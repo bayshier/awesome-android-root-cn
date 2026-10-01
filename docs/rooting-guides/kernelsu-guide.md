@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: "KernelSU Root Guide: Installation, Modules & Troubleshooting"
-description: "Learn KernelSU installation, GKI and LKM modes, KernelSU Next, modules, WebUI, app profiles and troubleshooting for supported Android devices."
+title: "KernelSU Root 指南：安装、模块与故障排除"
+description: "学习 KernelSU 安装、GKI 与 LKM 模式、KernelSU Next、模块、WebUI、应用配置文件以及受支持 Android 设备的故障排除。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: "KernelSU Root Guide: Installation, Modules & Troubleshooting"
+      content: "KernelSU Root 指南：安装、模块与故障排除"
   - - meta
     - property: og:description
-      content: Learn KernelSU installation, GKI and LKM modes, KernelSU Next, modules, WebUI, app profiles and troubleshooting.
+      content: "学习 KernelSU 安装、GKI 与 LKM 模式、KernelSU Next、模块、WebUI、应用配置文件与故障排除。"
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/kernelsu-guide
@@ -26,10 +26,10 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: "KernelSU Root Guide: Installation, Modules & Troubleshooting"
+      content: "KernelSU Root 指南：安装、模块与故障排除"
   - - meta
     - name: twitter:description
-      content: KernelSU root installation, GKI/LKM modes, modules, WebUI and app profile management.
+      content: KernelSU root 安装、GKI/LKM 模式、模块、WebUI 与应用配置文件管理。
   - - meta
     - name: author
       content: Awesome Android Root Project
@@ -92,16 +92,16 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: "KernelSU Root Guide | Awesome Android Root"
+      content: "KernelSU Root 指南 | Awesome Android Root"
   - - meta
     - name: twitter:description
-      content: "Learn KernelSU installation, GKI and LKM modes, KernelSU Next, modules, WebUI, app profiles and troubleshooting."
+      content: "学习 KernelSU 安装、GKI 与 LKM 模式、KernelSU Next、模块、WebUI、应用配置文件与故障排除。"
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og/kernelsu-guide.png
   - - meta
     - name: twitter:image:alt
-      content: KernelSU Root Guide - Complete Installation Tutorial
+      content: KernelSU Root 指南 - 完整安装教程
   - - link
     - rel: dns-prefetch
       href: https://github.com
@@ -134,184 +134,184 @@ head:
       }
 ---
 
-# KernelSU Root Installation Guide
+# KernelSU Root 安装指南
 
-KernelSU is a kernel-based Android root solution. This guide covers how to check compatibility, choose GKI or LKM mode, install KernelSU or KernelSU Next, use modules and app profiles, and diagnose common failures. Kernel support and the correct image are device-specific; do not flash a build just because the Android version matches.
+KernelSU 是一种基于内核的 Android root 方案。本指南涵盖如何检查兼容性、选择 GKI 或 LKM 模式、安装 KernelSU 或 KernelSU Next、使用模块与应用配置文件，以及诊断常见故障。内核支持与正确的镜像因设备而异；不要仅仅因为 Android 版本匹配就刷入某个构建。
 
-## Quick Navigation
+## 快速导航
 
-- [What is KernelSU](#understanding-kernelsu)
-- [KernelSU Variants](#kernelsu-variants)
+- [什么是 KernelSU](#认识-kernelsu)
+- [KernelSU 变体](#kernelsu-变体)
 - [KernelSU WebUI](#kernelsu-webui-ksuwebui)
-- [Installation Modes](#installation-modes)
-- [Prerequisites](#prerequisites)
-- [Installation Methods](#installation-methods)
-- [Metamodules & Modules](#metamodules-and-modules)
-- [App Profiles](#app-profile-system)
-- [Root Hiding & Play Integrity](#root-hiding-and-play-integrity)
-- [Troubleshooting](#troubleshooting)
+- [安装模式](#安装模式)
+- [前置条件](#前置条件)
+- [安装方法](#安装方法)
+- [元模块与模块](#元模块与模块)
+- [应用配置文件](#应用配置文件系统)
+- [Root 隐藏与 Play Integrity](#root-隐藏与-play-integrity)
+- [故障排除](#故障排除)
 
-**Related Guides:**
-- [Main Rooting Guide](./index.md) - Complete rooting overview
-- [Bootloader Unlocking](./how-to-unlock-bootloader.md) - Required first step
-- [Root Comparison](./root-framework-comparison.md) - Compare with Magisk and APatch
-- [FAQ](../faqs.md) - Common questions
+**相关指南：**
+- [Root 主指南](./index.md) - Root 完整概览
+- [解锁 Bootloader](./how-to-unlock-bootloader.md) - 必需的第一步
+- [Root 方案对比](./root-framework-comparison.md) - 与 Magisk 和 APatch 的比较
+- [常见问题](../faqs.md) - 常见问题解答
 
-**KernelSU topic links:** [installation](#installation-methods) · [modules](#metamodules-and-modules) · [WebUI](#kernelsu-webui-ksuwebui) · [KernelSU Next](#kernelsu-variants) · [KernelSU vs Magisk](#kernelsu-vs-alternatives) · [troubleshooting](#troubleshooting)
+**KernelSU 主题链接：** [安装](#安装方法) · [模块](#元模块与模块) · [WebUI](#kernelsu-webui-ksuwebui) · [KernelSU Next](#kernelsu-变体) · [KernelSU 与 Magisk 对比](#kernelsu-与其他方案对比) · [故障排除](#故障排除)
 
 ---
 
-## Understanding KernelSU
+## 认识 KernelSU
 
-KernelSU is a kernel-based root solution operating at the Linux kernel level, providing enhanced security, advanced app permission control, and superior detection evasion compared to userspace root methods.
+KernelSU 是一种运行在 Linux 内核层的基于内核的 root 方案，与用户空间 root 方案相比，它提供更强的安全性、更高级的应用权限控制以及更出色的检测规避能力。
 
-### Core Features
+### 核心特性
 
-- **Kernel-Level Integration** - Direct kernel modification for enhanced security
-- **Advanced App Profiles** - Granular root permission control per application
-- **Metamodule System** - Pluggable module infrastructure for systemless modifications
-- **Superior Hiding** - Better detection evasion than traditional methods
-- **LKM Support** - Loadable Kernel Module architecture
+- **内核级集成** - 直接修改内核以增强安全性
+- **高级应用配置文件** - 针对每个应用的细粒度 root 权限控制
+- **元模块系统** - 用于 systemless 修改的可插拔模块基础设施
+- **卓越的隐藏能力** - 比传统方法更好的检测规避
+- **LKM 支持** - 可加载内核模块架构
 
-### KernelSU vs Alternatives
+### KernelSU 与其他方案对比
 
-| Feature | KernelSU | Magisk | APatch |
+| 特性 | KernelSU | Magisk | APatch |
 |---------|----------|---------|--------|
-| Architecture | Kernel-based | Userspace overlay | Kernel-based |
-| Root Hiding | Excellent | Good | Excellent |
-| App Control | Advanced Profiles | Basic | Basic |
-| Module Mounting | Requires Metamodule | Built-in | Built-in |
-| Ease of Use | Moderate | Easy | Moderate |
+| 架构 | 基于内核 | 用户空间覆盖 | 基于内核 |
+| Root 隐藏 | 优秀 | 良好 | 优秀 |
+| 应用控制 | 高级配置文件 | 基础 | 基础 |
+| 模块挂载 | 需要元模块 | 内置 | 内置 |
+| 易用性 | 中等 | 简单 | 中等 |
 
-**Choose KernelSU if:**
-- You have Android 11+ device
-- You want best root hiding
-- You need fine-grained app control
-- You use banking/payment apps (see [root hiding apps](../apps-and-modules/root-management#root-hiding-play-integrity))
-- You prefer kernel-level security
+**在以下情况下选择 KernelSU：**
+- 你的设备是 Android 11 及以上
+- 你想要最佳的 root 隐藏效果
+- 你需要细粒度的应用控制
+- 你使用银行/支付类应用（参见 [root 隐藏应用](../apps-and-modules/root-management#root-hiding-play-integrity)）
+- 你偏好内核级安全
 
 > [!TIP]
-> Detailed comparison: [Root Comparison](./root-framework-comparison.md)
+> 详细对比：[Root 方案对比](./root-framework-comparison.md)
 
 ---
 
-## KernelSU Variants
+## KernelSU 变体
 
-The KernelSU ecosystem has expanded beyond the original project. Different variants serve different needs:
+KernelSU 生态已扩展到原创项目之外。不同变体满足不同需求：
 
-| Variant | Best For | Key Features |
+| 变体 | 最适用于 | 主要特性 |
 |---------|----------|-------------|
-| **[Official KernelSU](https://github.com/tiann/KernelSU)** | Modern GKI 2.0 devices | Most stable, LKM mode primary, official module repo |
-| **[KernelSU-Next](https://github.com/KernelSU-Next/KernelSU-Next)** | Broader device compatibility | GKI+LKM, auto-updates, modern UI, module backup/restore |
-| **[SukiSU-Ultra](https://github.com/SukiSU-Ultra/SukiSU-Ultra)** | Legacy & non-GKI devices | Broadest kernel compat, built-in SUSFS, KPM support |
-| **[ReSukiSU](https://github.com/ReSukiSU/ReSukiSU)** | Multi-manager setups | SukiSU-Ultra fork with multi-manager support |
+| **[Official KernelSU](https://github.com/tiann/KernelSU)** | 现代 GKI 2.0 设备 | 最稳定，以 LKM 模式为主，官方模块仓库 |
+| **[KernelSU-Next](https://github.com/KernelSU-Next/KernelSU-Next)** | 更广泛的设备兼容性 | GKI+LKM，自动更新，现代 UI，模块备份/恢复 |
+| **[SukiSU-Ultra](https://github.com/SukiSU-Ultra/SukiSU-Ultra)** | 老旧与非 GKI 设备 | 最广的内核兼容性，内置 SUSFS，支持 KPM |
+| **[ReSukiSU](https://github.com/ReSukiSU/ReSukiSU)** | 多管理器环境 | SukiSU-Ultra 的分支，支持多管理器 |
 
-**Quick variant selection:**
-- **Official KernelSU** - Stable, modern GKI 2.0 devices, maximum compatibility with official support
-- **KernelSU-Next** - If you want auto-updates, broader kernel range, and extra features
-- **Wild KSU / SukiSU-Ultra / ReSukiSU** - When built-in SUSFS root hiding or KPM kernel patching is needed
+**快速选择变体：**
+- **Official KernelSU** - 稳定，面向现代 GKI 2.0 设备，在官方支持下拥有最大兼容性
+- **KernelSU-Next** - 如果你想要自动更新、更广的内核适配范围和额外功能
+- **Wild KSU / SukiSU-Ultra / ReSukiSU** - 当需要内置 SUSFS root 隐藏或 KPM 内核修补时
 
 > [!TIP]
-> All variants now delegate module mounting to a metamodule. See [Metamodules & Modules](#metamodules-and-modules).
+> 所有变体现在都将模块挂载委托给元模块。参见[元模块与模块](#元模块与模块)。
 
 ---
 
 ## KernelSU WebUI (ksuwebui)
 
-KernelSU modules can expose a small web interface that the KernelSU Manager opens in its embedded WebView. This is a module interface, not a separate root method: a module places its page at `webroot/index.html` and can use KernelSU's JavaScript APIs for module-specific actions. The module author must document whether WebUI is supported and which manager version is required.
+KernelSU 模块可以提供一个小的 Web 界面，由 KernelSU Manager 在其内嵌 WebView 中打开。这是一种模块接口，而非独立的 root 方法：模块将其页面放在 `webroot/index.html`，并可以使用 KernelSU 的 JavaScript API 执行模块专属操作。模块作者必须说明是否支持 WebUI 以及需要哪个管理器版本。
 
-- Read the [official KernelSU Module WebUI documentation](https://kernelsu.org/guide/module-webui.html) before installing a WebUI module.
-- Open the module from a compatible root manager rather than trusting an arbitrary browser URL; WebUI pages can execute privileged module actions.
-- For installable examples, use the [KernelSU module repository](https://modules.kernelsu.org/) and review the module's source and permissions.
+- 安装 WebUI 模块前，请先阅读 [KernelSU 模块 WebUI 官方文档](https://kernelsu.org/guide/module-webui.html)。
+- 请从兼容的 root 管理器中打开模块，而不要轻信任意的浏览器 URL；WebUI 页面可以执行有特权的模块操作。
+- 如需可安装的示例，请使用 [KernelSU 模块仓库](https://modules.kernelsu.org/)，并审查模块的源码与权限。
 
-## Installation Modes
+## 安装模式
 
-KernelSU supports two installation modes. **Note:** Official KernelSU now recommends LKM mode. Community forks (Next, SukiSU) continue shipping GKI builds.
+KernelSU 支持两种安装模式。**注意：** Official KernelSU 现在推荐 LKM 模式。社区分支（Next、SukiSU）仍在继续提供 GKI 构建。
 
-### GKI Mode
+### GKI 模式
 
-**How it works:** Replaces device's original kernel with a KernelSU-patched Generic Kernel Image.
+**工作原理：** 用 KernelSU 修补过的通用内核镜像（GKI）替换设备原内核。
 
-| Pros | Cons |
+| 优点 | 缺点 |
 |------|------|
-| Universal GKI device compatibility | Loses manufacturer kernel optimizations |
-| Works on Samsung Knox devices | Requires manual fastboot flashing |
-| Better for heavily modified devices & custom ROMs | Must reflash after major OS updates |
+| 兼容所有 GKI 设备 | 失去厂商内核优化 |
+| 适用于 Samsung Knox 设备 | 需要手动 fastboot 刷入 |
+| 更适合深度修改的设备与第三方 ROM | 系统大版本更新后必须重新刷入 |
 
-**Best for:** Samsung devices, emulators, WSA, custom ROMs
+**最适用于：** Samsung 设备、模拟器、WSA、第三方 ROM
 
-### LKM Mode (Loadable Kernel Module)
+### LKM 模式（可加载内核模块）
 
-**How it works:** Loads KernelSU as a kernel module without replacing the original kernel.
+**工作原理：** 将 KernelSU 作为内核模块加载，不替换原内核。
 
-| Pros | Cons |
+| 优点 | 缺点 |
 |------|------|
-| Preserves original kernel & optimizations | Requires official firmware |
-| Easy in-app updates, OTA-friendly | May not work on all devices |
-| No AVB/dm-verity issues, can disable without reboot | Less compatible with modified firmware |
+| 保留原内核及优化 | 需要官方固件 |
+| 应用内更新便捷，对 OTA 友好 | 可能并非所有设备都可用 |
+| 无 AVB/dm-verity 问题，可不重启即禁用 | 与修改过的固件兼容性较差 |
 
-**Best for:** Most modern phones with stock/near-stock firmware
+**最适用于：** 大多数使用官方或接近官方固件的现代手机
 
-### Which Mode to Choose?
+### 该选哪种模式？
 
-| Device Type | Recommended | Reason |
+| 设备类型 | 推荐 | 原因 |
 |-------------|-------------|--------|
-| Stock firmware phones | LKM | Preserves optimizations, easy updates |
-| Samsung devices | GKI | Knox compatibility |
-| Custom ROMs | GKI | Better modified firmware support |
-| Emulators/WSA | GKI | Universal compatibility |
+| 官方固件手机 | LKM | 保留优化，更新方便 |
+| Samsung 设备 | GKI | Knox 兼容性 |
+| 第三方 ROM | GKI | 对修改过的固件支持更好 |
+| 模拟器/WSA | GKI | 通用兼容性 |
 
-If both modes are available, GKI takes priority and LKM is ignored.
+如果两种模式都可用，GKI 优先，LKM 会被忽略。
 
 ---
 
-## Prerequisites
+## 前置条件
 
-::: danger ESSENTIAL
-- **Unlocked bootloader** - Complete [bootloader unlocking](./how-to-unlock-bootloader.md) first
-- **GKI compatible device** - Modern Android with GKI 2.0 kernel support
-- **Full backup** of all important data
-- **Battery 50%+** to prevent interruption
+::: danger 必备条件
+- **已解锁的 Bootloader** - 先完成[解锁 Bootloader](./how-to-unlock-bootloader.md)
+- **GKI 兼容设备** - 支持 GKI 2.0 内核的现代 Android
+- **完整备份**所有重要数据
+- **电量 50% 以上**以防中途断电
 :::
 
-### Requirements
+### 要求
 
-| Hardware | Software |
+| 硬件 | 软件 |
 |----------|----------|
-| Android device with unlocked bootloader | [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools) (ADB/Fastboot) |
-| Data-capable USB cable | Device-specific USB drivers (Windows only) |
-| Computer (Windows, macOS, Linux) | KernelSU Manager APK from variant's GitHub releases |
-| 500MB+ free storage on device | Stock firmware for your device (optional but recommended) |
+| 已解锁 Bootloader 的 Android 设备 | [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)（ADB/Fastboot） |
+| 支持数据传输的 USB 数据线 | 设备专用 USB 驱动（仅 Windows） |
+| 电脑（Windows、macOS、Linux） | 来自所选变体 GitHub releases 的 KernelSU Manager APK |
+| 设备上 500MB+ 可用存储 | 你设备的官方固件（可选但推荐） |
 
-### Compatibility Check
+### 兼容性检查
 
 ```bash
-# Check kernel version
+# 检查内核版本
 adb shell uname -r
-# Look for GKI 2.0 support (check with your variant's requirements)
+# 确认 GKI 2.0 支持（参照你所选变体的要求）
 
-# Quick device check
-# Install KernelSU Manager → Open app → Check status:
-# "Not Installed" = supported
-# "Unsupported" = custom kernel or different variant needed
+# 快速设备检查
+# 安装 KernelSU Manager → 打开应用 → 查看状态：
+# "Not Installed" = 受支持
+# "Unsupported" = 需要第三方内核或其他变体
 ```
 
 ---
 
-## Installation Methods
+## 安装方法
 
-Three main methods. Choose based on your device and variant.
+三种主要方法。请根据你的设备和变体选择。
 
-### Method 1: GKI Kernel Flash
+### 方法 1：刷入 GKI 内核
 
-**Best for:** GKI 2.0 compatible devices using GKI mode
+**最适用于：** 使用 GKI 模式的 GKI 2.0 兼容设备
 
-**Step 1:** Download the appropriate GKI kernel from your chosen variant's releases:
-- [Official KernelSU Releases](https://github.com/tiann/KernelSU/releases)
-- [KernelSU-Next Releases](https://github.com/KernelSU-Next/KernelSU-Next/releases)
-- [Wild KSU Releases](https://github.com/WildKernels/Wild_KSU/releases)
+**第 1 步：** 从你所选变体的 releases 下载合适的 GKI 内核：
+- [Official KernelSU 发布页](https://github.com/tiann/KernelSU/releases)
+- [KernelSU-Next 发布页](https://github.com/KernelSU-Next/KernelSU-Next/releases)
+- [Wild KSU 发布页](https://github.com/WildKernels/Wild_KSU/releases)
 
-**Step 2:** Flash the kernel:
+**第 2 步：** 刷入内核：
 
 ```bash
 adb reboot bootloader
@@ -319,28 +319,28 @@ fastboot flash boot kernelsu-gki-*.img
 fastboot reboot
 ```
 
-**Step 3:** Download and install the variant's Manager APK. Verify installation opens correctly.
+**第 3 步：** 下载并安装该变体的 Manager APK。确认安装后能正常打开。
 
 ---
 
-### Method 2: Boot Image Patching (LKM Mode)
+### 方法 2：Boot 镜像修补（LKM 模式）
 
-**Best for:** Preserving stock kernel, LKM mode preference
+**最适用于：** 保留官方内核、偏好 LKM 模式
 
-**Step 1:** Extract stock boot image:
+**第 1 步：** 提取官方 boot 镜像：
 
 ```bash
-# From firmware ZIP
+# 从固件 ZIP 中提取
 unzip stock_firmware.zip boot.img
 
-# Or from device
+# 或从设备上转储
 adb shell su -c "dd if=/dev/block/by-name/boot of=/sdcard/boot.img"
 adb pull /sdcard/boot.img
 ```
 
-**Step 2:** Install Manager APK, open it, tap "Install" → "Select and Patch a File" → choose `boot.img`. Output: `kernelsu_patched_[random].img`.
+**第 2 步：** 安装 Manager APK，打开后点击"安装" → "选择并修补一个文件" → 选择 `boot.img`。输出：`kernelsu_patched_[random].img`。
 
-**Step 3:** Flash the patched image:
+**第 3 步：** 刷入修补后的镜像：
 
 ```bash
 adb pull /sdcard/Download/kernelsu_patched_*.img
@@ -349,121 +349,121 @@ fastboot flash boot kernelsu_patched_*.img
 fastboot reboot
 ```
 
-**Step 4:** Open Manager to verify - should show "Installed" with LKM mode.
+**第 4 步：** 打开 Manager 验证 - 应显示 "Installed" 且为 LKM 模式。
 
 ---
 
-### Method 3: Custom Kernel
+### 方法 3：第三方内核
 
-**Best for:** Devices with community kernel support
+**最适用于：** 有社区内核支持的设备
 
-Find device-specific kernels with KernelSU integration on XDA Forums, Telegram groups, or GitHub. Popular options include Sultan Kernel (Pixel), and various device-specific builds from [WildKernels](https://github.com/WildKernels).
+可在 XDA 论坛、Telegram 群组或 GitHub 上查找集成了 KernelSU 的设备专属内核。热门选择包括 Sultan Kernel（Pixel），以及 [WildKernels](https://github.com/WildKernels) 提供的多种设备专属构建。
 
 ```bash
-# For IMG files
+# 对于 IMG 文件
 adb reboot bootloader
 fastboot flash boot custom_kernel.img
 fastboot reboot
 
-# For ZIP files (requires custom recovery like TWRP)
-# Boot to recovery → Install ZIP → Reboot
+# 对于 ZIP 文件（需要 TWRP 等第三方 Recovery）
+# 启动到 Recovery → 安装 ZIP → 重启
 ```
 
 ---
 
-## Post-Installation Setup
+## 安装后设置
 
-### Initial Steps
+### 初始步骤
 
-1. **Verify root access** - Open Manager, confirm "Installed" status. Test: `adb shell su -c "id"`
-2. **Configure Manager** - Enable hiding (rename for banking apps), require authentication, enable safe mode
-3. **Install a metamodule** (required for module support - see next section)
-4. **Set up App Profiles** for granular root control
-5. **Backup your patched boot image** for recovery
+1. **验证 root 权限** - 打开 Manager，确认 "Installed" 状态。测试：`adb shell su -c "id"`
+2. **配置 Manager** - 启用隐藏（针对银行类应用改名）、要求身份验证、启用安全模式
+3. **安装元模块**（模块支持必需 - 见下一节）
+4. **设置应用配置文件**以实现细粒度 root 控制
+5. **备份修补后的 boot 镜像**以备恢复
 
 ---
 
-## App Profile System
+## 应用配置文件系统
 
-App Profiles are KernelSU's unique feature - granular permission control per app, beyond simple root grant/deny.
+应用配置文件是 KernelSU 的独有功能 - 针对每个应用的细粒度权限控制，超越了简单的 root 授予/拒绝。
 
-**What you can control per app:**
-- Root access on/off
-- File system access (read/write/deny per path)
-- Hardware access (camera, mic, GPS, sensors)
-- Network access and domain restrictions
-- Resource limits and SELinux context
-- Mount namespace isolation
+**每个应用可控制的内容：**
+- root 权限开/关
+- 文件系统访问（按路径读/写/拒绝）
+- 硬件访问（摄像头、麦克风、GPS、传感器）
+- 网络访问与域名限制
+- 资源限制与 SELinux 上下文
+- 挂载命名空间隔离
 
-### Quick Examples
+### 快速示例
 
-| Profile Type | Root | Filesystem | Hardware | Use Case |
+| 配置文件类型 | Root | 文件系统 | 硬件 | 使用场景 |
 |-------------|------|-----------|----------|----------|
-| **Banking Secure** | DENIED | App data only, /sdcard denied | All denied | Banking/finance apps |
-| **Developer Access** | FULL | Full access | All allowed | Dev tools, ADB |
-| **Gaming Optimized** | DENIED | App data only | GPU high priority | Games, anti-cheat |
+| **银行安全** | 拒绝 | 仅应用数据，拒绝 /sdcard | 全部拒绝 | 银行/金融应用 |
+| **开发者访问** | 完全 | 完全访问 | 全部允许 | 开发工具、ADB |
+| **游戏优化** | 拒绝 | 仅应用数据 | GPU 高优先级 | 游戏、反作弊 |
 
-### Apply a Profile
+### 应用配置文件
 
-1. KernelSU Manager → App Profiles → "+" → select app
-2. Configure permissions (root, filesystem, hardware, network, resources)
-3. Save and restart the app
+1. KernelSU Manager → 应用配置文件 → "+" → 选择应用
+2. 配置权限（root、文件系统、硬件、网络、资源）
+3. 保存并重启该应用
 
-**Export/Import via CLI:**
+**通过 CLI 导出/导入：**
 ```bash
 ksud profile export com.example.app > profile.json
 ksud profile import com.target.app < profile.json
 ```
 
 > [!TIP]
-> See [official App Profile docs](https://kernelsu.org/guide/app-profile.html) for complete configuration options.
+> 完整配置选项参见 [应用配置文件官方文档](https://kernelsu.org/guide/app-profile.html)。
 
 ---
 
-## Metamodules and Modules
+## 元模块与模块
 
-### What is a Metamodule?
+### 什么是元模块？
 
-Current KernelSU releases no longer include built-in module mounting. A **metamodule** provides the mounting infrastructure - without one, modules that modify `/system` will install but **not mount**. (Modules using only scripts, `sepolicy`, or `system.prop` still work without one.)
+现行的 KernelSU 版本不再内置模块挂载功能。**元模块**提供挂载基础设施 - 没有它，修改 `/system` 的模块能安装但**不会挂载**。（只使用脚本、`sepolicy` 或 `system.prop` 的模块没有元模块也能照常工作。）
 
-This applies to all variants: Official KernelSU, KernelSU-Next, Wild KSU, SukiSU-Ultra, and ReSukiSU.
+这适用于所有变体：Official KernelSU、KernelSU-Next、Wild KSU、SukiSU-Ultra 和 ReSukiSU。
 
-**Why metamodules?**
-- Reduced detection surface (KernelSU itself doesn't mount)
-- Flexibility to choose your mounting method (OverlayFS, Magic Mount, hybrid)
-- Core KernelSU stays stable while mounting evolves independently
+**为什么使用元模块？**
+- 更小的检测面（KernelSU 本身不执行挂载）
+- 可灵活选择挂载方式（OverlayFS、Magic Mount、混合）
+- 核心 KernelSU 保持稳定，挂载方案独立演进
 
 > [!WARNING]
-> Only **one** metamodule can be active at a time. To switch, uninstall all regular modules → uninstall metamodule → reboot → install new metamodule → reinstall modules.
+> 同一时间只能有**一个**元模块处于活动状态。切换方法：卸载所有普通模块 → 卸载元模块 → 重启 → 安装新元模块 → 重新安装模块。
 
-### Available Metamodules
+### 可用的元模块
 
-| Metamodule | Description | Best For |
+| 元模块 | 说明 | 最适用于 |
 |------------|-------------|----------|
-| **[meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs)** | Official reference using OverlayFS | Most users, standard setup |
-| **[mountify](https://github.com/backslashxx/mountify)** | OverlayFS + tmpfs/ext4 sparse, cross-platform | Reduced detection, multi-root |
-| **[meta-hybrid_mount](https://github.com/YuzakiKokuban/meta-hybrid_mount)** | Dual engine (OverlayFS + Magic Mount) + auto-fallback | Advanced control, stealth |
-| **[meta-mm](https://github.com/KernelSU-Modules-Repo/meta-mm)** | Lightweight Magic Mount alternative | Magisk-like mounting |
-| **[ZeroMount](https://github.com/Enginex0/zeromount)** | Mountless VFS path redirection + SUSFS | Maximum stealth |
+| **[meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs)** | 使用 OverlayFS 的官方参考实现 | 大多数用户、标准配置 |
+| **[mountify](https://github.com/backslashxx/mountify)** | OverlayFS + tmpfs/ext4 sparse，跨平台 | 更低检测率、多 root 方案并存 |
+| **[meta-hybrid_mount](https://github.com/YuzakiKokuban/meta-hybrid_mount)** | 双引擎（OverlayFS + Magic Mount）+ 自动回退 | 高级控制、隐蔽性 |
+| **[meta-mm](https://github.com/KernelSU-Modules-Repo/meta-mm)** | 轻量级 Magic Mount 替代方案 | 类 Magisk 挂载 |
+| **[ZeroMount](https://github.com/Enginex0/zeromount)** | 无挂载 VFS 路径重定向 + SUSFS | 最大隐蔽性 |
 
-> **Recommendation:** Start with **meta-overlayfs** or **mountify**.
+> **推荐：** 从 **meta-overlayfs** 或 **mountify** 开始。
 
-### Installing a Metamodule
+### 安装元模块
 
-1. Download metamodule ZIP from GitHub releases
-2. KernelSU Manager → Modules → "Install from storage" (➕)
-3. Select the ZIP → Reboot
+1. 从 GitHub releases 下载元模块 ZIP
+2. KernelSU Manager → 模块 → "从存储安装"（➕）
+3. 选择该 ZIP → 重启
 
-The active metamodule shows in your module list with a special designation.
+处于活动状态的元模块会以特殊标识显示在你的模块列表中。
 
-### Installing Regular Modules
+### 安装普通模块
 
-**Prerequisite:** A metamodule must be active.
+**前提条件：** 必须已有一个处于活动状态的元模块。
 
-1. KernelSU Manager → Modules → "Install from storage"
-2. Select module ZIP → Reboot when prompted
+1. KernelSU Manager → 模块 → "从存储安装"
+2. 选择模块 ZIP → 按提示重启
 
-**CLI alternative:**
+**CLI 替代方式：**
 ```bash
 ksud module install /path/to/module.zip
 ksud module list
@@ -471,102 +471,102 @@ ksud module enable/disable module_id
 ksud module remove module_id
 ```
 
-### Module Compatibility
+### 模块兼容性
 
-- Most Magisk modules work with compatible metamodules
-- Zygisk modules require [ZygiskNext](https://github.com/LSPosed/ZygiskNext) or [ReZygisk](https://github.com/PerformanC/ReZygisk)
-- KPM modules require SukiSU-Ultra or [KPatch Next Module](https://github.com/KernelSU-Next/KPatch-Next-Module)
-- Browse modules: [Official Module Repository](https://modules.kernelsu.org/)
+- 大多数 Magisk 模块可与兼容的元模块配合工作
+- Zygisk 模块需要 [ZygiskNext](https://github.com/LSPosed/ZygiskNext) 或 [ReZygisk](https://github.com/PerformanC/ReZygisk)
+- KPM 模块需要 SukiSU-Ultra 或 [KPatch Next Module](https://github.com/KernelSU-Next/KPatch-Next-Module)
+- 浏览模块：[官方模块仓库](https://modules.kernelsu.org/)
 
-### Module Troubleshooting
+### 模块故障排除
 
-| Issue | Likely Cause | Fix |
+| 问题 | 可能原因 | 解决方法 |
 |-------|-------------|-----|
-| **Not mounted** | No metamodule | Install metamodule → reboot |
-| **Bootloop** | Bad module | Hold power 10s → Volume Down at boot (safe mode) → disable/remove module |
-| **Root hiding not working** | Need Zygisk | Install ZygiskNext |
-| **Module incompatible** | Wrong metamodule | Try different metamodule
+| **未挂载** | 没有元模块 | 安装元模块 → 重启 |
+| **无限重启** | 模块有问题 | 长按电源 10 秒 → 开机时按音量下键（安全模式）→ 禁用/移除模块 |
+| **root 隐藏不生效** | 需要 Zygisk | 安装 ZygiskNext |
+| **模块不兼容** | 元模块不合适 | 尝试其他元模块
 
 ---
 
-## Root Hiding and Play Integrity
+## Root 隐藏与 Play Integrity
 
-Modern banking apps use Play Integrity API with hardware-backed attestation - increasingly difficult but not impossible to manage on rooted devices. KernelSU's kernel-level approach offers better evasion than userspace methods.
+现代银行类应用使用带硬件证明的 Play Integrity API - 在已 root 设备上应对起来越来越难，但并非不可能。KernelSU 的内核级方案比用户空间方法提供更好的规避能力。
 
-### Recommended Setup
+### 推荐配置
 
-| Step | Action | Details |
+| 步骤 | 操作 | 详情 |
 |------|--------|---------|
-| 1 | **Hide Manager** | KernelSU Manager → Settings → "Hide the KernelSU Manager" → rename (e.g., "Settings") |
-| 2 | **Banking Profile** | Create App Profile denying root, filesystem, and hardware access for banking apps |
-| 3 | **Install SUSFS** | For SUSFS-patched kernels - advanced root hiding with filesystem manipulation |
-| 4 | **Install Play Integrity Fix** | Use [Play Integrity Fork](https://github.com/osm0sis/PlayIntegrityFork) or [Play Integrity Fix (inject)](https://github.com/KOWX712/PlayIntegrityFix) for MEETS_DEVICE_INTEGRITY |
-| 5 | **Clear app data** | Clear data for Google Play Services, Play Store, and banking apps → Reboot |
+| 1 | **隐藏管理器** | KernelSU Manager → 设置 → "隐藏 KernelSU Manager" → 改名（例如 "Settings"） |
+| 2 | **银行应用配置** | 为银行类应用创建拒绝 root、文件系统和硬件访问的应用配置文件 |
+| 3 | **安装 SUSFS** | 适用于 SUSFS 修补过的内核 - 通过文件系统操纵实现高级 root 隐藏 |
+| 4 | **安装 Play Integrity Fix** | 使用 [Play Integrity Fork](https://github.com/osm0sis/PlayIntegrityFork) 或 [Play Integrity Fix (inject)](https://github.com/KOWX712/PlayIntegrityFix) 以获得 MEETS_DEVICE_INTEGRITY |
+| 5 | **清除应用数据** | 清除 Google Play Services、Play Store 和银行类应用的数据 → 重启 |
 
-### What's Realistic
+### 现实预期
 
-- **Basic Integrity:** PASS - achievable with proper setup
-- **Device Integrity:** PASS - possible with PIF + TrickyStore (keybox required for locked-bootloader-equivalent verification)
-- **Strong Integrity:** FAIL for most - requires an unrevoked hardware keybox (increasingly scarce)
+- **基础完整性：** 通过 - 配置得当时可以实现
+- **设备完整性：** 通过 - 借助 PIF + TrickyStore 可实现（需要 keybox 才能达到等效于 Bootloader 未解锁的验证）
+- **强完整性：** 对大多数人失败 - 需要未吊销的硬件 keybox（日益稀缺）
 
-### Testing Tools
+### 测试工具
 
-- [Play Integrity API Checker](https://github.com/1nikolas/play-integrity-checker-app) - Official checker
+- [Play Integrity API Checker](https://github.com/1nikolas/play-integrity-checker-app) - 官方检测工具
 > [!WARNING]
-> No guarantees. Some apps may still detect root despite all measures. Always test your specific apps.
+> 不作任何保证。尽管采取了所有措施，某些应用仍可能检测到 root。务必测试你自己的目标应用。
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-### Common Issues & Fixes
+### 常见问题与解决方法
 
-| Issue | Likely Cause | Solution |
+| 问题 | 可能原因 | 解决方法 |
 |-------|-------------|----------|
-| **Manager shows "Unsupported"** | Device not GKI 2.0 compatible | Try KernelSU-Next or SukiSU-Ultra for broader compat, or use Magisk |
-| **"Not Installed" after flashing** | Wrong GKI kernel | Use correct kernel for your Android version; try LKM patching |
-| **Bootloop** | Incompatible kernel/module | Flash stock boot.img via fastboot → `fastboot flash boot stock_boot.img` |
-| **Modules not mounted** | No metamodule installed | Install a metamodule (meta-overlayfs recommended) → reboot |
-| **Apps not getting root** | Profile restriction or Manager issue | Check Manager shows "Installed", verify App Profile, check logs |
-| **Banking app detects root** | Insufficient hiding | Hide Manager, create restrictive profile, install SUSFS + Play Integrity Fix |
-| **Play Integrity fails** | Detection not fully bypassed | Install PIF/TrickyStore, clear Google Play Services data |
+| **Manager 显示 "Unsupported"** | 设备不兼容 GKI 2.0 | 尝试兼容性更广的 KernelSU-Next 或 SukiSU-Ultra，或改用 Magisk |
+| **刷入后显示 "Not Installed"** | GKI 内核不对 | 使用与 Android 版本匹配的正确内核；尝试 LKM 修补 |
+| **无限重启** | 内核/模块不兼容 | 通过 fastboot 刷入官方 boot.img → `fastboot flash boot stock_boot.img` |
+| **模块未挂载** | 未安装元模块 | 安装一个元模块（推荐 meta-overlayfs）→ 重启 |
+| **应用拿不到 root** | 配置文件限制或 Manager 问题 | 确认 Manager 显示 "Installed"，检查应用配置文件，查看日志 |
+| **银行类应用检测到 root** | 隐藏不充分 | 隐藏 Manager、创建限制性配置文件、安装 SUSFS + Play Integrity Fix |
+| **Play Integrity 失败** | 检测未被完全绕过 | 安装 PIF/TrickyStore，清除 Google Play Services 数据 |
 
-### Emergency Recovery
+### 紧急恢复
 
-**Bootloop:**
-1. Force reboot (hold power 10s)
-2. Boot to safe mode (Volume Down at boot) - disables all modules
-3. If still looping, flash stock boot.img:
+**无限重启：**
+1. 强制重启（长按电源 10 秒）
+2. 启动到安全模式（开机时按音量下键）- 会禁用所有模块
+3. 如果仍然循环重启，刷入官方 boot.img：
 ```bash
 fastboot flash boot stock_boot.img
 fastboot reboot
 ```
 
-**Module causing issues:**
-- Disable: `touch /data/adb/modules/[module_name]/disable`
-- Remove: `rm -rf /data/adb/modules/[module_name]`
-- Remove all modules: `ksud --remove-modules` (via ADB)
+**模块引发问题：**
+- 禁用：`touch /data/adb/modules/[module_name]/disable`
+- 移除：`rm -rf /data/adb/modules/[module_name]`
+- 移除所有模块：`ksud --remove-modules`（通过 ADB）
 
 ---
 
-## Next Steps
+## 下一步
 
-1. **Configure App Profiles** for sensitive apps (banking, finance)
-2. **Install essential modules:** ZygiskNext (Zygisk support), SUSFS (root hiding), Play Integrity Fix
-3. **Explore:** [LSPosed Framework](./lsposed-guide.md), [Custom ROMs](./custom-rom-installation.md), [Root Apps Collection](../apps-and-modules/)
-4. **Optimize:** [Ad Blocking](../general-guides/android-adblocking.md), [Debloating](../general-guides/android-apps-debloating.md)
+1. **为敏感应用配置应用配置文件**（银行、金融类）
+2. **安装必备模块：** ZygiskNext（Zygisk 支持）、SUSFS（root 隐藏）、Play Integrity Fix
+3. **探索：** [LSPosed 框架](./lsposed-guide.md)、[第三方 ROM](./custom-rom-installation.md)、[Root 应用合集](../apps-and-modules/)
+4. **优化：** [广告拦截](../general-guides/android-adblocking.md)、[精简预装](../general-guides/android-apps-debloating.md)
 
 ---
 
-## Community Resources
+## 社区资源
 
-| Resource | Link |
+| 资源 | 链接 |
 |----------|------|
-| Official Website | [kernelsu.org](https://kernelsu.org/) |
-| Official GitHub | [github.com/tiann/KernelSU](https://github.com/tiann/KernelSU) |
-| Official Module Repository | [modules.kernelsu.org](https://modules.kernelsu.org/) |
-| Telegram (Official) | [@KernelSU](https://t.me/KernelSU) |
+| 官方网站 | [kernelsu.org](https://kernelsu.org/) |
+| 官方 GitHub | [github.com/tiann/KernelSU](https://github.com/tiann/KernelSU) |
+| 官方模块仓库 | [modules.kernelsu.org](https://modules.kernelsu.org/) |
+| Telegram（官方） | [@KernelSU](https://t.me/KernelSU) |
 | Reddit | [r/KernelSU](https://www.reddit.com/r/KernelSU/) |
-| Awesome KernelSU Resources | [github.com/fynks/awesome-kernelsu](https://github.com/fynks/awesome-kernelsu) |
+| Awesome KernelSU 资源 | [github.com/fynks/awesome-kernelsu](https://github.com/fynks/awesome-kernelsu) |
 
-**Getting help:** When asking, provide device model, kernel version (`adb shell uname -r`), your variant and mode, installation method, and exact error details.
+**求助：** 提问时请提供设备型号、内核版本（`adb shell uname -r`）、所用的变体与模式、安装方法以及确切的错误详情。

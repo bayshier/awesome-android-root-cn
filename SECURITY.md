@@ -1,76 +1,76 @@
-# Security Policy
+# 安全策略
 
-## Overview
+## 概述
 
-Awesome Android Root is a community-curated open-source resource covering Android rooting, system customization, root applications, modules, and related technical guides.
+Awesome Android Root 是一个由社区精心维护的开源资源，涵盖 Android root、系统定制、root 应用、模块及相关技术指南。
 
-We take security issues seriously and appreciate responsible disclosure from the community.
+我们高度重视安全问题，并感谢社区负责任的漏洞披露。
 
-## Supported Versions
+## 支持的版本
 
-Security reports are primarily accepted for the latest version of the project.
+安全报告主要针对项目最新版本受理。
 
-| Version | Supported |
+| 版本 | 是否支持 |
 | ------- | --------- |
-| 5.x     | Yes       |
-| < 5.0    | No        |
+| 5.x     | 是        |
+| < 5.0   | 否        |
 
-## Reporting a Vulnerability
+## 报告漏洞
 
-Please **do not report security vulnerabilities through public GitHub issues**.
+请**不要通过公开的 GitHub issue 报告安全漏洞**。
 
-If you discover a security vulnerability affecting this repository, its website, build/deployment configuration, or project infrastructure, please use GitHub's private vulnerability reporting mechanism:
+如果你发现影响本仓库、其网站、构建/部署配置或项目基础设施的安全漏洞，请使用 GitHub 的私密漏洞报告机制：
 
-**GitHub Security Advisories:**
+**GitHub Security Advisories：**
 
 https://github.com/awesome-android-root/awesome-android-root/security/advisories/new
 
-When reporting a vulnerability, please include:
+报告漏洞时，请包含：
 
-- A clear description of the vulnerability
-- The affected file, component, or URL
-- Steps required to reproduce the issue
-- The potential security impact
-- Any proof-of-concept or supporting material
-- Suggested remediation, if available
+- 对漏洞的清晰描述
+- 受影响的文件、组件或 URL
+- 复现问题所需的步骤
+- 潜在的安全影响
+- 任何概念验证（PoC）或佐证材料
+- 修复建议（如有）
 
-Please provide enough information for the maintainers to reproduce and verify the issue.
+请提供足够的信息，以便维护者复现并验证该问题。
 
-## Responsible Disclosure
+## 负责任的披露
 
-Please allow the maintainers reasonable time to investigate and address a reported vulnerability before publicly disclosing technical details.
+在公开披露技术细节之前，请给维护者留出合理的时间来调查和处理所报告的漏洞。
 
-We ask security researchers to avoid:
+我们要求安全研究人员避免：
 
-- Publicly posting exploit details before remediation
-- Accessing, modifying, or deleting data that does not belong to you
-- Disrupting project infrastructure or services
-- Performing denial-of-service attacks
-- Social engineering project contributors or users
+- 在修复完成前公开发布漏洞利用细节
+- 访问、修改或删除不属于你的数据
+- 干扰项目基础设施或服务
+- 发起拒绝服务攻击
+- 对项目贡献者或用户实施社会工程学攻击
 
-## Scope
+## 范围
 
-Security reports may include issues involving:
+安全报告可以涉及以下方面的问题：
 
-- The GitHub repository and its configuration
-- GitHub Actions and CI/CD workflows
-- The project's documentation website
-- Malicious or compromised dependencies
-- Supply-chain security issues
-- Credential or secret exposure
-- Unsafe repository automation
-- Security-sensitive instructions introduced into project documentation
+- GitHub 仓库及其配置
+- GitHub Actions 与 CI/CD 工作流
+- 项目的文档网站
+- 恶意或被入侵的依赖项
+- 供应链安全问题
+- 凭据或密钥泄露
+- 不安全的仓库自动化流程
+- 引入项目文档中的安全敏感指令
 
-Reports concerning third-party Android applications, modules, kernels, ROMs, or external websites should normally be reported to their respective maintainers.
+有关第三方 Android 应用、模块、内核、ROM 或外部网站的问题，通常应向其各自的维护者报告。
 
-## Security Considerations for Android Rooting
+## Android root 的安全注意事项
 
-Rooting and system-level Android modification can introduce significant security and stability risks.
+root 和系统级的 Android 修改可能带来重大的安全与稳定性风险。
 
-Awesome Android Root aims to provide accurate information and link to reputable sources, but users should independently verify software before installing it on their devices.
+Awesome Android Root 致力于提供准确的信息并链接到可信来源，但用户在将软件安装到设备上之前应自行进行验证。
 
-The project does not guarantee the safety, integrity, compatibility, or security of third-party applications, modules, kernels, ROMs, or other resources listed in the repository.
+本项目不保证仓库中列出的第三方应用、模块、内核、ROM 或其他资源的无害性、完整性、兼容性或安全性。
 
-## Acknowledgements
+## 致谢
 
-We appreciate responsible security researchers and community members who help improve the security and reliability of Awesome Android Root.
+我们感谢所有帮助提升 Awesome Android Root 安全性与可靠性的负责任的安全研究人员和社区成员。

@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: "Gaming"
-description: "Gaming apps and modules for rooted Android: performance tweaks, FPS unlockers and resolution changers, plus game modification tools."
+title: "游戏"
+description: "面向已 root Android 的游戏应用与模块：性能调整、FPS 解锁与分辨率更改工具，以及游戏修改工具。"
 head:
   - - link
     - rel: canonical
@@ -20,10 +20,10 @@ head:
       content: Awesome Android Root
   - - meta
     - property: og:title
-      content: "Gaming | Awesome Android Root"
+      content: "游戏 | Awesome Android Root"
   - - meta
     - property: og:description
-      content: "Gaming apps and modules for rooted Android: performance tweaks, FPS unlockers and resolution changers, plus game modification tools."
+      content: "面向已 root Android 的游戏应用与模块：性能调整、FPS 解锁与分辨率更改工具，以及游戏修改工具。"
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/apps-and-modules/gaming
@@ -41,37 +41,37 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: "Gaming | Awesome Android Root"
+      content: "游戏 | Awesome Android Root"
   - - meta
     - name: twitter:description
-      content: "Gaming apps and modules for rooted Android: performance tweaks, FPS unlockers and resolution changers, plus game modification tools."
+      content: "面向已 root Android 的游戏应用与模块：性能调整、FPS 解锁与分辨率更改工具，以及游戏修改工具。"
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og.png
 ---
 
-# Gaming
+# 游戏
 
-**Gaming** apps and modules for rooted Android - performance tweaks, FPS unlockers, resolution changers and
-game-specific tools, mixing root apps, Magisk/KernelSU modules and LSPosed modules.
+面向已 root Android 的**游戏**应用与模块 - 性能调整、FPS 解锁、分辨率更改和游戏专属工具，
+涵盖 root 应用、Magisk/KernelSU 模块和 LSPosed 模块。
 
 
 > [!TIP]
-> For overall device performance tuning, see [Performance and Optimization](performance.md#performance-optimization). For CPU/GPU management, see [Kernel Management](performance.md#kernel-management).
+> 整机性能调优请查看[性能与优化](performance.md#性能优化)。CPU/GPU 管理请查看[内核管理](performance.md#内核管理)。
 
-## Game Modifications & Tools
+## 游戏修改与工具
 
-- **[Boosteroid+](https://github.com/nitanmarcel/BoosteroidPlus)** - Customize advanced settings for the Boosteroid app, including frame rate, bitrate, and resolution options. `FOSS` `[LSP]`
-- **[JoyCon Droid](https://joycondroid.gitbook.io/joycondroid)** - Allows you to turn your Android device into a controller for your Nintendo Switch. `FOSS`
+- **[Boosteroid+](https://github.com/nitanmarcel/BoosteroidPlus)** - 自定义 Boosteroid 应用的高级设置，包括帧率、码率和分辨率选项。`FOSS` `[LSP]`
+- **[JoyCon Droid](https://joycondroid.gitbook.io/joycondroid)** - 让你把 Android 设备变成 Nintendo Switch 的手柄。`FOSS`
 
-## Gaming Optimization
+## 游戏优化
 
-- **[AsoulOpt](https://github.com/nakixii/Magisk_AsoulOpt)** - Game threads tweaker for Android, suitable for mainstream games and some niche games. `FOSS` `[M]`
-- **[Encore Tweaks](https://github.com/Rem01Gaming/encore)** - Enhance device performance during gaming sessions, while keeping battery life optimized for normal use. `Proprietary` `[M]`
-- **[EnCorinVest](https://github.com/LoggingNewMemory/EnCorinVest)** - Performance Module, Collaboration between CorinXMTKVest and Encore Tweaks. `FOSS` `[M]`
-- **[FPS Limitations Patcher](https://github.com/Mods-Center/FPS-Limitation-Patcher)** - Removes FPS limitations in system apps and games on HyperOS. `Proprietary` `[M]` `[K]`
-- **[FPS Unlocker](https://github.com/yadavnikhil03/GameUnlocker#fps-unlocker)** - Enables 90 FPS options in BGMI and PUBG and other Games as well for smoother gameplay on low-end devices. `FOSS` `[M]`
-- **[GameResChange](https://github.com/Xposed-Modules-Repo/com.game.reschange)** - Change the resolution of any app/game on Android 13+. `Proprietary` `[LSP]`
-- **[MIUIPerfSaver](https://github.com/rdtoy/MIUIPerfSaver)** - Remove MIUI's performance limit, run app at maximum FPS. `FOSS` `[LSP]`
-- **[PerfGame](https://github.com/adivenxnataly/PerfGame)** - Enable custom resolution and frame-rate mechanism for your games. `FOSS` `[M]`
-- **[Uperf-Game-Turbo](https://github.com/yinwanxi/Uperf-Game-Turbo)** - Userspace performance controller for Android. `FOSS` `[M]`
+- **[AsoulOpt](https://github.com/nakixii/Magisk_AsoulOpt)** - Android 游戏线程调整器，适用于主流游戏和部分小众游戏。`FOSS` `[M]`
+- **[Encore Tweaks](https://github.com/Rem01Gaming/encore)** - 在游戏过程中增强设备性能，同时为日常使用保持优化的续航表现。`Proprietary` `[M]`
+- **[EnCorinVest](https://github.com/LoggingNewMemory/EnCorinVest)** - 性能模块，由 CorinXMTKVest 与 Encore Tweaks 合作打造。`FOSS` `[M]`
+- **[FPS Limitations Patcher](https://github.com/Mods-Center/FPS-Limitation-Patcher)** - 移除 HyperOS 上系统应用和游戏的 FPS 限制。`Proprietary` `[M]` `[K]`
+- **[FPS Unlocker](https://github.com/yadavnikhil03/GameUnlocker#fps-unlocker)** - 在 BGMI、PUBG 及其他游戏中启用 90 FPS 选项，让低端设备也能更流畅地游玩。`FOSS` `[M]`
+- **[GameResChange](https://github.com/Xposed-Modules-Repo/com.game.reschange)** - 在 Android 13+ 上更改任意应用/游戏的分辨率。`Proprietary` `[LSP]`
+- **[MIUIPerfSaver](https://github.com/rdtoy/MIUIPerfSaver)** - 移除 MIUI 的性能限制，让应用以最高 FPS 运行。`FOSS` `[LSP]`
+- **[PerfGame](https://github.com/adivenxnataly/PerfGame)** - 为你的游戏启用自定义分辨率和帧率机制。`FOSS` `[M]`
+- **[Uperf-Game-Turbo](https://github.com/yinwanxi/Uperf-Game-Turbo)** - Android 用户态性能控制器。`FOSS` `[M]`

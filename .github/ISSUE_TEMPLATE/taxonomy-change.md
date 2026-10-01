@@ -1,41 +1,41 @@
 ---
-name: Taxonomy Change
-about: Propose a reorganization of the Apps & Modules category structure (docs/apps-and-modules)
+name: 分类体系变更
+about: 提议重组应用与模块的分类结构（docs/apps-and-modules）
 title: '[TAXONOMY] '
 labels: 'taxonomy, discussion'
 assignees: ''
 ---
 
-## Proposed Change
+## 拟议变更
 
-**Current category/section:**
-(What section do you want to move, rename, merge, or split?)
+**当前分类/章节：** 
+（你想移动、重命名、合并或拆分哪个章节？）
 
-**Proposed change:**
-- [ ] Move to different parent
-- [ ] Rename section
-- [ ] Merge with another section
-- [ ] Split into multiple sections
-- [ ] New top-level category needed
+**拟议变更：**
+- [ ] 移动到其他父级
+- [ ] 重命名章节
+- [ ] 与其他章节合并
+- [ ] 拆分为多个章节
+- [ ] 需要新的顶层分类
 
-## Rationale
+## 理由
 
-**Why should this change happen?**
-(Explain the reasoning - e.g., better discoverability, logical grouping, consistency with other sections)
+**为什么应该进行此变更？**
+（说明理由 - 例如：更好的可发现性、更合理的分组、与其他章节保持一致）
 
-## Impact
+## 影响
 
-**Affected entries:** (Approximate count)
-**Affected category pages / sub-sections:** (List them)
-**Navigation/sidebar changes needed:** [Yes/No]
-**URL/anchor changes needed:** [Yes/No]
+**受影响的条目：**（大致数量）
+**受影响的分类页面/子章节：**（请列出）
+**需要更改导航/侧边栏：** [是/否]
+**需要更改 URL/锚点：** [是/否]
 
-## Alternatives Considered
+## 已考虑的替代方案
 
-(What other approaches did you think about?)
+（你还考虑过哪些其他方案？）
 
-## Checklist
+## 检查清单
 
-- [ ] I've searched existing issues for similar proposals
-- [ ] I'm ready to help implement this (submit a PR)
-- [ ] I understand this may affect the VitePress website build
+- [ ] 我已搜索现有 issue 中是否有类似提案
+- [ ] 我愿意协助实现此变更（提交 PR）
+- [ ] 我了解此变更可能影响 VitePress 网站构建

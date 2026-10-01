@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: "Android Ad Blocking Guide"
-description: "Complete guide to system-wide ad blocking on rooted Android using AdAway and Bindhosts. Block ads in all apps."
+title: "Android 广告拦截指南"
+description: "使用 AdAway 和 Bindhosts 在已 root 的 Android 上进行全系统广告拦截的完整指南。拦截所有应用中的广告。"
 head:
   - - link
     - rel: canonical
@@ -17,10 +17,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: "Ultimate Android Ad Blocking Guide for Rooted Devices (2026)"
+      content: "已 root 设备的终极 Android 广告拦截指南（2026）"
   - - meta
     - property: og:description
-      content: "Complete guide to system-wide ad blocking on rooted Android using AdAway and Bindhosts. Block ads in all apps, improve performance, and enhance privacy with root access."
+      content: "使用 AdAway 和 Bindhosts 在已 root 的 Android 上进行全系统广告拦截的完整指南。拦截所有应用中的广告，提升性能，并借助 root 权限增强隐私保护。"
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/general-guides/android-adblocking
@@ -38,10 +38,10 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: "Ultimate Android Ad Blocking Guide for Rooted Devices (2026)"
+      content: "已 root 设备的终极 Android 广告拦截指南（2026）"
   - - meta
     - name: twitter:description
-      content: "Complete guide to system-wide ad blocking on rooted Android using AdAway and Bindhosts. Block ads in all apps, improve performance, and enhance privacy."
+      content: "使用 AdAway 和 Bindhosts 在已 root 的 Android 上进行全系统广告拦截的完整指南。拦截所有应用中的广告，提升性能，并增强隐私保护。"
   - - meta
     - name: twitter:site
       content: "@awsm_and_root"
@@ -53,7 +53,7 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og/android-adblocking.png
   - - meta
     - name: twitter:image:alt
-      content: Android Ad Blocking Guide - System-Wide Ad Blocking for Rooted Devices
+      content: Android 广告拦截指南 - 已 root 设备的全系统广告拦截
   - - meta
     - name: article:author
       content: Awesome Android Root
@@ -65,7 +65,7 @@ head:
       content: 2026-09-27T00:00:00Z
   - - meta
     - name: article:section
-      content: Guides
+      content: 指南
   - - meta
     - name: article:tag
       content: Android
@@ -74,7 +74,7 @@ head:
       content: Root
   - - meta
     - name: article:tag
-      content: Ad Blocking
+      content: 广告拦截
   - - meta
     - name: article:tag
       content: AdAway
@@ -83,123 +83,123 @@ head:
       content: Bindhosts
 ---
 
-# Ultimate Android Ad Blocking Guide for Rooted Devices (2026)
+# 已 root 设备的终极 Android 广告拦截指南（2026）
 
 <div align="center">
 
-🛡️ **Block Ads System-Wide with Root Access**
+🛡️ **利用 root 权限全系统拦截广告**
 
-*The complete guide to eliminating ads across your entire Android system using powerful root-based solutions*
+*使用强大的基于 root 的方案，消除整个 Android 系统中广告的完整指南*
 
-[![Root Required](https://img.shields.io/badge/Root-Required-red?style=for-the-badge)](#requirements)
-[![AdAway Compatible](https://img.shields.io/badge/AdAway-Compatible-green?style=for-the-badge)](#method-1-adaway-recommended)
-[![Systemless](https://img.shields.io/badge/Systemless-Supported-blue?style=for-the-badge)](#method-2-bindhosts-advanced)
+[![需要 Root](https://img.shields.io/badge/Root-Required-red?style=for-the-badge)](#前提条件)
+[![兼容 AdAway](https://img.shields.io/badge/AdAway-Compatible-green?style=for-the-badge)](#方法-1adaway推荐)
+[![支持 Systemless](https://img.shields.io/badge/Systemless-Supported-blue?style=for-the-badge)](#方法-2bindhosts进阶)
 
 </div>
 
 ---
 
-## Table of Contents
+## 目录
 
-- [Why Root-Based Ad Blocking?](#why-root-based-ad-blocking)
-- [Requirements](#requirements)
-- [Ad Blocking Methods Comparison](#ad-blocking-methods-comparison)
-- [Method 1: AdAway (Recommended)](#method-1-adaway-recommended)
-- [Method 2: Bindhosts (Advanced)](#method-2-bindhosts-advanced)
-- [Configuration & Optimization](#configuration-optimization)
-- [Troubleshooting](#troubleshooting)
-- [Advanced Tips](#advanced-tips)
-- [FAQ](#faq)
-
----
-
-## Why Root-Based Ad Blocking?
-
-Root access enables **system-level ad blocking** that surpasses traditional methods:
-
-### ✅ **Advantages of Root Ad Blocking**
-- **System-wide protection** - Blocks ads in all apps, browsers, and system components
-- **No battery drain** - Unlike VPN-based blockers, no additional battery consumption
-- **No network overhead** - Ads are blocked at the hosts file level before network requests
-- **Complete invisibility** - Apps cannot detect or bypass the blocking mechanism
-- **Offline functionality** - Continues working without internet connectivity
-- **Performance boost** - Faster browsing and app loading by eliminating ad requests
-
-### 🔄 **How Root Ad Blocking Works**
-
-Root ad blocking operates by modifying the **hosts file** (`/system/etc/hosts`), which acts as a local DNS resolver. When an app tries to connect to an ad server:
-
-1. The system checks the hosts file first
-2. Ad domains are redirected to `0.0.0.0` or `127.0.0.1` (localhost)
-3. The connection fails instantly, blocking the ad
-4. Content loads faster without ad network delays
+- [为什么选择基于 root 的广告拦截？](#为什么选择基于-root-的广告拦截)
+- [前提条件](#前提条件)
+- [广告拦截方法对比](#广告拦截方法对比)
+- [方法 1：AdAway（推荐）](#方法-1adaway推荐)
+- [方法 2：Bindhosts（进阶）](#方法-2bindhosts进阶)
+- [配置与优化](#configuration-optimization)
+- [故障排除](#故障排除)
+- [进阶技巧](#进阶技巧)
+- [常见问题](#常见问题)
 
 ---
 
-## Requirements
+## 为什么选择基于 root 的广告拦截？
 
-### 📱 **Device Requirements**
-- ✅ **Rooted Android device** ([Complete rooting guide](../rooting-guides/))
-- ✅ **Android 8.0+** for modern solutions
-- ✅ **Magisk**, **KernelSU**, or **APatch** installed ([compare methods](../rooting-guides/root-framework-comparison.md))
-- ✅ **Root access verification** (use Root Checker apps)
+Root 权限可以实现**系统级广告拦截**，效果远超传统方法：
 
-### 🔧 **Supported Root Managers**
-| Root Manager | AdAway Support | Bindhosts Support | Systemless | Notes |
+### ✅ **root 广告拦截的优势**
+- **全系统防护** - 拦截所有应用、浏览器和系统组件中的广告
+- **不耗电池** - 与基于 VPN 的拦截工具不同，不会产生额外电量消耗
+- **无网络开销** - 广告在网络请求发出前就在 hosts 文件层面被拦截
+- **完全隐形** - 应用无法检测或绕过拦截机制
+- **离线可用** - 没有网络连接时依然有效
+- **性能提升** - 消除广告请求，浏览和应用加载更迅速
+
+### 🔄 **root 广告拦截的工作原理**
+
+root 广告拦截通过修改 **hosts 文件**（`/system/etc/hosts`）来实现，该文件充当本地 DNS 解析器。当应用尝试连接广告服务器时：
+
+1. 系统首先检查 hosts 文件
+2. 广告域名被重定向到 `0.0.0.0` 或 `127.0.0.1`（localhost）
+3. 连接立即失败，广告被拦截
+4. 内容加载更快，没有广告网络的延迟
+
+---
+
+## 前提条件
+
+### 📱 **设备要求**
+- ✅ **已 root 的 Android 设备**（[完整 root 教程](../rooting-guides/)）
+- ✅ **Android 8.0+** 以使用现代方案
+- ✅ 已安装 **Magisk**、**KernelSU** 或 **APatch**（[对比各方案](../rooting-guides/root-framework-comparison.md)）
+- ✅ **root 权限验证**（使用 Root Checker 类应用）
+
+### 🔧 **受支持的 root 管理器**
+| root 管理器 | AdAway 支持 | Bindhosts 支持 | Systemless | 备注 |
 |--------------|----------------|-------------------|------------|-------|
-| **Magisk** | ✅ Full | ✅ Full | ✅ Yes | Most compatible |
-| **KernelSU** | ⚠️ Limited | ✅ Full | ✅ Yes | Use Bindhosts for best results |
-| **APatch** | ✅ Full | ✅ Full | ✅ Yes | Latest features supported |
+| **Magisk** | ✅ 完整支持 | ✅ 完整支持 | ✅ 是 | 兼容性最佳 |
+| **KernelSU** | ⚠️ 有限 | ✅ 完整支持 | ✅ 是 | 建议使用 Bindhosts 以获得最佳效果 |
+| **APatch** | ✅ 完整支持 | ✅ 完整支持 | ✅ 是 | 支持最新功能 |
 
-### ⚠️ **Important Notes**
-- Always backup your current hosts file before proceeding
-- Some banking/payment apps may require whitelisting
-- OTA updates may reset modifications (systemless methods prevent this)
+### ⚠️ **重要提示**
+- 操作前务必备份当前的 hosts 文件
+- 某些银行/支付类应用可能需要加入白名单
+- OTA 更新可能会重置修改（Systemless 方法可避免此问题）
 
 ---
 
-## Ad Blocking Methods Comparison
+## 广告拦截方法对比
 
-| Feature | AdAway | Bindhosts |
+| 特性 | AdAway | Bindhosts |
 |---------|--------|-----------|
-| **Ease of Use** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **User Interface** | Native Android App | Web UI + Terminal |
-| **Host Sources** | Multiple built-in | Extensive collection |
-| **Customization** | Good | Excellent |
-| **Root Hiding** | Basic | Advanced |
-| **Update Method** | Manual/Scheduled | Auto-updating |
-| **Performance** | Standard | Optimized |
-| **Best For** | Beginners | Power users |
+| **易用性** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| **用户界面** | 原生 Android 应用 | Web UI + 终端 |
+| **hosts 来源** | 多个内置 | 丰富集合 |
+| **可定制性** | 良好 | 出色 |
+| **root 隐藏** | 基础 | 高级 |
+| **更新方式** | 手动/定时 | 自动更新 |
+| **性能** | 标准 | 优化 |
+| **最适合** | 新手 | 高级用户 |
 
 ---
 
-## Method 1: AdAway (Recommended)
+## 方法 1：AdAway（推荐）
 
-**AdAway** is the most user-friendly and widely-adopted root ad blocker for Android. Also available in our [ad blocker collection](../apps-and-modules/ad-blocking#ad-tracker-blocking).
+**AdAway** 是最易用、使用最广泛的 Android root 广告拦截工具。也可在我们的[广告拦截工具合集](../apps-and-modules/ad-blocking#ad-tracker-blocking)中找到。
 
-### 📥 **Installation**
+### 📥 **安装**
 
-#### **Option A: Official Website (Recommended)**
+#### **方式 A：官方网站（推荐）**
 ```bash
-# Download latest version
+# 下载最新版本
 wget https://app.adaway.org/adaway.apk
-# Install via ADB
+# 通过 ADB 安装
 adb install adaway.apk
 ```
 
-#### **Option B: F-Droid**
-1. Install [F-Droid](https://f-droid.org/) if not already installed
-2. Search for "AdAway" and install
-3. Or use direct link: [AdAway on F-Droid](https://f-droid.org/packages/org.adaway/)
+#### **方式 B：F-Droid**
+1. 如果尚未安装，先安装 [F-Droid](https://f-droid.org/)
+2. 搜索 "AdAway" 并安装
+3. 或使用直链：[F-Droid 上的 AdAway](https://f-droid.org/packages/org.adaway/)
 
-### ⚙️ **Initial Setup**
+### ⚙️ **初始设置**
 
-1. **Launch AdAway** and grant root permissions when prompted
-2. **Choose blocking method**:
-   - **Root method** (Recommended): Modifies system hosts file
-   - **VPN method**: For non-rooted devices (not needed for rooted)
+1. **启动 AdAway**，并在提示时授予 root 权限
+2. **选择拦截方式**：
+   - **root 方式**（推荐）：修改系统 hosts 文件
+   - **VPN 方式**：适用于未 root 的设备（已 root 无需使用）
 
-3. **Configure hosts sources**:
+3. **配置 hosts 来源**：
    ```
    Default sources included:
    • StevenBlack hosts
@@ -207,13 +207,13 @@ adb install adaway.apk
    • Dan Pollock hosts
    ```
 
-4. **Enable AdAway** by tapping the toggle switch
-5. **Apply changes** - AdAway will download and apply hosts files
+4. **启用 AdAway**，点击开关即可
+5. **应用更改** - AdAway 将下载并应用 hosts 文件
 
-### 🔧 **Optimal Configuration**
+### 🔧 **最佳配置**
 
-#### **Hosts Sources Setup**
-Navigate to **Hosts Sources** and add these recommended sources:
+#### **hosts 来源设置**
+前往 **Hosts Sources** 并添加以下推荐来源：
 
 ```
 • StevenBlack (Default) - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
@@ -221,373 +221,373 @@ Navigate to **Hosts Sources** and add these recommended sources:
 • EasyList - https://easylist.to/easylist/easylist.txt
 ```
 
-#### **Advanced Settings**
-- **Enable "Systemless" mode** if using Magisk
-- **Set automatic updates** (daily/weekly recommended)
-- **Enable logging** for troubleshooting
-- **Configure whitelist** for problematic apps
+#### **高级设置**
+- 如果使用 Magisk，**启用 "Systemless" 模式**
+- **设置自动更新**（推荐每日/每周）
+- **启用日志记录**以便故障排除
+- **配置白名单**以解决问题应用
 
-### 📊 **Performance Optimization**
+### 📊 **性能优化**
 
 ```bash
-# Check hosts file size (optimal: 100k-500k entries)
+# 检查 hosts 文件大小（最佳：100k-500k 条目）
 wc -l /system/etc/hosts
 
-# Monitor blocked requests
+# 监控被拦截的请求
 logcat | grep AdAway
 
-# Clear DNS cache after updates
+# 更新后清除 DNS 缓存
 su -c "ndc resolver clearnetdns"
 ```
 
 ---
 
-## Method 2: Bindhosts (Advanced)
+## 方法 2：Bindhosts（进阶）
 
-**Bindhosts** offers advanced systemless ad blocking with superior root hiding and auto-updating capabilities. Find it in our [ad blocking modules](../apps-and-modules/ad-blocking#ad-tracker-blocking).
+**Bindhosts** 提供高级的 Systemless 广告拦截，具备更出色的 root 隐藏和自动更新能力。可在我们的[广告拦截模块](../apps-and-modules/ad-blocking#ad-tracker-blocking)中找到。
 
-### 🎯 **Why Choose Bindhosts?**
-- **Fully systemless** - No permanent system modifications
-- **Self-updating** - Automatically maintains latest hosts lists
-- **Advanced root hiding** - Better detection avoidance
-- **Multiple operating modes** - Adapts to your root manager
-- **Web-based management** - Modern interface for configuration
+### 🎯 **为什么选择 Bindhosts？**
+- **完全 Systemless** - 不对系统做任何永久性改动
+- **自我更新** - 自动维护最新的 hosts 列表
+- **高级 root 隐藏** - 更好的检测规避能力
+- **多种运行模式** - 适应你的 root 管理器
+- **基于 Web 的管理** - 现代化的配置界面
 
-### 📥 **Installation**
+### 📥 **安装**
 
-1. **Download from GitHub**:
+1. **从 GitHub 下载**：
    ```bash
    wget https://github.com/bindhosts/bindhosts/releases/latest/download/bindhosts.zip
    ```
 
-2. **Install via Root Manager**:
-   - **Magisk**: Flash in Magisk Manager
-   - **KernelSU**: Install via KernelSU Manager
-   - **APatch**: Install via APatch Manager
+2. **通过 root 管理器安装**：
+   - **Magisk**：在 Magisk Manager 中刷入
+   - **KernelSU**：通过 KernelSU Manager 安装
+   - **APatch**：通过 APatch Manager 安装
 
-3. **Verify installation**:
+3. **验证安装**：
    ```bash
    su
    bindhosts --help
    ```
 
-### ⚙️ **Configuration**
+### ⚙️ **配置**
 
-#### **Operating Modes**
-Bindhosts automatically selects the optimal mode, but you can manually configure:
+#### **运行模式**
+Bindhosts 会自动选择最佳模式，但你也可以手动配置：
 
-| Mode | Description | Best For |
+| 模式 | 描述 | 适合人群 |
 |------|-------------|----------|
-| `mode=0` | Default systemless | Most users |
-| `mode=1` | KernelSU + SuSFS | Advanced KernelSU users |
-| `mode=2` | Plain bind mount | Maximum compatibility |
-| `mode=4` | Zygisk injection | Best hiding |
+| `mode=0` | 默认 Systemless | 大多数用户 |
+| `mode=1` | KernelSU + SuSFS | KernelSU 高级用户 |
+| `mode=2` | 纯 bind 挂载 | 最大兼容性 |
+| `mode=4` | Zygisk 注入 | 最佳隐藏效果 |
 
-#### **Web UI Setup**
-1. **Access Web Interface**:
+#### **Web UI 设置**
+1. **访问 Web 界面**：
    ```bash
-   # Enable WebUI (if supported by your root manager)
+   # 启用 WebUI（如果你的 root 管理器支持）
    su
    bindhosts --webui
    ```
 
-2. **Configuration via Terminal**:
+2. **通过终端配置**：
    ```bash
-   # Enable bindhosts
+   # 启用 bindhosts
    bindhosts --action
    
-   # Force update hosts
+   # 强制更新 hosts
    bindhosts --force-update
    
-   # Check status
+   # 检查状态
    bindhosts --query example.com
    ```
 
-#### **Custom Sources**
-Add your preferred hosts sources via WebUI or terminal:
+#### **自定义来源**
+通过 WebUI 或终端添加你偏好的 hosts 来源：
 ```bash
-# Add custom source
+# 添加自定义来源
 echo "https://your-custom-hosts-source.com/hosts" >> /data/adb/modules/bindhosts/sources.txt
 
-# Update with new sources
+# 使用新来源更新
 bindhosts --force-update
 ```
 
-### 🔄 **Automation Setup**
+### 🔄 **自动化设置**
 
-#### **Enable Automatic Updates**
+#### **启用自动更新**
 ```bash
-# Set update time (10 AM daily)
+# 设置更新时间（每天上午 10 点）
 bindhosts --custom-cron 10
 
-# Enable cron job
+# 启用 cron 任务
 bindhosts --enable-cron
 
-# Verify cron status
+# 验证 cron 状态
 crontab -l
 ```
 
-#### **Network Monitoring**
+#### **网络监控**
 ```bash
-# Monitor active connections
+# 监控活动连接
 bindhosts --tcpdump
 
-# Check blocked domains
+# 检查被拦截的域名
 bindhosts --query doubleclick.net
 ```
 
 ---
 
-## Configuration & Optimization
+## 配置与优化
 
-### 🎛️ **Fine-Tuning Your Setup**
+### 🎛️ **微调你的配置**
 
-#### **Whitelist Management**
-Essential apps that may require whitelisting:
+#### **白名单管理**
+可能需要加入白名单的重要应用：
 
 ```bash
-# Banking & Payment Apps
+# 银行与支付类应用
 • PayPal, Google Pay, Samsung Pay
 • Banking apps (varies by region)
 
-# Social Media (if experiencing issues)
+# 社交媒体（如果遇到问题）
 • Facebook, Instagram (ads in feed may still appear)
 • Twitter, LinkedIn
 
-# Google Services (be selective)
+# Google 服务（需谨慎选择）
 • Gmail, Google Drive
 • YouTube (may break some features)
 ```
 
-#### **Custom Rules**
-Create custom blocking/allowing rules:
+#### **自定义规则**
+创建自定义拦截/放行规则：
 
-**AdAway Custom Rules**:
-- Navigate to **Your Lists** → **Allowed/Blocked Hosts**
-- Add specific domains as needed
+**AdAway 自定义规则**：
+- 前往 **Your Lists** → **Allowed/Blocked Hosts**
+- 按需添加特定域名
 
-**Bindhosts Custom Rules**:
+**Bindhosts 自定义规则**：
 ```bash
-# Block specific domain
+# 拦截特定域名
 echo "0.0.0.0 annoying-ads.com" >> /data/adb/modules/bindhosts/custom_rules.txt
 
-# Allow specific domain
+# 放行特定域名
 echo "# Allow: important-site.com" >> /data/adb/modules/bindhosts/whitelist.txt
 ```
 
-### 📱 **App-Specific Configurations**
+### 📱 **特定应用配置**
 
-#### **Chrome/Chromium Browsers**
-For KernelSU users experiencing issues:
-1. Open **KernelSU Manager**
-2. Go to **Superuser** → **Chrome**
-3. Select **Custom** → **Disable umount modules**
+#### **Chrome/Chromium 浏览器**
+针对遇到问题的 KernelSU 用户：
+1. 打开 **KernelSU Manager**
+2. 前往 **Superuser** → **Chrome**
+3. 选择 **Custom** → **Disable umount modules**
 
 #### **System WebView**
-Update Android System WebView for better compatibility:
+更新 Android System WebView 以获得更好的兼容性：
 ```bash
-# Check WebView version
+# 检查 WebView 版本
 dumpsys webviewupdate
 
-# Force WebView update via Play Store
+# 通过 Play Store 强制更新 WebView
 am start -a android.intent.action.VIEW -d "market://details?id=com.google.android.webview"
 ```
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-### 🔧 **Common Issues & Solutions**
+### 🔧 **常见问题与解决方案**
 
-#### **Issue: Ads Still Appearing**
+#### **问题：广告仍然出现**
 
-**Symptoms**: Ads visible in browsers or apps
-**Solutions**:
-1. **Clear DNS cache**:
+**症状**：浏览器或应用中广告可见
+**解决方案**：
+1. **清除 DNS 缓存**：
    ```bash
    su
    ndc resolver clearnetdns
    ```
 
-2. **Restart network stack**:
+2. **重启网络栈**：
    ```bash
    su
    svc wifi disable && svc wifi enable
    ```
 
-3. **Check hosts file**:
+3. **检查 hosts 文件**：
    ```bash
    su
    grep -i "doubleclick\|googlesyndication\|googleadservices" /system/etc/hosts
    ```
 
-#### **Issue: Apps Crashing or Not Working**
+#### **问题：应用崩溃或无法工作**
 
-**Symptoms**: Banking apps, games, or social media apps malfunctioning
-**Solutions**:
-1. **Add to whitelist**:
-   - AdAway: Add problematic domains to "Allowed Hosts"
-   - Bindhosts: Add to whitelist file
+**症状**：银行应用、游戏或社交媒体应用出现故障
+**解决方案**：
+1. **加入白名单**：
+   - AdAway：将有问题的域名添加到 "Allowed Hosts"
+   - Bindhosts：添加到白名单文件
 
-2. **Configure root hiding** for banking apps:
-   - See [root hiding solutions](../apps-and-modules/root-management#root-hiding-play-integrity)
-   - Check [Play Integrity troubleshooting](../troubleshooting.md#play-integrity-and-banking-apps)
+2. **为银行应用配置 root 隐藏**：
+   - 参见 [root 隐藏方案](../apps-and-modules/root-management#root-hiding-play-integrity)
+   - 查看 [Play Integrity 故障排除](../troubleshooting.md#play-integrity-与银行类应用)
 
-#### **Issue: Slow Internet or Connection Problems**
+#### **问题：网络缓慢或连接问题**
 
-**Symptoms**: Slower browsing, connection timeouts
-**Solutions**:
-1. **Reduce hosts file size**:
-   - Remove duplicate or unnecessary sources
-   - Use more focused lists
+**症状**：浏览变慢、连接超时
+**解决方案**：
+1. **减小 hosts 文件体积**：
+   - 移除重复或不必要的来源
+   - 使用更聚焦的列表
 
-2. **Optimize DNS**:
+2. **优化 DNS**：
    ```bash
-   # Set custom DNS (Cloudflare)
+   # 设置自定义 DNS（Cloudflare）
    setprop net.dns1 1.1.1.1
    setprop net.dns2 1.0.0.1
    ```
 
-### 🔍 **Diagnostic Commands**
+### 🔍 **诊断命令**
 
 ```bash
-# Check if hosts file is active
+# 检查 hosts 文件是否生效
 nslookup doubleclick.net
 
-# Monitor network requests
+# 监控网络请求
 tcpdump -i any host doubleclick.net
 
-# View blocked connections
+# 查看被拦截的连接
 logcat | grep -i "blocked\|denied"
 
-# Check root permissions
+# 检查 root 权限
 su -c "whoami"
 ```
 
 ---
 
-## Advanced Tips
+## 进阶技巧
 
-### 🚀 **Performance Optimization**
+### 🚀 **性能优化**
 
-#### **Hosts File Optimization**
+#### **hosts 文件优化**
 ```bash
-# Remove duplicate entries
+# 移除重复条目
 sort /system/etc/hosts | uniq > /tmp/hosts_clean
 cp /tmp/hosts_clean /system/etc/hosts
 
-# Remove comments and empty lines
+# 移除注释和空行
 grep -v "^#\|^$" /system/etc/hosts > /tmp/hosts_minimal
 ```
 
-#### **Memory Management**
+#### **内存管理**
 ```bash
-# Monitor memory usage
+# 监控内存使用情况
 free -h
 
-# Clear system cache
+# 清除系统缓存
 sync; echo 3 > /proc/sys/vm/drop_caches
 ```
 
-### 🔐 **Security Enhancements**
+### 🔐 **安全增强**
 
-#### **Malware Protection**
-Add malware-blocking hosts sources (also check our [privacy & security apps](../apps-and-modules/privacy)):
+#### **恶意软件防护**
+添加拦截恶意软件的 hosts 来源（也可查看我们的[隐私与安全应用](../apps-and-modules/privacy)）：
 ```
 • Malware Domain List: https://www.malwaredomainlist.com/hostslist/hosts.txt
 • URLVoid: https://www.urlvoid.com/downloads/hostformat.php
 • Malware domains: https://mirror1.malwaredomains.com/files/justdomains
 ```
 
-#### **Privacy Enhancement**
-Block tracking and analytics:
+#### **隐私增强**
+拦截追踪与分析：
 ```
 • EasyPrivacy: https://easylist.to/easylist/easyprivacy.txt
 • Disconnect: https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
 ```
 
-### 🔄 **Backup and Restore**
+### 🔄 **备份与恢复**
 
-#### **Create Backups**
+#### **创建备份**
 ```bash
-# Backup original hosts file
+# 备份原始 hosts 文件
 cp /system/etc/hosts /sdcard/hosts_original
 
-# Backup AdAway settings
+# 备份 AdAway 设置
 cp -r /data/data/org.adaway /sdcard/adaway_backup
 ```
 
-#### **Restore from Backup**
+#### **从备份恢复**
 ```bash
-# Restore original hosts
+# 恢复原始 hosts
 cp /sdcard/hosts_original /system/etc/hosts
 
-# Restart network
+# 重启网络
 svc wifi disable && svc wifi enable
 ```
 
 ---
 
-## FAQ
+## 常见问题
 
-### ❓ **Frequently Asked Questions**
+### ❓ **常见问题解答**
 
-**Q: Will ad blocking affect app functionality?**
-A: Most apps work normally, but some apps with strict ad requirements may malfunction. Use whitelisting for problematic apps.
+**问：广告拦截会影响应用功能吗？**
+答：大多数应用可以正常工作，但对广告依赖严格的应用可能出问题。对有问题的应用使用白名单。
 
-**Q: Can I use multiple ad blockers simultaneously?**
-A: Not recommended. Use either AdAway OR Bindhosts, not both, to avoid conflicts.
+**问：可以同时使用多个广告拦截工具吗？**
+答：不建议。请使用 AdAway 或 Bindhosts 二者之一，不要同时使用，以避免冲突。
 
-**Q: Do I need to update hosts files manually?**
-A: AdAway can be set to auto-update. Bindhosts updates automatically. Manual updates ensure you have the latest protection.
+**问：需要手动更新 hosts 文件吗？**
+答：AdAway 可以设置为自动更新。Bindhosts 会自动更新。手动更新可确保你获得最新防护。
 
-**Q: Will this work with VPN?**
-A: Yes, hosts-based blocking works alongside VPN services since it operates at a lower system level.
+**问：与 VPN 一起使用有效吗？**
+答：有效。基于 hosts 的拦截在更底层的系统层面运行，可与 VPN 服务并存。
 
-**Q: How much storage do hosts files use?**
-A: Typically 5-20MB depending on the number of sources. Larger files may impact DNS resolution speed.
+**问：hosts 文件占用多少存储空间？**
+答：通常为 5-20MB，取决于来源数量。文件过大可能影响 DNS 解析速度。
 
-**Q: Can Netflix/Spotify detect ad blocking?**
-A: Some streaming services detect and may restrict access. Use app-specific whitelisting if needed.
+**问：Netflix/Spotify 能检测到广告拦截吗？**
+答：部分流媒体服务会检测并可能限制访问。如有需要，可对该应用单独设置白名单。
 
-**Q: Does this work on mobile data?**
-A: Yes, hosts-based blocking works on both WiFi and mobile data connections.
+**问：在移动数据下有效吗？**
+答：有效。基于 hosts 的拦截在 WiFi 和移动数据连接下均可工作。
 
-**Q: Will OTA updates remove ad blocking?**
-A: Systemless methods (Magisk modules) survive OTA updates. Traditional modifications may be reset.
-
----
-
-## Related Guides
-
-- 📖 [Complete Android Rooting Guide](../rooting-guides/) - Start your rooting journey
-- 🔧 [Magisk Installation Guide](../rooting-guides/magisk-guide.md) - Popular systemless root
-- ⚡ [KernelSU Setup Guide](../rooting-guides/kernelsu-guide.md) - Kernel-based root with advanced hiding
-- 🛠️ [LSPosed Configuration](../rooting-guides/lsposed-guide.md) - Advanced app modifications
-- 🧹 [Android Debloating Guide](./android-apps-debloating.md) - Remove bloatware for better performance
-- 🛡️ [Privacy & Security Apps](../apps-and-modules/privacy) - Additional privacy tools
-- 🔍 [More Ad Blocking Solutions](../apps-and-modules/ad-blocking#ad-tracker-blocking) - Alternative blockers
+**问：OTA 更新会移除广告拦截吗？**
+答：Systemless 方法（Magisk 模块）可在 OTA 更新后保留。传统修改方式可能会被重置。
 
 ---
 
-## Conclusion
+## 相关指南
 
-Root-based ad blocking provides the most comprehensive and efficient way to eliminate advertisements across your entire Android system. Whether you choose the user-friendly **AdAway** or the advanced **Bindhosts** solution, you'll enjoy faster performance, better privacy, and an ad-free Android experience.
+- 📖 [Android 完整 Root 教程](../rooting-guides/) - 开启你的 root 之旅
+- 🔧 [Magisk 安装指南](../rooting-guides/magisk-guide.md) - 流行的 Systemless root 方案
+- ⚡ [KernelSU 设置指南](../rooting-guides/kernelsu-guide.md) - 基于内核的 root，具备高级隐藏能力
+- 🛠️ [LSPosed 配置](../rooting-guides/lsposed-guide.md) - 高级应用修改
+- 🧹 [Android 精简预装指南](./android-apps-debloating.md) - 移除预装软件以提升性能
+- 🛡️ [隐私与安全应用](../apps-and-modules/privacy) - 更多隐私工具
+- 🔍 [更多广告拦截方案](../apps-and-modules/ad-blocking#ad-tracker-blocking) - 其他拦截工具
 
-Remember to:
-- ✅ Keep your hosts sources updated
-- ✅ Maintain whitelist for essential apps
-- ✅ Monitor system performance
-- ✅ Backup your configuration
+---
 
-**Happy ad-free browsing!** 🎉
+## 结语
+
+基于 root 的广告拦截是在整个 Android 系统中消除广告的最全面、最高效的方式。无论你选择易用的 **AdAway** 还是进阶的 **Bindhosts** 方案，都将获得更快的性能、更好的隐私保护以及无广告的 Android 体验。
+
+请记得：
+- ✅ 保持 hosts 来源更新
+- ✅ 为重要应用维护白名单
+- ✅ 监控系统性能
+- ✅ 备份你的配置
+
+**祝你畅享无广告浏览！** 🎉
 
 ---
 
 <div align="center">
 
-*📚 Part of the [Awesome Android Root](https://github.com/awesome-android-root/awesome-android-root) collection*
+*📚 [Awesome Android Root](https://github.com/awesome-android-root/awesome-android-root) 合集的一部分*
 
-[![Star on GitHub](https://img.shields.io/github/stars/awesome-android-root/awesome-android-root?style=social)](https://github.com/awesome-android-root/awesome-android-root)
+[![在 GitHub 上加星](https://img.shields.io/github/stars/awesome-android-root/awesome-android-root?style=social)](https://github.com/awesome-android-root/awesome-android-root)
 
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Non-Root Alternatives
-description: "Achieve similar functionality without root access using ADB, Shizuku, wireless debugging, and alternative apps for devices where rooting isn't possible."
+title: 非 Root 替代方案
+description: "在无法 root 的设备上，使用 ADB、Shizuku、无线调试和替代应用实现类似功能。"
 head:
   - - link
     - rel: canonical
@@ -14,10 +14,10 @@ head:
       content: Awesome Android Root
   - - meta
     - property: og:title
-      content: Non-Root Alternatives - Customize Android Without Root Access 2026
+      content: 非 Root 替代方案 - 2026 年无需 Root 权限定制 Android
   - - meta
     - property: og:description
-      content: Achieve similar functionality without root access using ADB, Shizuku, wireless debugging, and alternative apps for devices where rooting isn't possible.
+      content: 在无法 root 的设备上，使用 ADB、Shizuku、无线调试和替代应用实现类似功能。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/non-root-alternatives
@@ -29,7 +29,7 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og.png
   - - meta
     - property: og:image:alt
-      content: Non-Root Alternatives - Customize Android Without Root 2026
+      content: 非 Root 替代方案 - 2026 年无需 Root 定制 Android
   - - meta
     - property: og:image:width
       content: '1200'
@@ -53,112 +53,112 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: Non-Root Alternatives - Customize Android Without Root 2026
+      content: 非 Root 替代方案 - 2026 年无需 Root 定制 Android
   - - meta
     - name: twitter:description
-      content: Achieve powerful Android customization without root using ADB, Shizuku, wireless debugging, and alternative apps.
+      content: 使用 ADB、Shizuku、无线调试和替代应用，无需 root 即可实现强大的 Android 定制。
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og.png
   - - meta
     - name: twitter:image:alt
-      content: Non-Root Alternatives - ADB, Shizuku & More
+      content: 非 Root 替代方案 - ADB、Shizuku 等
   - - meta
     - name: robots
       content: index, follow
 ---
 
-# Non-Root Alternatives
+# 非 Root 替代方案
 
-**Can't or won't root?** Modern Android provides powerful alternatives that cover 70-90% of root use cases.
+**不能或不想 root？** 现代 Android 提供了强大的替代方案，可覆盖 70-90% 的 root 使用场景。
 
-## Quick Assessment
+## 快速评估
 
-**Common blockers:**
-- Locked bootloader (US Samsung, carrier devices)
-- Warranty concerns
-- Banking/payment apps
-- Work devices with MDM
-- Security concerns
+**常见阻碍因素：**
+- Bootloader 已锁定（美版三星、运营商定制设备）
+- 保修顾虑
+- 银行/支付应用
+- 带 MDM 的工作设备
+- 安全顾虑
 
-## Foundation Technologies
+## 基础技术
 
-### 1. ADB (Android Debug Bridge)
+### 1. ADB（Android Debug Bridge）
 
-**What:** Direct device control via command line
+**是什么：** 通过命令行直接控制设备
 
-**Setup:**
-1. Install [Platform Tools](https://developer.android.com/studio/releases/platform-tools)
-2. Enable Developer Options (tap Build Number 7x)
-3. Enable USB Debugging
-4. Connect and authorize device
+**设置：**
+1. 安装 [Platform Tools](https://developer.android.com/studio/releases/platform-tools)
+2. 启用开发者选项（连续点击版本号 7 次）
+3. 启用 USB 调试
+4. 连接并授权设备
 
-**Pros:**
-- Full app control
-- System settings access
-- No permanent modifications
+**优点：**
+- 完全的应用控制
+- 可访问系统设置
+- 无永久性修改
 
-**Cons:**
-- Requires PC initially
-- Command line knowledge needed
-- Limited to user space
+**缺点：**
+- 初期需要电脑
+- 需要命令行知识
+- 仅限于用户空间
 
-### 2. Shizuku (Game Changer)
+### 2. Shizuku（改变格局的工具）
 
-**What:** Persistent ADB privileges for apps
+**是什么：** 为应用提供持久的 ADB 权限
 
-**Setup:**
+**设置：**
 ```bash
 # One-time setup via ADB
 adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
 ```
 
-**Pros:**
-- Works wirelessly after setup
-- Powers many root-like apps
-- Survives reboots (Android 11+)
+**优点：**
+- 设置完成后可无线使用
+- 支持众多类 root 应用
+- 重启后依然有效（Android 11+）
 
-**Cons:**
-- Initial ADB setup required
-- Not all apps support it
-- Still user-level access
+**缺点：**
+- 需要初始 ADB 设置
+- 并非所有应用都支持
+- 仍然只是用户级权限
 
-### 3. Wireless Debugging (Android 11+)
+### 3. 无线调试（Android 11+）
 
-**What:** Cable-free ADB access
+**是什么：** 无需数据线的 ADB 访问
 
-**Setup:**
-1. Developer Options → Wireless Debugging
-2. Pair: `adb pair [IP]:[PORT]`
-3. Connect: `adb connect [IP]:[PORT]`
+**设置：**
+1. 开发者选项 → 无线调试
+2. 配对：`adb pair [IP]:[PORT]`
+3. 连接：`adb connect [IP]:[PORT]`
 
-**Pros:**
-- No cable needed
-- Auto-starts Shizuku
-- Permanent setup
+**优点：**
+- 无需数据线
+- 自动启动 Shizuku
+- 设置永久有效
 
-**Cons:**
-- Android 11+ only
-- Same network required
+**缺点：**
+- 仅限 Android 11+
+- 需要处于同一网络
 
-## Core Solutions by Need
+## 按需求分类的核心方案
 
-### Debloating
+### 精简预装
 
 #### Universal Android Debloater Next Generation
 [GitHub](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation)
 
-**Pros:**
-- Pre-configured safe lists
-- Batch operations
-- Reversible changes
+**优点：**
+- 预配置的安全列表
+- 批量操作
+- 更改可逆
 
-**Cons:**
-- Requires PC
-- Learning curve
-- Can break features if careless
+**缺点：**
+- 需要电脑
+- 有学习曲线
+- 操作不慎可能破坏功能
 
-**Quick ADB alternative:**
+**快速 ADB 替代方法：**
 ```bash
 # Disable bloat (reversible)
 adb shell pm disable-user --user 0 com.package.name
@@ -167,155 +167,155 @@ adb shell pm disable-user --user 0 com.package.name
 adb shell pm enable com.package.name
 ```
 
-### Ad Blocking
+### 广告拦截
 
-#### Method 1: DNS (Simplest)
-**Setup:** Settings → Network → Private DNS → `dns.adguard.com`
+#### 方法 1：DNS（最简单）
+**设置：** 设置 → 网络 → 私人 DNS → `dns.adguard.com`
 
-**Pros:**
-- Zero setup
-- System-wide
-- No battery impact
+**优点：**
+- 零设置
+- 全局生效
+- 不影响电池
 
-**Cons:**
-- Can't block all ads
-- No fine control
-- Easily bypassed by apps
+**缺点：**
+- 无法拦截所有广告
+- 缺乏精细控制
+- 容易被应用绕过
 
-#### Method 2: VPN-based (Blokada/AdGuard)
+#### 方法 2：基于 VPN（Blokada/AdGuard）
 
-**Pros:**
-- Better blocking than DNS
-- Custom lists
-- App whitelisting
+**优点：**
+- 拦截效果优于 DNS
+- 支持自定义列表
+- 支持应用白名单
 
-**Cons:**
-- Uses VPN slot
-- Battery impact
-- Can't use with real VPN
+**缺点：**
+- 占用 VPN 通道
+- 影响电池
+- 无法与真正的 VPN 同时使用
 
-#### Method 3: Browser-based
+#### 方法 3：基于浏览器
 
-**Best option:** Firefox + uBlock Origin
+**最佳选择：** Firefox + uBlock Origin
 
-**Pros:**
-- Desktop-level blocking
-- Custom filters
-- No system changes
+**优点：**
+- 桌面级拦截效果
+- 支持自定义过滤规则
+- 不修改系统
 
-**Cons:**
-- Browser only
-- Not system-wide
+**缺点：**
+- 仅限浏览器内
+- 非全局生效
 
-### App Management
+### 应用管理
 
-#### App Manager with Shizuku
+#### 搭配 Shizuku 的 App Manager
 [GitHub](https://github.com/MuntashirAkon/AppManager)
 
-**Capabilities:**
-- Component blocking
-- Permission management
-- Batch operations
-- APK extraction
+**功能：**
+- 组件屏蔽
+- 权限管理
+- 批量操作
+- APK 提取
 
-**Pros:**
-- Near-root functionality
-- User-friendly interface
-- Comprehensive features
+**优点：**
+- 接近 root 的功能
+- 界面友好
+- 功能全面
 
-**Cons:**
-- Requires Shizuku
-- Can't modify system apps
-- Some features still need root
+**缺点：**
+- 需要 Shizuku
+- 无法修改系统应用
+- 部分功能仍需 root
 
-### Automation
+### 自动化
 
-#### MacroDroid (Best for beginners)
+#### MacroDroid（最适合新手）
 
-**Non-root capabilities:**
-- Location triggers
-- App launch detection
-- Notification handling
-- Time-based actions
+**非 root 能力：**
+- 位置触发
+- 应用启动检测
+- 通知处理
+- 定时操作
 
-**Pros:**
-- Visual programming
-- Extensive triggers
-- Cloud backup
+**优点：**
+- 可视化编程
+- 触发条件丰富
+- 云备份
 
-**Cons:**
-- System settings limited
-- Can't access root features
-- Some triggers unreliable
+**缺点：**
+- 系统设置操作受限
+- 无法访问 root 功能
+- 部分触发条件不可靠
 
-#### Tasker (Power users)
+#### Tasker（进阶用户）
 
-**Pros:**
-- Most powerful automation
-- Plugin ecosystem
-- Intent handling
+**优点：**
+- 最强大的自动化
+- 插件生态
+- Intent 处理
 
-**Cons:**
-- Steep learning curve
-- Expensive
-- Many features need root
+**缺点：**
+- 学习曲线陡峭
+- 价格昂贵
+- 许多功能需要 root
 
-### Backup Solutions
+### 备份方案
 
-#### Swift Backup with ADB
+#### 搭配 ADB 的 Swift Backup
 
-**What works:**
-- APKs
-- App data (Android 11+)
-- Call logs/SMS
+**可备份内容：**
+- APK
+- 应用数据（Android 11+）
+- 通话记录/短信
 
-**Pros:**
-- No root required
-- Cloud storage support
-- Scheduled backups
+**优点：**
+- 无需 root
+- 支持云存储
+- 支持计划备份
 
-**Cons:**
-- Not all apps supported
-- Slower than root methods
-- Android version dependent
+**缺点：**
+- 并非支持所有应用
+- 比 root 方案慢
+- 依赖 Android 版本
 
-### Network Control
+### 网络控制
 
-#### NetGuard (No-root firewall)
+#### NetGuard（无 root 防火墙）
 [GitHub](https://github.com/M66B/NetGuard)
 
-**Pros:**
-- Per-app blocking
-- No root needed
-- Traffic logging
+**优点：**
+- 按应用拦截
+- 无需 root
+- 流量日志
 
-**Cons:**
-- Uses VPN slot
-- Can't block system apps fully
-- May impact battery
+**缺点：**
+- 占用 VPN 通道
+- 无法完全拦截系统应用
+- 可能影响电池
 
-## Effectiveness Comparison
+## 效果对比
 
-| Goal | Root Method | Non-Root Alternative | Effectiveness |
+| 目标 | Root 方案 | 非 Root 替代方案 | 效果 |
 |------|------------|---------------------|---------------|
-| Remove Bloatware | Titanium Backup | UAD/ADB disable | 90% |
-| Block Ads | AdAway (hosts) | DNS + Browser | 70% |
-| App Backup | Swift/Neo Backup | Swift + ADB | 80% |
-| Automation | Tasker (root) | MacroDroid + Shizuku | 60% |
-| Battery Optimization | Greenify/Kernel | Debloat + Settings | 50% |
-| System UI Changes | Substratum/Xposed | Launcher + ADB | 40% |
-| Privacy Control | XPrivacyLua | App Ops + Shizuku | 70% |
+| 移除预装软件 | Titanium Backup | UAD/ADB 停用 | 90% |
+| 拦截广告 | AdAway（hosts） | DNS + 浏览器 | 70% |
+| 应用备份 | Swift/Neo Backup | Swift + ADB | 80% |
+| 自动化 | Tasker（root） | MacroDroid + Shizuku | 60% |
+| 电池优化 | Greenify/内核 | 精简预装 + 系统设置 | 50% |
+| 系统 UI 更改 | Substratum/Xposed | 启动器 + ADB | 40% |
+| 隐私控制 | XPrivacyLua | App Ops + Shizuku | 70% |
 
-## Essential Non-Root Toolkit
+## 非 Root 必备工具箱
 
-### Must-Have Apps
-1. **Shizuku** - Foundation for everything
-2. **App Manager** - Complete app control
-3. **Universal Android Debloater** - Remove bloat
-4. **Blokada/AdGuard** - Ad blocking
-5. **MacroDroid** - Automation
+### 必备应用
+1. **Shizuku** - 一切的基础
+2. **App Manager** - 完整的应用控制
+3. **Universal Android Debloater** - 移除预装软件
+4. **Blokada/AdGuard** - 广告拦截
+5. **MacroDroid** - 自动化
 
-### Key ADB Commands
+### 关键 ADB 命令
 ```bash
 # Disable app
 adb shell pm disable-user --user 0 [package]
@@ -333,55 +333,55 @@ adb shell am force-stop [package]
 adb shell cmd appops set [package] RUN_IN_BACKGROUND deny
 ```
 
-## Decision Matrix
+## 决策矩阵
 
-### Stay Non-Root If:
-- Banking apps are essential
-- Work device/MDM present
-- Warranty matters
-- 70% effectiveness is enough
-- Not comfortable with risk
+### 在以下情况下保持非 Root：
+- 银行应用必不可少
+- 工作设备/存在 MDM
+- 保修很重要
+- 70% 的效果已经足够
+- 不愿承担风险
 
-### Consider Root If:
-- Need systemless mods
-- Want Xposed/LSPosed
-- Require kernel control
-- Need 100% ad blocking
-- Full backup essential
-- Custom ROM features on stock
+### 在以下情况下考虑 Root：
+- 需要 systemless 修改
+- 想要 Xposed/LSPosed
+- 需要内核控制
+- 需要 100% 广告拦截
+- 完整备份必不可少
+- 想在官方系统上获得第三方 ROM 特性
 
-## Limitations to Accept
+## 需要接受的限制
 
-**Cannot do without root:**
-- Install Magisk/KernelSU modules
-- Modify system partition
-- Use Xposed framework
-- Custom kernels
-- Complete root detection bypass
-- Full system backup
-- Deep battery optimization
+**没有 root 无法做到：**
+- 安装 Magisk/KernelSU 模块
+- 修改系统分区
+- 使用 Xposed 框架
+- 第三方内核
+- 彻底绕过 root 检测
+- 完整系统备份
+- 深度电池优化
 
-## Quick Start Guide
+## 快速上手指南
 
-1. **Enable Developer Options**
-2. **Install Shizuku** via Play Store
-3. **Setup ADB** on PC
-4. **Initialize Shizuku** via ADB
-5. **Install App Manager**
-6. **Configure DNS** ad blocking
-7. **Debloat** carefully with UAD
+1. **启用开发者选项**
+2. 通过 Play Store **安装 Shizuku**
+3. 在电脑上**设置 ADB**
+4. 通过 ADB **初始化 Shizuku**
+5. **安装 App Manager**
+6. **配置 DNS** 广告拦截
+7. 使用 UAD 谨慎地**精简预装**
 
-## Pro Tips
+## 进阶技巧
 
-- Combine methods for best results (DNS + browser blocking)
-- Always disable apps before uninstalling (safer)
-- Keep ADB handy for emergencies
-- Document changes for reversal
-- Test one change at a time
-- Backup before major changes
+- 组合多种方法以获得最佳效果（DNS + 浏览器拦截）
+- 卸载前先停用应用（更安全）
+- 随时备好 ADB 以应对紧急情况
+- 记录所做的更改以便还原
+- 每次只测试一项更改
+- 进行重大更改前先备份
 
-## Resources
+## 资源
 
 - [Platform Tools](https://developer.android.com/studio/releases/platform-tools)
-- [Shizuku Documentation](https://shizuku.rikka.app/)
-- [ADB Command Reference](https://developer.android.com/studio/command-line/adb)
+- [Shizuku 文档](https://shizuku.rikka.app/)
+- [ADB 命令参考](https://developer.android.com/studio/command-line/adb)

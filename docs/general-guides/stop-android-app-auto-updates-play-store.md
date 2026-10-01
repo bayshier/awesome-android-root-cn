@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Stop Android App Auto Updates from Play Store
-description: Complete step-by-step guide to disable automatic app updates from Google Play Store.
+title: 阻止 Android 应用从 Play Store 自动更新
+description: 禁用 Google Play Store 自动应用更新的完整分步指南。
 head:
   # Canonical and preconnect links
   - - link
@@ -17,10 +17,10 @@ head:
       content: Awesome Android Root
   - - meta
     - property: og:title
-      content: How to Stop Android App Auto Updates from Play Store | Complete Zygisk Detach Guide
+      content: 如何阻止 Android 应用从 Play Store 自动更新 | Zygisk Detach 完整指南
   - - meta
     - property: og:description
-      content: Learn how to permanently disable automatic app updates from Google Play Store using Zygisk Detach module. Complete step-by-step guide for rooted Android devices with Magisk/KernelSU. Prevent unwanted app updates today!
+      content: 了解如何使用 Zygisk Detach 模块永久禁用 Google Play Store 的自动应用更新。面向搭载 Magisk/KernelSU 的已 root Android 设备的完整分步指南。立即阻止不需要的应用更新！
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/general-guides/stop-android-app-auto-updates-play-store
@@ -32,7 +32,7 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og/zygisk-detach.png
   - - meta
     - property: og:image:alt
-      content: How to Stop Android App Auto Updates from Play Store - Zygisk Detach Guide
+      content: 如何阻止 Android 应用从 Play Store 自动更新 - Zygisk Detach 指南
   - - meta
     - property: og:image:width
       content: '1200'
@@ -61,16 +61,16 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: Stop Android App Auto Updates from Play Store | Zygisk Detach Tutorial
+      content: 阻止 Android 应用从 Play Store 自动更新 | Zygisk Detach 教程
   - - meta
     - name: twitter:description
-      content: Permanently disable automatic app updates from Google Play Store using Zygisk Detach module. Complete guide for rooted Android devices with Magisk/KernelSU. Step-by-step tutorial included!
+      content: 使用 Zygisk Detach 模块永久禁用 Google Play Store 的自动应用更新。面向搭载 Magisk/KernelSU 的已 root Android 设备的完整指南。附分步教程！
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og/zygisk-detach.png
   - - meta
     - name: twitter:image:alt
-      content: Android app auto updates disable guide - Zygisk Detach method for rooted devices
+      content: Android 应用自动更新禁用指南 - 适用于已 root 设备的 Zygisk Detach 方法
 
 
   # Stop App Updates specific social tags
@@ -88,37 +88,37 @@ head:
       content: 2026-09-27T00:00:00Z
   - - meta
     - property: article:section
-      content: Android Root Guides
+      content: Android Root 指南
   - - meta
     - property: article:tag
-      content: Stop App Updates
+      content: 阻止应用更新
   - - meta
     - property: article:tag
-      content: Disable Auto Update Android
+      content: 禁用 Android 自动更新
   - - meta
     - property: article:tag
       content: Zygisk Detach
   - - meta
     - property: article:tag
-      content: Magisk Modules
+      content: Magisk 模块
   - - meta
     - property: article:tag
       content: KernelSU
   - - meta
     - property: article:tag
-      content: Play Store Auto Update
+      content: Play Store 自动更新
   - - meta
     - property: article:tag
-      content: Android App Management
+      content: Android 应用管理
   - - meta
     - property: article:tag
-      content: Root Android Apps
+      content: Root Android 应用
   - - meta
     - property: article:tag
-      content: Prevent App Updates
+      content: 阻止应用更新
   - - meta
     - property: article:tag
-      content: Detach Apps Play Store
+      content: 从 Play Store 分离应用
 
   # SEO optimization meta tags
   - - meta
@@ -134,121 +134,121 @@ head:
 
 ---
 
-# How to Stop App Updates from Play Store (Detach Apps)
+# 如何阻止 Play Store 更新应用（分离应用）
 
-Tired of Google Play Store forcefully updating your apps? This guide shows you how to **detach apps from the Play Store** using Zygisk Detach, preventing unwanted automatic updates permanently.
+厌倦了 Google Play Store 强制更新你的应用？本指南将教你如何使用 Zygisk Detach **将应用与 Play Store 分离**，永久阻止不需要的自动更新。
 
-## What is App Detaching?
+## 什么是应用分离？
 
-App detaching removes the connection between installed apps and Google Play Store. Once detached, apps won't receive automatic updates or be recognized by the Play Store.
+应用分离会移除已安装应用与 Google Play Store 之间的关联。分离之后，应用将不再接收自动更新，也不会被 Play Store 识别。
 
-## Prerequisites
+## 前提条件
 
-**Need to root your device first?** Check our device-specific guides:
-- 📱 [Samsung Phone Rooting Guide](../rooting-guides/how-to-root-samsung-phone.md)
-- 📱 [Pixel Phone Rooting Guide](../rooting-guides/how-to-root-pixel-phone.md)
-- 📱 [OnePlus Phone Rooting Guide](../rooting-guides/how-to-root-oneplus-phone.md)
-- 📱 [Xiaomi Phone Rooting Guide](../rooting-guides/how-to-root-xiaomi-phone.md)
-- 📱 [Nothing Phone Rooting Guide](../rooting-guides/how-to-root-nothing-phone.md)
-- 📱 [Motorola Phone Rooting Guide](../rooting-guides/how-to-root-motorola-phone.md)
-- 🔓 [Bootloader Unlocking Guide](../rooting-guides/how-to-unlock-bootloader.md)
+**需要先 root 你的设备？** 查看我们的设备专属教程：
+- 📱 [Samsung 手机 Root 教程](../rooting-guides/how-to-root-samsung-phone.md)
+- 📱 [Pixel 手机 Root 教程](../rooting-guides/how-to-root-pixel-phone.md)
+- 📱 [OnePlus 手机 Root 教程](../rooting-guides/how-to-root-oneplus-phone.md)
+- 📱 [Xiaomi 手机 Root 教程](../rooting-guides/how-to-root-xiaomi-phone.md)
+- 📱 [Nothing 手机 Root 教程](../rooting-guides/how-to-root-nothing-phone.md)
+- 📱 [Motorola 手机 Root 教程](../rooting-guides/how-to-root-motorola-phone.md)
+- 🔓 [Bootloader 解锁指南](../rooting-guides/how-to-unlock-bootloader.md)
 
-**Required:**
-- ✅ **Rooted Android device** (Magisk or KernelSU)
-- ✅ **Zygisk enabled** in your root manager
+**必备条件：**
+- ✅ **已 root 的 Android 设备**（Magisk 或 KernelSU）
+- ✅ root 管理器中已**启用 Zygisk**
 
-## Method 1: Using GUI App (Easiest)
+## 方法 1：使用 GUI 应用（最简单）
 
-### Step 1: Install Zygisk Detach Module
+### 第 1 步：安装 Zygisk Detach 模块
 
-1. **Download** [Zygisk Detach Module](https://github.com/j-hc/zygisk-detach/releases) (latest `.zip` file)
-2. **Flash in Magisk/KernelSU:**
-   - Open your root manager → Modules → Install from storage
-   - Select the downloaded zip file
-3. **Reboot** your device
+1. **下载** [Zygisk Detach 模块](https://github.com/j-hc/zygisk-detach/releases)（最新的 `.zip` 文件）
+2. **在 Magisk/KernelSU 中刷入：**
+   - 打开你的 root 管理器 → 模块 → 从存储安装
+   - 选择下载的 zip 文件
+3. **重启**设备
 
-### Step 2: Install Detach App
+### 第 2 步：安装 Detach 应用
 
-1. **Download** [Zygisk Detach App](https://github.com/j-hc/zygisk-detach-app/releases) (latest `.apk` file)
-2. **Install** the APK on your device
-3. **Open** the app and grant root permissions
-4. **Select apps** you want to detach
-5. **Apply changes** - done!
+1. **下载** [Zygisk Detach 应用](https://github.com/j-hc/zygisk-detach-app/releases)（最新的 `.apk` 文件）
+2. 在设备上**安装** APK
+3. **打开**应用并授予 root 权限
+4. **选择**要分离的应用
+5. **应用更改** - 完成！
 
-## Method 2: Using Terminal (Advanced)
+## 方法 2：使用终端（进阶）
 
-### Step 1: Install Module (Same as above)
+### 第 1 步：安装模块（同上）
 
-Follow Step 1 from Method 1.
+按照方法 1 的第 1 步操作。
 
-### Step 2: Use Terminal Commands
+### 第 2 步：使用终端命令
 
-1. **Open terminal** (Termux or similar)
-2. **Run detach command:**
+1. **打开终端**（Termux 或类似应用）
+2. **运行分离命令：**
    ```bash
    su
    detach
    ```
-3. **Select apps** from the list to detach
-4. Changes apply immediately
+3. 从列表中**选择**要分离的应用
+4. 更改立即生效
 
-*If command fails, try:*
+*如果命令失败，请尝试：*
 ```bash
 su -c /data/adb/modules/zygisk-detach/detach
 ```
 
-## Enable Zygisk (If Not Enabled)
+## 启用 Zygisk（如果尚未启用）
 
-**Magisk users:**
-1. Open Magisk → Settings → Enable "Zygisk" → Reboot
+**Magisk 用户：**
+1. 打开 Magisk → 设置 → 启用 "Zygisk" → 重启
 
-**KernelSU users:**
-1. Install a compatible Zygisk implementation if your setup does not include one → Reboot
+**KernelSU 用户：**
+1. 如果你的环境未包含兼容的 Zygisk 实现，请安装一个 → 重启
 
-## Verify Detachment
+## 验证分离结果
 
-1. Open Google Play Store
-2. Search for the detached app
-3. Should show "Install" instead of "Update/Open"
-4. ✅ App successfully detached!
+1. 打开 Google Play Store
+2. 搜索已分离的应用
+3. 应显示"安装"而不是"更新/打开"
+4. ✅ 应用分离成功！
 
-## How to Re-attach Apps
+## 如何重新关联应用
 
-**Using GUI App:** Open the detach app → Select detached apps → Re-attach
+**使用 GUI 应用：** 打开 detach 应用 → 选择已分离的应用 → 重新关联
 
-**Using Terminal:** Run `su` then `detach` → Select apps to re-attach
+**使用终端：** 运行 `su` 然后运行 `detach` → 选择要重新关联的应用
 
-## Troubleshooting
+## 故障排除
 
-**Module not working?**
-- Ensure device is properly rooted
-- Check Zygisk is enabled in your root manager
-- Reboot after installing module
+**模块不工作？**
+- 确保设备已正确 root
+- 检查 root 管理器中是否启用了 Zygisk
+- 安装模块后重启设备
 
-**Command not found?**
-- Try full path: `su -c /data/adb/modules/zygisk-detach/detach`
-- Verify module is installed and active
+**找不到命令？**
+- 尝试完整路径：`su -c /data/adb/modules/zygisk-detach/detach`
+- 确认模块已安装并处于启用状态
 
-**Apps still updating?**
-- Clear Play Store data: Settings → Apps → Google Play Store → Storage → Clear Data
-- Re-detach the apps
+**应用仍在更新？**
+- 清除 Play Store 数据：设置 → 应用 → Google Play Store → 存储 → 清除数据
+- 重新分离这些应用
 
-## Important Notes
+## 重要说明
 
-⚠️ **Security Warning:** Detached apps won't receive security updates. Only detach apps you specifically don't want updated.
+⚠️ **安全警告：** 被分离的应用将无法接收安全更新。只分离你明确不希望更新的应用。
 
-✅ **Best Practices:**
-- Keep banking/security apps attached
-- Manually check for important updates
-- Backup data before detaching critical apps
+✅ **最佳实践：**
+- 保持银行/安全类应用处于关联状态
+- 手动检查重要更新
+- 分离关键应用前备份数据
 
-## Related Guides
+## 相关指南
 
-- 📋 [Android Root Apps Collection](../apps-and-modules/)
-- 🔧 [Custom Recovery Installation](../rooting-guides/how-to-install-custom-recovery.md)
-- 🏠 [Custom ROM Installation](../rooting-guides/custom-rom-installation.md)
-- 📚 [All Root Guides](../rooting-guides/)
+- 📋 [Android Root 应用合集](../apps-and-modules/)
+- 🔧 [第三方 Recovery 安装](../rooting-guides/how-to-install-custom-recovery.md)
+- 🏠 [第三方 ROM 安装](../rooting-guides/custom-rom-installation.md)
+- 📚 [全部 Root 教程](../rooting-guides/)
 
 ---
 
-**Need help rooting your device first?** Check our [comprehensive rooting guides](../rooting-guides/) for step-by-step instructions tailored to your specific device.
+**需要先 root 你的设备？** 查看我们的[完整 root 教程](../rooting-guides/)，获取针对你设备量身定制的分步说明。

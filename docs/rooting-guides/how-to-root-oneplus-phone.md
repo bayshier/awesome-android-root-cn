@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Complete OnePlus Rooting Guide
-description: "Master guide to root all OnePlus devices - OnePlus 15, 13, 12, 11, 10, Nord series with bootloader unlock and Magisk installation for OxygenOS."
+title: OnePlus Root 完全指南
+description: "所有 OnePlus 设备的 Root 总指南 - OnePlus 15、13、12、11、10、Nord 系列，包含 Bootloader 解锁与 OxygenOS 上的 Magisk 安装。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: Complete OnePlus Rooting Guide - All Models Supported
+      content: OnePlus Root 完全指南 - 支持所有机型
   - - meta
     - property: og:description
-      content: Root any OnePlus device with our comprehensive guide covering bootloader unlock, MSM tool, custom recovery and Magisk installation for OxygenOS.
+      content: 通过我们涵盖 Bootloader 解锁、MSM 工具、第三方 Recovery 和 OxygenOS 上 Magisk 安装的全面指南 Root 任意 OnePlus 设备。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/how-to-root-oneplus-phone
@@ -26,10 +26,10 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: Complete OnePlus Rooting Guide - All Models
+      content: OnePlus Root 完全指南 - 所有机型
   - - meta
     - name: twitter:description
-      content: Root any OnePlus phone with bootloader unlock and Magisk installation guide.
+      content: 通过 Bootloader 解锁和 Magisk 安装指南 Root 任意 OnePlus 手机。
   - - meta
     - name: twitter:site
       content: "@awsm_and_root"
@@ -41,16 +41,16 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og/oneplus.png
   - - meta
     - name: twitter:image:alt
-      content: OnePlus Root Guide - All Models
+      content: OnePlus Root 指南 - 所有机型
   - - meta
     - name: author
-      content: Awesome Android Root Project
+      content: Awesome Android Root 项目
   - - meta
     - property: article:author
       content: https://github.com/awesome-android-root/awesome-android-root
   - - meta
     - property: article:section
-      content: Device Rooting
+      content: 设备 Root
   - - meta
     - property: article:tag
       content: OnePlus Root
@@ -59,10 +59,10 @@ head:
       content: OxygenOS
   - - meta
     - property: article:tag
-      content: Bootloader Unlock
+      content: Bootloader 解锁
   - - meta
     - property: article:tag
-      content: Magisk Installation
+      content: Magisk 安装
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -74,494 +74,494 @@ head:
       content: index, follow
 ---
 
-# OnePlus Root Guide
+# OnePlus Root 指南
 
-Root OnePlus devices with straightforward bootloader unlock. Covers OxygenOS and ColorOS, OnePlus 15, 13, 12, 11, 10, 9, Nord series, and legacy devices.
+通过简单直接的 Bootloader 解锁 Root OnePlus 设备。涵盖 OxygenOS 和 ColorOS、OnePlus 15、13、12、11、10、9、Nord 系列以及旧款设备。
 
-## Quick Navigation
+## 快速导航
 
-- [Device Compatibility](#device-compatibility)
-- [Prerequisites](#prerequisites)
-- [Bootloader Unlock](#unlock-bootloader)
-- [Root Installation](#root-installation)
-- [Troubleshooting](#troubleshooting)
+- [设备兼容性](#设备兼容性)
+- [前置条件](#前置条件)
+- [Bootloader 解锁](#解锁-bootloader)
+- [Root 安装](#root-安装)
+- [故障排除](#故障排除)
 
-**Related Guides:**
-- [Main Rooting Guide](./index.md) - Universal rooting concepts
-- [Bootloader Unlocking](./how-to-unlock-bootloader.md) - Detailed unlock guide
-- [Magisk Guide](./magisk-guide.md) - Complete Magisk documentation
+**相关指南：**
+- [Root 主指南](./index.md) - 通用 Root 概念
+- [Bootloader 解锁](./how-to-unlock-bootloader.md) - 详细的解锁指南
+- [Magisk 指南](./magisk-guide.md) - 完整的 Magisk 文档
 
 ---
 
-## Prerequisites
+## 前置条件
 
-### Critical Requirements
+### 关键要求
 
-::: danger BEFORE YOU START
-**Data Wipe:** Unlocking bootloader erases everything including internal storage.
+::: danger 开始之前
+**数据清除：** 解锁 Bootloader 会清除包括内部存储在内的所有内容。
 
-**Backup Everything:** Photos, contacts, messages, app data, authenticator codes.
+**备份所有内容：** 照片、联系人、短信、应用数据、验证器代码。
 
-**No Waiting Period:** Unlike Xiaomi, OnePlus unlock is immediate once enabled.
+**无等待期：** 与 Xiaomi 不同，OnePlus 解锁在启用后立即生效。
 
-**OEM Unlocking:** Must be available in Developer Options. Some T-Mobile models cannot unlock.
+**OEM 解锁：** 必须在开发者选项中可用。部分 T-Mobile 机型无法解锁。
 :::
 
-### Device Compatibility
+### 设备兼容性
 
-Most OnePlus devices with unlockable bootloaders can be rooted. Check [XDA Forums](https://forum.xda-developers.com/c/oneplus.11993/) for your specific model.
+大多数 Bootloader 可解锁的 OnePlus 设备都可以 Root。请在 [XDA 论坛](https://forum.xda-developers.com/c/oneplus.11993/)查询你的具体机型。
 
-::: warning INCOMPATIBLE DEVICES
-- **T-Mobile and some carrier-branded models** may have permanently locked bootloaders
-- **Chinese-market models** running ColorOS may have additional restrictions
+::: warning 不兼容设备
+- **T-Mobile 及部分运营商定制机型**的 Bootloader 可能永久锁定
+- 运行 ColorOS 的**中国市场机型**可能存在额外限制
 :::
 
-::: tip 💡 Locked bootloader? Temporary root exists
-On several OnePlus/OPPO/realme devices (OnePlus 13/15, Ace 6T, OPPO Pad 4 Pro and more), the **ghostlock-oneplus** exploit uses the GhostLock kernel bug (CVE-2026-43499) to grant **session-only root without unlocking the bootloader** - nothing flashed, nothing survives a reboot. See [Root Without Unlocking the Bootloader](./root-without-unlocking-bootloader.md).
+::: tip 💡 Bootloader 已锁定？存在临时 Root 方案
+在多款 OnePlus/OPPO/realme 设备上（OnePlus 13/15、Ace 6T、OPPO Pad 4 Pro 等），**ghostlock-oneplus** 漏洞利用 GhostLock 内核漏洞（CVE-2026-43499），可在**不解锁 Bootloader 的情况下授予仅当前会话有效的 Root** - 不刷入任何内容，重启后一切失效。参见[不解锁 Bootloader 进行 Root](./root-without-unlocking-bootloader.md)。
 :::
 
-### Hardware Requirements
+### 硬件要求
 
-- OnePlus device (any supported model)
-- Quality USB-C cable
-- Computer (Windows, macOS, or Linux)
-- 50%+ battery charge
+- OnePlus 设备（任意受支持机型）
+- 质量良好的 USB-C 数据线
+- 电脑（Windows、macOS 或 Linux）
+- 电量 50% 以上
 
-### Software Requirements
+### 软件要求
 
-**On Computer:**
+**电脑端：**
 
-1. **Platform Tools** (ADB/Fastboot)
-   - Download: [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
-   - Extract to easy location
+1. **Platform Tools**（ADB/Fastboot）
+   - 下载：[Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
+   - 解压到方便的位置
 
-2. **OnePlus USB Drivers** (Windows)
-   - Usually auto-install with ADB
-   - Or download from OnePlus site
+2. **OnePlus USB 驱动**（Windows）
+   - 通常随 ADB 自动安装
+   - 或从 OnePlus 官网下载
 
-3. **Stock Firmware** (for recovery)
-   - Download via [Oxygen Updater](https://github.com/oxygen-updater/os-updater/releases/latest) (Recommended)
-   - Or [XDA Forums](https://xdaforums.com/) (Alternative)
-   - or https://roms.danielspringer.at/
+3. **官方固件**（用于恢复）
+   - 通过 [Oxygen Updater](https://github.com/oxygen-updater/os-updater/releases/latest) 下载（推荐）
+   - 或 [XDA 论坛](https://xdaforums.com/)（备选）
+   - 或 https://roms.danielspringer.at/
 
-**On Device:**
+**设备端：**
 
 1. **Magisk APK**
-   - Download: [Magisk GitHub](https://github.com/topjohnwu/Magisk/releases)
-   - Latest stable version
+   - 下载：[Magisk GitHub](https://github.com/topjohnwu/Magisk/releases)
+   - 最新稳定版
 
-::: tip Alternative Root Methods
-For the OnePlus 15 and 13 series, **KernelSU** is recommended instead of Magisk. KernelSU patches the kernel directly and is often more successful at bypassing the latest Play Integrity (Strong Integrity) checks.
+::: tip 替代 Root 方案
+对于 OnePlus 15 和 13 系列，推荐使用 **KernelSU** 替代 Magisk。KernelSU 直接修补内核，在绕过最新 Play Integrity（Strong Integrity）检测方面通常更有效。
 :::
 
-2. **File Manager**
-   - OxygenOS Files app
-   - Or any from Play Store
+2. **文件管理器**
+   - OxygenOS“文件”应用
+   - 或 Play 商店中的任意一款
 
-### Device Preparation
+### 设备准备
 
-**Step 1: Enable Developer Options**
+**步骤 1：启用开发者选项**
 
-1. Settings > About device
-2. Tap "Build number" 7 times
-3. Enter PIN/password
-4. "Developer options unlocked" appears
+1. 设置 > 关于设备
+2. 连续点击“版本号”7 次
+3. 输入 PIN 码/密码
+4. 出现“开发者选项已解锁”提示
 
-**Step 2: Enable Required Settings**
+**步骤 2：启用所需设置**
 
-Settings > System > Developer options:
-- **OEM unlocking**: Enable (critical)
-- **USB debugging**: Enable
-- **Advanced reboot**: Enable (optional)
+设置 > 系统 > 开发者选项：
+- **OEM 解锁**：启用（关键）
+- **USB 调试**：启用
+- **高级重启**：启用（可选）
 
-**Step 3: Verify ADB Connection**
+**步骤 3：验证 ADB 连接**
 
 ```bash
 adb devices
-# Accept USB debugging prompt on device
-# Should show device with "device" status
+# 在设备上接受 USB 调试提示
+# 应显示状态为 "device" 的设备
 ```
 
 ---
 
-## Unlock Bootloader
+## 解锁 Bootloader
 
-OnePlus has one of simplest unlock processes.
+OnePlus 拥有最简单的解锁流程之一。
 
-### Step 1: Enter Fastboot Mode
+### 步骤 1：进入 Fastboot 模式
 
-**Method 1: ADB Command**
+**方法 1：ADB 命令**
 ```bash
 adb reboot bootloader
 ```
 
-**Method 2: Hardware Keys**
-1. Power off device
-2. Hold Volume Up + Volume Down + Power
-3. Release when fastboot screen appears
+**方法 2：物理按键**
+1. 关闭设备
+2. 按住音量加 + 音量减 + 电源键
+3. 出现 fastboot 界面时松开
 
-### Step 2: Verify Fastboot Connection
+### 步骤 2：验证 Fastboot 连接
 
 ```bash
 fastboot devices
-# Should show device serial number
+# 应显示设备序列号
 ```
 
-### Step 3: Unlock Bootloader
+### 步骤 3：解锁 Bootloader
 
 ```bash
 fastboot oem unlock
 ```
 
-**On Device:**
-1. Warning screen appears
-2. Use Volume keys to navigate
-3. Select "UNLOCK THE BOOTLOADER"
-4. Press Power to confirm
-5. Device automatically wipes and reboots
+**设备端操作：**
+1. 出现警告界面
+2. 使用音量键移动
+3. 选择 "UNLOCK THE BOOTLOADER"（解锁 Bootloader）
+4. 按电源键确认
+5. 设备自动清除数据并重启
 
-::: tip INSTANT UNLOCK
-Unlike Xiaomi, OnePlus unlock is immediate. No waiting period!
+::: tip 立即解锁
+与 Xiaomi 不同，OnePlus 解锁立即生效。无需等待！
 :::
 
-### Step 4: Verify Unlock Status
+### 步骤 4：验证解锁状态
 
-After automatic factory reset:
+自动恢复出厂设置后：
 
 ```bash
 adb reboot bootloader
 fastboot getvar unlocked
-# Should return: yes
+# 应返回：yes
 ```
 
-Or check on device boot:
-- "The bootloader is unlocked" warning (normal)
+或在设备开机时检查：
+- “Bootloader 已解锁”警告（正常现象）
 
 ---
 
-## Root Installation
+## Root 安装
 
-### Determine Correct Image
+### 确定正确的镜像
 
-| Device Generation | Image to Patch |
+| 设备世代 | 需要修补的镜像 |
 |---|---|
-| OnePlus 10 and newer (Android 13+) | `init_boot.img` |
-| OnePlus 9 and older | `boot.img` |
+| OnePlus 10 及更新（Android 13+） | `init_boot.img` |
+| OnePlus 9 及更早 | `boot.img` |
 
-**Quick Check in Magisk:**
-- Install Magisk app first
-- Check "Ramdisk" field
-- "Yes" = `boot.img`, "No" = `init_boot.img`
+**在 Magisk 中快速检查：**
+- 先安装 Magisk 应用
+- 查看“Ramdisk”字段
+- “是” = `boot.img`，“否” = `init_boot.img`
 
-::: tip Verified Boot
-Always ensure you have a copy of the stock `vbmeta.img`. When flashing a patched image on newer OxygenOS versions, you may need to disable verity using:
+::: tip 启动验证（Verified Boot）
+请始终确保你留有官方 `vbmeta.img` 的副本。在较新的 OxygenOS 版本上刷入修补后的镜像时，可能需要使用以下命令禁用 verity：
 `fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img`
 :::
 
 ---
 
-### Method 1: Boot Image Patching (Recommended)
+### 方法 1：修补 boot 镜像（推荐）
 
-**Step 1: Download Stock Firmware**
+**步骤 1：下载官方固件**
 
-**Using Oxygen Updater (Recommended):**
-1. Install [Oxygen Updater](https://github.com/oxygen-updater/os-updater/releases/latest) on your device
-2. Launch app and verify device name
-3. Go to Settings > Update Method > Select "Full"
-4. Enable "Advanced Mode" in settings
-5. Return to Home tab and tap "Download Update"
-6. Firmware ZIP will be downloaded to internal storage
-7. Transfer ZIP to computer for extraction
-8. Extract payload.bin from the downloaded ZIP
+**使用 Oxygen Updater（推荐）：**
+1. 在设备上安装 [Oxygen Updater](https://github.com/oxygen-updater/os-updater/releases/latest)
+2. 启动应用并确认设备名称
+3. 进入 Settings > Update Method > 选择 "Full"（完整包）
+4. 在设置中启用 "Advanced Mode"（高级模式）
+5. 返回 Home 标签页并点击 "Download Update"（下载更新）
+6. 固件 ZIP 将下载到内部存储
+7. 将 ZIP 传输到电脑进行解压
+8. 从下载的 ZIP 中提取 payload.bin
 
-**Alternative Method (XDA Forums):**
-1. Visit [XDA OnePlus Forums](https://xdaforums.com/c/oneplus.11993/)
-2. Find your device section
-3. Download matching firmware
-4. Extract payload.bin
+**替代方法（XDA 论坛）：**
+1. 访问 [XDA OnePlus 论坛](https://xdaforums.com/c/oneplus.11993/)
+2. 找到你的设备板块
+3. 下载匹配的固件
+4. 提取 payload.bin
 
-::: tip WHY OXYGEN UPDATER?
-OnePlus no longer provides direct firmware downloads. Oxygen Updater is the most reliable method to get official firmware files.
+::: tip 为什么选择 Oxygen Updater？
+OnePlus 不再提供直接的固件下载。Oxygen Updater 是获取官方固件文件最可靠的方法。
 :::
 
-**Step 2: Extract Boot Image**
+**步骤 2：提取 boot 镜像**
 
-Use payload-dumper-go:
+使用 payload-dumper-go：
 ```bash
-# Download payload-dumper-go
-# Extract images
+# 下载 payload-dumper-go
+# 提取镜像
 ./payload-dumper-go -o extracted payload.bin
 
-# Find boot.img or init_boot.img in extracted/
+# 在 extracted/ 中找到 boot.img 或 init_boot.img
 ```
 
-**Step 3: Transfer to Device**
+**步骤 3：传输到设备**
 
 ```bash
-# For newer devices (OnePlus 10+)
+# 较新设备（OnePlus 10+）
 adb push init_boot.img /sdcard/Download/
 
-# For older devices
+# 较旧设备
 adb push boot.img /sdcard/Download/
 ```
 
-**Step 4: Install Magisk and Patch**
+**步骤 4：安装 Magisk 并修补**
 
 ```bash
-# Install Magisk APK
+# 安装 Magisk APK
 adb install Magisk-v27.0.apk
 ```
 
-On device:
-1. Open Magisk app
-2. Tap "Install" next to Magisk
-3. Select "Select and Patch a File"
-4. Choose boot.img or init_boot.img
-5. Wait for patching
+在设备上：
+1. 打开 Magisk 应用
+2. 点击 Magisk 旁边的“安装”
+3. 选择“选择并修补一个文件”
+4. 选择 boot.img 或 init_boot.img
+5. 等待修补完成
 
-**Output:** `magisk_patched_[random].img`
+**输出：** `magisk_patched_[random].img`
 
-**Step 5: Transfer Patched Image**
+**步骤 5：传输修补后的镜像**
 
 ```bash
 adb pull /sdcard/Download/magisk_patched_xxxxx.img ./
 ```
 
-**Step 6: Flash Patched Image**
+**步骤 6：刷入修补后的镜像**
 
 ```bash
-# Boot to fastboot
+# 启动到 fastboot
 adb reboot bootloader
 
-# Verify connection
+# 验证连接
 fastboot devices
 
-# For newer devices (init_boot)
+# 较新设备（init_boot）
 fastboot flash init_boot magisk_patched_xxxxx.img
 
-# For older devices (boot)
+# 较旧设备（boot）
 fastboot flash boot magisk_patched_xxxxx.img
 
-# Reboot
+# 重启
 fastboot reboot
 ```
 
-**Step 7: Verify Root**
+**步骤 7：验证 Root**
 
-1. First boot takes 2-5 minutes
-2. Open Magisk app
-3. Should show:
-   - Magisk: Installed (version)
-   - App: Latest (version)
+1. 首次开机需要 2-5 分钟
+2. 打开 Magisk 应用
+3. 应显示：
+   - Magisk：已安装（版本号）
+   - 应用：最新（版本号）
 
-Test root:
+测试 Root：
 ```bash
 adb shell
 su
 id
-# Should return: uid=0(root)
+# 应返回：uid=0(root)
 ```
 
 ---
 
-### Method 2: TWRP Recovery (Older Devices)
+### 方法 2：TWRP Recovery（旧款设备）
 
-For OnePlus 8 series and older with TWRP:
+适用于支持 TWRP 的 OnePlus 8 系列及更早设备：
 
-**Step 1: Download TWRP**
+**步骤 1：下载 TWRP**
 
-1. Visit [TWRP OnePlus](https://twrp.me/Devices/OnePlus/)
-2. Find your device
-3. Download TWRP image
+1. 访问 [TWRP OnePlus](https://twrp.me/Devices/OnePlus/)
+2. 找到你的设备
+3. 下载 TWRP 镜像
 
-**Step 2: Boot TWRP**
+**步骤 2：引导启动 TWRP**
 
 ```bash
 fastboot boot twrp.img
 ```
 
-**Step 3: Flash Magisk**
+**步骤 3：刷入 Magisk**
 
-1. Download Magisk ZIP
-2. Push to device:
+1. 下载 Magisk ZIP
+2. 推送到设备：
 ```bash
 adb push Magisk-v27.0.zip /sdcard/
 ```
-3. In TWRP: Install > Select ZIP
-4. Swipe to flash
-5. Reboot system
+3. 在 TWRP 中：安装 > 选择 ZIP
+4. 滑动以刷入
+5. 重启系统
 
-**Note:** OnePlus 10+ devices generally lack TWRP support.
-
----
-
-## Post-Root Setup
-
-### Configure Magisk
-
-**Step 1: Basic Settings**
-
-Magisk > Settings:
-- **Zygisk**: Enable
-- **Enforce DenyList**: Enable
-- **Hide Magisk app**: Recommended for banking
-
-**Step 2: Configure DenyList**
-
-Add to DenyList:
-- Google Play Services (all)
-- Google Play Store
-- Banking apps
-- Payment apps (Google Pay, etc.)
-- Play Integrity-sensitive apps
-
-**Step 3: Install Essential Modules**
-
-Recommended for OnePlus:
-- **Play Integrity Fix** - Banking compatibility
-- **Shamiko** - Enhanced root hiding
-- **LSPosed (Zygisk)** - Framework
-- **Systemless Hosts** - Ad blocking
-
-### OxygenOS/ColorOS Optimization
-
-**Battery Optimization:**
-1. Settings > Battery > Battery optimization
-2. Find Magisk and root apps
-3. Set to "Don't optimize"
-
-**Autostart Permission:**
-1. Settings > Apps > Manage apps
-2. Magisk and root apps
-3. Enable "Autostart"
-
-**Background Restrictions:**
-1. Settings > Apps > Manage apps
-2. Magisk and root apps
-3. Disable "Restrict background activity"
+**注意：** OnePlus 10 及更新设备通常不支持 TWRP。
 
 ---
 
-## OTA Handling
+## Root 后设置
 
-### For A/B Devices (All Modern OnePlus)
+### 配置 Magisk
 
-**Step 1: Download OTA**
+**步骤 1：基础设置**
 
-Settings > System > System update
+Magisk > 设置：
+- **Zygisk**：启用
+- **Enforce DenyList**：启用
+- **隐藏 Magisk 应用**：使用银行类应用时建议开启
 
-Download update but **DO NOT reboot**
+**步骤 2：配置 DenyList**
 
-**Step 2: Install with Magisk**
+添加到 DenyList：
+- Google Play Services（全部）
+- Google Play 商店
+- 银行类应用
+- 支付类应用（Google Pay 等）
+- 对 Play Integrity 敏感的应用
 
-1. Open Magisk app
-2. Tap "Install" next to Magisk
-3. Select "Install to Inactive Slot (After OTA)"
-4. Wait for installation
-5. Tap "Reboot" when prompted
+**步骤 3：安装必要模块**
 
-**Step 3: Verify After Update**
+OnePlus 设备推荐：
+- **Play Integrity Fix** - 银行类应用兼容性
+- **Shamiko** - 增强 Root 隐藏
+- **LSPosed (Zygisk)** - 框架
+- **Systemless Hosts** - 广告屏蔽
 
-- System boots to updated version
-- Magisk still installed
-- Root preserved
+### OxygenOS/ColorOS 优化
+
+**电池优化：**
+1. 设置 > 电池 > 电池优化
+2. 找到 Magisk 和 Root 应用
+3. 设为“不优化”
+
+**自启动权限：**
+1. 设置 > 应用 > 应用管理
+2. Magisk 和 Root 应用
+3. 启用“自启动”
+
+**后台限制：**
+1. 设置 > 应用 > 应用管理
+2. Magisk 和 Root 应用
+3. 禁用“限制后台活动”
 
 ---
 
-## Troubleshooting
+## OTA 处理
 
-<details><summary>Click to expand troubleshooting tips</summary>
+### 针对 A/B 设备（所有现代 OnePlus 机型）
 
-### Bootloader Issues
+**步骤 1：下载 OTA**
 
-**"OEM Unlocking" Greyed Out**
+设置 > 系统 > 系统更新
 
-Causes:
-- Device protection active
-- Carrier-locked (T-Mobile)
-- Account lock
+下载更新但**不要重启**
 
-Solutions:
-1. Remove all accounts
-2. Factory reset device
-3. Wait 24 hours after setup
-4. Try again
+**步骤 2：使用 Magisk 安装**
 
-If still grey: Device may be carrier-locked
+1. 打开 Magisk 应用
+2. 点击 Magisk 旁边的“安装”
+3. 选择“安装到未使用的插槽（OTA 后）”
+4. 等待安装完成
+5. 在提示时点击“重启”
 
-**Fastboot Not Detecting**
+**步骤 3：更新后验证**
 
-Solutions:
-- Update Platform Tools
-- Try USB 2.0 port
-- Different USB cable
-- Reinstall drivers (Windows)
-- Try different computer
+- 系统启动到更新后的版本
+- Magisk 仍然安装
+- Root 得以保留
 
-### Installation Issues
+---
 
-**Magisk Shows "N/A"**
+## 故障排除
 
-Causes:
-- Wrong image patched
-- Wrong partition flashed
+<details><summary>点击展开故障排除提示</summary>
 
-Solutions:
-1. Verify correct image (boot vs init_boot)
-2. Check Android version
-3. Re-extract and patch correct image
-4. Flash to correct partition
+### Bootloader 问题
 
-**Device Bootloop**
+**“OEM 解锁”呈灰色**
 
-Solutions:
+原因：
+- 设备保护处于激活状态
+- 运营商锁定（T-Mobile）
+- 账号锁定
+
+解决方法：
+1. 移除所有账号
+2. 恢复出厂设置
+3. 完成设置后等待 24 小时
+4. 重试
+
+如果仍然呈灰色：设备可能被运营商锁定
+
+**Fastboot 检测不到设备**
+
+解决方法：
+- 更新 Platform Tools
+- 尝试 USB 2.0 端口
+- 更换 USB 数据线
+- 重新安装驱动（Windows）
+- 换一台电脑
+
+### 安装问题
+
+**Magisk 显示 "N/A"**
+
+原因：
+- 修补了错误的镜像
+- 刷入了错误的分区
+
+解决方法：
+1. 确认镜像正确（boot 还是 init_boot）
+2. 检查 Android 版本
+3. 重新提取并修补正确的镜像
+4. 刷入正确的分区
+
+**设备无限重启**
+
+解决方法：
 ```bash
-# Flash stock image
+# 刷入官方镜像
 fastboot flash boot stock_boot.img
-# Or
+# 或者
 fastboot flash init_boot stock_init_boot.img
 fastboot reboot
 ```
 
-### Root Access Issues
+### Root 权限问题
 
-**Apps Not Getting Root**
+**应用无法获取 Root**
 
-Solutions:
-1. Open Magisk, check status
-2. Grant root to shell: `adb shell su`
-3. Reinstall via Direct Install
-4. Clear Magisk app data
+解决方法：
+1. 打开 Magisk，检查状态
+2. 给 shell 授予 root：`adb shell su`
+3. 通过直接安装重新安装
+4. 清除 Magisk 应用数据
 
-**Play Integrity Fails**
+**Play Integrity 校验失败**
 
-Solutions:
-1. Enable Zygisk
-2. Configure DenyList
-3. Hide Magisk app
-4. Install Play Integrity Fix module
-5. Clear Google Play Services
-6. Reboot
+解决方法：
+1. 启用 Zygisk
+2. 配置 DenyList
+3. 隐藏 Magisk 应用
+4. 安装 Play Integrity Fix 模块
+5. 清除 Google Play Services
+6. 重启
 
 ---
 
 </details>
 
-## Unroot and Restore
+## 取消 Root 与恢复
 
-### Remove Root Only
+### 仅移除 Root
 
 ```bash
-# Magisk > Uninstall > Restore Images
-# Root removed, bootloader still unlocked
+# Magisk > 卸载 > 还原镜像
+# Root 已移除，Bootloader 仍处于解锁状态
 ```
 
-### Flash Stock Firmware
+### 刷入官方固件
 
-**Method 1: Fastboot ROM**
+**方法 1：Fastboot ROM**
 
-1. Download fastboot ROM
-2. Extract and run flash script:
+1. 下载 fastboot ROM
+2. 解压并运行刷机脚本：
 ```bash
 # Windows
 flash-all.bat
@@ -570,18 +570,18 @@ flash-all.bat
 ./flash-all.sh
 ```
 
-**Method 2: MSM Download Tool**
+**方法 2：MSM Download Tool**
 
-For complete restore and unbrick:
-1. Download MSM tool for your device (XDA)
-2. Boot to EDL mode
-3. Run MSM tool
-4. Complete stock restoration
+用于完整恢复和救砖：
+1. 下载适用于你设备的 MSM 工具（XDA）
+2. 启动到 EDL 模式
+3. 运行 MSM 工具
+4. 完整恢复官方系统
 
-### Relock Bootloader (Optional)
+### 重新锁定 Bootloader（可选）
 
-::: danger RELOCK WARNING
-Only relock when completely stock. Relocking with modified system will brick!
+::: danger 重新锁定警告
+只有在完全恢复官方系统时才能重新锁定。在系统被修改的情况下重新锁定会导致变砖！
 :::
 
 ```bash
@@ -591,59 +591,60 @@ fastboot oem lock
 ---
 
 
-## Best Practices
+## 最佳实践
 
-### Security
+### 安全
 
-1. **Hide Magisk** for banking apps
-2. **Configure DenyList** properly
-3. **Only install trusted modules**
-4. **Keep Magisk updated**
-5. **Backup stock images**
-6. **Use strong device security** (PIN, password, biometrics)
-
----
-
-## Community Resources
-
-**Official OnePlus:**
-- [OnePlus Forums](https://forums.oneplus.com/) - Official community
-- [OnePlus Support](https://www.oneplus.com/support) - Official support
-
-**Firmware Downloads:**
-- [Oxygen Updater](https://github.com/oxygen-updater/os-updater/releases/latest) - Primary firmware source (App)
-- [Oxygen Updater GitHub](https://github.com/oxygen-updater/oxygen-updater) - Alternative download
-
-**Developer Community:**
-- [XDA OnePlus Forums](https://xdaforums.com/c/oneplus.11993/) - Device discussions
-- [Reddit r/OnePlus](https://www.reddit.com/r/oneplus/) - Community help
-
-### Getting Help
-
-**When asking for help, provide:**
-- Exact OnePlus model
-- OxygenOS/ColorOS version
-- Android version
-- Which image patched
-- Exact error messages
-- Steps attempted
+1. 使用银行类应用时**隐藏 Magisk**
+2. 正确**配置 DenyList**
+3. **只安装可信模块**
+4. **保持 Magisk 为最新版本**
+5. **备份官方镜像**
+6. **使用强设备安全措施**（PIN 码、密码、生物识别）
 
 ---
 
-## Next Steps
+## 社区资源
 
-**After Rooting Your OnePlus:**
+**OnePlus 官方：**
+- [OnePlus 论坛](https://forums.oneplus.com/) - 官方社区
+- [OnePlus 支持](https://www.oneplus.com/support) - 官方支持
 
-1. **Essential apps:**
-   - [Root Apps Collection](../apps-and-modules/) - Curated list
+**固件下载：**
+- [Oxygen Updater](https://github.com/oxygen-updater/os-updater/releases/latest) - 主要固件来源（应用）
+- [Oxygen Updater GitHub](https://github.com/oxygen-updater/oxygen-updater) - 备用下载
 
-2. **Enhance experience:**
-   - [Ad Blocking Guide](../general-guides/android-adblocking.md) - System-wide blocking
-   - [Debloating Guide](../general-guides/android-apps-debloating.md) - Remove bloat
-   - [LSPosed Guide](./lsposed-guide.md) - App modifications
+**开发者社区：**
+- [XDA OnePlus 论坛](https://xdaforums.com/c/oneplus.11993/) - 设备讨论
+- [Reddit r/OnePlus](https://www.reddit.com/r/oneplus/) - 社区互助
 
-3. **Explore ROMs:**
-   - [Custom ROM Guide](./custom-rom-installation.md) - Installation guide
-   - LineageOS for stability
-   - Pixel Experience for clean look
+### 寻求帮助
+
+**求助时请提供：**
+- 确切的 OnePlus 机型
+- OxygenOS/ColorOS 版本
+- Android 版本
+- 修补了哪个镜像
+- 确切的错误信息
+- 已尝试的步骤
+
+---
+
+## 下一步
+
+**Root 你的 OnePlus 之后：**
+
+1. **必备应用：**
+   - [Root 应用合集](../apps-and-modules/) - 精选列表
+
+2. **增强体验：**
+   - [广告屏蔽指南](../general-guides/android-adblocking.md) - 全系统屏蔽
+   - [精简应用指南](../general-guides/android-apps-debloating.md) - 移除预装应用
+   - [LSPosed 指南](./lsposed-guide.md) - 应用修改
+
+3. **探索 ROM：**
+   - [第三方 ROM 指南](./custom-rom-installation.md) - 安装指南
+   - LineageOS，稳定
+   - Pixel Experience，界面纯净
+
 

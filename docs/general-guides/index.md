@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Android General Guides & Tutorials
-description: "Practical Android general guides and tutorials for ad blocking, debloating, privacy, customization and app management."
+title: Android 通用指南与教程
+description: "实用的 Android 通用指南与教程，涵盖广告拦截、精简预装、隐私、定制与应用管理。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: website
   - - meta
     - property: og:title
-      content: Android General Guides & Tutorials | Awesome Android Root
+      content: Android 通用指南与教程 | Awesome Android Root
   - - meta
     - property: og:description
-      content: Master Android with comprehensive tutorials covering ad blocking, app debloating, privacy enhancement, performance tuning, and customization. Expert guides for all skill levels.
+      content: 通过全面的教程掌握 Android：涵盖广告拦截、应用精简预装、隐私增强、性能调优与定制。适合所有技能水平的专家指南。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/general-guides/  
@@ -38,16 +38,16 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: Android General Guides & Tutorials | Awesome Android Root
+      content: Android 通用指南与教程 | Awesome Android Root
   - - meta
     - name: twitter:description
-      content: Master Android with expert tutorials covering ad blocking, debloating, privacy, optimization, and customization for rooted and stock devices.
+      content: 通过专家教程掌握 Android：涵盖已 root 与官方设备的广告拦截、精简预装、隐私、优化与定制。
   - - meta
     - name: author
       content: Awesome Android Root Project
   - - meta
     - property: article:section
-      content: Android Guides & Tutorials
+      content: Android 指南与教程
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -63,19 +63,19 @@ head:
       {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Android Tutorials & Guides Collection",
-        "description": "Comprehensive collection of Android tutorials covering rooting, customization, privacy, and optimization.",
+        "name": "Android 教程与指南合集",
+        "description": "涵盖 root、定制、隐私与优化的 Android 教程综合合集。",
         "url": "https://awesome-android-root.zhoe.org/general-guides/",
         "mainEntity": {
           "@type": "ItemList",
-          "name": "Android Tutorial Categories",
+          "name": "Android 教程分类",
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
               "item": {
                 "@type": "HowTo",
-                "name": "System-Wide Ad Blocking",
+                "name": "全系统广告拦截",
                 "url": "https://awesome-android-root.zhoe.org/general-guides/android-adblocking"
               }
             },
@@ -84,7 +84,7 @@ head:
               "position": 2,
               "item": {
                 "@type": "HowTo",
-                "name": "Android Debloating",
+                "name": "Android 精简预装",
                 "url": "https://awesome-android-root.zhoe.org/general-guides/android-apps-debloating"
               }
             },
@@ -93,7 +93,7 @@ head:
               "position": 3,
               "item": {
                 "@type": "HowTo",
-                "name": "Stop Auto Updates",
+                "name": "停止自动更新",
                 "url": "https://awesome-android-root.zhoe.org/general-guides/stop-android-app-auto-updates-play-store"
               }
             }
@@ -102,150 +102,150 @@ head:
       }
 ---
 
-# Android General Guides & Tutorials
+# Android 通用指南与教程
 
-Master your Android experience with our comprehensive collection of expert tutorials and step-by-step guides. Designed for users of all skill levels-from beginners to advanced power users-covering privacy enhancement, performance optimization, system customization, and efficient app management for both rooted and stock Android devices.
-
----
-
-## Privacy & Security Guides
-
-### Ad Blocking & Privacy Protection
-- **[Ultimate Android Ad Blocking Guide](./android-adblocking.md)** - Achieve complete system-wide ad blocking on rooted devices using AdAway, Bindhosts, and advanced DNS solutions. Block ads, trackers, and malware across all apps.
-- **[Android Apps Debloating Guide](./android-apps-debloating.md)** - Safely remove bloatware and unwanted pre-installed apps using App Manager & Canta. Free up storage, improve performance, and enhance privacy.
-
-### Coming Soon
-- **Complete Android Privacy Setup** - Comprehensive guide to configuring device for maximum privacy with firewall, VPN, and permission management.
-- **Network Security for Android** - Secure internet connections, protect data with encryption, DNS configuration, and network monitoring.
-- **Root Permission Management** - Advanced methods for controlling app permissions, root access, and security policies with Magisk/KernelSU.
+通过我们全面的专业教程和分步指南合集，掌控你的 Android 体验。这些内容面向所有技能水平的用户——从初学者到高级玩家——涵盖隐私增强、性能优化、系统定制，以及适用于已 root 与官方 Android 设备的高效应用管理。
 
 ---
 
-## App Management & Optimization
+## 隐私与安全指南
 
-### Data & App Management
-- **[Stop Android App Auto Updates from Play Store](./stop-android-app-auto-updates-play-store.md)** - Take complete control over app updates by disabling automatic updates with Zygisk Detach module. Prevent unwanted changes and save data.
+### 广告拦截与隐私保护
+- **[终极 Android 广告拦截指南](./android-adblocking.md)** - 使用 AdAway、Bindhosts 和高级 DNS 方案，在已 root 设备上实现完全的全系统广告拦截。拦截所有应用中的广告、跟踪器和恶意软件。
+- **[Android 应用精简预装指南](./android-apps-debloating.md)** - 使用 App Manager 和 Canta 安全移除臃肿软件和不需要的预装应用。释放存储空间、提升性能并增强隐私。
 
-### Coming Soon
-- **Batch Install/Uninstall Apps** - Efficiently manage multiple applications simultaneously with ADB and root tools.
-- **Export Installed Apps List** - Create comprehensive backup list of installed applications with version info.
-- **App Cloning & Isolation** - Run multiple instances of apps for better account management.
-- **App Usage Analytics** - Monitor and control app behavior to enhance privacy and performance.
-
----
-
-## Performance & System Optimization
-
-### Battery & Power Management
-- **Advanced Battery Optimization** *(Coming Soon)* - Maximize battery life using root-level power management techniques.
-- **Background App Management** *(Coming Soon)* - Control background activity and wake locks to reduce battery drain.
-- **Aggressive Doze Configuration** *(Coming Soon)* - Implement enhanced battery-saving strategies.
-
-### Performance Tuning
-- **Android Performance Optimization** *(Coming Soon)* - Improve system responsiveness and speed through system-level tweaks.
-- **RAM Management** *(Coming Soon)* - Optimize memory usage for smoother multitasking.
-- **Custom Kernel Configuration** *(Coming Soon)* - Explore kernel modifications for improved performance and efficiency.
+### 即将推出
+- **完整的 Android 隐私设置** - 通过防火墙、VPN 和权限管理，将设备配置至最大隐私水平的综合指南。
+- **Android 网络安全** - 通过加密、DNS 配置和网络监控，保护互联网连接与数据安全。
+- **Root 权限管理** - 使用 Magisk/KernelSU 控制应用权限、root 访问和安全策略的高级方法。
 
 ---
 
-## Customization & Theming
+## 应用管理与优化
 
-### Visual Customization
-- **System Theme Modification** *(Coming Soon)* - Customize your device's look and feel with advanced theming options.
-- **Custom Fonts Installation** *(Coming Soon)* - Replace system fonts for a personalized experience.
-- **Status Bar Customization** *(Coming Soon)* - Modify the status bar to display the information you value most.
+### 数据与应用管理
+- **[阻止 Play Store 上的 Android 应用自动更新](./stop-android-app-auto-updates-play-store.md)** - 使用 Zygisk Detach 模块禁用自动更新，全面掌控应用更新。防止不必要的变更并节省流量。
 
-### System UI Changes
-- **Boot Animation Replacement** *(Coming Soon)* - Personalize your device with custom boot animations.
-- **System Sounds Modification** *(Coming Soon)* - Replace default system sounds with your own.
-
----
-
-## Essential Android Knowledge
-
-### For Beginners
-- **Enable Developer Options** - Unlock hidden settings and debugging features on your device.
-- **Understanding Android Versions** - Learn about the features and capabilities of different Android versions.
-- **Basic Security Setup** - Implement essential security configurations for everyday use.
-- **Monitor Data Usage** - Effectively control and manage your mobile data consumption.
-- **Battery Health Basics** - Understand how to maintain your battery's longevity and performance.
-
-### Advanced Users
-- **ADB Commands Mastery** - Learn essential ADB commands for powerful device control and troubleshooting.
-- **Android System Architecture** - Gain a deeper understanding of how the Android operating system functions.
-- **Magisk Module Development** - Create your own custom Magisk modules to extend device functionality.
-- **Custom Recovery Usage** - Master the use of TWRP and other custom recovery systems for flashing and maintenance.
+### 即将推出
+- **批量安装/卸载应用** - 使用 ADB 和 root 工具高效地同时管理多个应用。
+- **导出已安装应用列表** - 创建包含版本信息的已安装应用完整备份列表。
+- **应用克隆与隔离** - 运行应用的多个实例，更好地管理多个账号。
+- **应用使用分析** - 监控并控制应用行为，提升隐私与性能。
 
 ---
 
-## Development & Technical Guides
+## 性能与系统优化
 
-### Root Development
-- **Creating Magisk Modules** *(Coming Soon)* - Build custom modules tailored to your specific needs.
-- **LSPosed Module Development** *(Coming Soon)* - Develop Xposed framework modules for deep system customization.
-- **Testing Root Apps Safely** *(Coming Soon)* - Set up a secure environment for testing root applications.
+### 电池与电源管理
+- **高级电池优化** *（即将推出）* - 使用 root 级电源管理技术最大化电池续航。
+- **后台应用管理** *（即将推出）* - 控制后台活动和唤醒锁，减少电量消耗。
+- **激进 Doze 配置** *（即将推出）* - 实施增强的省电策略。
 
-### System Modification
-- **System Partition Editing** *(Coming Soon)* - Perform advanced modifications to system partitions.
-- **Build.prop Modifications** *(Coming Soon)* - Tweak system properties to alter device behavior.
-- **Logcat Analysis** *(Coming Soon)* - Use logcat to debug and diagnose system issues.
-
----
-
-## Community & Resources
-
-### Official Project Links
-- **[GitHub Repository](https://github.com/awesome-android-root/awesome-android-root)** - Access source code, report issues, and contribute to the project.
-- **[Twitter/X](https://x.com/awsm_and_root)** - Stay informed with the latest project updates and community highlights.
-
-### Essential External Resources
-- **[XDA Developers](https://forum.xda-developers.com/)** - The largest community for Android development and discussion.
-- **[Android Developer Docs](https://developer.android.com/)** - Official documentation and APIs from Google.
-- **[ADB Tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/)** - A complete guide to setting up and using ADB on any operating system.
-- **[Magisk Official](https://github.com/topjohnwu/Magisk)** - The official repository and documentation for Magisk.
-- **[KernelSU Project](https://kernelsu.org/)** - Official documentation for the KernelSU root solution.
-
-### Getting Help & Support
-When requesting assistance, please provide the following details to help us resolve your issue efficiently:
-- **Device Model**: The exact model number and manufacturer.
-- **Android Version**: Your current Android version and security patch level.
-- **Root Method**: The root solution you are using (e.g., Magisk, KernelSU, APatch) and its version.
-- **Error Details**: Specific error messages or symptoms you are encountering.
-- **Screenshots**: Visual evidence of any issues, if applicable.
-- **Steps Taken**: A summary of the actions you've already attempted to fix the problem.
+### 性能调优
+- **Android 性能优化** *（即将推出）* - 通过系统级调整提升系统响应速度与流畅度。
+- **内存管理** *（即将推出）* - 优化内存使用，让多任务更流畅。
+- **自定义内核配置** *（即将推出）* - 探索内核修改，提升性能与效率。
 
 ---
 
----
+## 定制与主题
 
-## Contributing to Our Guides
+### 视觉定制
+- **系统主题修改** *（即将推出）* - 使用高级主题选项自定义设备的外观与体验。
+- **自定义字体安装** *（即将推出）* - 替换系统字体，打造个性化体验。
+- **状态栏定制** *（即将推出）* - 修改状态栏，显示你最关心的信息。
 
-Help us build the most comprehensive collection of Android guides available. Your expertise and contributions are vital to the project's success.
-
-### Ways to Contribute
-- **[Report Issues](https://github.com/awesome-android-root/awesome-android-root/issues)** - Notify us of any errors or outdated information.
-- **[Suggest New Guides](https://github.com/awesome-android-root/awesome-android-root/discussions)** - Request tutorials on topics you'd like to see covered.
-- **[Write Guides](https://github.com/awesome-android-root/awesome-android-root?tab=contributing-ov-file)** - Share your knowledge by authoring new guides.
-- **[Submit Screenshots](https://github.com/awesome-android-root/awesome-android-root/discussions)** - Enhance existing guides with clear, helpful images.
-- **[Star Repository](https://github.com/awesome-android-root/awesome-android-root)** - Show your support and help increase the project's visibility.
-
-### Guide Writing Guidelines
-To maintain quality and consistency, please adhere to the following when contributing:
-- **Device Compatibility**: Test procedures on multiple devices where possible.
-- **Clear Screenshots**: Include visual aids to clarify complex steps.
-- **Safety Warnings**: Clearly highlight potential risks and necessary precautions.
-- **Update Frequency**: Ensure content remains current with the latest software versions.
-- **Target Audience**: Specify the intended skill level (beginner or advanced).
+### 系统 UI 修改
+- **开机动画替换** *（即将推出）* - 使用自定义开机动画彰显个性。
+- **系统声音修改** *（即将推出）* - 用你自己的声音替换默认系统音效。
 
 ---
 
-## Quick Navigation
+## Android 必备知识
 
-**New to Android Root?** Start with these foundational guides:
-1. **[Complete Android Rooting Guide](../rooting-guides/)** - Master the fundamentals of rooting.
-2. **[Android Ad Blocking](./android-adblocking.md)** - Enhance your privacy from the start.
-3. **[Remove Bloatware](./android-apps-debloating.md)** - Clean up your device and improve performance.
+### 初学者
+- **启用开发者选项** - 解锁设备上的隐藏设置和调试功能。
+- **了解 Android 版本** - 了解不同 Android 版本的功能与特性。
+- **基础安全设置** - 实施日常使用所需的基本安全配置。
+- **监控数据用量** - 有效控制和管理你的移动数据消耗。
+- **电池健康基础** - 了解如何维持电池的寿命与性能。
 
-**Advanced Users:** Explore our **[300+ Root Apps Collection](../apps-and-modules/index.md)** for the ultimate customization toolkit. Additionally, find detailed, device-specific rooting guides for **[Pixel](../rooting-guides/how-to-root-pixel-phone.md)**, **[Samsung](../rooting-guides/how-to-root-samsung-phone.md)**, **[Xiaomi](../rooting-guides/how-to-root-xiaomi-phone.md)**, and other major brands.
+### 高级用户
+- **精通 ADB 命令** - 学习必备的 ADB 命令，实现强大的设备控制与故障排除。
+- **Android 系统架构** - 更深入地理解 Android 操作系统的运作方式。
+- **Magisk 模块开发** - 创建自己的自定义 Magisk 模块，扩展设备功能。
+- **第三方 Recovery 使用** - 掌握 TWRP 及其他第三方 Recovery 系统的使用，进行刷入与维护。
+
+---
+
+## 开发与技术指南
+
+### Root 开发
+- **创建 Magisk 模块** *（即将推出）* - 构建完全符合你特定需求的定制模块。
+- **LSPosed 模块开发** *（即将推出）* - 开发 Xposed framework 模块，实现深度系统定制。
+- **安全测试 Root 应用** *（即将推出）* - 搭建安全的 root 应用测试环境。
+
+### 系统修改
+- **系统分区编辑** *（即将推出）* - 对系统分区执行高级修改。
+- **Build.prop 修改** *（即将推出）* - 调整系统属性以改变设备行为。
+- **Logcat 分析** *（即将推出）* - 使用 logcat 调试和诊断系统问题。
+
+---
+
+## 社区与资源
+
+### 官方项目链接
+- **[GitHub 仓库](https://github.com/awesome-android-root/awesome-android-root)** - 访问源代码、报告问题并为项目做出贡献。
+- **[Twitter/X](https://x.com/awsm_and_root)** - 了解最新的项目动态与社区亮点。
+
+### 重要外部资源
+- **[XDA Developers](https://forum.xda-developers.com/)** - 最大的 Android 开发与讨论社区。
+- **[Android 开发者文档](https://developer.android.com/)** - Google 官方文档与 API。
+- **[ADB 教程](https://www.xda-developers.com/install-adb-windows-macos-linux/)** - 在任何操作系统上安装和使用 ADB 的完整指南。
+- **[Magisk 官方](https://github.com/topjohnwu/Magisk)** - Magisk 的官方仓库与文档。
+- **[KernelSU 项目](https://kernelsu.org/)** - KernelSU root 方案的官方文档。
+
+### 获取帮助与支持
+求助时，请提供以下信息，以便我们高效地解决你的问题：
+- **设备型号**：确切的型号和制造商。
+- **Android 版本**：你当前的 Android 版本和安全补丁级别。
+- **Root 方案**：你正在使用的 root 解决方案（如 Magisk、KernelSU、APatch）及其版本。
+- **错误详情**：你遇到的具体错误信息或症状。
+- **截图**：如有适用，提供问题的视觉证据。
+- **已尝试的步骤**：你为解决问题已经尝试过的操作摘要。
+
+---
+
+---
+
+## 参与贡献我们的指南
+
+帮助我们构建最全面的 Android 指南合集。你的专业知识和贡献对项目的成功至关重要。
+
+### 贡献方式
+- **[报告问题](https://github.com/awesome-android-root/awesome-android-root/issues)** - 告知我们任何错误或过时的信息。
+- **[建议新指南](https://github.com/awesome-android-root/awesome-android-root/discussions)** - 请求撰写你希望看到的主题教程。
+- **[撰写指南](https://github.com/awesome-android-root/awesome-android-root?tab=contributing-ov-file)** - 通过编写新指南分享你的知识。
+- **[提交截图](https://github.com/awesome-android-root/awesome-android-root/discussions)** - 用清晰有用的图片完善现有指南。
+- **[为仓库加星](https://github.com/awesome-android-root/awesome-android-root)** - 表示你的支持并帮助提升项目的知名度。
+
+### 指南撰写规范
+为保持质量与一致性，贡献时请遵守以下要求：
+- **设备兼容性**：尽可能在多台设备上测试操作步骤。
+- **清晰的截图**：提供视觉辅助，说明复杂步骤。
+- **安全警告**：清楚标明潜在风险和必要的预防措施。
+- **更新频率**：确保内容与最新软件版本保持同步。
+- **目标受众**：注明面向的技能水平（初学者或高级）。
+
+---
+
+## 快速导航
+
+**刚开始接触 Android Root？** 从这些基础指南开始：
+1. **[完整 Android Root 指南](../rooting-guides/)** - 掌握 root 的基础知识。
+2. **[Android 广告拦截](./android-adblocking.md)** - 从一开始就增强你的隐私。
+3. **[移除臃肿软件](./android-apps-debloating.md)** - 清理设备并提升性能。
+
+**高级用户：** 探索我们的 **[300+ Root 应用合集](../apps-and-modules/index.md)**，获得终极定制工具箱。此外，还可查阅针对 **[Pixel](../rooting-guides/how-to-root-pixel-phone.md)**、**[Samsung](../rooting-guides/how-to-root-samsung-phone.md)**、**[Xiaomi](../rooting-guides/how-to-root-xiaomi-phone.md)** 及其他主要品牌的详细设备专属 root 指南。
 
 ---

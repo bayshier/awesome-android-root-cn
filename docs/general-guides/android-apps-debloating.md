@@ -1,6 +1,6 @@
 ---
-title: "Android Debloating"
-description: "Safely remove Android bloatware using App Manager and Canta. Step-by-step tutorial with safety tips."
+title: "Android 精简预装"
+description: "使用 App Manager 和 Canta 安全移除 Android 预装软件。包含安全提示的分步教程。"
 head:
   - - meta
     - name: author
@@ -13,10 +13,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: "Complete Guide: Remove Android Bloatware Safely with App Manager & Canta"
+      content: "完整指南：使用 App Manager 与 Canta 安全移除 Android 预装软件"
   - - meta
     - property: og:description
-      content: "Safely remove Android bloatware using App Manager and Canta. Step-by-step tutorial with safety tips."
+      content: "使用 App Manager 和 Canta 安全移除 Android 预装软件。包含安全提示的分步教程。"
   - - meta
     - property: og:image
       content: https://awesome-android-root.zhoe.org/images/og/android-debloating.png
@@ -31,10 +31,10 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: "Complete Guide: Remove Android Bloatware Safely with App Manager & Canta"
+      content: "完整指南：使用 App Manager 与 Canta 安全移除 Android 预装软件"
   - - meta
     - name: twitter:description
-      content: "Learn how to safely remove Android bloatware using App Manager and Canta. Step-by-step tutorial with screenshots, safety tips, and app alternatives."
+      content: "了解如何使用 App Manager 和 Canta 安全移除 Android 预装软件。包含截图、安全提示和替代应用推荐的分步教程。"
   - - meta
     - name: twitter:site
       content: "@awsm_and_root"
@@ -46,7 +46,7 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og/android-debloating.png
   - - meta
     - name: twitter:image:alt
-      content: Android Debloating Guide - Remove Bloatware Safely
+      content: Android 精简预装指南 - 安全移除预装软件
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -58,323 +58,323 @@ head:
       href: https://awesome-android-root.zhoe.org/general-guides/android-apps-debloating
 ---
 
-# How to Remove Bloatware Safely Using App Manager or Canta
+# 如何使用 App Manager 或 Canta 安全移除预装软件
 
-Android devices often come loaded with unnecessary pre-installed apps (bloatware) that consume storage, drain battery, and may track your privacy. This guide covers two powerful tools for safely removing bloatware: **App Manager** and **Canta**.
+Android 设备通常预装了大量不必要的应用（预装软件/bloatware），它们占用存储空间、消耗电量，还可能侵犯你的隐私。本指南介绍两款安全移除预装软件的强大工具：**App Manager** 和 **Canta**。
 
-## What is Bloatware?
+## 什么是预装软件（Bloatware）？
 
-Bloatware refers to pre-installed applications that:
-- Come bundled with your device by the manufacturer
-- Cannot be easily uninstalled through normal means
-- Often include tracking, advertising, or unnecessary functionality
-- Consume system resources even when not actively used
-- May include Google apps, social media apps, carrier apps, and OEM utilities
+预装软件是指那些：
+- 由厂商随机附带的应用
+- 无法通过常规方式轻松卸载
+- 通常包含追踪、广告或无用功能
+- 即使未被主动使用也会消耗系统资源
+- 可能包括 Google 应用、社交媒体应用、运营商应用和 OEM 工具
 
-## Important Safety Information
+## 重要安全信息
 
-⚠️ **WARNING**: Always create a backup before debloating and understand the risks:
+⚠️ **警告**：精简预装前务必备份，并了解以下风险：
 
-- **Not truly deleted**: System apps remain in `/system` partition but are disabled for users
-- **Factory reset restores**: All debloated apps return after factory reset
-- **Dependency risks**: Some system functions may depend on these apps
-- **Recovery possible**: Most changes can be reversed using the same tools
+- **并非真正删除**：系统应用仍保留在 `/system` 分区中，只是对用户禁用
+- **恢复出厂设置会还原**：所有被精简的应用在恢复出厂设置后会重新出现
+- **依赖风险**：某些系统功能可能依赖这些应用
+- **可以恢复**：大多数更改都可以用同样的工具撤销
 
-## Method 1: App Manager Debloater
+## 方法 1：App Manager 精简工具
 
-App Manager includes a built-in debloater that uses the comprehensive [Android Debloat List](https://github.com/MuntashirAkon/android-debloat-list) project for intelligent recommendations. Find it in our [app management collection](../apps-and-modules/system#app-package-management).
+App Manager 内置精简工具，使用全面的 [Android Debloat List](https://github.com/MuntashirAkon/android-debloat-list) 项目提供智能推荐。可在我们的[应用管理合集](../apps-and-modules/system#app-package-management)中找到。
 
-### Requirements
+### 系统要求
 
-- **App Manager v4.0.0+** installed
-- **Root access** ([rooting guide](../rooting-guides/)) OR **ADB debugging** enabled ([setup guide](../rooting-guides/how-to-unlock-bootloader.md#step-5-test-adb-connection))
-- Android 5.0+ (recommended Android 7.0+)
+- 已安装 **App Manager v4.0.0+**
+- **root 权限**（[root 教程](../rooting-guides/)）或启用 **ADB 调试**（[设置指南](../rooting-guides/how-to-unlock-bootloader.md#步骤-5测试-adb-连接)）
+- Android 5.0+（推荐 Android 7.0+）
 
-### Setup Instructions
+### 设置说明
 
-#### For Root Users
-1. Install App Manager from [F-Droid](https://f-droid.org/packages/io.github.muntashirakon.AppManager) or [GitHub](https://github.com/MuntashirAkon/AppManager/releases)
-2. Grant root permission when prompted
-3. Open App Manager - it will automatically detect root access
+#### root 用户
+1. 从 [F-Droid](https://f-droid.org/packages/io.github.muntashirakon.AppManager) 或 [GitHub](https://github.com/MuntashirAkon/AppManager/releases) 安装 App Manager
+2. 在提示时授予 root 权限
+3. 打开 App Manager - 它会自动检测 root 权限
 
-#### For ADB Users
-1. Enable **Developer Options** and **USB Debugging**
-2. Connect device to PC and run:
+#### ADB 用户
+1. 启用**开发者选项**和 **USB 调试**
+2. 将设备连接到电脑并运行：
    ```bash
    adb tcpip 5555
    adb connect <device-ip>:5555
    ```
-3. Set App Manager's operation mode to **ADB over TCP**
+3. 将 App Manager 的操作模式设置为 **ADB over TCP**
 
-### Using App Manager Debloater
+### 使用 App Manager 精简工具
 
-#### Step 1: Access Debloater
-1. Open App Manager
-2. Tap the **three-dots menu** in top-right corner
-3. Select **Debloater**
+#### 第 1 步：进入精简工具
+1. 打开 App Manager
+2. 点击右上角的**三点菜单**
+3. 选择 **Debloater**
 
-#### Step 2: Review Bloatware Categories
-App Manager categorizes apps based on safety levels:
+#### 第 2 步：查看预装软件分类
+App Manager 按安全级别对应用进行分类：
 
-- **🟢 Safe (Recommended)**: Can be removed without issues
-- **🟡 Caution (Advanced)**: May break minor functionality
-- **🟠 Expert**: May break important features
-- **🔴 Unsafe**: High risk of system instability
+- **🟢 安全（推荐）**：可以移除，不会出问题
+- **🟡 谨慎（进阶）**：可能导致次要功能失效
+- **🟠 专家**：可能导致重要功能失效
+- **🔴 不安全**：系统不稳定风险高
 
-#### Step 3: Select Apps for Removal
-1. **Review descriptions**: Tap any app to see detailed information
-2. **Check alternatives**: Many entries suggest replacement apps
-3. **Start conservative**: Begin with "Safe" category only
-4. **Use filters**: Sort by OEM, Google, or carrier apps
+#### 第 3 步：选择要移除的应用
+1. **查看描述**：点击任意应用查看详细信息
+2. **检查替代方案**：许多条目会推荐替代应用
+3. **从保守开始**：先只处理"安全"类别
+4. **使用过滤器**：按 OEM、Google 或运营商应用排序
 
-#### Step 4: Remove Bloatware
-1. Select apps using checkboxes
-2. Tap **Uninstall** button at bottom
-3. Choose removal method:
-   - **Uninstall**: Removes for all users (recommended)
-   - **Disable**: Keeps app but prevents execution
+#### 第 4 步：移除预装软件
+1. 使用复选框选择应用
+2. 点击底部的**卸载**按钮
+3. 选择移除方式：
+   - **卸载**：对所有用户移除（推荐）
+   - **禁用**：保留应用但阻止其运行
 
-#### Step 5: Create Backup Profile (Optional)
-1. Go to **Profiles** page
-2. Create new profile with selected debloat apps
-3. Save for easy restoration if needed
+#### 第 5 步：创建备份配置（可选）
+1. 前往 **Profiles** 页面
+2. 用选定的精简应用创建新配置
+3. 保存以便需要时轻松恢复
 
-### Advanced Features
+### 高级功能
 
-#### Batch Operations
-- Remove multiple apps simultaneously
-- Export/import debloating configurations
-- Apply profiles across multiple devices
+#### 批量操作
+- 同时移除多个应用
+- 导出/导入精简配置
+- 在多台设备上应用配置
 
-#### Component Blocking
-For apps you can't fully remove:
-1. Open app in **App Details**
-2. Go to **Components** tabs
-3. Block specific **trackers** or **services**
-4. Apply rules to prevent background activity
+#### 组件拦截
+对于无法完全移除的应用：
+1. 在**应用详情**中打开该应用
+2. 前往 **Components** 标签页
+3. 拦截特定**追踪器**或**服务**
+4. 应用规则以阻止后台活动
 
-## Method 2: Canta (Shizuku-Based)
+## 方法 2：Canta（基于 Shizuku）
 
-Canta is a modern, user-friendly debloating tool that works without root using the Shizuku framework.
+Canta 是一款现代、易用的精简工具，借助 Shizuku 框架无需 root 即可工作。
 
-### Requirements
+### 系统要求
 
-- **Android 9.0+** (API level 28+)
-- **Shizuku** app installed and activated
-- **Canta** app installed
+- **Android 9.0+**（API 级别 28+）
+- 已安装并激活 **Shizuku** 应用
+- 已安装 **Canta** 应用
 
-### Setup Instructions
+### 设置说明
 
-#### Step 1: Install Shizuku
-1. Download [Shizuku](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api) from Play Store
-2. Enable **Developer Options** and **USB Debugging**
-3. Connect to PC and run: `adb shell sh /sdcard/Android/data/moe.shizuku.privileged.api/start.sh`
-4. Or use **Wireless ADB** in Android 11+
+#### 第 1 步：安装 Shizuku
+1. 从 Play Store 下载 [Shizuku](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
+2. 启用**开发者选项**和 **USB 调试**
+3. 连接电脑并运行：`adb shell sh /sdcard/Android/data/moe.shizuku.privileged.api/start.sh`
+4. 或在 Android 11+ 上使用**无线 ADB**
 
-#### Step 2: Install Canta  
-Download from:
+#### 第 2 步：安装 Canta  
+下载来源：
 - [F-Droid](https://f-droid.org/en/packages/io.github.samolego.canta/)
 - [GitHub Releases](https://github.com/samolego/Canta/releases)
-- [Google Play Store](https://play.google.com/store/apps/details?id=io.github.samolego.canta) (testing)
+- [Google Play Store](https://play.google.com/store/apps/details?id=io.github.samolego.canta)（测试中）
 
-### Using Canta
+### 使用 Canta
 
-#### Step 1: Verify Shizuku Connection
-1. Open Canta
-2. Ensure Shizuku permission is granted
-3. Check for green "Connected" status
+#### 第 1 步：验证 Shizuku 连接
+1. 打开 Canta
+2. 确保已授予 Shizuku 权限
+3. 检查是否显示绿色"已连接"状态
 
-#### Step 2: Browse and Filter Apps
-1. **Search**: Use search bar for specific apps
-2. **Filter**: Switch between All/System/User apps
-3. **Categories**: View by app type or OEM
+#### 第 2 步：浏览和筛选应用
+1. **搜索**：使用搜索栏查找特定应用
+2. **筛选**：在全部/系统/用户应用之间切换
+3. **分类**：按应用类型或 OEM 查看
 
-#### Step 3: Review App Information
-Canta shows detailed info for each app:
-- **Package name** and **description**
-- **Safety rating** from Universal Debloat List
-- **Alternative suggestions** when available
-- **Dependencies** and **warnings**
+#### 第 3 步：查看应用信息
+Canta 为每个应用显示详细信息：
+- **包名**和**描述**
+- 来自 Universal Debloat List 的**安全评级**
+- **替代建议**（如有）
+- **依赖关系**和**警告**
 
-#### Step 4: Remove Bloatware
-1. **Long-press** app or use **checkbox selection**
-2. Tap **trash/delete icon**
-3. Confirm removal in dialog
-4. Apps are uninstalled for current user
+#### 第 4 步：移除预装软件
+1. **长按**应用或使用**复选框选择**
+2. 点击**垃圾桶/删除图标**
+3. 在对话框中确认移除
+4. 应用将对当前用户卸载
 
-#### Step 5: Monitor Removed Apps
-- **"See uninstalled"** tab shows removed apps
-- **Restore** any app if issues occur
-- **Auto-detection** finds previously removed apps
+#### 第 5 步：监控已移除的应用
+- **"查看已卸载"** 标签页会显示已移除的应用
+- 如果出现问题，可**恢复**任意应用
+- **自动检测**可发现之前移除的应用
 
-### Advanced Canta Features
+### Canta 高级功能
 
-#### Batch Selection
-- **Select All** button for bulk operations
-- **Filter then select** for targeted removal
-- **Multi-select** with checkboxes
+#### 批量选择
+- **全选**按钮用于批量操作
+- **先筛选再选择**实现定向移除
+- 使用复选框**多选**
 
-#### Safety Features
-- **No bootloop risk** - system partition unchanged
-- **Restore capability** - easily undo changes
-- **Dependency warnings** - alerts about app relationships
+#### 安全特性
+- **没有无限重启风险** - 系统分区不会被改动
+- **可恢复** - 轻松撤销更改
+- **依赖警告** - 提示应用之间的关联
 
-## Best Practices for Safe Debloating
+## 安全精简预装的最佳实践
 
-### Pre-Debloating Checklist
+### 精简前检查清单
 
-1. **✅ Research thoroughly**: Understand what each app does
-2. **✅ Start small**: Remove only obvious bloatware initially
-3. **✅ Create backups**: Note removed apps for restoration
-4. **✅ Test functionality**: Verify core features work after removal
-5. **✅ Keep tools available**: Maintain ADB/root access for fixes
+1. **✅ 充分调研**：了解每个应用的用途
+2. **✅ 从小着手**：初期只移除明显的预装软件
+3. **✅ 创建备份**：记录已移除的应用以便恢复
+4. **✅ 测试功能**：移除后验证核心功能正常
+5. **✅ 保留工具**：保持 ADB/root 权限以便修复
 
-### Recommended Removal Order
+### 推荐移除顺序
 
-#### Phase 1: Obviously Safe Apps
-- **Social media** (Facebook, Instagram, Twitter)
-- **Games** and **entertainment** apps
-- **Carrier bloatware** (carrier-specific apps)
-- **OEM duplicates** (when Google equivalent exists)
+#### 阶段 1：明显安全的应用
+- **社交媒体**（Facebook、Instagram、Twitter）
+- **游戏**和**娱乐**应用
+- **运营商预装软件**（运营商专属应用）
+- **OEM 重复应用**（存在 Google 等价应用时）
 
-#### Phase 2: Advanced Removals
-- **Google apps** you don't use (Google Books, Movies, etc.)
-- **Assistant/AI features** (Google Assistant, Bixby)
-- **Cloud services** you don't need (Google Drive if using alternatives)
+#### 阶段 2：进阶移除
+- 不使用的 **Google 应用**（Google 图书、Movies 等）
+- **助手/AI 功能**（Google Assistant、Bixby）
+- 不需要的**云服务**（如已使用替代品，则移除 Google Drive）
 
-#### Phase 3: Expert Level
-- **System UI elements** (certain themes, wallpapers)
-- **Backup/sync services** (if using alternatives)
-- **Accessibility services** (if unused)
+#### 阶段 3：专家级
+- **系统 UI 元素**（某些主题、壁纸）
+- **备份/同步服务**（如已使用替代品）
+- **无障碍服务**（如未使用）
 
-### Apps to NEVER Remove
+### 绝不可移除的应用
 
-❌ **Critical System Components**:
+❌ **关键系统组件**：
 - Android System/System UI
-- Phone/Dialer apps
-- Settings app
-- Package installer
-- Core Google Play Services (if using Play Store)
+- 电话/拨号应用
+- 设置应用
+- 软件包安装器
+- 核心 Google Play 服务（如果使用 Play Store）
 
-## Troubleshooting Common Issues
+## 常见问题故障排除
 
-### App Still Appears After Removal
-**Cause**: App disabled but not fully removed  
-**Solution**: 
-- Try "Uninstall for all users" in App Manager
-- Use ADB command: `adb shell pm uninstall --user 0 package.name`
+### 移除后应用仍然出现
+**原因**：应用被禁用但未完全移除  
+**解决方案**：
+- 在 App Manager 中尝试"为所有用户卸载"
+- 使用 ADB 命令：`adb shell pm uninstall --user 0 package.name`
 
-### Feature Stopped Working
-**Cause**: Removed dependency app  
-**Solution**:
-1. Check recently removed apps
-2. Restore most recent removals one by one
-3. Test functionality after each restoration
+### 功能停止工作
+**原因**：移除了被依赖的应用
+**解决方案**：
+1. 检查最近移除的应用
+2. 逐个恢复最近的移除项
+3. 每次恢复后测试功能
 
-### Boot Loop (Rare)
-**Cause**: Critical system app removed  
-**Solution**:
-1. Boot into recovery mode (Power + Volume buttons)
-2. Perform factory reset
-3. All removed apps will be restored
+### 无限重启（罕见）
+**原因**：移除了关键系统应用
+**解决方案**：
+1. 启动到 Recovery 模式（电源键 + 音量键）
+2. 执行恢复出厂设置
+3. 所有被移除的应用将被还原
 
-### ADB Connection Issues
-**Cause**: Network or permission problems  
-**Solution**:
-- Restart ADB daemon: `adb kill-server && adb start-server`
-- Re-enable USB debugging
-- Use different USB port/cable
+### ADB 连接问题
+**原因**：网络或权限问题  
+**解决方案**：
+- 重启 ADB 守护进程：`adb kill-server && adb start-server`
+- 重新启用 USB 调试
+- 更换 USB 端口/数据线
 
-## Alternative Apps and Replacements
+## 替代应用与替换方案
 
-When removing OEM apps, consider these open-source alternatives (explore more in our [apps collection](../apps-and-modules/)):
+移除 OEM 应用时，可以考虑以下开源替代品（在我们的[应用合集](../apps-and-modules/)中探索更多）：
 
-### Core Apps
-- **Launcher**: [Lawnchair](https://lawnchair.app/), [Nova Launcher](https://novalauncher.com/) (see [more launchers](../apps-and-modules/customization#launchers-home-screen))
-- **Gallery**: [Fossify Gallery](https://github.com/FossifyOrg/Gallery)
-- **File Manager**: [Material Files](https://github.com/zhanghai/MaterialFiles) (see [file managers](../apps-and-modules/file-management#file-managers))
-- **Camera**: [Open Camera](https://opencamera.sourceforge.io/)
+### 核心应用
+- **桌面启动器**：[Lawnchair](https://lawnchair.app/)、[Nova Launcher](https://novalauncher.com/)（参见[更多启动器](../apps-and-modules/customization#launchers-home-screen)）
+- **相册**：[Fossify Gallery](https://github.com/FossifyOrg/Gallery)
+- **文件管理器**：[Material Files](https://github.com/zhanghai/MaterialFiles)（参见[文件管理器](../apps-and-modules/file-management#文件管理器)）
+- **相机**：[Open Camera](https://opencamera.sourceforge.io/)
 
-### Communication
-- **SMS**: [QUIK SMS](https://github.com/quik-sms/quik)
-- **Email**: [FairEmail](https://email.faircode.eu/), [K-9 Mail](https://k9mail.app/)
-- **Browser**: [Firefox](https://www.mozilla.org/en-US/firefox/mobile/), [Brave](https://play.google.com/store/apps/details?id=com.brave.browser)
+### 通信
+- **短信**：[QUIK SMS](https://github.com/quik-sms/quik)
+- **邮件**：[FairEmail](https://email.faircode.eu/)、[K-9 Mail](https://k9mail.app/)
+- **浏览器**：[Firefox](https://www.mozilla.org/en-US/firefox/mobile/)、[Brave](https://play.google.com/store/apps/details?id=com.brave.browser)
 
-### Productivity
-- **Notes**: [Standard Notes](https://standardnotes.com/), [Joplin](https://joplinapp.org/)
-- **Calendar**: [Simple Calendar](https://github.com/SimpleMobileTools/Simple-Calendar)
-- **Keyboard**: [HeliBoard](https://github.com/HeliBorg/HeliBoard)
+### 生产力
+- **笔记**：[Standard Notes](https://standardnotes.com/)、[Joplin](https://joplinapp.org/)
+- **日历**：[Simple Calendar](https://github.com/SimpleMobileTools/Simple-Calendar)
+- **键盘**：[HeliBoard](https://github.com/HeliBorg/HeliBoard)
 
-## Monitoring and Maintenance
+## 监控与维护
 
-### Regular Maintenance Tasks
+### 定期维护任务
 
-1. **Review new bloatware**: Check after system updates
-2. **Monitor battery usage**: Ensure removed apps aren't running
-3. **Update debloat lists**: Keep App Manager updated for latest recommendations
-4. **Test core functions**: Periodically verify all essential features work
+1. **检查新增预装软件**：系统更新后进行检查
+2. **监控电量消耗**：确保被移除的应用没有在运行
+3. **更新精简列表**：保持 App Manager 为最新版本以获取最新推荐
+4. **测试核心功能**：定期验证所有重要功能正常
 
-### Performance Benefits
+### 性能收益
 
-After successful debloating, you should notice:
-- **Faster boot times**
-- **Improved battery life** (also see [battery optimization apps](../apps-and-modules/performance))
-- **More available storage**
-- **Reduced background data usage**
-- **Fewer unwanted notifications**
+成功精简预装后，你应该会注意到：
+- **开机更快**
+- **续航提升**（另见[电池优化应用](../apps-and-modules/performance)）
+- **可用存储更多**
+- **后台流量减少**
+- **垃圾通知更少**
 
-For additional performance improvements, check out [performance optimization apps](../apps-and-modules/performance#performance-optimization).
+如需进一步提升性能，请查看[性能优化应用](../apps-and-modules/performance#性能优化)。
 
-## Advanced Techniques
+## 高级技巧
 
-### Using Profiles in App Manager
+### 在 App Manager 中使用配置
 
-Create reusable debloating profiles:
+创建可复用的精简配置：
 
-1. **Create Profile**: Go to Profiles → New Profile
-2. **Add Apps**: Select bloatware packages
-3. **Configure Actions**: Set to "Uninstall" or "Disable"
-4. **Save and Apply**: Store profile for future use
-5. **Export Profile**: Share configurations across devices
+1. **创建配置**：前往 Profiles → New Profile
+2. **添加应用**：选择预装软件包
+3. **配置操作**：设为"卸载"或"禁用"
+4. **保存并应用**：保存配置以备将来使用
+5. **导出配置**：在多台设备间共享配置
 
-### Command Line Debloating
+### 命令行精简
 
-For advanced users, direct ADB commands:
+面向高级用户的直接 ADB 命令：
 
 ```bash
-# List all packages
+# 列出所有软件包
 adb shell pm list packages
 
-# Uninstall specific package
+# 卸载特定软件包
 adb shell pm uninstall --user 0 com.example.bloatware
 
-# Disable package
+# 禁用软件包
 adb shell pm disable-user --user 0 com.example.bloatware
 
-# Restore package
+# 恢复软件包
 adb shell cmd package install-existing com.example.bloatware
 ```
 
-## Conclusion
+## 结语
 
-Both App Manager and Canta provide excellent solutions for safe Android debloating:
+App Manager 和 Canta 都为安全的 Android 精简预装提供了出色的方案：
 
-- **Choose App Manager** for comprehensive features, root users, or advanced customization
-- **Choose Canta** for simplicity, modern UI, and no-root requirements
+- 需要全面功能、是 root 用户或需要高级自定义时，**选择 App Manager**
+- 追求简洁、现代界面且无需 root 时，**选择 Canta**
 
-Remember to:
-- Start conservatively with obvious bloatware
-- Research each app before removal
-- Keep restoration tools available
-- Test functionality after debloating
+请记得：
+- 从明显的预装软件开始，保守行事
+- 移除前调研每个应用
+- 保留恢复工具
+- 精简后测试功能
 
-With proper care and the right tools, you can significantly improve your Android device's performance and privacy by removing unnecessary bloatware while maintaining system stability.
+只要谨慎操作并使用合适的工具，你就可以在保持系统稳定的同时，通过移除不必要的预装软件，显著提升 Android 设备的性能和隐私。
 
-## Related Guides
+## 相关指南
 
-- [How to Root Android Devices](../rooting-guides/) - Get root access for advanced debloating
-- [ADB Setup Guide](../rooting-guides/how-to-unlock-bootloader.md#step-5-test-adb-connection) - Enable USB debugging
-- [System-Wide Ad Blocking](./android-adblocking.md) - Block ads after debloating
-- [App Management Tools](../apps-and-modules/system#app-package-management) - More app control solutions
-- [Performance Optimization Apps](../apps-and-modules/performance#performance-optimization) - Further speed improvements
-- [Backup Solutions](../apps-and-modules/backup#backup-restore) - Protect your data before debloating
+- [Android 设备 Root 教程](../rooting-guides/) - 获取 root 权限以进行深度精简
+- [ADB 设置指南](../rooting-guides/how-to-unlock-bootloader.md#步骤-5测试-adb-连接) - 启用 USB 调试
+- [全系统广告拦截](./android-adblocking.md) - 精简后拦截广告
+- [应用管理工具](../apps-and-modules/system#app-package-management) - 更多应用控制方案
+- [性能优化应用](../apps-and-modules/performance#性能优化) - 进一步提速
+- [备份方案](../apps-and-modules/backup#backup-restore) - 精简前保护你的数据

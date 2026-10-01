@@ -4,8 +4,8 @@
       v-show="visible"
       class="back-to-top"
       type="button"
-      aria-label="Back to top"
-      title="Back to top"
+      aria-label="回到顶部"
+      title="回到顶部"
       @click="scrollToTop"
     >
       <svg
@@ -21,7 +21,7 @@
       >
         <path d="M5 15l7-7 7 7" />
       </svg>
-      <span class="sr-only">Back to top</span>
+      <span class="sr-only">回到顶部</span>
     </button>
   </transition>
 </template>

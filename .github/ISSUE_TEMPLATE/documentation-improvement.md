@@ -1,46 +1,46 @@
 ---
-name: Documentation Improvement
-about: Suggest improvements to guides or documentation
+name: 文档改进
+about: 对指南或文档提出改进建议
 title: '[DOCS] '
 labels: 'documentation'
 assignees: ''
 ---
 
-## Documentation Issue
+## 文档问题
 
-**Affected Page/Guide:** 
-(Which guide or documentation page needs improvement?)
+**受影响的页面/指南：** 
+（哪个指南或文档页面需要改进？）
 
-**Section:** 
-(Specific section if applicable)
+**章节：** 
+（如适用，请指明具体章节）
 
-## Issue Description
+## 问题描述
 
-**What's wrong or missing?**
-(Describe the problem with current documentation)
+**有什么错误或缺失？**
+（描述当前文档存在的问题）
 
-**What needs to be improved?**
-- [ ] Information is outdated
-- [ ] Information is incorrect
-- [ ] Missing important details
-- [ ] Unclear instructions
-- [ ] Needs more examples
-- [ ] Other (describe below)
+**需要改进什么？**
+- [ ] 信息已过时
+- [ ] 信息有误
+- [ ] 缺少重要细节
+- [ ] 说明不清晰
+- [ ] 需要更多示例
+- [ ] 其他（在下方描述）
 
-## Suggested Improvement
+## 改进建议
 
-**How should it be improved?**
-(Describe what should be added, changed, or clarified)
+**应该如何改进？**
+（描述应添加、更改或澄清的内容）
 
-**Additional Information:**
-(Any sources, examples, or details that would help)
+**补充信息：**
+（任何有帮助的来源、示例或细节）
 
-## Your Environment (if relevant)
+## 你的环境（如相关）
 
-**Device:** 
-**Android Version:** 
-**Root Method:** (Magisk/KernelSU/APatch)
+**设备：** 
+**Android 版本：** 
+**Root 方式：**（Magisk/KernelSU/APatch）
 
-## Additional Context
+## 补充信息
 
-(Screenshots, links to external resources, etc.)
+（截图、外部资源链接等）

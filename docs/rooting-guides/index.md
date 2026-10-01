@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Android Rooting Guide
-description: "The ultimate Android rooting guide. Learn Magisk, KernelSU & APatch with step-by-step instructions, device-specific guides, and root-hiding techniques."
+title: Android Root 指南
+description: "最全面的 Android Root 指南。通过分步说明学习 Magisk、KernelSU 与 APatch，包含机型专属指南与 root 隐藏技巧。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: Android Rooting Guide | Awesome Android Root
+      content: Android Root 指南 | Awesome Android Root
   - - meta
     - property: og:description
-      content: The ultimate Android rooting guide covering Magisk, KernelSU, APatch installation with device-specific tutorials for Pixel, Samsung, Xiaomi, OnePlus & more.
+      content: 最全面的 Android Root 指南，涵盖 Magisk、KernelSU、APatch 的安装方法，并为 Pixel、Samsung、Xiaomi、OnePlus 等机型提供专属教程。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/  
@@ -26,19 +26,19 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: Android Rooting Guide | Awesome Android Root
+      content: Android Root 指南 | Awesome Android Root
   - - meta
     - name: twitter:description
-      content: Complete Android rooting tutorial with Magisk, KernelSU, APatch guides and device-specific instructions for safe rooting. Includes Vector/LSPosed framework & Play Integrity bypass.
+      content: 完整的 Android root 教程，包含 Magisk、KernelSU、APatch 指南与机型专属说明，安全刷入 root。涵盖 Vector/LSPosed 框架与 Play Integrity 绕过。
   - - meta
     - name: author
-      content: Awesome Android Root Project
+      content: Awesome Android Root 项目
   - - meta
     - property: article:author
       content: https://github.com/awesome-android-root/awesome-android-root  
   - - meta
     - property: article:section
-      content: Android Rooting Tutorials
+      content: Android Root 教程
   - - meta
     - property: article:tag
       content: Android Root
@@ -47,28 +47,28 @@ head:
       content: Magisk
   - - meta
     - property: article:tag
-      content: KernelSU Tutorial
+      content: KernelSU 教程
   - - meta
     - property: article:tag
-      content: APatch Rooting
+      content: APatch Root
   - - meta
     - property: article:tag
-      content: Bootloader Unlock
+      content: 解锁 Bootloader
   - - meta
     - property: article:tag
-      content: Custom Recovery
+      content: 第三方 Recovery
   - - meta
     - property: article:tag
-      content: Vector Framework
+      content: Vector 框架
   - - meta
     - property: article:tag
-      content: LSPosed Framework
+      content: LSPosed 框架
   - - meta
     - property: article:tag
       content: Play Integrity Fix
   - - meta
     - property: article:tag
-      content: Android Customization
+      content: Android 深度定制
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -84,8 +84,8 @@ head:
       {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        "name": "Android Rooting Guide",
-        "description": "Complete tutorial for rooting Android devices using Magisk, KernelSU, or APatch with safety practices and Play Integrity bypass",
+        "name": "Android Root 指南",
+        "description": "使用 Magisk、KernelSU 或 APatch root Android 设备的完整教程，包含安全实践与 Play Integrity 绕过方法",
         "totalTime": "PT2H",
         "estimatedCost": {
           "@type": "MonetaryAmount",
@@ -93,540 +93,540 @@ head:
           "value": "0"
         },
         "tool": [
-          {"@type": "HowToTool", "name": "Android Device"},
-          {"@type": "HowToTool", "name": "Computer with ADB/Fastboot"},
-          {"@type": "HowToTool", "name": "USB Cable (data-capable)"}
+          {"@type": "HowToTool", "name": "Android 设备"},
+          {"@type": "HowToTool", "name": "装有 ADB/Fastboot 的电脑"},
+          {"@type": "HowToTool", "name": "USB 数据线（支持数据传输）"}
         ],
         "supply": [
           {"@type": "HowToSupply", "name": "Magisk APK"},
-          {"@type": "HowToSupply", "name": "Custom Recovery (TWRP/OrangeFox)"},
-          {"@type": "HowToSupply", "name": "Stock Boot/Init_Boot Image"}
+          {"@type": "HowToSupply", "name": "第三方 Recovery（TWRP/OrangeFox）"},
+          {"@type": "HowToSupply", "name": "官方 Boot/Init_Boot 镜像"}
         ],
         "step": [
           {
             "@type": "HowToStep",
-            "name": "Prepare Device and Backup Data",
-            "text": "Enable Developer Options, backup all important data, and charge device to 50%+"
+            "name": "准备设备并备份数据",
+            "text": "启用开发者选项，备份所有重要数据，并将设备充电至 50% 以上"
           },
           {
             "@type": "HowToStep", 
-            "name": "Unlock Bootloader",
-            "text": "Enable OEM unlocking and unlock bootloader using fastboot commands"
+            "name": "解锁 Bootloader",
+            "text": "启用 OEM 解锁，并使用 fastboot 命令解锁 Bootloader"
           },
           {
             "@type": "HowToStep",
-            "name": "Install Custom Recovery (Optional)",
-            "text": "Flash TWRP or OrangeFox for advanced recovery features"
+            "name": "安装第三方 Recovery（可选）",
+            "text": "刷入 TWRP 或 OrangeFox 以获得高级 Recovery 功能"
           },
           {
             "@type": "HowToStep",
-            "name": "Patch & Flash Boot Image",
-            "text": "Patch stock boot.img or init_boot.img with Magisk/KernelSU/APatch, then flash via fastboot"
+            "name": "修补并刷入 Boot 镜像",
+            "text": "使用 Magisk/KernelSU/APatch 修补官方 boot.img 或 init_boot.img，然后通过 fastboot 刷入"
           },
           {
             "@type": "HowToStep",
-            "name": "Post-Root Setup & Hide Root",
-            "text": "Install root manager, configure DenyList, set up Play Integrity Fix modules for banking apps"
+            "name": "Root 后设置与隐藏 Root",
+            "text": "安装 root 管理器，配置 DenyList，并为银行类应用设置 Play Integrity Fix 模块"
           }
         ]
       }
 ---
 
-# Android Rooting Guide
+# Android Root 指南
 
-Master Android rooting with comprehensive tutorials covering bootloader unlocking, root installation, and advanced customization techniques.
+通过全面教程掌握 Android root：涵盖解锁 Bootloader、安装 root 以及高级定制技巧。
 
-## Quick Navigation
+## 快速导航
 
 > [!TIP]
-> **Want guide for a specific device?**
-> Select your manufacturer in the [**Device-Specific Guides section ↗**](#device-specific-guides)
+> **想找特定机型的指南？**
+> 请在[**机型专属指南部分 ↗**](#机型专属指南)中选择你的厂商
 
-::: info Steps
-**Ready to begin?** Choose your path:
-- [Prerequisites and Safety](#prerequisites-and-safety) - Critical preparations
-- [Universal Rooting Process](#universal-rooting-process) - Four-step guide for all devices
-- [Device-Specific Guides](#device-specific-guides) - Tailored instructions for your device
-- [Root Method Comparison](#choosing-a-root-method) - Magisk vs KernelSU vs APatch
-- [Root Without Unlocking the Bootloader](./root-without-unlocking-bootloader.md) - GhostLock temporary root
+::: info 步骤
+**准备好了吗？** 选择你的路径：
+- [前提条件与安全须知](#前提条件与安全须知) - 关键准备工作
+- [通用 Root 流程](#通用-root-流程) - 适用于所有设备的四步指南
+- [机型专属指南](#机型专属指南) - 为你的设备量身定制的说明
+- [Root 方案对比](#选择-root-方案) - Magisk vs KernelSU vs APatch
+- [无需解锁 Bootloader 的 Root](./root-without-unlocking-bootloader.md) - GhostLock 临时 root
 :::
 
 > [!NOTE]
-> **Need help?**
-> Visit [Troubleshooting](#troubleshooting) or [FAQ](../faqs.md)
+> **需要帮助？**
+> 请访问[故障排除](#故障排除)或[常见问题](../faqs.md)
 
 ---
 
-## Understanding Root Access
+## 理解 Root 权限
 
-Root access grants **superuser (administrator) privileges** on Android, providing complete control over your device's operating system and hardware.
+Root 权限授予 Android 上的**超级用户（管理员）特权**，让你完全掌控设备的操作系统和硬件。
 
-### What Root Enables
+### Root 能做什么
 
-- **System-level control** over files, processes, and hardware
-- **Bypass manufacturer restrictions** on any Android version
-- **Install powerful apps** requiring deep system integration (see [Root Apps](../apps-and-modules/))
-- **Modify core system files** and customize every aspect via Magic Mount, OverlayFS, or KPM
-- **Access hidden hardware features** and advanced kernel-level configurations
-- **Kernel-level code injection** via APatch KPM (inline-hook, syscall-table-hook)
-- **Fine-grained root access control** via KernelSU App Profiles (uid, gid, capabilities, SELinux)
+- **系统级控制**，掌控文件、进程与硬件
+- **绕过厂商限制**，适用于任何 Android 版本
+- **安装功能强大的应用**，它们需要深度系统集成（参见 [Root 应用](../apps-and-modules/)）
+- **修改核心系统文件**，并通过 Magic Mount、OverlayFS 或 KPM 定制系统的方方面面
+- **访问隐藏的硬件功能**与高级内核级配置
+- 通过 APatch KPM 实现**内核级代码注入**（inline-hook、syscall-table-hook）
+- 通过 KernelSU App Profiles（uid、gid、capabilities、SELinux）实现**细粒度的 root 权限控制**
 
-### Benefits vs Risks
+### 收益与风险
 
-| Benefits | Risks |
+| 收益 | 风险 |
 |----------|-------|
-| Complete device control | Warranty void (usually permanent) |
-| [System-wide ad blocking](../general-guides/android-adblocking.md) | Reduced security if misconfigured |
-| [Performance tuning](../apps-and-modules/performance#performance-optimization) | Banking apps require active hiding ([solutions](../troubleshooting.md#play-integrity-and-banking-apps)) |
-| Privacy enhancements (firewall, permission control) | OTA updates require manual re-patching |
-| [Bloatware removal](../general-guides/android-apps-debloating.md) | Potential for device bricking |
-| Full app + data backups (Swift Backup, Neo Backup) | Play Integrity may break unpredictably |
-| Kernel-level tweaks (CPU, GPU, scheduler) | Strong Integrity generally unachievable on unlocked devices |
-| Custom ROM installation freedom | Bootloader unlock wipes ALL data |
+| 完全掌控设备 | 保修失效（通常是永久性的） |
+| [系统级广告拦截](../general-guides/android-adblocking.md) | 配置不当会降低安全性 |
+| [性能调优](../apps-and-modules/performance#性能优化) | 银行类应用需要主动隐藏 root（[解决方案](../troubleshooting.md#play-integrity-与银行类应用)） |
+| 隐私增强（防火墙、权限控制） | OTA 更新需要手动重新修补 |
+| [精简预装软件](../general-guides/android-apps-debloating.md) | 设备存在变砖风险 |
+| 完整的应用+数据备份（Swift Backup、Neo Backup） | Play Integrity 可能随时意外失效 |
+| 内核级调整（CPU、GPU、调度器） | 已解锁设备通常无法达到 Strong Integrity |
+| 自由安装第三方 ROM | 解锁 Bootloader 会清空所有数据 |
 
-### Is Rooting Right for You?
+### Root 适合你吗？
 
-| **✅ Root If:** | **❌ Don't Root If:** |
+| **✅ 适合 Root 的情况：** | **❌ 不适合 Root 的情况：** |
 |---------------------------|---------------------|
-| Want complete control over your device | Rely solely on banking/finance apps |
-| System-wide ad blocking is priority | Uncomfortable with terminal/command-line |
-| Enjoy deep customization & theming | Need 100% warranty coverage |
-| Privacy & anti-tracking matters | Want seamless automatic OTA updates |
-| Willing to learn & troubleshoot | New to Android and risk-averse |
-| Use device as daily driver with backups | Prefer stock, zero-maintenance experience |
+| 希望完全掌控自己的设备 | 完全依赖银行/金融类应用 |
+| 系统级广告拦截是首要需求 | 不适应终端/命令行操作 |
+| 热衷深度定制与主题美化 | 需要 100% 的保修保障 |
+| 重视隐私与反追踪 | 希望无缝的自动 OTA 更新 |
+| 愿意学习并动手排查问题 | Android 新手且厌恶风险 |
+| 将设备作为主力机并做好备份 | 偏好官方系统、零维护的体验 |
 
 ---
 
-## Prerequisites and Safety
+## 前提条件与安全须知
 
-### Critical Warnings
+### 重要警告
 
-::: danger ⚠️ PERMANENT CONSEQUENCES
-**Data Loss** - Unlocking bootloader completely erases all device data. Backup everything before proceeding.
+::: danger ⚠️ 不可逆的后果
+**数据丢失** - 解锁 Bootloader 会彻底清除设备上的所有数据。开始之前请备份全部内容。
 
-**Warranty Void** - Bootloader unlocking permanently voids manufacturer warranty on most devices.
+**保修失效** - 在大多数设备上，解锁 Bootloader 会导致厂商保修永久失效。
 
-**Samsung Knox** - Bootloader unlock permanently trips Knox eFuse. Samsung Pay, Secure Folder, Samsung Pass are lost **forever** - even if you re-lock the bootloader.
+**Samsung Knox** - 解锁 Bootloader 会永久熔断 Knox eFuse。Samsung Pay、Secure Folder、Samsung Pass 将**永远**失去——即使你重新锁定 Bootloader 也无法找回。
 
-**Security Risks** - Root access can expose your device to malware if misused. Only grant root to trusted apps. With great power comes great responsibility.
+**安全风险** - 如果使用不当，root 权限可能使设备暴露于恶意软件。只授予可信应用 root 权限。能力越大，责任越大。
 
-**Banking & Finance Apps** - Many financial apps actively detect root. Play Integrity bypass is a continuous cat-and-mouse game requiring ongoing maintenance.
+**银行与金融类应用** - 许多金融应用会主动检测 root。绕过 Play Integrity 是一场持续的猫鼠游戏，需要不断维护。
 
-**Bricking Risk** - Incorrect procedures can permanently damage your device. Follow instructions exactly and have a [recovery plan ready](../troubleshooting.md#emergency-recovery).
+**变砖风险** - 操作不当可能对设备造成永久性损坏。请严格按说明操作，并[准备好恢复预案](../troubleshooting.md#紧急恢复)。
 :::
 
-### Essential Requirements
+### 基本要求
 
-**Hardware:**
-- Android device with **unlockable bootloader** (verify before starting - some carrier-locked variants cannot be unlocked)
-- **50% or higher** battery charge (a dead battery during flashing = brick)
-- Quality **data-capable** USB cable (not charge-only cables)
-- Computer (Windows, macOS, or Linux - Linux is often the most reliable)
+**硬件：**
+- 拥有**可解锁 Bootloader** 的 Android 设备（开始前先确认——部分运营商定制机型无法解锁）
+- 电量**不低于 50%**（刷入过程中断电 = 变砖）
+- 质量可靠、**支持数据传输**的 USB 数据线（不能是仅充电线）
+- 一台电脑（Windows、macOS 或 Linux——Linux 通常最为可靠）
 
-**Software:**
-- [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools) (ADB/Fastboot) - keep these updated!
-- Device-specific USB drivers (Windows only - see [OEM driver list](https://developer.android.com/studio/run/oem-usb))
-- Stock firmware for your device (essential for recovery)
-- Backup solution for your data (Swift Backup, Neo Backup, or manual copy)
+**软件：**
+- [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)（ADB/Fastboot）- 务必保持更新！
+- 机型对应的 USB 驱动（仅 Windows 需要——参见 [OEM 驱动列表](https://developer.android.com/studio/run/oem-usb)）
+- 你设备的官方固件（恢复时必不可少）
+- 数据备份方案（Swift Backup、Neo Backup 或手动复制）
 
-**Files You'll Need:**
-- Stock `boot.img` or `init_boot.img` (extract from your device's firmware - Android 13+ devices typically use `init_boot.img`)
-- Latest root solution APK/ZIP (Magisk, KernelSU, or APatch)
-- Custom recovery image (optional but recommended)
+**所需文件：**
+- 官方 `boot.img` 或 `init_boot.img`（从你设备的固件中提取——Android 13+ 设备通常使用 `init_boot.img`）
+- 最新版 root 方案 APK/ZIP（Magisk、KernelSU 或 APatch）
+- 第三方 Recovery 镜像（可选，但建议准备）
 
-**Knowledge:**
-- Basic command line / terminal familiarity
-- Understanding of your exact device model and variant
-- Ability to research and follow instructions carefully
-- Emergency recovery plan (know how to flash stock firmware)
+**知识储备：**
+- 基本的命令行/终端操作能力
+- 清楚自己设备的具体型号与版本
+- 能够认真查阅资料并严格遵循说明
+- 应急恢复预案（知道如何刷入官方固件）
 
-### Pre-Rooting Checklist
+### Root 前检查清单
 
-1. ✅ **Backup all data** - Photos, contacts, messages, app data (see [Backup Apps](../apps-and-modules/backup#backup-restore))
-2. ✅ **Charge device** - Minimum 50% battery
-3. ✅ **Verify bootloader unlockability** - Check OEM Unlocking toggle in Developer Options (greyed out = likely carrier-locked)
-4. ✅ **Download necessary files** - Stock firmware, root solution (APK+ZIP), recovery image
-5. ✅ **Research your device** - Read XDA forums and device-specific guides thoroughly
-6. ✅ **Prepare recovery plan** - Know how to restore stock firmware via fastboot/recovery
-7. ✅ **Identify correct partition** - Determine if your device uses `boot.img` or `init_boot.img` (Android 13+ typically = `init_boot.img`)
+1. ✅ **备份所有数据** - 照片、联系人、短信、应用数据（参见[备份应用](../apps-and-modules/backup#backup-restore)）
+2. ✅ **给设备充电** - 电量至少 50%
+3. ✅ **确认 Bootloader 可解锁** - 检查开发者选项中的 OEM 解锁开关（灰色不可用 = 很可能是运营商锁定机型）
+4. ✅ **下载必要文件** - 官方固件、root 方案（APK+ZIP）、Recovery 镜像
+5. ✅ **研究你的设备** - 仔细阅读 XDA 论坛与机型专属指南
+6. ✅ **准备恢复预案** - 知道如何通过 fastboot/Recovery 恢复官方固件
+7. ✅ **确认正确的分区** - 判断你的设备使用 `boot.img` 还是 `init_boot.img`（Android 13+ 通常是 `init_boot.img`）
 
 ---
 
-## Choosing a Root Method
+## 选择 Root 方案
 
-Three primary rooting solutions exist, each with distinct advantages and trade-offs. **Magisk** offers the broadest compatibility and largest ecosystem, **KernelSU** provides kernel-level root with granular app control, and **APatch** combines kernel patching with module support.
+目前有三种主流 root 方案，各有优势与取舍。**Magisk** 兼容性最广、生态最大；**KernelSU** 提供内核级 root 和细粒度的应用控制；**APatch** 则将内核修补与模块支持结合在一起。
 
-### Quick Comparison
+### 快速对比
 
-| Feature | Magisk | KernelSU | APatch |
+| 特性 | Magisk | KernelSU | APatch |
 |---------|---------|----------|---------|
-| **Guide** | [Magisk Guide](./magisk-guide.md) | [KernelSU Guide](./kernelsu-guide.md) | [APatch Guide](./apatch-guide.md) |
-| **Target Users** | Beginners, most users | GKI devices, privacy-focused | Developers, edge cases |
-| **Architecture** | Systemless (boot/init_boot/vendor_boot) | Kernel-level (GKI/LKM) | Kernel patching (KernelPatch) |
-| **Android Support** | Android 6.0+ | GKI 2.0 (kernel 5.10+) | ARM64, kernel 3.18+ |
-| **Installation** | Easy (patch & flash) | Moderate (needs compatible kernel) | Moderate (ARM64 only) |
-| **Module Ecosystem** | 1000+ Magisk modules | Modified Magisk modules via metamodule | APModule + KPM (kernel-level) |
-| **Module Mounting** | Built-in Magic Mount | Metamodule required | Magic Mount default; OverlayFS optional |
-| **Root Hiding** | Good (DenyList + Shamiko + PIF) | Excellent (app profiles, uid/gid/selinux control) | Good (SuperKey credential system) |
-| **Community** | Largest | Growing | Small |
-| **Development** | Active | Very active | Active |
-| **Unique Strength** | Ecosystem & broad compatibility | Kernel space, only permitted apps see su | KPM kernel code injection without source |
-| **OTA Handling** | Re-patch after OTA | Some OTA flows survive via LKM | Initial A/B OTA support |
+| **指南** | [Magisk 指南](./magisk-guide.md) | [KernelSU 指南](./kernelsu-guide.md) | [APatch 指南](./apatch-guide.md) |
+| **目标用户** | 新手、大多数用户 | GKI 设备、注重隐私的用户 | 开发者、特殊场景 |
+| **架构** | Systemless（boot/init_boot/vendor_boot） | 内核级（GKI/LKM） | 内核修补（KernelPatch） |
+| **Android 支持** | Android 6.0+ | GKI 2.0（内核 5.10+） | ARM64，内核 3.18+ |
+| **安装难度** | 简单（修补并刷入） | 中等（需要兼容的内核） | 中等（仅限 ARM64） |
+| **模块生态** | 1000+ 个 Magisk 模块 | 通过 metamodule 使用改版 Magisk 模块 | APModule + KPM（内核级） |
+| **模块挂载** | 内置 Magic Mount | 需要 metamodule | 默认 Magic Mount；可选 OverlayFS |
+| **Root 隐藏** | 良好（DenyList + Shamiko + PIF） | 优秀（应用配置文件，uid/gid/selinux 控制） | 良好（SuperKey 凭证体系） |
+| **社区** | 最大 | 不断增长 | 较小 |
+| **开发活跃度** | 活跃 | 非常活跃 | 活跃 |
+| **独特优势** | 生态与广泛兼容性 | 内核空间，仅授权应用可见 su | 无需内核源码即可进行 KPM 内核代码注入 |
+| **OTA 处理** | OTA 后需重新修补 | 部分 OTA 流程可借助 LKM 存活 | 初步支持 A/B OTA |
 
-### Decision Guide
+### 决策指南
 
-**Choose Magisk if:**
-- You are new to rooting and want the easiest path
-- You need maximum module compatibility
-- You want universal device support across Android versions
-- You prefer in-app updates and the largest community
+**如果你符合以下情况，选 Magisk：**
+- 你是 root 新手，想要最简单的路径
+- 你需要最大的模块兼容性
+- 你需要跨 Android 版本的通用设备支持
+- 你偏好应用内更新和最庞大的社区
 
-**Choose KernelSU if:**
-- Your device runs a GKI kernel (5.10+) and you want kernel-level security
-- Fine-grained app profiles (uid, gid, groups, capabilities, SELinux) matter to you
-- You want the best root concealment (only permitted apps can see `su`)
-- You're comfortable with metamodule setup for module support
+**如果你符合以下情况，选 KernelSU：**
+- 你的设备运行 GKI 内核（5.10+），且你想要内核级安全
+- 你看重细粒度的应用配置文件（uid、gid、groups、capabilities、SELinux）
+- 你想要最佳的 root 隐蔽性（只有授权应用才能看到 `su`）
+- 你能接受为模块支持而配置 metamodule
 
-**Choose APatch if:**
-- Magisk/KernelSU are blocked on your specific firmware
-- You need kernel-level code injection (KPM) without kernel source
-- Your device is ARM64 with a compatible kernel
-- You want both Magisk-like modules AND kernel patching
+**如果你符合以下情况，选 APatch：**
+- 你的特定固件上 Magisk/KernelSU 无法使用
+- 你需要无需内核源码的内核级代码注入（KPM）
+- 你的设备是 ARM64 且内核兼容
+- 你既想要类 Magisk 的模块，又想要内核修补
 
 > [!IMPORTANT]
-> For detailed comparison including migration guides, see [Root Framework Comparison](./root-framework-comparison.md)
+> 有关包含迁移指南的详细对比，请参阅 [Root 框架对比](./root-framework-comparison.md)
 
 > [!TIP]
-> **Can't (or don't want to) unlock your bootloader?** All three frameworks above assume an unlocked bootloader. On a narrow set of 2024-2026 devices, the **GhostLock** bug (CVE-2026-43499) instead grants **temporary, session-only root** with the bootloader locked - no Knox trip, no data wipe. See [Root Without Unlocking the Bootloader](./root-without-unlocking-bootloader.md) for what it can and can't do, plus the broader [Temporary Root for Android: Methods & Solutions](./temporary-root-solutions.md) page.
+> **无法（或不想）解锁 Bootloader？** 上述三种框架都以解锁 Bootloader 为前提。在少数 2024-2026 年的设备上，**GhostLock** 漏洞（CVE-2026-43499）可以在 Bootloader 保持锁定的情况下提供**临时的、仅限当前开机的 root**——不熔断 Knox，不清除数据。它能做什么、不能做什么，请参阅[无需解锁 Bootloader 的 Root](./root-without-unlocking-bootloader.md)；更全面的介绍见 [Android 临时 Root：方法与解决方案](./temporary-root-solutions.md)页面。
 
 ---
 
-## Universal Rooting Process
+## 通用 Root 流程
 
-All Android devices follow this four-step rooting process, regardless of manufacturer or root method. Modern devices (Android 13+) often use `init_boot.img` instead of `boot.img` for root patching - check your device specifics.
+无论厂商或 root 方案如何，所有 Android 设备都遵循同一个四步 root 流程。现代设备（Android 13+）通常使用 `init_boot.img` 而非 `boot.img` 来进行 root 修补——请核实你设备的具体情况。
 
-### Step 1: Unlock Bootloader
+### 第 1 步：解锁 Bootloader
 
-Unlocking the bootloader is the essential first step that enables all subsequent modifications.
+解锁 Bootloader 是必不可少的第一步，后续所有修改都以此为基础。
 
-**Quick Steps:**
-1. **Enable Developer Options** (Settings > About > Tap Build Number 7 times)
-2. **Enable OEM Unlocking** (Developer Options > OEM Unlocking)
-3. **Enable USB Debugging** (Developer Options > USB Debugging)
-4. **Boot to fastboot mode** (Power + Volume Down or `adb reboot bootloader`)
-5. **Execute unlock command** (`fastboot flashing unlock` or `fastboot oem unlock`)
+**快速步骤：**
+1. **启用开发者选项**（设置 > 关于手机 > 连点 7 次"版本号"）
+2. **启用 OEM 解锁**（开发者选项 > OEM 解锁）
+3. **启用 USB 调试**（开发者选项 > USB 调试）
+4. **进入 fastboot 模式**（电源键 + 音量下键，或 `adb reboot bootloader`）
+5. **执行解锁命令**（`fastboot flashing unlock` 或 `fastboot oem unlock`）
 
 > [!CAUTION]
-> ⚠️ This step **erases ALL data**. Backup everything first. On Samsung devices, this also **permanently trips Knox** (Samsung Pay, Secure Folder, Samsung Pass lost forever).
+> ⚠️ 此步骤会**清空所有数据**。请先备份全部内容。在 Samsung 设备上，这还会**永久熔断 Knox**（Samsung Pay、Secure Folder、Samsung Pass 将永远失去）。
 
-**[📖 How to unlock an Android bootloader](./how-to-unlock-bootloader.md)**
+**[📖 如何解锁 Android Bootloader](./how-to-unlock-bootloader.md)**
 
-### Step 2: Install Custom Recovery (Optional but Recommended)
+### 第 2 步：安装第三方 Recovery（可选但建议执行）
 
-Custom recovery provides advanced features and safer modification workflows. While not strictly required for all modern root methods, it's invaluable for backups and emergency recovery.
+第三方 Recovery 提供高级功能和更安全的修改流程。虽然并非所有现代 root 方案都严格要求它，但它在备份和应急恢复方面价值极高。
 
-**Popular Options:**
-- **TWRP** - Most widely supported, active development
-- **OrangeFox** - Modern UI, frequent updates, EROFS support
-- **SKYHAWK** - Feature-rich recovery project
-- **PitchBlack** - Based on TWRP with enhanced features
+**热门选择：**
+- **TWRP** - 支持最广泛，开发活跃
+- **OrangeFox** - 界面现代，更新频繁，支持 EROFS
+- **SKYHAWK** - 功能丰富的 Recovery 项目
+- **PitchBlack** - 基于 TWRP 并增强功能
 
-**Process:**
-1. **Download device-specific recovery image**
-2. **Boot to fastboot mode**
-3. **Flash recovery image** - `fastboot flash recovery recovery.img`
-4. **Boot to recovery** - Test functionality before proceeding
+**流程：**
+1. **下载机型对应的 Recovery 镜像**
+2. **进入 fastboot 模式**
+3. **刷入 Recovery 镜像** - `fastboot flash recovery recovery.img`
+4. **启动到 Recovery** - 继续之前先测试功能是否正常
 
 > [!NOTE]
-> Some modern devices (especially A/B partition schemes) may not have a dedicated recovery partition. In these cases, you can `fastboot boot recovery.img` to temporarily boot recovery without flashing.
+> 一些现代设备（尤其是 A/B 分区方案）可能没有独立的 Recovery 分区。这种情况下，可以使用 `fastboot boot recovery.img` 临时启动 Recovery 而无需刷入。
 
-**[📖 Custom Recovery Installation Guide](./how-to-install-custom-recovery.md)**
+**[📖 第三方 Recovery 安装指南](./how-to-install-custom-recovery.md)**
 
-### Step 3: Install Root Solution
+### 第 3 步：安装 Root 方案
 
-Choose and install your preferred root method. The modern approach uses boot image patching.
+选择并安装你偏好的 root 方案。现代做法是修补 boot 镜像。
 
-#### Option A: Magisk (Recommended for Most Users)
+#### 方案 A：Magisk（适合大多数用户）
 
-1. Download latest **Magisk APK** from [official GitHub](https://github.com/topjohnwu/Magisk/releases)
-2. Extract the correct image from your device's stock firmware:
-   - **Android 13+ (most devices):** `init_boot.img`
-   - **Android 12 and older:** `boot.img`
-   - **Some Samsung devices:** `boot.img` + `vendor_boot.img` (Magisk v30.3+)
-3. Transfer image to device, patch it using the Magisk app
-4. Flash patched image via fastboot (`fastboot flash init_boot magisk_patched...img`)
-5. Reboot and complete Magisk app setup
+1. 从[官方 GitHub](https://github.com/topjohnwu/Magisk/releases) 下载最新的 **Magisk APK**
+2. 从你设备的官方固件中提取正确的镜像：
+   - **Android 13+（大多数设备）：** `init_boot.img`
+   - **Android 12 及更早：** `boot.img`
+   - **部分 Samsung 设备：** `boot.img` + `vendor_boot.img`（Magisk v30.3+）
+3. 将镜像传到设备上，使用 Magisk 应用进行修补
+4. 通过 fastboot 刷入修补后的镜像（`fastboot flash init_boot magisk_patched...img`）
+5. 重启并完成 Magisk 应用设置
 
 > [!TIP]
-> Magisk now supports XZ-compressed modules and 16k page size devices. Use the latest stable release from [GitHub](https://github.com/topjohnwu/Magisk/releases).
+> Magisk 现已支持 XZ 压缩模块和 16k 页大小的设备。请使用 [GitHub](https://github.com/topjohnwu/Magisk/releases) 上的最新稳定版本。
 
-**[📖 Complete Magisk Guide](./magisk-guide.md)**
+**[📖 完整 Magisk 指南](./magisk-guide.md)**
 
-#### Option B: KernelSU
+#### 方案 B：KernelSU
 
-1. Verify your device has a **GKI-compatible kernel** (kernel 5.10+ with GKI 2.0)
-2. Download KernelSU-supported kernel for your device or use LKM (Loadable Kernel Module) mode
-3. Flash kernel via fastboot or KernelSU app
-4. Install **KernelSU Manager** app
-5. Install a **metamodule** (meta-overlayfs or Meta-Hybrid Mount) - required for modules to work
-6. Configure App Profiles for fine-grained root access control
+1. 确认你的设备拥有 **GKI 兼容内核**（内核 5.10+ 且支持 GKI 2.0）
+2. 为你的设备下载支持 KernelSU 的内核，或使用 LKM（可加载内核模块）模式
+3. 通过 fastboot 或 KernelSU 应用刷入内核
+4. 安装 **KernelSU Manager** 应用
+5. 安装一个 **metamodule**（meta-overlayfs 或 Meta-Hybrid Mount）——模块要正常工作必须有它
+6. 配置 App Profiles 以实现细粒度的 root 权限控制
 
 > [!WARNING]
-> KernelSU **no longer has built-in module mounting**. Fresh installations require a metamodule for modules to function. See the [KernelSU Guide](./kernelsu-guide.md) for details.
+> KernelSU **不再内置模块挂载功能**。全新安装必须配置 metamodule，模块才能正常工作。详情参见 [KernelSU 指南](./kernelsu-guide.md)。
 
-**[📖 Complete KernelSU Guide](./kernelsu-guide.md)**
+**[📖 完整 KernelSU 指南](./kernelsu-guide.md)**
 
-#### Option C: APatch
+#### 方案 C：APatch
 
-1. Verify device compatibility (ARM64, kernel 3.18–6.12)
-2. Download **APatch Manager** and prepare your stock `boot.img`
-3. Patch boot image via APatch app (set a strong SuperKey)
-4. Flash patched image via fastboot
-5. Configure APatch Manager and install APModule/KPM as needed
+1. 确认设备兼容性（ARM64，内核 3.18–6.12）
+2. 下载 **APatch Manager** 并准备好官方 `boot.img`
+3. 通过 APatch 应用修补 boot 镜像（设置一个强 SuperKey）
+4. 通过 fastboot 刷入修补后的镜像
+5. 配置 APatch Manager，并按需安装 APModule/KPM
 
 > [!NOTE]
-> APatch combines Magisk's convenient boot.img install with KernelSU's kernel patching power. KPM allows kernel function inline-hook and syscall-table-hook without kernel source.
+> APatch 结合了 Magisk 便捷的 boot.img 安装方式与 KernelSU 强大的内核修补能力。KPM 无需内核源码即可对内核函数进行 inline-hook 和 syscall-table-hook。
 
-**[📖 Complete APatch Guide](./apatch-guide.md)**
+**[📖 完整 APatch 指南](./apatch-guide.md)**
 
-### Step 4: Post-Root Configuration
+### 第 4 步：Root 后配置
 
-After successful root installation, complete these essential steps:
+root 安装成功后，请完成以下关键步骤：
 
-1. **Verify Root Access** - Use a root checker app to confirm superuser access works
-2. **Install Essential Apps** - Visit [Starter Kit: Must-Have Apps](../apps-and-modules/#starter-kit-must-have-apps)
-3. **Configure Root Hiding** (critical for banking apps):
-   - **Magisk:** Enable Zygisk + DenyList, install any Play Integrity Fix module + [Tricky Store](https://github.com/5ec1cff/TrickyStore) + [Shamiko](https://github.com/LSPosed/LSPosed.github.io) (or open-source [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant))
-   - **KernelSU:** Use App Profiles, install Zygisk Next + PIF + Tricky Store
-   - **APatch:** Use SuperKey credential system + PIF modules
-4. **Create Full Backup** - Use Swift Backup, Neo Backup, or recovery nandroid
+1. **验证 root 权限** - 使用 root 检测应用确认超级用户权限生效
+2. **安装必备应用** - 访问[入门套装：必备应用](../apps-and-modules/#新手必备套装必装应用)
+3. **配置 root 隐藏**（对银行类应用至关重要）：
+   - **Magisk：** 启用 Zygisk + DenyList，安装任意 Play Integrity Fix 模块 + [Tricky Store](https://github.com/5ec1cff/TrickyStore) + [Shamiko](https://github.com/LSPosed/LSPosed.github.io)（或开源的 [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)）
+   - **KernelSU：** 使用 App Profiles，安装 Zygisk Next + PIF + Tricky Store
+   - **APatch：** 使用 SuperKey 凭证体系 + PIF 模块
+4. **创建完整备份** - 使用 Swift Backup、Neo Backup 或 Recovery 的 nandroid 备份
 
-**Recommended Next Steps:**
-- [Block Ads System-Wide](../general-guides/android-adblocking.md) - Eliminate ads across all apps
-- [Debloat Your Device](../general-guides/android-apps-debloating.md) - Remove bloatware safely
-- [Install LSPosed / Vector Framework](./lsposed-guide.md) - Advanced app customization with Xposed modules
-- [Browse 650+ Root Apps](../apps-and-modules/) - Discover essential tools
+**推荐后续步骤：**
+- [系统级广告拦截](../general-guides/android-adblocking.md) - 消除所有应用中的广告
+- [精简预装软件](../general-guides/android-apps-debloating.md) - 安全移除预装冗余软件
+- [安装 LSPosed / Vector 框架](./lsposed-guide.md) - 使用 Xposed 模块深度定制应用
+- [浏览 650+ 个 Root 应用](../apps-and-modules/) - 探索必备工具
 
 ---
 
-## Device-Specific Guides
+## 机型专属指南
 
-Detailed rooting instructions tailored for specific manufacturers and models.
+针对特定厂商和机型的详细 root 教程。
 
-### 📱 [Google Pixel Series](./how-to-root-pixel-phone.md)
+### 📱 [Google Pixel 系列](./how-to-root-pixel-phone.md)
 
-### 📱 [Samsung Galaxy Series](./how-to-root-samsung-phone.md)
+### 📱 [Samsung Galaxy 系列](./how-to-root-samsung-phone.md)
 
-### 📱 [Xiaomi Devices](./how-to-root-xiaomi-phone.md)
+### 📱 [Xiaomi 设备](./how-to-root-xiaomi-phone.md)
 
-### 📱 [OnePlus Devices](./how-to-root-oneplus-phone.md)
+### 📱 [OnePlus 设备](./how-to-root-oneplus-phone.md)
 
-### 📱 [Motorola Devices](./how-to-root-motorola-phone.md)
+### 📱 [Motorola 设备](./how-to-root-motorola-phone.md)
 
-### 📱 [Nothing Phone Series](./how-to-root-nothing-phone.md)
+### 📱 [Nothing Phone 系列](./how-to-root-nothing-phone.md)
 
 > [!TIP]
-> **Can't find your device?** Check [XDA Developers Forums](https://forum.xda-developers.com/) or search device-specific Telegram groups. Most devices with unlockable bootloaders follow the universal process above.
+> **找不到你的设备？** 请查看 [XDA Developers 论坛](https://forum.xda-developers.com/)，或搜索机型对应的 Telegram 群组。大多数 Bootloader 可解锁的设备都遵循上述通用流程。
 
 > [!NOTE]
-> **ASUS (ROG/Zenfone), Realme/OPPO:** Check the [Root Framework Comparison](./root-framework-comparison.md#device-guidance) for device-specific root method recommendations.
+> **ASUS（ROG/Zenfone）、Realme/OPPO：** 请查看 [Root 框架对比](./root-framework-comparison.md#机型建议)，获取针对这些设备的 root 方案建议。
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-### Common Issues and Solutions
+### 常见问题与解决方法
 
-**Device Won't Boot (Bootloop)**
+**设备无法启动（无限重启）**
 
-Symptoms: Device stuck on boot logo, constantly rebooting
+症状：设备卡在开机 logo，不断重启
 
-Solutions:
-1. Boot to recovery mode (Power + Volume Up, varies by device)
-2. Wipe cache partition from recovery
-3. Restore from backup if available
-4. Flash stock `boot.img` / `init_boot.img` via fastboot to undo root
-5. Flash full stock firmware via fastboot/recovery
-6. Seek help on your device-specific XDA forum
+解决方法：
+1. 启动到 Recovery 模式（电源键 + 音量上键，因设备而异）
+2. 在 Recovery 中清除缓存分区
+3. 如有备份则从备份恢复
+4. 通过 fastboot 刷入官方 `boot.img` / `init_boot.img` 以撤销 root
+5. 通过 fastboot/Recovery 刷入完整官方固件
+6. 到你机型的 XDA 论坛寻求帮助
 
-**Root Not Detected**
+**无法检测到 Root**
 
-Symptoms: Root checker shows no root, apps can't get superuser access
+症状：root 检测应用显示没有 root，应用无法获取超级用户权限
 
-Solutions:
-1. Verify root manager app is installed and running
-2. Check if Zygisk is enabled (Magisk settings)
-3. Grant root permission when prompted by apps
-4. Re-patch and re-flash boot image
-5. Verify the patched image wasn't overwritten by an OTA
+解决方法：
+1. 确认 root 管理器应用已安装且正在运行
+2. 检查 Zygisk 是否已启用（Magisk 设置中）
+3. 在应用弹窗提示时授予 root 权限
+4. 重新修补并重新刷入 boot 镜像
+5. 确认修补后的镜像没有被 OTA 覆盖
 
-**Banking Apps Not Working (Play Integrity)**
+**银行类应用无法使用（Play Integrity）**
 
-Symptoms: Apps detect root and refuse to run, Play Integrity check fails
+症状：应用检测到 root 后拒绝运行，Play Integrity 检查失败
 
 > [!WARNING]
-> Play Integrity bypass is a **cat-and-mouse game** - Google continuously updates detection. No solution is permanent.
+> 绕过 Play Integrity 是一场**猫鼠游戏**——Google 会不断更新检测手段。没有一劳永逸的解决方案。
 
-Solutions (2026 best practices):
-1. **Magisk:** Enable Zygisk → Configure DenyList (add banking app) → Enforce DenyList
-2. Install Play Integrity Fix module (provides working device fingerprint)
-3. Install **[Tricky Store](https://github.com/5ec1cff/TrickyStore)** for advanced key attestation spoofing
-4. Install **[Shamiko](https://github.com/LSPosed/LSPosed.github.io)** (closed-source) or **[Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)** (open-source) for better root hiding
-5. Hide the Magisk app (Settings → Hide the Magisk app → repackage with random name)
-6. Use **[Zygisk Next](https://github.com/LSPosed/ZygiskNext)** (alternative Zygisk implementation, works on KernelSU too)
-7. Clear banking app data after setting up hiding
-8. See [detailed Play Integrity troubleshooting](../troubleshooting.md#play-integrity-and-banking-apps)
+解决方法（2026 年最佳实践）：
+1. **Magisk：** 启用 Zygisk → 配置 DenyList（添加银行类应用）→ 强制执行 DenyList
+2. 安装 Play Integrity Fix 模块（提供可用的设备指纹）
+3. 安装 **[Tricky Store](https://github.com/5ec1cff/TrickyStore)** 实现高级密钥认证伪造
+4. 安装 **[Shamiko](https://github.com/LSPosed/LSPosed.github.io)**（闭源）或 **[Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)**（开源）以获得更好的 root 隐藏效果
+5. 隐藏 Magisk 应用（设置 → 隐藏 Magisk 应用 → 以随机名称重新打包）
+6. 使用 **[Zygisk Next](https://github.com/LSPosed/ZygiskNext)**（替代 Zygisk 实现，KernelSU 上也可用）
+7. 配置好隐藏后清除银行类应用的数据
+8. 参阅[详细的 Play Integrity 故障排除](../troubleshooting.md#play-integrity-与银行类应用)
 
 > [!NOTE]
-> **Strong Integrity** (required by some wallet/payment apps) is generally **not achievable** on unlocked bootloaders. Even with all fixes, some apps may refuse to run. Consider using a secondary unrooted device for critical banking.
+> **Strong Integrity**（部分钱包/支付应用要求）在已解锁 Bootloader 的设备上通常**无法实现**。即使应用了所有修复方法，某些应用仍可能拒绝运行。关键的银行业务可考虑使用一台未 root 的备用设备。
 
-**OTA Updates Failing**
+**OTA 更新失败**
 
-Symptoms: System updates fail to install or cause bootloop
+症状：系统更新无法安装，或导致无限重启
 
-Solutions:
-1. **Magisk:** Use "Restore Images" in Magisk app before OTA, then "Install to Inactive Slot" after OTA
-2. Flash full OTA package manually, then re-patch and re-flash root
-3. **KernelSU:** Some OTA flows survive via LKM mode, but verify after each update
-4. **APatch:** Initial A/B OTA support available (experimental)
-5. Consider switching to a custom ROM with built-in OTA + root support
+解决方法：
+1. **Magisk：** OTA 前在 Magisk 应用中使用"还原镜像"（Restore Images），OTA 后使用"安装到未使用分区槽"（Install to Inactive Slot）
+2. 手动刷入完整 OTA 包，然后重新修补并重新刷入 root
+3. **KernelSU：** 部分 OTA 流程可借助 LKM 模式存活，但每次更新后都要验证
+4. **APatch：** 已有初步的 A/B OTA 支持（实验性）
+5. 考虑换用内置 OTA + root 支持的第三方 ROM
 
-**Fastboot Not Recognized**
+**无法识别 Fastboot**
 
-Symptoms: Computer doesn't detect device in fastboot mode
+症状：电脑在 fastboot 模式下检测不到设备
 
-Solutions:
-1. Install proper [USB drivers](https://developer.android.com/studio/run/win-usb) (Windows)
-2. Try a USB 2.0 port (USB 3.0 often causes issues with fastboot)
-3. Use a high-quality data-capable USB cable (not charge-only)
-4. On Linux: add udev rules, run `fastboot` as root or configure permissions
-5. Try `fastboot devices` on a different computer
+解决方法：
+1. 安装正确的 [USB 驱动](https://developer.android.com/studio/run/win-usb)（Windows）
+2. 换用 USB 2.0 接口（USB 3.0 在 fastboot 下经常出问题）
+3. 使用高质量、支持数据传输的 USB 数据线（不能是仅充电线）
+4. Linux 下：添加 udev 规则，以 root 运行 `fastboot` 或配置权限
+5. 在另一台电脑上尝试 `fastboot devices`
 
-### Emergency Recovery
+### 应急恢复
 
-**Safe Mode (Disable All Modules)**
+**安全模式（禁用所有模块）**
 
-If a rogue module causes bootloop:
-1. Hold **Power + Volume Down** (or your device's Safe Mode key combo) during boot
-2. This disables all Magisk modules temporarily
-3. Uninstall the problematic module and reboot
+如果某个模块导致无限重启：
+1. 开机时按住**电源键 + 音量下键**（或你设备进入安全模式的按键组合）
+2. 这会暂时禁用所有 Magisk 模块
+3. 卸载出问题的模块并重启
 
-**Factory Reset Protection (FRP)**
+**恢复出厂设置保护（FRP）**
 
-If locked out after factory reset:
-1. Use previously synced Google account credentials
-2. Follow manufacturer-specific FRP bypass methods
-3. Flash stock firmware with all partitions
-4. Contact manufacturer support if purchased legitimately
+如果恢复出厂设置后被锁在外面：
+1. 使用之前同步过的 Google 账号凭据
+2. 按照厂商专属的 FRP 绕过方法操作
+3. 刷入包含全部分区的官方固件
+4. 如果是正规渠道购买，可联系厂商支持
 
-**Complete Brick Recovery (EDL/9008 Mode)**
+**彻底变砖恢复（EDL/9008 模式）**
 
-If device won't power on or enter any mode:
-1. Try **Emergency Download Mode** (EDL/9008) - varies by device
-2. Use manufacturer-specific unbrick tools (MSM Tool for OnePlus, Odin for Samsung, etc.)
-3. Search XDA for device-specific unbrick guides
-4. Professional repair may be necessary for hardware-level bricks
+如果设备无法开机或无法进入任何模式：
+1. 尝试**紧急下载模式**（EDL/9008）——因设备而异
+2. 使用厂商专属的救砖工具（OnePlus 用 MSM Tool，Samsung 用 Odin 等）
+3. 在 XDA 搜索机型专属的救砖指南
+4. 硬件级变砖可能需要专业维修
 
-**Prevention Tips:**
-- 📥 Always keep stock firmware downloaded before starting
-- 💾 Create regular backups (Swift Backup, Neo Backup, recovery nandroid)
-- 📖 Read your device's XDA forum thoroughly before attempting anything
-- 🔑 Keep a copy of your stock `boot.img` and `init_boot.img`
-- 🧪 Test one module at a time, reboot between installations
-- 📋 Join device-specific Telegram/Discord communities for real-time help
+**预防提示：**
+- 📥 开始之前务必先下载好官方固件
+- 💾 定期创建备份（Swift Backup、Neo Backup、Recovery nandroid）
+- 📖 动手之前仔细阅读你机型的 XDA 论坛
+- 🔑 保存好官方 `boot.img` 和 `init_boot.img` 的副本
+- 🧪 每次只测试一个模块，每次安装之间重启
+- 📋 加入机型专属的 Telegram/Discord 社区以获取实时帮助
 
 ---
 
-## Additional Resources
+## 更多资源
 
-### Framework and Advanced Guides
+### 框架与进阶指南
 
-**Vector / LSPosed Framework**
+**Vector / LSPosed 框架**
 
-Advanced app modification framework for rooted devices. The ecosystem has evolved: the original LSPosed was archived in January 2024, and current builds are either closed-source (lsposed.zip) or the fully open-source **Vector** fork.
+面向已 root 设备的高级应用修改框架。生态已经发生变化：最初的 LSPosed 于 2024 年 1 月归档，目前的版本要么是闭源的（lsposed.zip），要么是完全开源的 **Vector** 分支。
 
-- **Vector (Recommended):** [GitHub](https://github.com/JingMatrix/Vector) - Fully open-source (GPLv3), actively maintained, supports Android 8.1–17 Beta
-- **LSPosed (Closed-Source):** [lsposed.zip](https://lsposed.zip/) - Original team's builds, API 101 stable
-- Requires Zygisk (Magisk) or Zygisk Next/NeoZygisk (KernelSU)
-- Enables Xposed modules for per-app customization, privacy, and UI tweaks
-- API 101 is the current standard; Vector CI builds already support it
+- **Vector（推荐）：** [GitHub](https://github.com/JingMatrix/Vector) - 完全开源（GPLv3），维护活跃，支持 Android 8.1–17 Beta
+- **LSPosed（闭源）：** [lsposed.zip](https://lsposed.zip/) - 原团队的构建版本，API 101 稳定
+- 需要 Zygisk（Magisk）或 Zygisk Next/NeoZygisk（KernelSU）
+- 支持 Xposed 模块，实现按应用定制、隐私控制和 UI 调整
+- API 101 是当前标准；Vector 的 CI 构建已支持该标准
 
 > [!IMPORTANT]
-> See our [Complete Vector/LSPosed Guide](./lsposed-guide.md) for the full breakdown on choosing between Vector (open-source) and lsposed.zip (closed-source), installation, and module management.
+> 有关在 Vector（开源）与 lsposed.zip（闭源）之间如何选择、安装方法以及模块管理的完整解析，请参阅我们的[完整 Vector/LSPosed 指南](./lsposed-guide.md)。
 
-**Custom ROM Installation**
+**第三方 ROM 安装**
 
-Replace stock Android with privacy-focused custom ROMs:
-- Requires unlocked bootloader and typically custom recovery
-- Popular options: LineageOS, PixelOS, crDroid, GrapheneOS (now supports Zygisk Next)
-- Reduces telemetry, removes bloatware, extends device lifespan
+用注重隐私的第三方 ROM 替换官方 Android 系统：
+- 需要已解锁的 Bootloader，通常还需要第三方 Recovery
+- 热门选择：LineageOS、PixelOS、crDroid、GrapheneOS（现已支持 Zygisk Next）
+- 减少遥测数据收集，移除预装冗余软件，延长设备使用寿命
 
-**[📖 Custom ROM Installation Guide](./custom-rom-installation.md)**
+**[📖 第三方 ROM 安装指南](./custom-rom-installation.md)**
 
-### Root Hiding & Play Integrity Resources
+### Root 隐藏与 Play Integrity 资源
 
-Play Integrity bypass is essential for banking apps in 2026. Key tools:
+2026 年，绕过 Play Integrity 对银行类应用至关重要。关键工具：
 
-| Tool | Purpose | Status |
+| 工具 | 用途 | 状态 |
 |------|---------|--------|
-| **[Tricky Store](https://github.com/5ec1cff/TrickyStore)** | Advanced key attestation spoofing | Active |
-| **[Shamiko](https://github.com/LSPosed/LSPosed.github.io)** | Systemlessly hides Zygisk/modules from detection | Closed-source |
-| **[Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)** | Open-source alternative to Shamiko | Active (FOSS) |
-| **[Zygisk Next](https://github.com/LSPosed/ZygiskNext)** | Standalone Zygisk implementation for Magisk/KernelSU | Active |
-| **[Play Integrity Fork](https://github.com/osm0sis/PlayIntegrityFork)** | Community-maintained PIF script | Active |
+| **[Tricky Store](https://github.com/5ec1cff/TrickyStore)** | 高级密钥认证伪造 | 活跃维护 |
+| **[Shamiko](https://github.com/LSPosed/LSPosed.github.io)** | 以 systemless 方式隐藏 Zygisk/模块，避开检测 | 闭源 |
+| **[Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant)** | Shamiko 的开源替代品 | 活跃维护（FOSS） |
+| **[Zygisk Next](https://github.com/LSPosed/ZygiskNext)** | 独立的 Zygisk 实现，适用于 Magisk/KernelSU | 活跃维护 |
+| **[Play Integrity Fork](https://github.com/osm0sis/PlayIntegrityFork)** | 社区维护的 PIF 脚本 | 活跃维护 |
 
 
 > [!TIP]
-> For the complete and up-to-date list, see our [Root Hiding & Play Integrity apps](../apps-and-modules/root-management#root-hiding-play-integrity)
+> 完整且最新的列表请参阅我们的 [Root 隐藏与 Play Integrity 应用](../apps-and-modules/root-management#root-hiding-play-integrity)
 
 ---
 
-## Community and Support
+## 社区与支持
 
-### **Official Resources**
-- [GitHub Repository](https://github.com/awesome-android-root/awesome-android-root) - Source code and issues
-- [Troubleshooting Guide](../troubleshooting.md) - Common problems and fixes
-- [FAQ](../faqs.md) - Common questions
-- [Root Apps Collection](../apps-and-modules/) - Curated apps and modules
-- [X (Twitter) Updates](https://x.com/awsm_and_root) - Project news & updates
+### **官方资源**
+- [GitHub 仓库](https://github.com/awesome-android-root/awesome-android-root) - 源代码与问题反馈
+- [故障排除指南](../troubleshooting.md) - 常见问题与修复方法
+- [常见问题](../faqs.md) - 常见疑问
+- [Root 应用合集](../apps-and-modules/) - 精选应用与模块
+- [X (Twitter) 动态](https://x.com/awsm_and_root) - 项目新闻与更新
 
-### **External Communities**
-- [XDA Developers](https://forum.xda-developers.com/) - Device-specific forums (largest Android modding community)
-- [r/AndroidRoot](https://www.reddit.com/r/androidroot/) - Rooting help and discussion
-- [r/Magisk](https://www.reddit.com/r/Magisk/) - Magisk-specific support
-- [r/KernelSU](https://www.reddit.com/r/KernelSU/) - KernelSU community
-- **Telegram Groups** - Device-specific and framework-specific groups (search for your device)
+### **外部社区**
+- [XDA Developers](https://forum.xda-developers.com/) - 机型专属论坛（最大的 Android 玩机社区）
+- [r/AndroidRoot](https://www.reddit.com/r/androidroot/) - root 求助与讨论
+- [r/Magisk](https://www.reddit.com/r/Magisk/) - Magisk 专属支持
+- [r/KernelSU](https://www.reddit.com/r/KernelSU/) - KernelSU 社区
+- **Telegram 群组** - 机型专属和框架专属群组（搜索你的设备）
 
-### When Asking for Help
+### 求助时
 
-Include this information for faster troubleshooting:
-- **Device model** and exact variant (e.g., Pixel 8 Pro `husky`, not just "Pixel 8")
-- **Android version** and build number (e.g., Android 16 QPR2, build BP1A)
-- **Root method and version** (e.g., Magisk v30.7, KernelSU v3.2)
-- **Modules installed** (list all active Magisk/KernelSU/APatch modules)
-- **Exact error messages** (screenshots or copy-pasted text)
-- **Steps already tried** (so helpers don't suggest things you've done)
-- **Screenshots** of error states if applicable
+提供以下信息可加快故障排除：
+- **设备型号**与具体版本（例如 Pixel 8 Pro `husky`，而不只是"Pixel 8"）
+- **Android 版本**与构建号（例如 Android 16 QPR2，构建号 BP1A）
+- **root 方案与版本**（例如 Magisk v30.7、KernelSU v3.2）
+- **已安装的模块**（列出所有已启用的 Magisk/KernelSU/APatch 模块）
+- **完整的错误信息**（截图或复制的文本）
+- **已尝试过的步骤**（避免他人重复建议你已做过的事情）
+- 如适用，附上错误状态的**截图**
 
 ---
 
-## Next Steps
+## 下一步
 
-### Your Path Forward
-1. **[Unlock Bootloader](./how-to-unlock-bootloader.md)** - The essential first step
-2. **[Install Recovery](./how-to-install-custom-recovery.md)** - Optional but recommended
-3. **[Choose Your Root Method](#choosing-a-root-method)** - Magisk, KernelSU, or APatch
-4. **[Follow Device-Specific Guide](#device-specific-guides)** - Tailored for your phone
-5. **[Set Up Root Hiding](#step-4-post-root-configuration)** - Essential for banking apps
-6. **[Install Vector/LSPosed](./lsposed-guide.md)** - Unlock app customization
+### 你的进阶路线
+1. **[解锁 Bootloader](./how-to-unlock-bootloader.md)** - 必不可少的第一步
+2. **[安装 Recovery](./how-to-install-custom-recovery.md)** - 可选但建议执行
+3. **[选择你的 Root 方案](#选择-root-方案)** - Magisk、KernelSU 或 APatch
+4. **[跟随机型专属指南](#机型专属指南)** - 为你的手机量身定制
+5. **[配置 root 隐藏](#第-4-步root-后配置)** - 银行类应用必备
+6. **[安装 Vector/LSPosed](./lsposed-guide.md)** - 解锁应用定制能力
 
 > [!IMPORTANT]
-> - Join our [community discussions](../about.md#community-support)
-> - Contribute to the [project](../contributing.md)
-> - Stay updated via [X (Twitter)](https://x.com/awsm_and_root)
+> - 加入我们的[社区讨论](../about.md#community-support)
+> - 为[项目](../contributing.md)做贡献
+> - 通过 [X (Twitter)](https://x.com/awsm_and_root) 获取最新动态
 
 ---
 
-🎉 **Welcome to the World of Android Freedom!**
+🎉 **欢迎来到 Android 自由的世界！**
 
-Your journey to unlimited Android possibilities begins now! The rooting community is stronger than ever in 2026
+通往无限可能的 Android 之旅从此开始！2026 年，root 社区比以往任何时候都更强大

@@ -1,77 +1,77 @@
-# Pull Request Template
+# Pull Request 模板
 
-## Description
+## 描述
 
-**What does this PR do?**
-(Clear description of changes)
+**这个 PR 做了什么？**
+（对变更的清晰描述）
 
-**Type of change:**
-- [ ] New app/module addition
-- [ ] Documentation update
-- [ ] Bug fix
-- [ ] Guide improvement
-- [ ] Link update/correction
-- [ ] Other (describe)
+**变更类型：**
+- [ ] 新增应用/模块
+- [ ] 文档更新
+- [ ] Bug 修复
+- [ ] 指南改进
+- [ ] 链接更新/修正
+- [ ] 其他（请描述）
 
-## Related Issue
+## 相关 Issue
 
-Fixes #(issue number)
+修复 #(issue 编号)
 
-## Changes Made
+## 所做变更
 
-**Detailed list of changes:**
+**变更详细列表：**
 - 
 - 
 - 
 
-## Checklist
+## 检查清单
 
-### For App/Module Additions:
+### 应用/模块新增：
 
-- [ ] App/module is actively maintained (updated in last 6 months)
-- [ ] Added to correct category
-- [ ] Included proper badges (FOSS, M, K, LSP, etc.)
-- [ ] Link points to source code (for FOSS) or official page
-- [ ] Added F-Droid/Play Store links where applicable
-- [ ] Description is clear and concise
-- [ ] Follows existing format and style
+- [ ] 应用/模块在积极维护中（近 6 个月内有更新）
+- [ ] 已添加到正确的分类
+- [ ] 已包含正确的徽章（FOSS、M、K、LSP 等）
+- [ ] 链接指向源码（FOSS 项目）或官方页面
+- [ ] 已在适用处添加 F-Droid/Play Store 链接
+- [ ] 描述清晰简洁
+- [ ] 遵循现有格式和风格
 
-### For Documentation Changes:
+### 文档变更：
 
-- [ ] Content is accurate and up-to-date
-- [ ] Spelling and grammar checked
-- [ ] Links are working
-- [ ] Follows markdown formatting standards
-- [ ] Tested on actual devices (if technical guide)
+- [ ] 内容准确且为最新
+- [ ] 已检查拼写和语法
+- [ ] 链接有效
+- [ ] 遵循 Markdown 格式规范
+- [ ] 已在真实设备上测试（如果是技术指南）
 
-### For All PRs:
+### 所有 PR：
 
-- [ ] My changes don't break existing content
-- [ ] I've previewed the changes locally (if possible)
-- [ ] Commit messages are clear
-- [ ] No merge conflicts
+- [ ] 我的更改不会破坏现有内容
+- [ ] 我已在本地预览过更改（如果可能）
+- [ ] 提交信息清晰
+- [ ] 无合并冲突
 
-## Testing
+## 测试
 
-**How have you tested this?**
-(Describe your testing process)
+**你是如何测试的？**
+（描述你的测试过程）
 
-**Test environment:**
-- Device: 
-- Android version: 
-- Root method (if applicable): 
+**测试环境：**
+- 设备： 
+- Android 版本： 
+- Root 方式（如适用）： 
 
-## Screenshots (if applicable)
+## 截图（如适用）
 
-(Add screenshots showing your changes)
+（添加展示你更改内容的截图）
 
-## Additional Notes
+## 补充说明
 
-(Any additional information reviewers should know)
+（审查者需要了解的任何其他信息）
 
 ---
 
-**By submitting this PR, I confirm:**
-- [ ] My contribution is my own work or properly attributed
-- [ ] I agree to license my contribution under the project's MIT license
-- [ ] I've read and followed the [Contributing Guidelines](https://github.com/awesome-android-root/awesome-android-root/blob/main/docs/contributing.md)
+**提交此 PR，即表示我确认：**
+- [ ] 我的贡献是我自己的作品，或已恰当注明出处
+- [ ] 我同意以本项目的 MIT 许可证授权我的贡献
+- [ ] 我已阅读并遵循[贡献指南](https://github.com/awesome-android-root/awesome-android-root/blob/main/docs/contributing.md)

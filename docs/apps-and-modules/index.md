@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Best Android Root Apps & Modules
-description: Browse a curated directory of 650+ Android root apps, Magisk, KernelSU, APatch and LSPosed modules, organized by use case with source and compatibility labels.
+title: 最佳 Android Root 应用与模块
+description: 浏览精心整理的 650+ Android root 应用，以及 Magisk、KernelSU、APatch 和 LSPosed 模块目录，按使用场景分类，并标注来源与兼容性标签。
 head:
   - - link
     - rel: canonical
@@ -28,10 +28,10 @@ head:
       content: Awesome Android Root
   - - meta
     - property: og:title
-      content: Best Android Root Apps & Modules | Awesome Android Root
+      content: 最佳 Android Root 应用与模块 | Awesome Android Root
   - - meta
     - property: og:description
-      content: Browse 650+ curated Android root apps, Magisk, KernelSU, APatch and LSPosed modules organized by use case, framework and source.
+      content: 浏览 650+ 精选 Android root 应用与 Magisk、KernelSU、APatch 和 LSPosed 模块，按使用场景、框架与来源分类。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/apps-and-modules/
@@ -43,7 +43,7 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og.png
   - - meta
     - property: og:image:alt
-      content: Best Android Root Apps & Modules - 650+ curated tools
+      content: 最佳 Android Root 应用与模块 - 650+ 精选工具
   - - meta
     - property: og:image:width
       content: '1200'
@@ -64,10 +64,10 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: Best Android Root Apps & Modules | Awesome Android Root
+      content: 最佳 Android Root 应用与模块 | Awesome Android Root
   - - meta
     - name: twitter:description
-      content: Browse 650+ curated Android root apps and modules organized by use case and root framework.
+      content: 浏览 650+ 精选 Android root 应用与模块，按使用场景与 root 框架分类。
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og.png
@@ -206,173 +206,171 @@ head:
   <img src="/images/logo.svg" alt="Awesome Android Root Logo" width="120" height="120" />
 </picture>
 
-# Best Android Root Apps & Modules
+# 最佳 Android Root 应用与模块
 
-<p class="apps-lede">Explore a curated directory of 650+ Android root apps and modules. Find Magisk, KernelSU, APatch and LSPosed tools by what they help you do, then check the framework, FOSS status and official source before installing.</p>
+<p class="apps-lede">探索精心整理的 650+ Android root 应用与模块目录。按用途查找 Magisk、KernelSU、APatch 和 LSPosed 工具，安装前请先确认框架、开源状态与官方来源。</p>
 
 <div class="quick-nav">
 
-[Browse by Category](#browse-by-category) &nbsp;•&nbsp; [Starter Kit](#starter-kit-must-have-apps) &nbsp;•&nbsp; [Glossary](#glossary) &nbsp;•&nbsp; [Safety](#safety-legal)
+[按分类浏览](#按分类浏览) &nbsp;•&nbsp; [新手必备套装](#新手必备套装必装应用) &nbsp;•&nbsp; [术语表](#术语表) &nbsp;•&nbsp; [安全须知](#safety-legal)
 
 </div>
 </div>
 
 > [!TIP]
-> **New to rooting?** Start with the [Complete Rooting Guide](../rooting-guides/index.md) before exploring the
-> lists below. For privacy-friendly installs, use the F-Droid ecosystem: install
-> [Droid-ify](https://github.com/Droid-ify/client/releases) (modern F-Droid client) and enable the
-> [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) repo for many additional packages.
+> **刚接触 root？**在浏览下面的列表之前，先阅读[完整 Root 指南](../rooting-guides/index.md)。若希望以更注重隐私的方式安装，可使用 F-Droid 生态：安装
+> [Droid-ify](https://github.com/Droid-ify/client/releases)（现代化的 F-Droid 客户端），并启用
+> [IzzyOnDroid](https://apt.izzysoft.de/fdroid/) 仓库以获取更多软件包。
 
 > [!NOTE]
-> Every entry links to its **Source Code** page (GitHub/GitLab etc.) for `FOSS` apps, otherwise to its
-> **Google Play Store** listing. The inline badges identify framework and licensing metadata: `[M]` Magisk,
-> `[K]` KernelSU, `[A]` APatch, `[LSP]` LSPosed, `FOSS`, and ⭐ featured entries.
+> 每个条目对于 `FOSS` 应用会链接到其**源代码**页面（GitHub/GitLab 等），否则链接到其
+> **Google Play Store** 页面。行内徽章标识框架与许可信息：`[M]` Magisk、
+> `[K]` KernelSU、`[A]` APatch、`[LSP]` LSPosed、`FOSS`，以及 ⭐ 精选条目。
 
 ---
 
-## Browse by Category
+## 按分类浏览
 
-Apps and modules are grouped by **what you want to accomplish**, not by whether they are apps or modules. Each category combines root apps, Magisk modules, KernelSU modules, APatch modules and LSPosed modules for that topic.
+应用与模块按**你想完成的事情**分组，而不按其为应用还是模块划分。每个类别都汇集了该主题下的 root 应用、Magisk 模块、KernelSU 模块、APatch 模块和 LSPosed 模块。
 
-| Category | What you will find |
+| 类别 | 你能找到什么 |
 | :--- | :--- |
-| 🛠️ [Root Management](root-management.md) | Root managers, module managers, temporary root, LSPosed, Zygisk and root-hiding tools. |
-| ⚙️ [System](system.md) | Systemless tweaks, boot and startup tools, permissions, AppOps and package management. |
-| ⚡ [Performance &amp; Battery](performance.md) | Kernel, CPU, memory, battery, charging and process-management tools. |
-| 🕵️ [Privacy](privacy.md) | Privacy controls, app isolation, location tools and device-ID management. |
-| 🔐 [Security](security.md) | Firewalls, security utilities and tools for inspecting rooted devices. |
-| 🚫 [Ad Blocking](ad-blocking.md) | Hosts-based blockers, DNS filtering and anti-tracking modules. |
-| 🧩 [App Modifications](app-modifications.md) | App patchers, media, browser, social and LSPosed modifications. |
-| 🧹 [Debloating](debloating.md) | Tools for safely reviewing, freezing and removing unwanted system apps. |
-| 🗂️ [File Management](file-management.md) | Root file managers, cleaners, partition and storage tools. |
-| 💾 [Backup &amp; Restore](backup.md) | App/data backup, migration and recovery utilities. |
-| 🎨 [Customization](customization.md) | Themes, fonts, launchers, display, navigation and status-bar changes. |
-| 🎵 [Audio](audio.md) | Audio effects, enhancement, routing and device-specific audio tools. |
-| 🌐 [Networking](networking.md) | VPN, proxy, DNS, Wi-Fi, Bluetooth and NFC utilities. |
-| 🎮 [Gaming](gaming.md) | Gaming performance, FPS, input and device-tuning tools. |
-| 🧑‍💻 [Development &amp; Automation](development.md) | Terminals, ADB, scripting, automation and Android development tools. |
-| 🧰 [General Utilities](utilities.md) | Sync, power, sharing and practical root utilities. |
+| 🛠️ [Root 管理](root-management.md) | Root 管理器、模块管理器、临时 root、LSPosed、Zygisk 与 root 隐藏工具。 |
+| ⚙️ [系统](system.md) | 无系统级修改的调整、启动与开机工具、权限、AppOps 与包管理。 |
+| ⚡ [性能与电池](performance.md) | 内核、CPU、内存、电池、充电与进程管理工具。 |
+| 🕵️ [隐私](privacy.md) | 隐私控制、应用隔离、位置工具与设备 ID 管理。 |
+| 🔐 [安全](security.md) | 防火墙、安全实用工具以及检查已 root 设备的工具。 |
+| 🚫 [广告拦截](ad-blocking.md) | 基于 hosts 的拦截器、DNS 过滤与反跟踪模块。 |
+| 🧩 [应用修改](app-modifications.md) | 应用补丁工具、媒体、浏览器、社交媒体与 LSPosed 修改。 |
+| 🧹 [精简预装](debloating.md) | 安全审查、冻结与移除无用系统应用的工具。 |
+| 🗂️ [文件管理](file-management.md) | root 文件管理器、清理工具、分区与存储工具。 |
+| 💾 [备份与恢复](backup.md) | 应用/数据备份、迁移与恢复工具。 |
+| 🎨 [个性化定制](customization.md) | 主题、字体、启动器、显示、导航与状态栏修改。 |
+| 🎵 [音频](audio.md) | 音效、增强、路由与设备专用音频工具。 |
+| 🌐 [网络](networking.md) | VPN、代理、DNS、Wi-Fi、蓝牙与 NFC 工具。 |
+| 🎮 [游戏](gaming.md) | 游戏性能、FPS、输入与设备调校工具。 |
+| 🧑‍💻 [开发与自动化](development.md) | 终端、ADB、脚本、自动化与 Android 开发工具。 |
+| 🧰 [通用工具](utilities.md) | 同步、电源、分享与实用的 root 工具。 |
 
 > [!TIP]
-> Looking for tutorials instead of tools? Browse the [Rooting Guides](../rooting-guides/index.md) or the
-> [General Guides](../general-guides/index.md).
+> 想找教程而不是工具？浏览 [Root 指南](../rooting-guides/index.md)或
+> [通用指南](../general-guides/index.md)。
 
 ---
 
-## Starter Kit: Must have Apps
+## 新手必备套装：必装应用
 
-| App | Why it's essential |
+| 应用 | 为什么必备 |
 | :---: | :--- |
-| **[Magisk](https://github.com/topjohnwu/Magisk)** <br><small> [Root Management](root-management.md) </small> | If you chose Magisk, this is your manager. |
-| **[App Manager](https://github.com/MuntashirAkon/AppManager)** <br><small> [System → App & Package Management](system.md#app-package-management) </small> | Inspect and manage apps with root privileges. |
-| **[MiXplorer](https://mixplorer.com/)** <br><small> [File Management](file-management.md) </small> | A powerful file manager with full root access. |
-| **[AdAway](https://adaway.org/)** <br><small> [Ad Blocking](ad-blocking.md) </small> | Open-source system-wide ad blocker. |
-| **[Droid-ify](https://f-droid.org/packages/com.looker.droidify)** <br><small> [System → App & Package Management](system.md#app-package-management) </small> | A modern F-Droid client for installing open-source apps. |
+| **[Magisk](https://github.com/topjohnwu/Magisk)** <br><small> [Root 管理](root-management.md) </small> | 如果你选择 Magisk，这就是你的管理器。 |
+| **[App Manager](https://github.com/MuntashirAkon/AppManager)** <br><small> [系统 → 应用与包管理](system.md#app-package-management) </small> | 以 root 权限检查并管理应用。 |
+| **[MiXplorer](https://mixplorer.com/)** <br><small> [文件管理](file-management.md) </small> | 拥有完整 root 权限的强大文件管理器。 |
+| **[AdAway](https://adaway.org/)** <br><small> [广告拦截](ad-blocking.md) </small> | 开源的系统级广告拦截器。 |
+| **[Droid-ify](https://f-droid.org/packages/com.looker.droidify)** <br><small> [系统 → 应用与包管理](system.md#app-package-management) </small> | 用于安装开源应用的现代 F-Droid 客户端。 |
 
 ---
 
-## Glossary
+## 术语表
 
-### Entry Tags
+### 条目标签
 
-| Tag | Meaning |
+| 标签 | 含义 |
 |:----|:---|
-| ⭐ | Community-recommended (most trusted/popular in category) |
-| `FOSS` | Free and Open Source Software (source code available) |
-| `Proprietary` | Closed-source software or unclear licensing |
+| ⭐ | 社区推荐（该类别中最受信赖/最受欢迎） |
+| `FOSS` | 自由开源软件（源代码公开） |
+| `Proprietary` | 闭源软件或许可不明确 |
 
-### Framework & Module Badges
+### 框架与模块徽章
 
-| Badge | Framework | Requires |
+| 徽章 | 框架 | 需要 |
 |:---|:---|:---|
-| `[M]` | Magisk Module | [Magisk](../rooting-guides/magisk-guide.md) |
-| `[K]` | KernelSU Module | [KernelSU](../rooting-guides/kernelsu-guide.md) |
-| `[A]` | APatch Module | [APatch](../rooting-guides/apatch-guide.md) |
-| `[LSP]` | LSPosed / Xposed Module | [LSPosed](../rooting-guides/lsposed-guide.md) |
+| `[M]` | Magisk 模块 | [Magisk](../rooting-guides/magisk-guide.md) |
+| `[K]` | KernelSU 模块 | [KernelSU](../rooting-guides/kernelsu-guide.md) |
+| `[A]` | APatch 模块 | [APatch](../rooting-guides/apatch-guide.md) |
+| `[LSP]` | LSPosed / Xposed 模块 | [LSPosed](../rooting-guides/lsposed-guide.md) |
 
-### Store & Source Icons
+### 商店与来源图标
 
-| Icon | Source |
+| 图标 | 来源 |
 |:---|:---|
-| 🌱 | Available on F-Droid / IzzyOnDroid |
-| ▶️ | Available on Google Play Store |
+| 🌱 | 可在 F-Droid / IzzyOnDroid 获取 |
+| ▶️ | 可在 Google Play Store 获取 |
 
-### Ordering of Entries
+### 条目排序
 
-1. ⭐ (Community-recommended) entries first
-2. Alphabetical order within each (sub-)category
+1. ⭐（社区推荐）条目优先
+2. 每个类别（及子类别）内按字母顺序排列
 
 <details>
-<summary><b>📚 Common Rooting Terms</b></summary>
+<summary><b>📚 常见 Root 术语</b></summary>
 
-- **Bootloader** - Low-level software that starts your OS (must be unlocked for root)
-- **Temporary Root** - Root that exists in memory for the current boot only (e.g. GhostLock/CVE-2026-43499 tools); lost on reboot, no bootloader unlock needed
-- **Recovery** - Special mode for system modifications (TWRP, CWM)
-- **Systemless Root** - Root method that doesn't modify system partition
-- **Zygisk** - Feature for advanced app hooking and hiding
-- **DenyList** - Feature to hide root from specific apps
-- **Play Integrity** - Google's security check (replacing SafetyNet)
-- **Knox** - Samsung's security platform (trips when bootloader unlocked)
+- **Bootloader** - 启动操作系统的底层软件（root 必须先解锁）
+- **Temporary Root** - 仅在本次开机期间存在于内存中的 root（如 GhostLock/CVE-2026-43499 工具）；重启即失效，无需解锁 bootloader
+- **Recovery** - 用于系统修改的特殊模式（TWRP、CWM）
+- **Systemless Root** - 不修改系统分区的 root 方式
+- **Zygisk** - 用于高级应用钩子与隐藏的功能
+- **DenyList** - 对特定应用隐藏 root 的功能
+- **Play Integrity** - Google 的安全校验（取代 SafetyNet）
+- **Knox** - 三星的安全平台（解锁 bootloader 即触发）
 
 </details>
 
 ---
 
-## Resources and Help
+## 资源与帮助
 
-### Official Channels
+### 官方渠道
 
-| Platform | Purpose | Link |
+| 平台 | 用途 | 链接 |
 |:---|:---|:---|
-| 🌐 **Website** | Browse apps, modules & guides | [awesome-android-root.zhoe.org](https://awesome-android-root.zhoe.org) |
-| 📂 **GitHub** | Source, discussions & issues | [GitHub Repo](https://github.com/awesome-android-root/awesome-android-root) |
-| 𝕏 **X/Twitter** | Updates & news | [@awsm_and_root](https://x.com/awsm_and_root) |
+| 🌐 **网站** | 浏览应用、模块与指南 | [awesome-android-root.zhoe.org](https://awesome-android-root.zhoe.org) |
+| 📂 **GitHub** | 源码、讨论与 issue | [GitHub 仓库](https://github.com/awesome-android-root/awesome-android-root) |
+| 𝕏 **X/Twitter** | 更新与动态 | [@awsm_and_root](https://x.com/awsm_and_root) |
 
-### Quick Help Paths
+### 快速帮助路径
 
-- First time here? Start at the [Introduction](/rooting-guides/#understanding-root-access) & the
-  [4-Step Rooting Process](/rooting-guides/#universal-rooting-process)
-- Unsure about a term? Open the [Glossary](#glossary)
-- Want tools? Jump to [Browse by Category](#browse-by-category)
-- Need a walkthrough? Browse the [Rooting Guides Index](../rooting-guides/index.md)
-- Common questions? Check the [FAQs](../faqs.md)
-- Need fixes? See the [Troubleshooting Guide](../troubleshooting.md)
+- 第一次来？从[简介](/rooting-guides/#understanding-root-access)与
+  [四步 Root 流程](/rooting-guides/#universal-rooting-process)开始
+- 对术语不确定？打开[术语表](#术语表)
+- 想找工具？跳转到[按分类浏览](#按分类浏览)
+- 需要手把手教程？浏览 [Root 指南索引](../rooting-guides/index.md)
+- 常见问题？查看[常见问题解答](../faqs.md)
+- 需要修复？参见[故障排除指南](../troubleshooting.md)
 
-### Contribute and Participate
+### 参与贡献
 
-- ⭐ Star the [repo](https://github.com/awesome-android-root/awesome-android-root) (boosts discovery)
-- 🐛 Report [issues](https://github.com/awesome-android-root/awesome-android-root/issues)
-- 💡 Suggest new apps/modules
-- 🧹 Improve formatting / dead link cleanup
+- ⭐ 给[仓库](https://github.com/awesome-android-root/awesome-android-root)加星（提升曝光度）
+- 🐛 报告[问题](https://github.com/awesome-android-root/awesome-android-root/issues)
+- 💡 推荐新的应用/模块
+- 🧹 改进排版 / 清理失效链接
 
-> 📝 Read the [Contributing Guide](../contributing.md) before major PRs.
+> 📝 在提交大型 PR 前，请先阅读[贡献指南](../contributing.md)。
 
 ---
 
-## Safety & Legal
+## 安全与法律
 
 > [!IMPORTANT]
-> **Educational reference only. Proceed at your own risk.**
-> Rooting can void warranty, break security (Knox/Integrity), and lock out banking/DRM apps. **Avoid
-> proceeding** if this is a mission-critical device or if you lack a verified backup.
+> **仅供教育参考。风险自负。**
+> root 可能导致保修失效、破坏安全机制（Knox/Integrity），并导致银行/DRM 应用无法使用。如果这是关键设备，或你没有经过验证的备份，**请勿继续**。
 
-### Pre-Flash Checklist
+### 刷入前检查清单
 
-- [ ] **Backups:** Full app data and internal storage images.
-- [ ] **Firmware:** Matching factory boot/vbmeta images on hand.
-- [ ] **Tools:** Latest `platform-tools` (ADB/Fastboot) installed.
-- [ ] **Access:** Alternate path available (Custom Recovery or 2nd device).
+- [ ] **备份：**完整的应用数据和内部存储镜像。
+- [ ] **固件：**准备好与出厂匹配的 boot/vbmeta 镜像。
+- [ ] **工具：**安装最新版 `platform-tools`（ADB/Fastboot）。
+- [ ] **退路：**确保有替代途径（第三方 Recovery 或另一台设备）。
 
-### Risk Mitigation
+### 风险缓解
 
-- **Systemless First:** Favor Magisk/KernelSU over invasive system partition mods.
-- **One at a Time:** Change one variable and test before moving to the next.
-- **Clean Rollback:** Keep pristine copies of original `boot` and `vbmeta` images.
-- **Module Safety:** Check "Open Issues" and avoid overlapping mods (e.g., multiple ad-blockers).
+- **优先无系统修改：**优先选择 Magisk/KernelSU，而非侵入式修改系统分区的方案。
+- **一次只改一项：**每次只改动一个变量并测试，再进行下一步。
+- **保持干净的回滚：**保留原始 `boot` 与 `vbmeta` 镜像的完好副本。
+- **模块安全：**查看"Open Issues"（未解决的 issue），避免功能重叠的修改（如多个广告拦截器）。
 
 <div align="center">
 
-*Respect licenses, ToS, and local laws. Do not use root to unlawfully bypass paid features. See the
-[Legal Disclaimer](../legal-disclaimer.md) for details.*
+*尊重许可证、服务条款与当地法律。不要使用 root 非法绕过付费功能。详情请见
+[法律免责声明](../legal-disclaimer.md)。*
 
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: "Backup & Restore"
-description: "Backup and restore apps for rooted Android: full app+data backups, cloud backup, nandroid and partition images and data recovery tools."
+title: "备份与恢复"
+description: "面向已 root Android 的备份与恢复应用：完整的应用+数据备份、云备份、nandroid 与分区镜像以及数据恢复工具。"
 head:
   - - link
     - rel: canonical
@@ -20,10 +20,10 @@ head:
       content: Awesome Android Root
   - - meta
     - property: og:title
-      content: "Backup & Restore | Awesome Android Root"
+      content: "备份与恢复 | Awesome Android Root"
   - - meta
     - property: og:description
-      content: "Backup and restore apps for rooted Android: full app+data backups, cloud backup, nandroid and partition images and data recovery tools."
+      content: "面向已 root Android 的备份与恢复应用：完整的应用+数据备份、云备份、nandroid 与分区镜像以及数据恢复工具。"
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/apps-and-modules/backup
@@ -41,27 +41,26 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: "Backup & Restore | Awesome Android Root"
+      content: "备份与恢复 | Awesome Android Root"
   - - meta
     - name: twitter:description
-      content: "Backup and restore apps for rooted Android: full app+data backups, cloud backup, nandroid and partition images and data recovery tools."
+      content: "面向已 root Android 的备份与恢复应用：完整的应用+数据备份、云备份、nandroid 与分区镜像以及数据恢复工具。"
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og.png
 ---
 
-# Backup & Restore
+# 备份与恢复
 
-**Backup & Restore** apps for rooted Android - full app + data backups (the kind only root can do), cloud and
-local backup solutions, partition images and data recovery tools. Back up before flashing, debloating or
-unlocking - always.
+面向已 root Android 的**备份与恢复**应用 - 完整的应用 + 数据备份（只有 root 才能做到的那种）、云端与
+本地备份方案、分区镜像与数据恢复工具。刷入、精简预装或解锁之前——务必备份。
 
 
-## Backup Apps & Tools
+## 备份应用与工具
 
-- **[⭐ Swift Backup](https://play.google.com/store/apps/details?id=org.swiftapps.swiftbackup)** - Modern backup solution with cloud support. `Proprietary`
-- **[DataBackup](https://github.com/XayahSuSuSu/Android-DataBackup)** - DataBackup for Android 7.0+. `FOSS` | [🌱](https://f-droid.org/zh_Hans/packages/com.xayah.databackup.foss/)
-- **[DiskDigger](https://play.google.com/store/apps/details?id=com.defianttech.diskdigger)** - A powerful data recovery tool for Android devices. `Proprietary`
-- **[Dumpster: Photo/Video Recovery](https://play.google.com/store/apps/details?id=com.baloota.dumpster)** - You can recover deleted videos, restore photos, undelete recently deleted apps, and other files. `Proprietary`
-- **[Neo Backup](https://github.com/NeoApplications/Neo-Backup)** - Powerful open-source backup solution. `FOSS` | [🌱](https://f-droid.org/packages/com.machiav3lli.backup/)
-- **[Restoid](https://github.com/hddq/restoid)** - modern, root-based Android app backup tool powered by restic. `FOSS`
+- **[⭐ Swift Backup](https://play.google.com/store/apps/details?id=org.swiftapps.swiftbackup)** - 支持云端的现代备份方案。`Proprietary`
+- **[DataBackup](https://github.com/XayahSuSuSu/Android-DataBackup)** - 适用于 Android 7.0+ 的 DataBackup。`FOSS` | [🌱](https://f-droid.org/zh_Hans/packages/com.xayah.databackup.foss/)
+- **[DiskDigger](https://play.google.com/store/apps/details?id=com.defianttech.diskdigger)** - 面向 Android 设备的强大数据恢复工具。`Proprietary`
+- **[Dumpster: Photo/Video Recovery](https://play.google.com/store/apps/details?id=com.baloota.dumpster)** - 恢复已删除的视频、还原照片、找回最近删除的应用以及其他文件。`Proprietary`
+- **[Neo Backup](https://github.com/NeoApplications/Neo-Backup)** - 强大的开源备份方案。`FOSS` | [🌱](https://f-droid.org/packages/com.machiav3lli.backup/)
+- **[Restoid](https://github.com/hddq/restoid)** - 由 restic 驱动的现代 root Android 应用备份工具。`FOSS`

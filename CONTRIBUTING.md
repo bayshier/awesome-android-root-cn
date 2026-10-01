@@ -1,41 +1,41 @@
-# Contributing to Awesome Android Root
+# 参与 Awesome Android Root 贡献
 
-Thanks for contributing.
+感谢你的贡献。
 
-This file is the short version. The complete contribution guide, including entry format, tags, category rules, quality requirements, and examples, lives in [`docs/contributing.md`](docs/contributing.md).
+本文件是精简版本。完整的贡献指南（包括条目格式、标签、分类规则、质量要求和示例）位于 [`docs/contributing.md`](docs/contributing.md)。
 
-## Quick start
+## 快速开始
 
-1. Fork the repository.
-2. Edit the relevant page under [`docs/apps-and-modules/`](docs/apps-and-modules/).
-3. Add or update the entry in alphabetical order.
-4. Open a pull request.
+1. Fork 本仓库。
+2. 编辑 [`docs/apps-and-modules/`](docs/apps-and-modules/) 下的相关页面。
+3. 按字母顺序添加或更新条目。
+4. 发起 pull request。
 
-The root `README.md` is an index. The collection itself is maintained under `docs/`.
+根目录的 `README.md` 只是一个索引。收录内容本身维护在 `docs/` 之下。
 
-## Before opening a PR
+## 发起 PR 之前
 
-- Use the correct topic page.
-- Check for duplicates.
-- Use an official, working link.
-- Keep the description factual and concise.
-- Follow the entry format and tags in the [full guide](docs/contributing.md).
-- Check the quality requirements before submitting.
+- 使用正确的主题页面。
+- 检查是否有重复条目。
+- 使用有效且官方的链接。
+- 保持描述客观、简洁。
+- 遵循[完整指南](docs/contributing.md)中的条目格式和标签。
+- 提交前检查质量要求。
 
-### Typical entry
+### 典型条目
 
 ```markdown
 - **[Name](link)** - Short description. `FOSS` `[M]`
 ````
 
-Use only the tags that apply. See the [full guide](docs/contributing.md) for the complete format and tag reference.
+只使用适用的标签。完整的格式和标签参考请参见[完整指南](docs/contributing.md)。
 
-## Need help?
+## 需要帮助？
 
-* [Full contribution guide](docs/contributing.md)
-* [Issue templates](.github/ISSUE_TEMPLATE/)
-* [Pull request template](.github/PULL_REQUEST_TEMPLATE.md)
+* [完整贡献指南](docs/contributing.md)
+* [Issue 模板](.github/ISSUE_TEMPLATE/)
+* [Pull request 模板](.github/PULL_REQUEST_TEMPLATE.md)
 
-If a category or taxonomy needs to change, use the relevant issue template before restructuring existing entries.
+如果需要变更分类或类别体系，请先使用相应的 issue 模板，再重构现有条目。
 
-Contributions are licensed under the [MIT License](LICENSE).
+贡献内容基于 [MIT 许可证](LICENSE) 授权。

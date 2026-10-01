@@ -1,44 +1,44 @@
 ---
-name: App/Module Suggestion
-about: Suggest a new root app or module for inclusion
+name: 应用/模块建议
+about: 建议收录新的 root 应用或模块
 title: '[APP/MODULE] '
 labels: 'enhancement, app-suggestion'
 assignees: ''
 ---
 
-## App/Module Information
+## 应用/模块信息
 
-**Name:** 
-**Type:** (Select one: Root App / Magisk Module / KernelSU Module / LSPosed Module)
-**Category:** (choose the topic page in `docs/apps-and-modules/`: Root Management / System / Debloating / Performance & Battery / Privacy / Security / Ad Blocking / App Modifications / File Management / Backup & Restore / Customization / Audio / Networking / Gaming / Development & Automation / General Utilities)
+**名称：** 
+**类型：**（选择一项：Root 应用 / Magisk 模块 / KernelSU 模块 / LSPosed 模块）
+**分类：**（选择 `docs/apps-and-modules/` 中的主题页面：Root 管理 / 系统 / 精简预装 / 性能与电池 / 隐私 / 安全 / 广告拦截 / 应用修改 / 文件管理 / 备份与恢复 / 个性化定制 / 音频 / 网络 / 游戏 / 开发与自动化 / 通用工具）
 
-## Links
+## 链接
 
-**Source Code / Main Link:** 
-**Additional Links:** (Play Store, F-Droid, XDA, etc.)
+**源码 / 主链接：** 
+**其他链接：**（Play Store、F-Droid、XDA 等）
 
-## Description
+## 描述
 
-**What does it do?**
-(Brief description of functionality)
+**它有什么功能？**
+（简要描述其功能）
 
-**Why should it be included?**
-(What makes it valuable/unique?)
+**为什么应该收录它？**
+（它的价值/独特之处是什么？）
 
-## Verification
+## 核实确认
 
-- [ ] The app/module is actively maintained (updated in last 6 months)
-- [ ] I have tested it personally and it works
-- [ ] Source code is available (for FOSS) OR it's a well-known proprietary app
-- [ ] It doesn't duplicate existing entries (or explain why it's better)
-- [ ] The link provided is the official source
+- [ ] 应用/模块在积极维护中（近 6 个月内有更新）
+- [ ] 我已亲自测试且可正常使用
+- [ ] 源码可获取（FOSS 项目），或者是知名的专有应用
+- [ ] 它不与现有条目重复（或说明它为何更优）
+- [ ] 提供的链接是官方来源
 
-## License & Status
+## 许可证与状态
 
-**License:** (FOSS/Proprietary)
-**Last Update:** 
-**Tested on:** (Your device and Android version)
+**许可证：**（FOSS/专有）
+**最后更新：** 
+**测试环境：**（你的设备和 Android 版本）
 
-## Additional Context
+## 补充信息
 
-(Any other relevant information, screenshots, or context)
+（任何其他相关信息、截图或背景说明）

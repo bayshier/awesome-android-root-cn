@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: "How to Root a Samsung Galaxy: Odin, AP & Magisk"
-description: "Learn how to root a Samsung Galaxy with model- and region-specific bootloader checks, Download Mode, Odin AP patching, Magisk, Knox and One UI warnings."
+title: "如何 Root Samsung Galaxy：Odin、AP 与 Magisk"
+description: "了解如何 Root Samsung Galaxy：机型与地区相关的 Bootloader 检查、Download Mode、Odin AP 修补、Magisk，以及 Knox 与 One UI 的注意事项。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: "How to Root a Samsung Galaxy: Odin, AP & Magisk"
+      content: "如何 Root Samsung Galaxy：Odin、AP 与 Magisk"
   - - meta
     - property: og:description
-      content: Samsung Galaxy rooting guide covering bootloader eligibility, OEM unlocking, Download Mode, Odin AP patching, Magisk, Knox and One UI differences.
+      content: Samsung Galaxy Root 指南，涵盖 Bootloader 解锁资格、OEM 解锁、Download Mode、Odin AP 修补、Magisk，以及 Knox 与 One UI 的差异。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/how-to-root-samsung-phone
@@ -26,10 +26,10 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: "How to Root a Samsung Galaxy: Odin, AP & Magisk"
+      content: "如何 Root Samsung Galaxy：Odin、AP 与 Magisk"
   - - meta
     - name: twitter:description
-      content: Rooting steps for eligible Samsung Galaxy models, with Odin AP patching, Magisk and model-specific restrictions.
+      content: 符合条件的 Samsung Galaxy 机型的 Root 步骤，包含 Odin AP 修补、Magisk 以及机型特定的限制。
   - - meta
     - name: twitter:site
       content: "@awsm_and_root"
@@ -41,16 +41,16 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og/samsung.png
   - - meta
     - name: twitter:image:alt
-      content: Samsung Galaxy rooting guide with Odin, AP patching and Magisk
+      content: Samsung Galaxy Root 指南：Odin、AP 修补与 Magisk
   - - meta
     - name: author
-      content: Awesome Android Root Project
+      content: Awesome Android Root 项目
   - - meta
     - property: article:author
       content: https://github.com/awesome-android-root/awesome-android-root
   - - meta
     - property: article:section
-      content: Device Rooting
+      content: 设备 Root
   - - meta
     - property: article:tag
       content: Samsung Galaxy Root
@@ -59,10 +59,10 @@ head:
       content: One UI
   - - meta
     - property: article:tag
-      content: Knox Security
+      content: Knox 安全
   - - meta
     - property: article:tag
-      content: Magisk Installation
+      content: Magisk 安装
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -74,646 +74,646 @@ head:
       content: index, follow
 ---
 
-# How to Root a Samsung Galaxy: Odin, AP & Magisk
+# 如何 Root Samsung Galaxy：Odin、AP 与 Magisk
 
-There is no single Samsung rooting procedure. Bootloader availability, chipset, CSC/region, Android version and One UI release determine whether a Galaxy device can be rooted. This guide explains the checks first, then covers Download Mode, Odin AP-file patching and Magisk for models that are actually eligible.
+Samsung 并没有统一的 Root 流程。Bootloader 是否可解锁、芯片组、CSC/地区、Android 版本和 One UI 版本共同决定了 Galaxy 设备能否被 Root。本指南先讲解相关检查，然后再针对真正符合条件的机型介绍 Download Mode、Odin AP 文件修补和 Magisk。
 
-## Quick Navigation
+## 快速导航
 
-- [Samsung-specific risks](#samsung-rooting-challenges)
-- [Model and region compatibility](#device-compatibility)
-- [Prerequisites](#prerequisites)
-- [Bootloader Unlock](#unlock-bootloader)
-- [Root Installation](#root-installation)
-- [Troubleshooting](#troubleshooting)
+- [Samsung 特有风险](#samsung-root-的挑战)
+- [机型与地区兼容性](#设备兼容性)
+- [前置条件](#前置条件)
+- [Bootloader 解锁](#解锁-bootloader)
+- [Root 安装](#root-安装)
+- [故障排除](#故障排除)
 
-**Related Guides:**
-- [Main Rooting Guide](./index.md) - Universal rooting concepts
-- [Bootloader Unlocking](./how-to-unlock-bootloader.md) - Model and region checks
-- [Magisk Guide](./magisk-guide.md) - Complete Magisk documentation
-- [Samsung troubleshooting](#troubleshooting) - Odin, Download Mode and root failures
-
----
-## Samsung Rooting Challenges
-
-::: warning BOOTLOADER ELIGIBILITY CHANGES BY MODEL
-Samsung does not offer one unlock policy for every Galaxy device. Some international models expose OEM unlocking, while many carrier-branded US/Canadian variants do not. Newer Galaxy generations and One UI releases can change what is available, so verify the exact model number, CSC/region and firmware before updating or attempting to root.
-
-Do not treat a guide for one Galaxy model as proof that another model or region is unlockable.
-:::
-
-
-::: danger ⚠️ Samsung-Specific Risks
-- **Knox permanently tripped (0x1)** – **Cannot be reversed**, affects Samsung Pay, Health, Secure Folder
-- **Warranty completely void** – Samsung will refuse all service once Knox is tripped
-- **Carrier restrictions** – US carrier models (Verizon, AT&T) often **cannot unlock bootloader**
-- **Banking & financial app detection** – Enhanced root detection via **Play Integrity** and **SafetyNet**
-- **OTA updates blocked** – Official updates will fail unless root is temporarily uninstalled
-- **Samsung Cloud & Find My Mobile** – May flag device as compromised
-:::
-
-::: tip 💡 Want root WITHOUT tripping Knox?
-On a subset of specifically verified Galaxy builds, the **GhostLock** bug (CVE-2026-43499) may provide **temporary root with the bootloader still locked**. That is not a general Samsung rooting method: root is lost on reboot and support depends on the exact firmware. See [Root Without Unlocking the Bootloader](./root-without-unlocking-bootloader.md) for the current limitations.
-:::
-
-
+**相关指南：**
+- [Root 主指南](./index.md) - 通用 Root 概念
+- [Bootloader 解锁](./how-to-unlock-bootloader.md) - 机型与地区检查
+- [Magisk 指南](./magisk-guide.md) - 完整的 Magisk 文档
+- [Samsung 故障排除](#故障排除) - Odin、Download Mode 与 Root 失败
 
 ---
+## Samsung Root 的挑战
 
-## Device Compatibility
+::: warning BOOTLOADER 解锁资格因机型而异
+Samsung 并未对所有 Galaxy 设备实行统一的解锁政策。部分国际版机型提供 OEM 解锁选项，而许多美版/加拿大版运营商定制机型则没有。较新的 Galaxy 世代和 One UI 版本可能改变可用选项，因此在更新或尝试 Root 之前，请核实确切的型号、CSC/地区和固件。
 
-Samsung rooting is complex and model-dependent. International Exynos devices and some international Snapdragon devices are more likely to expose an unlock path, but the model number and region are decisive.
+不要把适用于某一 Galaxy 机型的指南当作其他机型或地区也可解锁的依据。
+:::
 
-| Device situation | What to verify before doing anything |
+
+::: danger ⚠️ Samsung 特有风险
+- **Knox 永久熔断（0x1）** – **无法逆转**，影响 Samsung Pay、Health、Secure Folder
+- **保修完全失效** – Knox 熔断后 Samsung 将拒绝一切售后服务
+- **运营商限制** – 美版运营商机型（Verizon、AT&T）通常**无法解锁 Bootloader**
+- **银行与金融应用检测** – 通过 **Play Integrity** 和 **SafetyNet** 进行强化 Root 检测
+- **OTA 更新被阻断** – 除非临时卸载 Root，否则官方更新会失败
+- **Samsung Cloud 与 Find My Mobile** – 可能将设备标记为存在安全风险
+:::
+
+::: tip 💡 想要不触发 Knox 就获得 Root？
+在一部分经过专门验证的 Galaxy 固件版本上，**GhostLock** 漏洞（CVE-2026-43499）或许能在 **Bootloader 保持锁定的情况下提供临时 Root**。但这不是通用的 Samsung Root 方法：重启后 Root 即失效，且支持情况取决于具体固件。当前的限制请参见[不解锁 Bootloader 进行 Root](./root-without-unlocking-bootloader.md)。
+:::
+
+
+
+---
+
+## 设备兼容性
+
+Samsung 的 Root 流程复杂且因机型而异。国际版 Exynos 设备和部分国际版 Snapdragon 设备更有可能提供解锁途径，但型号和地区才是决定性因素。
+
+| 设备情况 | 动手之前需要核实的事项 |
 | :--- | :--- |
-| International or unlocked model | Whether **OEM unlocking** appears and whether the device accepts the Download Mode unlock confirmation. |
-| US or Canadian carrier model | Carrier bootloader policy; many variants do not expose an unlock path even when the hardware is similar. |
-| New Galaxy generation or current One UI firmware | The exact model, CSC/region and firmware build; do not infer support from an older S or A series guide. |
-| Snapdragon versus Exynos variant | The chipset and regional firmware, because rooting instructions and unlock availability can differ. |
+| 国际版或无锁机型 | 是否出现 **OEM 解锁**选项，以及设备是否接受 Download Mode 中的解锁确认。 |
+| 美版或加拿大版运营商机型 | 运营商的 Bootloader 政策；许多变体即使硬件相似也不提供解锁途径。 |
+| 新一代 Galaxy 或最新 One UI 固件 | 确切的型号、CSC/地区和固件版本；不要从较旧的 S 或 A 系列指南推断支持情况。 |
+| Snapdragon 与 Exynos 变体 | 芯片组和地区固件，因为 Root 步骤和解锁可用性可能不同。 |
 
-### Incompatible / Restricted Devices
+### 不兼容 / 受限设备
 
-::: warning VERIFY, DO NOT ASSUME
-A missing or permanently greyed-out OEM Unlocking option is a stop sign, not a problem to work around with a random Odin file. If the exact model and region cannot be verified as unlockable, do not flash a patched AP file.
+::: warning 先核实，不要想当然
+OEM 解锁选项缺失或永久呈灰色是一个停止信号，而不是可以随便找个 Odin 文件绕过的问题。如果无法确认确切的机型和地区可以解锁，请不要刷入修补过的 AP 文件。
 :::
 
-::: warning KNOX CONSEQUENCES (Permanent)
-- Knox EFUSE physically burned - **cannot be reversed**
-- Samsung Pay/Wallet, Secure Folder, Samsung Pass permanently disabled
-- Warranty permanently void
-- Some banking apps may refuse to run even with root hiding
+::: warning KNOX 后果（永久性）
+- Knox EFUSE 已物理熔断 - **无法逆转**
+- Samsung Pay/Wallet、Secure Folder、Samsung Pass 永久禁用
+- 保修永久失效
+- 某些银行类应用即使做了 Root 隐藏也可能拒绝运行
 :::
 
-**Before attempting:** Check your model's unlockability on [XDA Forums](https://forum.xda-developers.com/) for your specific variant.
+**尝试之前：** 请在 [XDA 论坛](https://forum.xda-developers.com/)上查询你的具体变体机型的可解锁性。
 
 ---
 
-## Prerequisites
+## 前置条件
 
-### Critical Requirements
+### 关键要求
 
-::: danger BEFORE YOU START
-**Knox Will Trip:** Permanently and irreversibly. Think carefully.
+::: danger 开始之前
+**Knox 将被熔断：** 永久且不可逆。请慎重考虑。
 
-**Data Wipe:** Unlocking erases everything. Backup first.
+**数据清除：** 解锁会清除所有内容。请先备份。
 
-**Warranty Void:** Samsung will refuse all service.
+**保修失效：** Samsung 将拒绝一切售后服务。
 
-**Banking Apps:** May not work even with root hiding.
+**银行类应用：** 即使做了 Root 隐藏也可能无法使用。
 
-**US Carrier Models:** Most cannot unlock bootloader at all.
+**美版运营商机型：** 大多数根本无法解锁 Bootloader。
 :::
 
-### Hardware Requirements
+### 硬件要求
 
-- Samsung Galaxy device (international or unlocked US)
-- Windows computer (Odin requires Windows)
-- Quality USB cable (Samsung original recommended)
-- 50%+ battery charge
+- Samsung Galaxy 设备（国际版或美版无锁）
+- Windows 电脑（Odin 仅支持 Windows）
+- 质量良好的 USB 数据线（推荐 Samsung 原装）
+- 电量 50% 以上
 
-### Software Requirements
+### 软件要求
 
-**On Computer:**
+**电脑端：**
 
-1. **Samsung USB Drivers**
-   - Download: [Samsung Developers](https://developer.samsung.com/android-usb-driver)
-   - Install before connecting device
+1. **Samsung USB 驱动**
+   - 下载：[Samsung Developers](https://developer.samsung.com/android-usb-driver)
+   - 在连接设备之前安装
 
-2. **Odin Flash Tool**
-  - Download the stock Odin package from the [XDA Odin thread](https://xdaforums.com/t/patched-odin-3-13-1.3762572/); this guide's AP-patching steps do not require patched Odin.
-  - The thread warns that packages labeled Odin 3.14.4 are fake. Follow the exact-device instructions for the required version, and do not trust a filename alone.
-  - Compare the archive's SHA-256 with a hash from an independently trusted source, if available. Scan the archive with up-to-date security software, but do not treat a clean scan as proof of authenticity.
-  - Patched Odin builds modify behavior and can bypass checks; use one only when device-specific instructions explicitly require it. Extract the archive before running Odin.
+2. **Odin 刷入工具**
+  - 从 [XDA Odin 帖子](https://xdaforums.com/t/patched-odin-3-13-1.3762572/)下载官方 Odin 压缩包；本指南的 AP 修补步骤不需要 patched Odin。
+  - 该帖子警告称，标注为 Odin 3.14.4 的压缩包是伪造的。请按照针对你具体机型的说明获取所需版本，不要仅凭文件名判断真伪。
+  - 如有可能，请将压缩包的 SHA-256 与来自独立可信来源的哈希值进行比对。使用最新的安全软件扫描压缩包，但不要把扫描无异常当作真实性的证明。
+  - Patched Odin 版本会修改行为并可能绕过检查；只有在针对具体机型的说明明确要求时才使用。运行 Odin 之前请先解压压缩包。
 
-3. **Stock Firmware**
-   - Download from [SamFrew](https://samfrew.com/) or [Bifrost](https://github.com/zacharee/Bifrost) or [Frija](https://github.com/SlackingVeteran/frija/releases)
-   - Match exact model and region
-   - Contains: AP, BL, CP, CSC files
+3. **官方固件**
+   - 从 [SamFrew](https://samfrew.com/)、[Bifrost](https://github.com/zacharee/Bifrost) 或 [Frija](https://github.com/SlackingVeteran/frija/releases) 下载
+   - 与确切的机型和地区匹配
+   - 包含：AP、BL、CP、CSC 文件
 
-**On Device:**
+**设备端：**
 
 1. **Magisk APK**
-   - Download: [Magisk GitHub](https://github.com/topjohnwu/Magisk/releases)
-   - Latest stable version
+   - 下载：[Magisk GitHub](https://github.com/topjohnwu/Magisk/releases)
+   - 最新稳定版
 
-2. **File Manager**
-   - Samsung My Files (pre-installed)
-   - Or any from Play Store
+2. **文件管理器**
+   - Samsung“我的文件”（预装）
+   - 或 Play 商店中的任意一款
 
-### Device Preparation
+### 设备准备
 
-**Step 1: Verify Model and Build**
+**步骤 1：核实机型与版本**
 
-Settings > About phone:
-- Model number (e.g., SM-G998B, SM-S918U)
-- Android version
-- Build number
-- Baseband version (for CSC region)
+设置 > 关于手机：
+- 型号（例如 SM-G998B、SM-S918U）
+- Android 版本
+- 版本号（build number）
+- 基带版本（用于确定 CSC 地区）
 
-**Step 2: Enable Developer Options**
+**步骤 2：启用开发者选项**
 
-1. Settings > About phone
-2. Tap Software information
-3. Tap Build number 7 times
-4. Enter PIN/password
-5. Developer options now available
+1. 设置 > 关于手机
+2. 点击软件信息
+3. 连续点击版本号 7 次
+4. 输入 PIN 码/密码
+5. 开发者选项现已可用
 
-**Step 3: Enable Required Settings**
+**步骤 3：启用所需设置**
 
-Settings > Developer options:
-- **OEM unlocking**: Enable (critical)
-- **USB debugging**: Enable
+设置 > 开发者选项：
+- **OEM 解锁**：启用（关键）
+- **USB 调试**：启用
 
-**Step 4: Backup Everything**
+**步骤 4：备份所有内容**
 
-- Samsung Cloud backup
-- Google Photos for images
-- SMS backup
-- Export contacts
-- Save authenticator codes
-- Note installed apps
+- Samsung Cloud 备份
+- 用 Google 相册备份照片
+- 短信备份
+- 导出联系人
+- 保存验证器代码
+- 记录已安装的应用
 
 ---
 
-## Unlock Bootloader
+## 解锁 Bootloader
 
-### Step 1: Verify OEM Unlock Available
+### 步骤 1：确认 OEM 解锁可用
 
-Settings > Developer options > OEM unlocking
+设置 > 开发者选项 > OEM 解锁
 
-If greyed out:
-- Carrier-locked device (cannot unlock)
-- Wait 7 days after factory reset
-- Remove all Google accounts
-- Connect to internet
+如果呈灰色：
+- 运营商锁定设备（无法解锁）
+- 恢复出厂设置后等待 7 天
+- 移除所有 Google 账号
+- 连接互联网
 
-### Step 2: Enter Download Mode
+### 步骤 2：进入 Download Mode
 
-**Method 1: ADB**
+**方法 1：ADB**
 ```bash
 adb reboot download
 ```
 
-**Method 2: Hardware Keys**
-1. Power off device completely
-2. Hold Volume Up + Volume Down
-3. Connect USB cable while holding buttons
-4. Press Volume Up to continue
-5. Download mode screen appears
+**方法 2：物理按键**
+1. 完全关闭设备
+2. 按住音量加 + 音量减
+3. 按住按键的同时连接 USB 数据线
+4. 按音量加继续
+5. 出现 Download Mode 界面
 
-### Step 3: Unlock Bootloader
+### 步骤 3：解锁 Bootloader
 
-**On Device:**
-1. Long press Volume Up
-2. Bootloader unlock warning appears
-3. Use Volume keys to select "Unlock bootloader"
-4. Press Power to confirm
-5. Device automatically factory resets
-6. Shows "Custom binary blocked by FRP lock" (normal)
+**设备端操作：**
+1. 长按音量加
+2. 出现 Bootloader 解锁警告
+3. 使用音量键选择 "Unlock bootloader"（解锁 Bootloader）
+4. 按电源键确认
+5. 设备自动恢复出厂设置
+6. 显示 "Custom binary blocked by FRP lock"（正常现象）
 
-**Device restarts and wipes completely.**
+**设备将重启并完全清除数据。**
 
 ---
 
-## Root Installation
+## Root 安装
 
-### Method 1: AP File Patching (Primary Method)
+### 方法 1：AP 文件修补（主要方法）
 
-**Step 1: Download Firmware**
+**步骤 1：下载固件**
 
-1. Determine exact model and CSC:
+1. 确定确切的机型和 CSC：
 ```bash
 adb shell getprop ro.product.model
 adb shell getprop ro.csc.countryiso_code
 ```
 
-2. Download matching firmware from SamFrew
-3. Extract firmware ZIP
-4. Files inside:
-   - **AP_[model]_[version].tar.md5** (system image)
-   - **BL_[model]_[version].tar.md5** (bootloader)
-   - **CP_[model]_[version].tar.md5** (modem)
-   - **CSC_[model]_[version].tar.md5** (region data)
+2. 从 SamFrew 下载匹配的固件
+3. 解压固件 ZIP
+4. 其中的文件：
+   - **AP_[model]_[version].tar.md5**（系统镜像）
+   - **BL_[model]_[version].tar.md5**（Bootloader）
+   - **CP_[model]_[version].tar.md5**（基带）
+   - **CSC_[model]_[version].tar.md5**（地区数据）
 
-**Step 2: Transfer and Patch AP File**
+**步骤 2：传输并修补 AP 文件**
 
 ```bash
-# Transfer AP file to device
+# 将 AP 文件传输到设备
 adb push AP_*.tar.md5 /sdcard/Download/
 
-# Install Magisk APK
+# 安装 Magisk APK
 adb install Magisk-v27.0.apk
 ```
 
-**On Device:**
-1. Open Magisk app
-2. Tap "Install" next to Magisk
-3. Select "Select and Patch a File"
-4. Navigate to Download folder
-5. Select AP file
-6. Tap "Let's Go"
-7. Wait for patching (2-5 minutes)
+**设备端操作：**
+1. 打开 Magisk 应用
+2. 点击 Magisk 旁边的“安装”
+3. 选择“选择并修补一个文件”
+4. 进入 Download 文件夹
+5. 选择 AP 文件
+6. 点击“开始”（Let's Go）
+7. 等待修补完成（2-5 分钟）
 
-**Output:** `magisk_patched_[random].tar` in Download folder
+**输出：** Download 文件夹中的 `magisk_patched_[random].tar`
 
-**Transfer patched file back:**
+**将修补后的文件传回电脑：**
 ```bash
 adb pull /sdcard/Download/magisk_patched_*.tar ./
 ```
 
-**Step 3: Flash with Odin**
+**步骤 3：使用 Odin 刷入**
 
-1. **Boot to Download Mode:**
+1. **启动到 Download Mode：**
 ```bash
 adb reboot download
 ```
 
-2. **Open Odin as Administrator**
-3. **Device should show in Odin (blue box with COM port)**
+2. **以管理员身份运行 Odin**
+3. **设备应显示在 Odin 中（蓝色框内显示 COM 端口）**
 
-4. **Load firmware files:**
+4. **加载固件文件：**
 
-Click each button and select files:
-- **BL**: Original BL file (unchanged)
-- **AP**: Magisk-patched AP file (patched)
-- **CP**: Original CP file (unchanged)
-- **CSC**: Original CSC file (NOT HOME_CSC)
+点击各个按钮并选择对应文件：
+- **BL**：原始 BL 文件（不改动）
+- **AP**：经 Magisk 修补的 AP 文件（已修补）
+- **CP**：原始 CP 文件（不改动）
+- **CSC**：原始 CSC 文件（不要用 HOME_CSC）
 
-5. **Configure Odin Options:**
+5. **配置 Odin 选项：**
 
-Options tab:
-- ✅ Auto Reboot
-- ✅ F. Reset Time
-- ❌ Re-Partition (uncheck!)
+Options（选项）标签页：
+- ✅ Auto Reboot（自动重启）
+- ✅ F. Reset Time（重置计时）
+- ❌ Re-Partition（重新分区，务必取消勾选！）
 
-::: warning CRITICAL SETTING
-**Auto Reboot MUST be checked** for newer Samsung devices. If unchecked, manual boot to recovery required.
+::: warning 关键设置
+对于较新的 Samsung 设备，**必须勾选 Auto Reboot**。如果不勾选，则需要手动进入 Recovery。
 :::
 
-6. **Click START**
+6. **点击 START**
 
-Odin flashes files:
-- Shows progress bar
-- Takes 3-5 minutes
-- "PASS!" appears in green when complete
+Odin 开始刷入文件：
+- 显示进度条
+- 需要 3-5 分钟
+- 完成后显示绿色的 “PASS!”
 
-**Step 4: Mandatory Factory Reset**
+**步骤 4：必须进行的恢复出厂设置**
 
-::: danger CRITICAL STEP
-For One UI 4.0+ (Android 12+), factory reset required to complete root properly.
+::: danger 关键步骤
+对于 One UI 4.0+（Android 12+），必须恢复出厂设置才能正确完成 Root。
 :::
 
-**Immediate after flash completes:**
+**刷入完成后立即操作：**
 
-1. Device reboots automatically
-2. When Samsung logo appears, immediately:
-3. Hold **Volume Up + Power**
-4. Enter Recovery Mode
+1. 设备自动重启
+2. 当 Samsung 标志出现时，立即：
+3. 按住**音量加 + 电源键**
+4. 进入 Recovery 模式
 
-**In Recovery:**
-1. Use Volume keys to navigate
-2. Select "Wipe data/factory reset"
-3. Select "Factory data reset"
-4. Confirm with "Yes"
-5. After wipe, select "Reboot system now"
+**在 Recovery 中：**
+1. 使用音量键移动
+2. 选择 "Wipe data/factory reset"（清除数据/恢复出厂设置）
+3. 选择 "Factory data reset"（恢复出厂设置）
+4. 选择 “Yes” 确认
+5. 清除完成后，选择 "Reboot system now"（立即重启系统）
 
-**Step 5: Complete Setup and Verify Root**
+**步骤 5：完成设置并验证 Root**
 
-1. Complete Android setup again
-2. Reinstall Magisk APK
-3. Open Magisk app
-4. May show "Additional Setup Required"
-5. Tap "OK" and reboot
-6. After reboot, Magisk shows:
-   - Magisk: Installed (version)
-   - App: Latest (version)
+1. 重新完成 Android 设置
+2. 重新安装 Magisk APK
+3. 打开 Magisk 应用
+4. 可能显示“需要额外设置”
+5. 点击“确定”并重启
+6. 重启后，Magisk 显示：
+   - Magisk：已安装（版本号）
+   - 应用：最新（版本号）
 
-Test root:
+测试 Root：
 ```bash
 adb shell
 su
 id
-# Should show: uid=0(root)
+# 应显示：uid=0(root)
 ```
 
-::: tip SUCCESS!
-If Magisk shows both installed and su works, you're rooted!
+::: tip 成功！
+如果 Magisk 显示已安装且 su 命令可用，说明 Root 成功！
 :::
 
 
-### Step 6: Verify Knox Trip
+### 步骤 6：确认 Knox 熔断状态
 
-After setup:
-1. Dial `*#0*#` for service mode
-2. Check Knox warranty status
-3. Should show "0x1" (tripped, permanent)
-
-
----
-
-### Method 2: TWRP Recovery (Legacy Devices)
-
-For older Samsung devices with TWRP support:
-
-1. Download TWRP for your device from [TWRP website](https://twrp.me/Devices/Samsung/)
-2. Flash TWRP via Odin (AP slot)
-3. Boot to TWRP recovery
-4. Flash Magisk ZIP
-5. Reboot system
-
-**Note:** Most modern Samsung devices lack TWRP support due to A/B partitions and encryption changes.
-
-
-### Verify Knox Trip
-
-After setup:
-1. Dial `*#0*#` for service mode
-2. Check Knox warranty status
-3. Should show "0x1" (tripped, permanent)
+完成设置后：
+1. 拨打 `*#0*#` 进入工程模式
+2. 查看 Knox 保修状态
+3. 应显示 “0x1”（已熔断，永久性）
 
 
 ---
 
-## Post-Root Setup
+### 方法 2：TWRP Recovery（旧款设备）
 
-### Configure Magisk
+适用于支持 TWRP 的旧款 Samsung 设备：
 
-**Step 1: Basic Settings**
+1. 从 [TWRP 网站](https://twrp.me/Devices/Samsung/)下载适用于你设备的 TWRP
+2. 通过 Odin 刷入 TWRP（AP 槽位）
+3. 启动到 TWRP Recovery
+4. 刷入 Magisk ZIP
+5. 重启系统
 
-Magisk > Settings:
-- **Zygisk**: Enable (required for hiding)
-- **Enforce DenyList**: Enable
-- **Hide Magisk app**: Rename to avoid detection
+**注意：** 由于 A/B 分区和加密机制的变化，大多数现代 Samsung 设备已不支持 TWRP。
 
-**Step 2: Configure DenyList**
 
-Critical for Samsung due to Knox detection:
+### 确认 Knox 熔断状态
 
-Add to DenyList:
-- Google Play Services (all)
-- Google Play Store (all)
-- Samsung apps:
+完成设置后：
+1. 拨打 `*#0*#` 进入工程模式
+2. 查看 Knox 保修状态
+3. 应显示 “0x1”（已熔断，永久性）
+
+
+---
+
+## Root 后设置
+
+### 配置 Magisk
+
+**步骤 1：基础设置**
+
+Magisk > 设置：
+- **Zygisk**：启用（隐藏功能所需）
+- **Enforce DenyList**：启用
+- **隐藏 Magisk 应用**：重命名以避免被检测
+
+**步骤 2：配置 DenyList**
+
+由于 Knox 检测，这一步对 Samsung 至关重要：
+
+添加到 DenyList：
+- Google Play Services（全部）
+- Google Play 商店（全部）
+- Samsung 应用：
   - Samsung Health
   - Samsung Members
   - Samsung Galaxy Store
-  - Samsung Pay (won't work anyway)
-- Banking apps
-- Payment apps
-- Any Knox-dependent apps
+  - Samsung Pay（反正也无法使用）
+- 银行类应用
+- 支付类应用
+- 任何依赖 Knox 的应用
 
-**Step 3: Install Essential Modules**
+**步骤 3：安装必要模块**
 
-Recommended for Samsung:
-- **Play Integrity Fix** - For banking apps
-- **Shamiko** - Enhanced root hiding
-- **Systemless Hosts** - Ad blocking
+Samsung 设备推荐：
+- **Play Integrity Fix** - 针对银行类应用
+- **Shamiko** - 增强 Root 隐藏
+- **Systemless Hosts** - 广告屏蔽
 
-### Samsung-Specific Root Hiding
+### Samsung 特有的 Root 隐藏
 
-**Additional Steps:**
+**额外步骤：**
 
-1. **Hide Magisk App:**
-   - Magisk > Settings
-   - "Hide the Magisk app"
-   - Enter custom name (e.g., "Settings")
+1. **隐藏 Magisk 应用：**
+   - Magisk > 设置
+   - “隐藏 Magisk 应用”
+   - 输入自定义名称（例如 “Settings”）
 
-2. **Clear App Data:**
+2. **清除应用数据：**
 
-After DenyList configuration:
+配置完 DenyList 后：
 ```bash
-# Clear Google Play Services
+# 清除 Google Play Services
 pm clear com.google.android.gms
 
-# Clear Play Store
+# 清除 Play 商店
 pm clear com.android.vending
 
-# Clear Samsung Health
+# 清除 Samsung Health
 pm clear com.sec.android.app.shealth
 ```
 
-3. **Reboot device**
+3. **重启设备**
 
 ---
 
-## OTA Handling
+## OTA 处理
 
-Samsung OTA updates are blocked when rooted.
+Root 之后 Samsung 的 OTA 更新会被阻断。
 
-### Unroot for OTA
+### 为 OTA 取消 Root
 
-**Step 1: Uninstall Magisk**
+**步骤 1：卸载 Magisk**
 
-1. Magisk > Uninstall
-2. Select "Restore Images"
-3. Reboot
-4. Root removed
+1. Magisk > 卸载
+2. 选择“还原镜像”
+3. 重启
+4. Root 已移除
 
-**Step 2: Install OTA**
+**步骤 2：安装 OTA**
 
-1. Settings > Software update
-2. Download and install
-3. Device updates normally
+1. 设置 > 软件更新
+2. 下载并安装
+3. 设备正常更新
 
-**Step 3: Re-Root**
+**步骤 3：重新 Root**
 
-1. Download new firmware AP file
-2. Patch with Magisk
-3. Flash with Odin
-4. Root restored
+1. 下载新固件的 AP 文件
+2. 使用 Magisk 修补
+3. 使用 Odin 刷入
+4. Root 已恢复
 
-### Alternative: Manual Firmware Flash
+### 替代方案：手动刷入固件
 
-1. Download latest firmware
-2. Patch AP file
-3. Flash complete firmware with Odin
-4. Factory reset
-5. Root restored and updated
+1. 下载最新固件
+2. 修补 AP 文件
+3. 使用 Odin 刷入完整固件
+4. 恢复出厂设置
+5. Root 恢复且系统已更新
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-### Bootloader Issues
+### Bootloader 问题
 
-**OEM Unlocking Greyed Out**
+**OEM 解锁呈灰色**
 
-Causes:
-- Carrier-locked device
-- FRP lock active
-- Internet not connected
+原因：
+- 运营商锁定设备
+- FRP 锁处于激活状态
+- 未连接互联网
 
-Solutions:
-1. Remove all accounts
-2. Factory reset
-3. Wait 7 days
-4. Connect to internet
-5. Check again
+解决方法：
+1. 移除所有账号
+2. 恢复出厂设置
+3. 等待 7 天
+4. 连接互联网
+5. 再次检查
 
-If still grey: Device is carrier-locked (cannot unlock)
+如果仍然呈灰色：设备被运营商锁定（无法解锁）
 
-**Stuck in Download Mode**
+**卡在 Download Mode**
 
-Solutions:
+解决方法：
 ```bash
-# Exit download mode
-Hold Volume Down + Power for 10 seconds
+# 退出 Download Mode
+按住音量减 + 电源键 10 秒
 
-# Force restart
-Hold Power + Volume Down + Bixby for 10 seconds
+# 强制重启
+按住电源键 + 音量减 + Bixby 键 10 秒
 ```
 
-### Odin Issues
+### Odin 问题
 
-**Odin Doesn't Detect Device**
+**Odin 检测不到设备**
 
-Solutions:
-1. Reinstall Samsung USB drivers
-2. Try different USB port (USB 2.0)
-3. Run Odin as Administrator
-4. Disable antivirus temporarily
-5. Try different USB cable
-6. Reboot computer
+解决方法：
+1. 重新安装 Samsung USB 驱动
+2. 换一个 USB 端口（USB 2.0）
+3. 以管理员身份运行 Odin
+4. 暂时禁用杀毒软件
+5. 换一条 USB 数据线
+6. 重启电脑
 
-**FAIL! Error in Odin**
+**Odin 中出现 FAIL! 错误**
 
-Common causes:
-- Wrong firmware for model
-- Corrupted download
-- Re-Partition checked (uncheck it)
-- Low battery
-- Cable disconnected
+常见原因：
+- 固件与机型不匹配
+- 下载文件损坏
+- 勾选了 Re-Partition（请取消勾选）
+- 电量过低
+- 数据线松脱
 
-Solutions:
-1. Verify firmware matches model exactly
-2. Re-download firmware
-3. Uncheck Re-Partition
-4. Charge device
-5. Use better cable
+解决方法：
+1. 确认固件与机型完全匹配
+2. 重新下载固件
+3. 取消勾选 Re-Partition
+4. 给设备充电
+5. 更换更好的数据线
 
-**Stuck at Samsung Logo**
+**卡在 Samsung 标志界面**
 
-Solutions:
-1. Boot to recovery (Volume Up + Power)
-2. Factory reset again
-3. Wipe cache partition
-4. If persists, reflash stock firmware
+解决方法：
+1. 进入 Recovery（音量加 + 电源键）
+2. 再次恢复出厂设置
+3. 清除 cache 分区
+4. 如果问题依旧，重新刷入官方固件
 
-### Root Issues
+### Root 问题
 
-**Magisk Shows N/A**
+**Magisk 显示 N/A**
 
-Causes:
-- Patched wrong AP file
-- Didn't factory reset
-- Firmware mismatch
+原因：
+- 修补了错误的 AP 文件
+- 未恢复出厂设置
+- 固件不匹配
 
-Solutions:
-1. Verify correct firmware version
-2. Perform factory reset again
-3. Re-patch and reflash AP
+解决方法：
+1. 确认固件版本正确
+2. 再次恢复出厂设置
+3. 重新修补并重新刷入 AP
 
-**Play Integrity Fails**
+**Play Integrity 校验失败**
 
-Solutions:
-1. Enable Zygisk
-2. Configure DenyList properly
-3. Hide Magisk app
-4. Install Play Integrity Fix
-5. Install Shamiko module
-6. Clear Google Play Services
-7. Reboot
+解决方法：
+1. 启用 Zygisk
+2. 正确配置 DenyList
+3. 隐藏 Magisk 应用
+4. 安装 Play Integrity Fix
+5. 安装 Shamiko 模块
+6. 清除 Google Play Services
+7. 重启
 
-Note: Due to Knox trip, some apps may always fail.
+注意：由于 Knox 已熔断，某些应用可能始终无法通过检测。
 
-**Samsung Apps Detect Root**
+**Samsung 应用检测到 Root**
 
-Reality:
-- Samsung Health: Limited functionality
-- Samsung Pay: Will not work (Knox 0x1)
-- Secure Folder: Disabled permanently
-- Samsung Pass: Unusable
+实际情况：
+- Samsung Health：功能受限
+- Samsung Pay：无法使用（Knox 0x1）
+- Secure Folder：永久禁用
+- Samsung Pass：无法使用
 
-No workaround for Knox-dependent features.
+依赖 Knox 的功能没有任何解决办法。
 
 ---
 
-## Unroot and Restore
+## 取消 Root 与恢复
 
-### Remove Root Only
+### 仅移除 Root
 
 ```bash
-# Magisk > Uninstall > Restore Images
-# Root removed, Knox still tripped (0x1)
+# Magisk > 卸载 > 还原镜像
+# Root 已移除，但 Knox 仍处于熔断状态（0x1）
 ```
 
-### Flash Stock Firmware
+### 刷入官方固件
 
-**Complete restoration:**
+**完整恢复：**
 
-1. Download stock firmware
-2. Flash all files with Odin:
-   - BL, AP, CP, CSC (not patched)
-3. Perform factory reset
-4. Device stock but Knox still 0x1
+1. 下载官方固件
+2. 使用 Odin 刷入所有文件：
+   - BL、AP、CP、CSC（未修补）
+3. 恢复出厂设置
+4. 设备恢复官方系统，但 Knox 仍为 0x1
 
-### Knox Status
+### Knox 状态
 
-::: danger KNOX CANNOT BE RESET
-Once Knox trips to 0x1, it is permanent. Flashing stock firmware does NOT reset Knox counter. The efuse is physically blown.
+::: danger KNOX 无法重置
+Knox 一旦熔断为 0x1 就是永久性的。刷入官方固件**不会**重置 Knox 计数器。eFuse 已被物理熔断。
 :::
 
 ---
 
-## Community Resources
+## 社区资源
 
-**Official Samsung Resources:**
-- [Samsung Firmware](https://samfrew.com/) - Stock firmware downloads
-- [Frija Tool](https://github.com/SlackingVeteran/frija) - Firmware downloader
-- [Samsung Developers](https://developer.samsung.com/) - Drivers and tools
+**Samsung 官方资源：**
+- [Samsung 固件](https://samfrew.com/) - 官方固件下载
+- [Frija 工具](https://github.com/SlackingVeteran/frija) - 固件下载器
+- [Samsung Developers](https://developer.samsung.com/) - 驱动与工具
 
-**Community Forums:**
-- **[Samsung XDA Forums](https://xdaforums.com/c/samsung.11975/)** – Device-specific development
-- **[Odin stock and patched downloads](https://xdaforums.com/t/patched-odin-3-13-1.3762572/)** – Community thread with package-specific warnings; choose the build required for your device
-- **[One UI Mods Community](https://t.me/oneuimods)** – Samsung customization
-- **[r/Samsung](https://www.reddit.com/r/samsung/)** – Latest device discussions
-- **[Samsung Firmware Database](https://samfrew.com/)** – Firmware downloads
+**社区论坛：**
+- **[Samsung XDA 论坛](https://xdaforums.com/c/samsung.11975/)** – 机型相关的开发讨论
+- **[Odin 官方及 patched 版本下载](https://xdaforums.com/t/patched-odin-3-13-1.3762572/)** – 包含针对特定压缩包警告的社区帖子；请选择你的设备所需的版本
+- **[One UI Mods 社区](https://t.me/oneuimods)** – Samsung 定制
+- **[r/Samsung](https://www.reddit.com/r/samsung/)** – 最新设备讨论
+- **[Samsung 固件数据库](https://samfrew.com/)** – 固件下载
 
-**Essential Samsung Resources:**
-- **[Samsung Smart Switch](https://www.samsung.com/us/support/owners/app/smart-switch)** – Backup tool
-- **[SamFrew](https://samfrew.com/)** – Firmware downloads
-- **[Heimdall](https://glassechidna.com.au/heimdall/)** – Open-source alternative
+**重要 Samsung 资源：**
+- **[Samsung Smart Switch](https://www.samsung.com/us/support/owners/app/smart-switch)** – 备份工具
+- **[SamFrew](https://samfrew.com/)** – 固件下载
+- **[Heimdall](https://glassechidna.com.au/heimdall/)** – 开源替代方案
 
-**Custom ROM Resources:**
-- [LineageOS](https://lineageos.org/) - Official builds
-- [XDA ROM Development](https://forum.xda-developers.com/) - Custom ROMs
+**第三方 ROM 资源：**
+- [LineageOS](https://lineageos.org/) - 官方构建版本
+- [XDA ROM 开发](https://forum.xda-developers.com/) - 第三方 ROM
 
 
-### Getting Help
+### 寻求帮助
 
-**When asking for help, provide:**
-- Exact model number (SM-XXXXX)
-- Region/CSC code
-- Current firmware version
-- One UI version
-- Exact error messages
-- Odin log if applicable
-- Steps already attempted
+**求助时请提供：**
+- 确切型号（SM-XXXXX）
+- 地区/CSC 代码
+- 当前固件版本
+- One UI 版本
+- 确切的错误信息
+- Odin 日志（如有）
+- 已尝试过的步骤
 
 ---
 
-## Next Steps
+## 下一步
 
-**After Rooting Your Samsung:**
+**Root 你的 Samsung 之后：**
 
-1. **Essential apps:**
-   - [Root Apps Collection](../apps-and-modules/) - Curated list
+1. **必备应用：**
+   - [Root 应用合集](../apps-and-modules/) - 精选列表
 
-2. **Enhance experience:**
-   - [Ad Blocking Guide](../general-guides/android-adblocking.md) - System-wide blocking
-   - [Debloating Guide](../general-guides/android-apps-debloating.md) - Remove Samsung bloat
-   - [LSPosed Guide](./lsposed-guide.md) - App modifications
+2. **增强体验：**
+   - [广告屏蔽指南](../general-guides/android-adblocking.md) - 全系统屏蔽
+   - [精简应用指南](../general-guides/android-apps-debloating.md) - 移除 Samsung 预装应用
+   - [LSPosed 指南](./lsposed-guide.md) - 应用修改
 
-3. **Consider alternatives:**
-   - [Custom ROM Guide](./custom-rom-installation.md) - LineageOS, Evolution X
-   - Explore Samsung-specific ROMs
-   - Join development community
+3. **考虑其他选择：**
+   - [第三方 ROM 指南](./custom-rom-installation.md) - LineageOS、Evolution X
+   - 探索 Samsung 专属 ROM
+   - 加入开发社区

@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Complete Motorola Rooting Guide
-description: "Master guide to root all Motorola phones - Edge series, Moto G series with bootloader unlock codes, Magisk installation, and A/B partition handling."
+title: Motorola Root 完全指南
+description: "所有 Motorola 手机的 Root 总指南 - Edge 系列、Moto G 系列，包含 Bootloader 解锁码、Magisk 安装以及 A/B 分区处理。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: Complete Motorola Rooting Guide - All Models Supported
+      content: Motorola Root 完全指南 - 支持所有机型
   - - meta
     - property: og:description
-      content: Root any Motorola device with our comprehensive guide covering bootloader unlock codes, Magisk installation, and special A/B partition procedures.
+      content: 通过我们涵盖 Bootloader 解锁码、Magisk 安装以及特殊 A/B 分区流程的全面指南 Root 任意 Motorola 设备。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/how-to-root-motorola-phone
@@ -26,10 +26,10 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: Complete Motorola Rooting Guide - All Models
+      content: Motorola Root 完全指南 - 所有机型
   - - meta
     - name: twitter:description
-      content: Root any Motorola phone with bootloader unlock codes and Magisk installation guide.
+      content: 通过 Bootloader 解锁码和 Magisk 安装指南 Root 任意 Motorola 手机。
   - - meta
     - name: twitter:site
       content: "@awsm_and_root"
@@ -41,25 +41,25 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og/motorola.png
   - - meta
     - name: twitter:image:alt
-      content: Motorola Root Guide - All Models
+      content: Motorola Root 指南 - 所有机型
   - - meta
     - name: author
-      content: Awesome Android Root Project
+      content: Awesome Android Root 项目
   - - meta
     - property: article:author
       content: https://github.com/awesome-android-root/awesome-android-root
   - - meta
     - property: article:section
-      content: Device Rooting
+      content: 设备 Root
   - - meta
     - property: article:tag
       content: Motorola Root
   - - meta
     - property: article:tag
-      content: Bootloader Unlock
+      content: Bootloader 解锁
   - - meta
     - property: article:tag
-      content: Magisk Installation
+      content: Magisk 安装
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -71,139 +71,139 @@ head:
       content: index, follow
 ---
 
-# Motorola Root Guide
+# Motorola Root 指南
 
-Root Motorola devices via the official unlock code system. Covers Edge 60, Edge 50, Edge 40, Edge 30, Moto G series, and legacy Moto devices.
+通过官方解锁码系统 Root Motorola 设备。涵盖 Edge 60、Edge 50、Edge 40、Edge 30、Moto G 系列以及旧款 Moto 设备。
 
-## Quick Navigation
+## 快速导航
 
-- [Device Compatibility](#device-compatibility)
-- [Prerequisites](#prerequisites)
-- [Get Unlock Code](#get-unlock-code)
-- [Unlock Bootloader](#unlock-bootloader)
-- [Root Installation](#root-installation)
-- [Troubleshooting](#troubleshooting)
+- [设备兼容性](#设备兼容性)
+- [前置条件](#前置条件)
+- [获取解锁码](#获取解锁码)
+- [解锁 Bootloader](#解锁-bootloader)
+- [Root 安装](#root-安装)
+- [故障排除](#故障排除)
 
-**Related Guides:**
-- [Main Rooting Guide](./index.md) - Universal rooting concepts
-- [Bootloader Unlocking](./how-to-unlock-bootloader.md) - Detailed unlock guide
-- [Magisk Guide](./magisk-guide.md) - Complete Magisk documentation
-- [Custom ROMs](./custom-rom-installation.md) - Installing custom ROMs
-- [Root Apps](../apps-and-modules/) - Best root apps collection
+**相关指南：**
+- [Root 主指南](./index.md) - 通用 Root 概念
+- [Bootloader 解锁](./how-to-unlock-bootloader.md) - 详细的解锁指南
+- [Magisk 指南](./magisk-guide.md) - 完整的 Magisk 文档
+- [第三方 ROM](./custom-rom-installation.md) - 安装第三方 ROM
+- [Root 应用](../apps-and-modules/) - 最佳 Root 应用合集
 
 ---
 
-## Device Compatibility
+## 设备兼容性
 
-Most Motorola devices with unlockable bootloaders can be rooted. Check [XDA Forums](https://forum.xda-developers.com/) for your specific model's status.
+大多数 Bootloader 可解锁的 Motorola 设备都可以 Root。请在 [XDA 论坛](https://forum.xda-developers.com/)查询你具体机型的支持情况。
 
-### Incompatible / Restricted Devices
+### 不兼容 / 受限设备
 
-::: danger CANNOT BE ROOTED
-- **Carrier-exclusive models** (Verizon, AT&T, Tracfone) - bootloader unlock codes not available
-- **Amazon Branded devices** - permanently locked
-- **ThinkShield / Enterprise devices** - locked down by policy
-- **Prepaid carrier-locked variants** - typically cannot unlock
+::: danger 无法 Root
+- **运营商专属机型**（Verizon、AT&T、Tracfone）- 不提供 Bootloader 解锁码
+- **Amazon 定制设备** - 永久锁定
+- **ThinkShield / 企业设备** - 被策略锁定
+- **预付费运营商锁定版本** - 通常无法解锁
 :::
 
-### Image Type Quick Reference
+### 镜像类型快速参考
 
-| Device Generation | Image to Patch |
+| 设备世代 | 需要修补的镜像 |
 |---|---|
-| Modern Edge/Moto G (Android 13+) | `init_boot.img` |
-| Older Moto G/Edge (Android 12-) | `boot.img` |
+| 新款 Edge/Moto G（Android 13+） | `init_boot.img` |
+| 旧款 Moto G/Edge（Android 12 及更早） | `boot.img` |
 
-**Check Magisk "Ramdisk" field if unsure.**
+**如果不确定，请查看 Magisk 的“Ramdisk”字段。**
 
-## Prerequisites
+## 前置条件
 
-### Critical Requirements
+### 关键要求
 
-::: danger ⚠️ BEFORE YOU START
+::: danger ⚠️ 开始之前
 
-**Warranty Void:** Once you get the unlock code, your device is no longer covered by the Motorola warranty.
+**保修失效：** 一旦获取解锁码，你的设备将不再受 Motorola 保修覆盖。
 
-**Unlock Code Required:** Must request from Motorola's official website. May take minutes to hours.
+**需要解锁码：** 必须在 Motorola 官方网站申请。可能需要几分钟到几小时。
 
-**Data Wipe:** Unlocking erases all data including internal storage.
+**数据清除：** 解锁会清除包括内部存储在内的所有数据。
 
-**Carrier Check:** There are certain restrictions such as carrier-exclusive models. To find out if your phone supports bootloader unlock you will need to visit Motorola's page and proceed to follow the process.
+**运营商检查：** 存在一些限制，例如运营商专属机型。要确认你的手机是否支持解锁 Bootloader，你需要访问 Motorola 的页面并按流程操作。
 :::
 
-### Hardware Requirements
+### 硬件要求
 
-- Motorola device (unlockable model)
-- Quality USB cable (try multiple cables if you encounter issues)
-- Computer (Windows, macOS, Linux)
-- 50%+ battery charge
+- Motorola 设备（可解锁机型）
+- 质量良好的 USB 数据线（如遇问题可多试几条）
+- 电脑（Windows、macOS、Linux）
+- 电量 50% 以上
 
-### Software Requirements
+### 软件要求
 
-**On Computer:**
+**电脑端：**
 
 1. **Platform Tools**
-   - Download: [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
+   - 下载：[Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
 
-2. **Motorola USB Drivers** (Windows)
-   - Download: [Motorola USB Drivers](https://en-us.support.motorola.com/app/usb-drivers)
+2. **Motorola USB 驱动**（Windows）
+   - 下载：[Motorola USB 驱动](https://en-us.support.motorola.com/app/usb-drivers)
 
-3. **Web Browser**
-   - For unlock code request
-   - Valid email address (Gmail recommended)
+3. **网页浏览器**
+   - 用于申请解锁码
+   - 有效的电子邮箱（推荐 Gmail）
 
-**On Device:**
+**设备端：**
 
 1. **Magisk APK**
-   - Download: [Magisk GitHub Releases](https://github.com/topjohnwu/Magisk/releases)
-   - Android compatibility: Android 6.0 and higher
+   - 下载：[Magisk GitHub Releases](https://github.com/topjohnwu/Magisk/releases)
+   - Android 兼容性：Android 6.0 及更高
 
-2. **Motorola Account**
-   - For unlock code request
+2. **Motorola 账号**
+   - 用于申请解锁码
 
-### Device Preparation
+### 设备准备
 
-**Step 1: Enable Developer Options**
+**步骤 1：启用开发者选项**
 
-1. Settings > About phone
-2. Tap "Build number" 7 times
-3. Enter PIN/password
+1. 设置 > 关于手机
+2. 连续点击“版本号”7 次
+3. 输入 PIN 码/密码
 
-**Step 2: Enable Required Settings**
+**步骤 2：启用所需设置**
 
-Settings > System > Developer options:
-- **OEM unlocking**: Enable
-- **USB debugging**: Enable
+设置 > 系统 > 开发者选项：
+- **OEM 解锁**：启用
+- **USB 调试**：启用
 
-**Step 3: Verify ADB**
+**步骤 3：验证 ADB**
 
 ```bash
 adb devices
-# Should show device
+# 应显示设备
 ```
 
 ---
 
-## Get Unlock Code
+## 获取解锁码
 
-Motorola requires an official unlock code from their website.
+Motorola 要求使用从其官网申请的官方解锁码。
 
-### Step 1: Gather Device Information
+### 步骤 1：收集设备信息
 
-**Get Device ID String:**
+**获取设备 ID 字符串：**
 
 ```bash
-# Reboot to fastboot
+# 重启到 fastboot
 adb reboot bootloader
 
-# Get device ID (unique string)
+# 获取设备 ID（唯一字符串）
 fastboot oem get_unlock_data
 
-# Output will be multiple lines
-# Copy ALL lines together as one string
-# Remove spaces and (bootloader) prefixes
+# 输出会是多行
+# 将所有行合并为一个字符串复制
+# 去掉空格和 (bootloader) 前缀
 ```
 
-**Example output:**
+**输出示例：**
 ```
 (bootloader) 0A40040192024205#4C4D3556313230
 (bootloader) 30373731363031303332323239#BD00
@@ -212,285 +212,285 @@ fastboot oem get_unlock_data
 (bootloader) 0000000
 ```
 
-Copy the code part off of each line (exclude the `(bootloader)` part and remove all spaces) and make it a single string:
+复制每行中的代码部分（去掉 `(bootloader)` 部分和所有空格），拼成一个字符串：
 ```
 0A40040192024205#4C4D355631323030373731363031303332323239#BD008A672BA4746C2CE02328A2AC0C39F951A3E5#1F532800020000000000000000000000
 ```
 
-::: tip DATA SCRUB TOOL
-Be careful not to remove part of the unlock key when removing the junk, spaces and extra lines. You can paste it into the online Motorola dataScrubTool to clean it up automatically.
+::: tip 数据清理工具
+在去除多余内容、空格和多余行时，注意不要误删解锁码的一部分。你可以把它粘贴到 Motorola 在线的 dataScrubTool 中自动清理。
 :::
 
-### Step 2: Request Unlock Code
+### 步骤 2：申请解锁码
 
-1. Visit [Motorola Bootloader Unlock](https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-a)
+1. 访问 [Motorola Bootloader 解锁](https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-a)
 
-2. Sign in with your Motorola account
+2. 登录你的 Motorola 账号
 
-3. Unlocking your device and installing your own software might cause the device to stop working, disable important features and functionality.
+3. 解锁设备并安装自制软件可能导致设备停止工作，并禁用重要特性和功能。
 
-4. Paste the string on the website. Click "Can my device be unlocked?" You'll receive an email with your unlock key.
+4. 在网站上粘贴该字符串。点击 "Can my device be unlocked?"（我的设备能否解锁？）。你将收到一封包含解锁密钥的邮件。
 
-5. **Check email:**
-   - Try to use Gmail as your account email for Motorola. If you don't receive the unlock code (which should come in about a minute or so), try changing your account email address and requesting the code again.
+5. **查收邮件：**
+   - 尽量使用 Gmail 作为 Motorola 账号邮箱。如果没有收到解锁码（通常大约一分钟左右就会收到），可以尝试更换账号邮箱后重新申请。
 
-### Step 3: Save Unlock Code
+### 步骤 3：保存解锁码
 
-- Copy unlock code exactly
-- Save to text file
-- Keep safe for next steps
+- 一字不差地复制解锁码
+- 保存到文本文件
+- 妥善保存以便后续使用
 
 ---
 
-## Unlock Bootloader
+## 解锁 Bootloader
 
-### Step 1: Enter Fastboot Mode
+### 步骤 1：进入 Fastboot 模式
 
 ```bash
 adb reboot bootloader
 ```
 
-Or hardware keys:
-1. Power off
-2. Hold Volume Down + Power
-3. Release at fastboot screen
+或使用物理按键：
+1. 关机
+2. 按住音量减 + 电源键
+3. 出现 fastboot 界面时松开
 
-### Step 2: Unlock with Code
+### 步骤 2：使用解锁码解锁
 
 ```bash
-# Verify fastboot connection
+# 验证 fastboot 连接
 fastboot devices
 
-# Unlock using code from email
+# 使用邮件中的解锁码解锁
 fastboot oem unlock UNIQUE_KEY_FROM_EMAIL
 ```
 
-**On Device:**
-- Warning screen may appear
-- Device automatically wipes
-- Bootloader unlocks
-- Device reboots
+**设备端操作：**
+- 可能出现警告界面
+- 设备自动清除数据
+- Bootloader 解锁
+- 设备重启
 
-### Step 3: Verify Unlock
+### 步骤 3：验证解锁
 
-After reboot:
+重启后：
 ```bash
 adb reboot bootloader
 fastboot getvar unlocked
-# Should return: yes
+# 应返回：yes
 ```
 
-On boot you will see a "Bootloader unlocked" warning - this is normal.
+开机时你会看到“Bootloader 已解锁”警告 - 这是正常现象。
 
 ---
 
-## Root Installation
+## Root 安装
 
-### Determine Correct Image
+### 确定正确的镜像
 
-| Device Generation | Image to Patch |
+| 设备世代 | 需要修补的镜像 |
 |---|---|
-| Modern Edge/Moto G (Android 13+) | `init_boot.img` |
-| Older devices (Android 12 and below) | `boot.img` |
+| 新款 Edge/Moto G（Android 13+） | `init_boot.img` |
+| 旧款设备（Android 12 及以下） | `boot.img` |
 
-**Open the Magisk app and check the "Ramdisk" field if unsure. If Ramdisk = Yes, use `boot.img`. If your device has a separate `init_boot` partition, use `init_boot.img`.**
+**如果不确定，请打开 Magisk 应用查看“Ramdisk”字段。如果 Ramdisk = 是，使用 `boot.img`。如果你的设备有独立的 `init_boot` 分区，使用 `init_boot.img`。**
 
-### Method 1: Boot Image Patching (Standard)
+### 方法 1：修补 boot 镜像（标准方法）
 
-**Step 1: Get Stock Firmware**
+**步骤 1：获取官方固件**
 
-1. Download from [Motorola Rescue and Smart Assistant (Software Fix)](https://en-us.support.motorola.com/app/softwarefix) or [Lolinet Motorola Firmware Mirror](https://mirrors.lolinet.com/firmware/moto/). 
-2. If using the Motorola Rescue and Smart Assistant software, the installer must be run on an x86-based Windows machine. The firmware image must be downloaded by specifying the exact model, though the IMEI number can also be provided.
-3. Find `boot.img` or `init_boot.img` in the installed directory.
+1. 从 [Motorola Rescue and Smart Assistant（Software Fix）](https://en-us.support.motorola.com/app/softwarefix)或 [Lolinet Motorola 固件镜像站](https://mirrors.lolinet.com/firmware/moto/)下载。
+2. 如果使用 Motorola Rescue and Smart Assistant 软件，安装程序必须在基于 x86 的 Windows 电脑上运行。下载固件镜像时必须指定确切的机型，也可以提供 IMEI 号。
+3. 在安装目录中找到 `boot.img` 或 `init_boot.img`。
 
-::: warning FIRMWARE VERSION MATCH
-If you already installed an official update before rooting: Do NOT extract init_boot.img from the initial/launch firmware. DO extract init_boot.img from the updated firmware that matches your current build number.
+::: warning 固件版本匹配
+如果你在 Root 之前已经安装过官方更新：不要从初始/首发固件中提取 init_boot.img。务必从与你当前版本号一致的更新后固件中提取 init_boot.img。
 :::
 
-**Step 2: Transfer to Device**
+**步骤 2：传输到设备**
 
 ```bash
-# For newer devices (Android 13+)
+# 较新设备（Android 13+）
 adb push init_boot.img /sdcard/Download/
 
-# For older devices (Android 12 and below)
+# 较旧设备（Android 12 及以下）
 adb push boot.img /sdcard/Download/
 ```
 
-**Step 3: Patch with Magisk**
+**步骤 3：使用 Magisk 修补**
 
 ```bash
-# Install Magisk
+# 安装 Magisk
 adb install magisk.apk
 ```
 
-On device:
-1. Open Magisk
-2. Install > Select and Patch a File
-3. Choose boot/init_boot image
-4. Wait for patching to complete
+在设备上：
+1. 打开 Magisk
+2. 安装 > 选择并修补一个文件
+3. 选择 boot/init_boot 镜像
+4. 等待修补完成
 
-**Step 4: Flash Patched Image**
+**步骤 4：刷入修补后的镜像**
 
 ```bash
-# Get patched image back to PC
+# 将修补后的镜像取回电脑
 adb pull /sdcard/Download/magisk_patched_xxxxx.img ./
 
-# Reboot to fastboot
+# 重启到 fastboot
 adb reboot bootloader
 
-# Flash (use the correct partition for your device)
-# For devices with init_boot partition:
+# 刷入（使用与设备对应的正确分区）
+# 对于有 init_boot 分区的设备：
 fastboot flash init_boot magisk_patched_xxxxx.img
 
-# For devices using boot.img:
+# 对于使用 boot.img 的设备：
 fastboot flash boot magisk_patched_xxxxx.img
 
-# Reboot
+# 重启
 fastboot reboot
 ```
 
-**Step 5: Verify Root**
+**步骤 5：验证 Root**
 
-1. Open Magisk app
-2. Should show "Installed" with version number
-3. Test: `adb shell su`
+1. 打开 Magisk 应用
+2. 应显示“已安装”及版本号
+3. 测试：`adb shell su`
 
-### Method 2: Fastboot Boot + Direct Install (Edge 50 Fusion and similar)
+### 方法 2：Fastboot Boot + 直接安装（Edge 50 Fusion 及类似机型）
 
-Some Motorola devices (especially MediaTek-based ones like the Edge 50 Fusion) don't work with the standard flash method. Use this alternative:
+某些 Motorola 设备（尤其是联发科芯片的机型，如 Edge 50 Fusion）无法使用标准刷入方法。请使用以下替代方案：
 
-1. Unlock bootloader like any other Motorola device
-2. Install Magisk app
-3. Patch boot.img with Magisk and transfer to PC
-4. Execute `adb reboot bootloader`
-5. Execute `fastboot boot patched_boot.img`
-6. Open Magisk app and select "Direct Install"
-7. Reboot - device is now rooted
+1. 像其他 Motorola 设备一样解锁 Bootloader
+2. 安装 Magisk 应用
+3. 使用 Magisk 修补 boot.img 并传输到电脑
+4. 执行 `adb reboot bootloader`
+5. 执行 `fastboot boot patched_boot.img`
+6. 打开 Magisk 应用并选择“直接安装”
+7. 重启 - 设备现已 Root
 
 ---
 
-## Post-Root Setup
+## Root 后设置
 
-### Configure Magisk
+### 配置 Magisk
 
-**Settings:**
-- **Zygisk**: Enable
-- **Enforce DenyList**: Enable
+**设置：**
+- **Zygisk**：启用
+- **Enforce DenyList**：启用
 
-**DenyList:**
+**DenyList：**
 - Google Play Services
-- Google Play Store
-- Banking apps
-- Payment apps
+- Google Play 商店
+- 银行类应用
+- 支付类应用
 
-### Motorola Optimization
+### Motorola 优化
 
-**Battery:**
-1. Settings > Battery
-2. Magisk and root apps > Set "Unrestricted"
+**电池：**
+1. 设置 > 电池
+2. Magisk 和 Root 应用 > 设为“不受限制”
 
-**Background:**
-- Allow background activity for root apps
-- Disable battery optimization for Magisk
+**后台：**
+- 允许 Root 应用后台活动
+- 为 Magisk 禁用电池优化
 
-### Recommended Modules
+### 推荐模块
 
-- **Play Integrity Fix** (replaces Universal SafetyNet Fix)
-- **Shamiko** (hide root from detection)
-- **LSPosed** (Xposed framework)
-- **Systemless Hosts** (ad blocking support)
+- **Play Integrity Fix**（替代 Universal SafetyNet Fix）
+- **Shamiko**（隐藏 Root 避免检测）
+- **LSPosed**（Xposed 框架）
+- **Systemless Hosts**（广告屏蔽支持）
 
 ---
 
-## OTA Handling
+## OTA 处理
 
-### For A/B Devices (All Modern Motorola)
+### 针对 A/B 设备（所有现代 Motorola 机型）
 
-**Process:**
-1. Download OTA
-2. Magisk > Install to Inactive Slot
-3. Reboot
-4. Root preserved
+**流程：**
+1. 下载 OTA
+2. Magisk > 安装到未使用的插槽
+3. 重启
+4. Root 得以保留
 
 ::: warning
-After rooting, OTA updates may fail with "package verification failed." The only way to update is to download the full firmware package and flash it yourself using Rescue and Smart Assistant or fastboot.
+Root 之后，OTA 更新可能失败并提示“package verification failed（更新包校验失败）”。唯一的更新方法是下载完整固件包，然后自行使用 Rescue and Smart Assistant 或 fastboot 刷入。
 :::
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-<details><summary>Click to expand troubleshooting</summary><br>
+<details><summary>点击展开故障排除</summary><br>
 
-### Unlock Code Issues
+### 解锁码问题
 
-**Code Not Received**
+**未收到解锁码**
 
-Solutions:
-- Check spam folder
-- Wait up to 24 hours
-- Re-submit request
-- Try to use Gmail as your account email for Motorola
-- Contact Motorola support
+解决方法：
+- 检查垃圾邮件文件夹
+- 最长等待 24 小时
+- 重新提交申请
+- 尽量使用 Gmail 作为 Motorola 账号邮箱
+- 联系 Motorola 支持
 
-**Code Doesn't Work**
+**解锁码无效**
 
-Solutions:
-- Verify copied correctly - no extra spaces
-- Be careful not to remove part of the unlock key when removing the junk, spaces and extra lines
+解决方法：
+- 确认复制正确 - 没有多余空格
+- 在去除多余内容、空格和多余行时，注意不要误删解锁码的一部分
 
-### Bootloader Issues
+### Bootloader 问题
 
-**OEM Unlocking Greyed Out**
+**OEM 解锁呈灰色**
 
-Causes:
-- Carrier-locked device
-- ThinkShield/enterprise model
-- Device not eligible
+原因：
+- 运营商锁定设备
+- ThinkShield/企业机型
+- 设备不符合条件
 
-If greyed out: device likely cannot be unlocked.
+如果呈灰色：设备很可能无法解锁。
 
-**Device Shows "Not Eligible" on Motorola Website**
+**设备在 Motorola 网站上显示 “Not Eligible”（不符合条件）**
 
-- The site often gives false ineligible responses
-- The device's CID is one of the factors that can determine if it is eligible for unlocking
-- Check your CID with: `fastboot getvar cid`
-- Try submitting again or use a different browser
+- 该网站经常给出错误的“不符合条件”回复
+- 设备的 CID 是决定其是否有资格解锁的因素之一
+- 使用以下命令检查你的 CID：`fastboot getvar cid`
+- 尝试重新提交或换一个浏览器
 
-### "Preflash Validation Failed"
+### “Preflash Validation Failed”（刷入前校验失败）
 
-This is a common Motorola-specific error when flashing patched images.
+这是刷入修补镜像时常见的 Motorola 特有错误。
 
-**Cause:** This can mean multiple things including flashing an older image, or DMVerity/Verification still being enabled. If DMVerity/Verification is still enabled and you try to flash a rooted image, it will be denied because the device can detect it's been modified.
+**原因：** 可能有多种情况，包括刷入了较旧的镜像，或 DMVerity/Verification 仍然启用。如果 DMVerity/Verification 仍处于启用状态而你尝试刷入已 Root 的镜像，刷入会被拒绝，因为设备能检测到镜像已被修改。
 
-**Solution 1: Use fastbootd mode**
-Reboot into Fastboot-Fastboot mode (fastbootd) instead of Fastboot-bootloader. While still in bootloader mode, send: `fastboot reboot fastboot`. While in fastbootd mode, repeat flashing the images - they should succeed this time.
+**解决方法 1：使用 fastbootd 模式**
+重启进入 Fastboot-Fastboot 模式（fastbootd），而不是 Fastboot-bootloader。在仍处于 bootloader 模式时执行：`fastboot reboot fastboot`。在 fastbootd 模式下重新刷入镜像 - 这次应该能成功。
 
-**Solution 2: Disable vbmeta verification**
+**解决方法 2：禁用 vbmeta 校验**
 ```bash
 fastboot flash --disable-verity --disable-verification vbmeta vbmeta.img
 ```
 
-**Solution 3: Use the fastboot boot method**
-Instead of flashing directly, use `fastboot boot patched_boot.img`, then do a Direct Install from within the Magisk app.
+**解决方法 3：使用 fastboot boot 方法**
+不直接刷入，而是使用 `fastboot boot patched_boot.img`，然后在 Magisk 应用内执行直接安装。
 
-### Installation Issues
+### 安装问题
 
-**Magisk Not Working After Flash**
+**刷入后 Magisk 不工作**
 
-Solutions:
-1. On some devices like the Edge 50 Ultra, flashing patched boot.img alone doesn't work - you may need to patch init_boot.img instead
-2. Verify firmware version matches your current build
-3. Re-patch and flash
-4. Clear Magisk data
+解决方法：
+1. 在 Edge 50 Ultra 等某些设备上，仅刷入修补后的 boot.img 无效 - 你可能需要改为修补 init_boot.img
+2. 确认固件版本与当前系统版本一致
+3. 重新修补并刷入
+4. 清除 Magisk 数据
 
-**Bootloop**
+**无限重启**
 
 ```bash
-# Restore stock image
+# 恢复官方镜像
 fastboot flash boot stock_boot.img
-# Or
+# 或者
 fastboot flash init_boot stock_init_boot.img
 fastboot reboot
 ```
@@ -499,28 +499,28 @@ fastboot reboot
 
 ---
 
-## Unroot and Restore
+## 取消 Root 与恢复
 
-### Remove Root
+### 移除 Root
 
 ```bash
-# Magisk > Uninstall > Restore Images
+# Magisk > 卸载 > 还原镜像
 ```
 
-### Flash Stock
+### 刷入官方系统
 
 ```bash
-# Flash stock firmware images
+# 刷入官方固件镜像
 fastboot flash boot stock_boot.img
-# Or for newer devices:
+# 或对于较新设备：
 fastboot flash init_boot stock_init_boot.img
 fastboot reboot
 ```
 
-### Relock Bootloader
+### 重新锁定 Bootloader
 
-::: danger RELOCK WARNING
-Don't relock the bootloader if it was unlocked by any other method than official. Reflash stock firmware, factory reset, reboot, and make sure everything is working correctly before relocking. Warranty remains void after relocking.
+::: danger 重新锁定警告
+如果 Bootloader 不是通过官方方法解锁的，请不要重新锁定。重新锁定之前，请重新刷入官方固件、恢复出厂设置、重启，并确认一切工作正常。重新锁定后保修仍然失效。
 :::
 
 ```bash
@@ -529,82 +529,83 @@ fastboot oem lock
 
 ---
 
-## Custom ROMs
+## 第三方 ROM
 
-### Popular ROMs
+### 热门 ROM
 
-**LineageOS:**
-- Official for many Moto G and Edge devices
-- Stable and well-maintained
+**LineageOS：**
+- 许多 Moto G 和 Edge 设备都有官方支持
+- 稳定且维护良好
 
-**Pixel Experience:**
-- Pixel-like interface
-- Good performance
+**Pixel Experience：**
+- 类 Pixel 界面
+- 性能良好
 
-**crDroid:**
-- Feature-rich
-- Active development
+**crDroid：**
+- 功能丰富
+- 开发活跃
 
-**Evolution X:**
-- Customizable
-- Growing support
-
----
-
-## Best Practices
-
-### Security
-
-1. **Configure DenyList** for sensitive apps
-2. **Trusted modules only** - verify sources
-3. **Keep Magisk updated** - latest versions support new sepolicy binary format introduced in Android 16
-4. **Back up boot images** before every update
+**Evolution X：**
+- 高度可定制
+- 支持范围不断扩大
 
 ---
 
-## Community Resources
+## 最佳实践
 
-**Official Motorola:**
-- [Bootloader Unlock](https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-a) - Official unlock portal
-- [Supported Devices Info](https://en-us.support.motorola.com/app/answers/detail/a_id/87215) - Official eligibility info
-- [Motorola USB Drivers](https://en-us.support.motorola.com/app/usb-drivers) - Official drivers
-- [Motorola Rescue & Smart Assistant](https://en-us.support.motorola.com/app/softwarefix) - Stock firmware tool
+### 安全
 
-**Developer Community:**
-- [XDA Motorola Forums](https://xdaforums.com/c/motorola.11990/) - Development & guides
-- [XDA Bootloader Unlock Guide](https://xdaforums.com/t/guide-un-locking-motorola-bootloader.4079111/) - Comprehensive unlock reference
-- [Reddit r/MotoG](https://www.reddit.com/r/MotoG/) - Moto G community
-- [Reddit r/Motorola](https://www.reddit.com/r/Motorola/) - General Motorola
-
-**Awesome Android Root help resources:**
-- [FAQs](../faqs)
-- [Troubleshooting Guide](../troubleshooting)
-
-### Getting Help
-
-**Provide:**
-- Exact Motorola model and codename
-- Android version and build number
-- Unlock code status
-- Exact error messages (especially fastboot output)
-- Steps attempted
-- Which Magisk version was used to patch
+1. 为敏感应用**配置 DenyList**
+2. **只用可信模块** - 核实来源
+3. **保持 Magisk 为最新版本** - 最新版本支持 Android 16 引入的新 sepolicy 二进制格式
+4. 每次更新前**备份 boot 镜像**
 
 ---
 
-## Next Steps
+## 社区资源
 
-**After Rooting:**
+**Motorola 官方：**
+- [Bootloader 解锁](https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-a) - 官方解锁入口
+- [支持设备信息](https://en-us.support.motorola.com/app/answers/detail/a_id/87215) - 官方资格说明
+- [Motorola USB 驱动](https://en-us.support.motorola.com/app/usb-drivers) - 官方驱动
+- [Motorola Rescue & Smart Assistant](https://en-us.support.motorola.com/app/softwarefix) - 官方固件工具
 
-1. **Essential apps:**
-   - [Root Apps Collection](../apps-and-modules/)
+**开发者社区：**
+- [XDA Motorola 论坛](https://xdaforums.com/c/motorola.11990/) - 开发与指南
+- [XDA Bootloader 解锁指南](https://xdaforums.com/t/guide-un-locking-motorola-bootloader.4079111/) - 全面的解锁参考
+- [Reddit r/MotoG](https://www.reddit.com/r/MotoG/) - Moto G 社区
+- [Reddit r/Motorola](https://www.reddit.com/r/Motorola/) - Motorola 综合讨论
 
-2. **Enhance:**
-   - [Ad Blocking Guide](../general-guides/android-adblocking.md)
-   - [Debloating Guide](../general-guides/android-apps-debloating.md)
-   - [LSPosed Guide](./lsposed-guide.md)
+**Awesome Android Root 帮助资源：**
+- [常见问题](../faqs)
+- [故障排除指南](../troubleshooting)
 
-3. **Explore ROMs:**
-   - [Custom ROM Guide](./custom-rom-installation.md)
-   - LineageOS for stability
-   - Pixel Experience for clean look
+### 寻求帮助
+
+**请提供：**
+- 确切的 Motorola 机型和代号
+- Android 版本和版本号
+- 解锁码状态
+- 确切的错误信息（尤其是 fastboot 输出）
+- 已尝试的步骤
+- 修补时使用的 Magisk 版本
+
+---
+
+## 下一步
+
+**Root 之后：**
+
+1. **必备应用：**
+   - [Root 应用合集](../apps-and-modules/)
+
+2. **增强：**
+   - [广告屏蔽指南](../general-guides/android-adblocking.md)
+   - [精简应用指南](../general-guides/android-apps-debloating.md)
+   - [LSPosed 指南](./lsposed-guide.md)
+
+3. **探索 ROM：**
+   - [第三方 ROM 指南](./custom-rom-installation.md)
+   - LineageOS，稳定
+   - Pixel Experience，界面纯净
+

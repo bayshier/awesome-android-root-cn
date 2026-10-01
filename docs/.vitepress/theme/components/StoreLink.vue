@@ -20,8 +20,8 @@ const props = defineProps({
 })
 
 const ariaLabel = computed(() => {
-  if (props.store === 'fdroid') return 'Download on F-Droid'
-  if (props.store === 'playstore') return 'Get it on Play Store'
+  if (props.store === 'fdroid') return '从 F-Droid 下载'
+  if (props.store === 'playstore') return '在 Play Store 获取'
   return ''
 })
 

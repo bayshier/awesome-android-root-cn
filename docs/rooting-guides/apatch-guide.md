@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Complete APatch Root Guide
-description: "Master APatch rooting with a practical 2026 guide: compatibility checks, safe install flow, OTA survival, and recovery steps."
+title: APatch Root 完整指南
+description: "通过实用的 2026 指南掌握 APatch root：兼容性检查、安全安装流程、OTA 后保住 root 以及恢复步骤。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: Complete APatch Root Guide - Modern Kernel-Based Android Rooting
+      content: APatch Root 完整指南 - 现代基于内核的 Android root
   - - meta
     - property: og:description
-      content: Install APatch safely with updated boot/init_boot guidance, OTA handling, module basics, and troubleshooting.
+      content: 在最新的 boot/init_boot 指引下安全安装 APatch，涵盖 OTA 处理、模块基础与故障排除。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/apatch-guide
@@ -32,16 +32,16 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: Complete APatch Root Guide
+      content: APatch Root 完整指南
   - - meta
     - name: twitter:description
-      content: "Updated APatch setup for modern Android devices: compatibility, install, OTA, and recovery."
+      content: "面向现代 Android 设备的最新 APatch 设置：兼容性、安装、OTA 与恢复。"
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og/apatch-guide.png
   - - meta
     - name: twitter:image:alt
-      content: APatch Installation Guide - Modern Kernel-Based Android Rooting
+      content: APatch 安装指南 - 现代基于内核的 Android root
   - - meta
     - name: author
       content: Awesome Android Root Project
@@ -50,16 +50,16 @@ head:
       content: https://github.com/awesome-android-root/awesome-android-root
   - - meta
     - property: article:section
-      content: Android Rooting
+      content: Android root
   - - meta
     - property: article:tag
       content: APatch
   - - meta
     - property: article:tag
-      content: Kernel Root
+      content: 内核 root
   - - meta
     - property: article:tag
-      content: Android Rooting
+      content: Android root
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -71,173 +71,173 @@ head:
       content: index, follow
 ---
 
-# APatch Root Installation Guide
+# APatch Root 安装指南
 
-APatch is a kernel-based root solution for modern Android devices. This guide focuses on a safe, repeatable workflow: verify compatibility first, patch the correct image, test boot if possible, then flash permanently.
+APatch 是面向现代 Android 设备的基于内核的 root 方案。本指南聚焦一套安全、可重复的工作流：先验证兼容性，修补正确的镜像，尽可能先测试启动，然后再永久刷入。
 
-## Quick Navigation
+## 快速导航
 
-- [What is APatch](#understanding-apatch)
-- [Compatibility and Requirements](#compatibility-and-requirements)
-- [Boot vs Init Boot](#boot-vs-init-boot-what-to-patch)
-- [Installation Steps](#installation-steps)
-- [Post-Install Security Setup](#post-installation-setup)
-- [Modules](#managing-modules)
-- [OTA Updates](#ota-handling)
-- [Troubleshooting and Recovery](#troubleshooting)
+- [什么是 APatch](#认识-apatch)
+- [兼容性与要求](#兼容性与要求)
+- [boot 与 init_boot：该修补哪个](#boot-与-initboot该修补哪个)
+- [安装步骤](#安装步骤)
+- [安装后的安全设置](#安装后的设置)
+- [模块管理](#模块管理)
+- [OTA 更新](#ota-处理)
+- [故障排除与恢复](#故障排除)
 
-**Related Guides:**
-- [Main Rooting Guide](./index.md) - Rooting overview and framework selection
-- [Bootloader Unlocking](./how-to-unlock-bootloader.md) - Required first step
-- [Root Framework Comparison](./root-framework-comparison.md) - APatch vs Magisk vs KernelSU
-- [General Troubleshooting](../troubleshooting.md)
-- [FAQs](../faqs.md)
+**相关指南：**
+- [主 root 指南](./index.md) - root 总览与框架选择
+- [解锁 Bootloader](./how-to-unlock-bootloader.md) - 必需的第一步
+- [Root 框架对比](./root-framework-comparison.md) - APatch vs Magisk vs KernelSU
+- [通用故障排除](../troubleshooting.md)
+- [常见问题](../faqs.md)
 
 ---
 
-## Understanding APatch
+## 认识 APatch
 
-APatch patches your boot chain image (`boot.img` or `init_boot.img`) and provides kernel-level root access with systemless-style behavior.
+APatch 会修补你的启动链镜像（`boot.img` 或 `init_boot.img`），并以 systemless 风格提供内核级 root 权限。
 
-### Core Characteristics
+### 核心特性
 
-- **Kernel-space root model** - root control comes from kernel-side components
-- **System partition remains untouched** - no `/system` remount required
-- **Modern Android friendly** - especially useful on recent devices using `init_boot`
-- **Module support** - APModule ecosystem plus partial cross-compatibility with some other module styles
+- **内核态 root 模型** - root 控制来自内核侧组件
+- **系统分区保持不动** - 无需重新挂载 `/system`
+- **对现代 Android 友好** - 在使用 `init_boot` 的较新设备上尤其有用
+- **模块支持** - APModule 生态，并对某些其他模块风格提供部分交叉兼容
 
-### APatch vs Other Root Solutions
+### APatch 与其他 root 方案对比
 
-| Feature | APatch | Magisk | KernelSU |
+| 特性 | APatch | Magisk | KernelSU |
 |---------|--------|--------|----------|
-| Architecture | Kernel-based | Userspace root stack | Kernel-based |
-| Typical setup | Patch + flash boot chain image | Patch + flash image | Kernel-dependent install methods |
-| Module model | APModule (plus some compatibility) | Magisk modules | KSU modules |
-| Zygisk-style workflow | Via community alternatives | Native | Via alternatives |
-| OTA workflow | Repatch updated image | Built-in paths + manual recovery cases | Slot/image aware workflows |
+| 架构 | 基于内核 | 用户态 root 方案 | 基于内核 |
+| 典型安装方式 | 修补 + 刷入启动链镜像 | 修补 + 刷入镜像 | 依赖内核的安装方式 |
+| 模块模型 | APModule（外加部分兼容性） | Magisk 模块 | KSU 模块 |
+| Zygisk 风格工作流 | 通过社区替代方案 | 原生支持 | 通过替代方案 |
+| OTA 工作流 | 重新修补更新后的镜像 | 内置路径 + 个别需手动恢复的情形 | 感知槽位/镜像的工作流 |
 
 > [!CAUTION]
-> Do **not** run APatch together with Magisk or KernelSU on the same active slot. Use one root stack at a time.
+> **不要**在同一活动槽位上同时运行 APatch 与 Magisk 或 KernelSU。同一时间只使用一套 root 方案。
 
 ---
 
-## Compatibility and Requirements
+## 兼容性与要求
 
-### Officially Relevant Compatibility Signals
+### 官方给出的兼容性信号
 
-Based on APatch upstream docs and repository notes:
+根据 APatch 上游文档与仓库说明：
 
-- **Architecture:** ARM64 only
-- **Kernel range:** Linux kernel 3.18 to 6.12 (upstream stated range)
-- **Practical Android target:** modern Android builds (Android 10+ is the common baseline in community usage)
+- **架构：** 仅支持 ARM64
+- **内核范围：** Linux 内核 3.18 至 6.12（上游声明的范围）
+- **实际 Android 目标：** 现代 Android 构建（社区使用中普遍以 Android 10+ 为基线）
 
-### Must-Have Prerequisites
+### 必备前提
 
-::: danger ESSENTIAL REQUIREMENTS
-**Unlocked bootloader** - mandatory before any APatch install.
+::: danger 必要要求
+**已解锁的 Bootloader** - 安装 APatch 之前的硬性前提。
 
-**Exact matching stock firmware** - image must match your current build fingerprint.
+**完全匹配的官方固件** - 镜像必须与你当前的构建指纹一致。
 
-**Complete backup** - failed flashes can force full restore.
+**完整备份** - 刷入失败可能需要完整还原。
 
-**Battery 50%+** - avoid interruptions during patch/flash.
+**电量 50% 以上** - 避免修补/刷入过程中断。
 :::
 
-### Tools You Need
+### 所需工具
 
-**Computer:**
-- [Android Platform Tools](https://developer.android.com/tools/releases/platform-tools) (latest `adb`/`fastboot`)
-- OEM USB drivers (Windows)
-- Image extraction tools (for payload/Firmware archives)
+**电脑：**
+- [Android Platform Tools](https://developer.android.com/tools/releases/platform-tools)（最新的 `adb`/`fastboot`）
+- OEM USB 驱动（Windows）
+- 镜像提取工具（用于 payload/固件压缩包）
 
-**Device:**
-- Latest APatch manager from [GitHub Releases](https://github.com/bmax121/APatch/releases/latest) or [F-Droid](https://f-droid.org/packages/me.bmax.apatch/)
-- File manager
-- 500MB+ free storage
+**设备：**
+- 来自 [GitHub Releases](https://github.com/bmax121/APatch/releases/latest) 或 [F-Droid](https://f-droid.org/packages/me.bmax.apatch/) 的最新 APatch 管理器
+- 文件管理器
+- 500MB 以上可用存储空间
 
 ---
 
-## Boot vs Init Boot: What to Patch
+## boot 与 init_boot：该修补哪个
 
-Flashing the wrong target is a top cause of bootloops.
+刷错目标分区是导致无限重启的首要原因之一。
 
 ### `boot.img`
 
-- Traditional boot partition
-- Common on many older devices and many Android 12-and-below builds
+- 传统 boot 分区
+- 常见于许多较旧设备以及众多 Android 12 及更早版本的构建
 
 ### `init_boot.img`
 
-- Newer boot chain layout used by many Android 13+ devices
-- Common on Pixel 7/8/9 generation and many newer OEM builds
+- 许多 Android 13+ 设备采用的较新启动链布局
+- 常见于 Pixel 7/8/9 一代以及许多较新的 OEM 构建
 
-### How to Identify Correct Target
+### 如何确定正确的目标
 
-**Method 1 (recommended):** APatch app detection
-1. Install/open APatch
-2. Start install flow
-3. Check which partition/image APatch expects
+**方法一（推荐）：** 通过 APatch 应用检测
+1. 安装/打开 APatch
+2. 进入安装流程
+3. 查看 APatch 期望哪个分区/镜像
 
-**Method 2:** inspect block names
+**方法二：** 检查块设备名称
 
 ```bash
 adb shell ls -l /dev/block/by-name/ | grep -E "boot|init_boot"
 ```
 
-Presence of `init_boot` often indicates modern split-ramdisk layout.
+存在 `init_boot` 通常意味着采用了现代的 split-ramdisk 布局。
 
-::: tip SAFETY RULE
-Always patch the image extracted from the **same build currently running on your phone**.
+::: tip 安全规则
+始终修补从**手机当前正在运行的同一构建**中提取的镜像。
 :::
 
 ---
 
-## Installation Steps
+## 安装步骤
 
-## Step 1: Extract the Correct Stock Image
+## 步骤 1：提取正确的官方镜像
 
-You need `boot.img` or `init_boot.img` from your exact current firmware build.
+你需要从与当前完全一致的固件构建中提取 `boot.img` 或 `init_boot.img`。
 
 ### Pixel
 
-1. Download factory image from [Google Factory Images](https://developers.google.com/android/images)
-2. Extract outer archive
-3. Extract inner `image-*.zip`
-4. Grab `boot.img` or `init_boot.img`
+1. 从 [Google Factory Images](https://developers.google.com/android/images) 下载出厂镜像
+2. 解压外层压缩包
+3. 解压内层的 `image-*.zip`
+4. 取出 `boot.img` 或 `init_boot.img`
 
-### OnePlus/OPPO/Realme (payload OTA)
+### OnePlus/OPPO/Realme（payload OTA）
 
-1. Download full OTA package
-2. Extract `payload.bin`
-3. Use payload dumper to extract images
+1. 下载完整 OTA 包
+2. 提取 `payload.bin`
+3. 使用 payload dumper 提取镜像
 
 ### Xiaomi/Redmi/POCO
 
-1. Download full fastboot ROM
-2. Extract archive
-3. Use image from the `images/` directory
+1. 下载完整的 Fastboot ROM
+2. 解压压缩包
+3. 使用 `images/` 目录中的镜像
 
 ### Samsung
 
-Samsung often uses Odin pipelines and compressed images (`*.lz4`). APatch workflows are less straightforward and device-specific. Proceed only with a tested model-specific method.
+Samsung 常使用 Odin 流程和压缩镜像（`*.lz4`）。APatch 的流程并不那么直接，且因设备而异。仅在拥有经过验证的机型专属方法时才继续。
 
-## Step 2: Patch the Image in APatch
+## 步骤 2：在 APatch 中修补镜像
 
 ```bash
 adb push boot.img /sdcard/Download/
-# or
+# 或
 adb push init_boot.img /sdcard/Download/
 ```
 
-In APatch manager:
-1. Open APatch
-2. Tap install/patch image
-3. Select your stock `boot.img` or `init_boot.img`
-4. Wait for patch completion
+在 APatch 管理器中：
+1. 打开 APatch
+2. 点击安装/修补镜像
+3. 选择你的官方 `boot.img` 或 `init_boot.img`
+4. 等待修补完成
 
-Patched output is saved to storage (usually Download folder).
+修补后的文件会保存到存储中（通常在 Download 文件夹）。
 
-## Step 3: Test Boot First (When Supported)
+## 步骤 3：先测试启动（如果设备支持）
 
 ```bash
 adb pull /sdcard/Download/apatch_patched*.img ./
@@ -246,48 +246,48 @@ fastboot devices
 fastboot boot apatch_patched_xxxxx.img
 ```
 
-If temporary boot succeeds and root works, continue to permanent flash.
+如果临时启动成功且 root 可用，再继续永久刷入。
 
 > [!WARNING]
-> Some devices/bootloaders do not support `fastboot boot`. If unsupported, skip test boot and keep a stock image ready for immediate recovery.
+> 部分设备/Bootloader 不支持 `fastboot boot`。如果不支持，请跳过测试启动，并准备好官方镜像以便立即恢复。
 
-## Step 4: Flash Permanently
+## 步骤 4：永久刷入
 
 ```bash
 adb reboot bootloader
 
-# patch target is boot
+# 补丁目标是 boot
 fastboot flash boot apatch_patched_xxxxx.img
 
-# or patch target is init_boot
+# 或补丁目标是 init_boot
 fastboot flash init_boot apatch_patched_xxxxx.img
 
 fastboot reboot
 ```
 
-### A/B Slot Awareness
+### A/B 槽位注意事项
 
 ```bash
 fastboot getvar current-slot
 ```
 
-If needed, target explicit slot partitions:
+如有需要，明确指定槽位分区：
 
 ```bash
 fastboot flash boot_a apatch_patched_xxxxx.img
-# or
+# 或
 fastboot flash init_boot_b apatch_patched_xxxxx.img
 ```
 
-::: warning VERIFIED BOOT NOTE
-Do not disable AVB as a default APatch setup step. APatch workflows are designed to operate without broadly disabling verification.
+::: warning 已验证启动说明
+不要把禁用 AVB 当作 APatch 的默认安装步骤。APatch 的工作流被设计为无需大范围禁用验证即可运行。
 :::
 
-## Step 5: Verify Root
+## 步骤 5：验证 root
 
-1. Boot may take longer on first startup
-2. Open APatch manager and confirm installed status
-3. Validate shell root:
+1. 首次启动可能耗时更长
+2. 打开 APatch 管理器并确认已安装状态
+3. 验证 shell root：
 
 ```bash
 adb shell
@@ -295,211 +295,211 @@ su
 id
 ```
 
-Expected output includes `uid=0(root)`.
+预期输出中包含 `uid=0(root)`。
 
 ---
 
-## Post-Installation Setup
+## 安装后的设置
 
-### Recommended Security Baseline
+### 推荐的安全基线
 
-In APatch settings:
-- Default SU action: prompt
-- Short prompt timeout (for accidental requests)
-- Biometric or device authentication for approvals
-- Enable root access logs
+在 APatch 设置中：
+- 默认 SU 动作：提示
+- 较短的提示超时（防止误触请求）
+- 授权时使用生物识别或设备认证
+- 启用 root 访问日志
 
-### Root Permission Hygiene
+### root 权限管理习惯
 
-- Grant only to trusted apps
-- Revoke old/unused grants regularly
-- Check logs after new module installs
+- 只授予受信任的应用
+- 定期撤销陈旧/不再使用的授权
+- 安装新模块后检查日志
 
-### Manager Hiding and Sensitive Apps
+### 管理器隐藏与敏感应用
 
-If your build supports manager hiding/repackaging, use it carefully and test critical apps one-by-one after changes.
-
----
-
-## Managing Modules
-
-### Module Reality Check
-
-- APatch module support changes quickly
-- Not every Magisk or KernelSU module is compatible
-- Start with well-maintained modules with recent updates
-
-### Safe Module Workflow
-
-1. Install one module at a time
-2. Reboot and test system stability
-3. Keep a known-good boot image for rollback
-4. Avoid stacking many behavior-changing modules at once
-
-### If a Module Causes Boot Problems
-
-1. Boot to bootloader
-2. Flash stock `boot`/`init_boot` to recover
-3. Boot system and remove problematic module
-4. Repatch and reinstall only necessary modules
+如果你的构建支持管理器隐藏/重打包，请谨慎使用，并在每次更改后逐一测试关键应用。
 
 ---
 
-## OTA Handling
+## 模块管理
 
-Root survival with APatch is image-based, so OTAs usually require repatching the updated boot chain image.
+### 模块现状须知
 
-### A/B Devices
+- APatch 的模块支持变化很快
+- 并非每个 Magisk 或 KernelSU 模块都兼容
+- 从维护良好、近期有更新的模块入手
 
-1. Download OTA
-2. Extract updated `boot.img` or `init_boot.img` from that OTA
-3. Patch new image with APatch
-4. Flash patched image to the correct target slot/partition
-5. Reboot and verify root
+### 安全的模块工作流
 
-### Non-A/B Devices
+1. 每次只安装一个模块
+2. 重启并测试系统稳定性
+3. 保留一个确认可用的启动镜像以便回滚
+4. 避免一次性堆叠多个改变系统行为的模块
 
-1. Install update
-2. Extract updated boot chain image for current build
-3. Patch and flash again
+### 如果模块导致启动问题
 
-::: tip OTA RULE
-Always patch image from the **newly installed build**, not from an older firmware package.
+1. 进入 Bootloader
+2. 刷入官方 `boot`/`init_boot` 以恢复
+3. 启动系统并移除有问题的模块
+4. 重新修补并只重装必要的模块
+
+---
+
+## OTA 处理
+
+APatch 的 root 存续依赖镜像，因此 OTA 之后通常需要重新修补更新后的启动链镜像。
+
+### A/B 设备
+
+1. 下载 OTA
+2. 从该 OTA 中提取更新后的 `boot.img` 或 `init_boot.img`
+3. 用 APatch 修补新镜像
+4. 将修补后的镜像刷入正确的目标槽位/分区
+5. 重启并验证 root
+
+### 非 A/B 设备
+
+1. 安装更新
+2. 提取当前构建对应的更新后的启动链镜像
+3. 重新修补并刷入
+
+::: tip OTA 规则
+始终修补来自**新安装构建**的镜像，而不是较旧的固件包。
 :::
 
 ---
 
-## Root Hiding and Play Integrity
+## root 隐藏与 Play Integrity
 
-Play Integrity behavior changes frequently server-side. There is no permanent bypass guarantee.
+Play Integrity 的行为会在服务端频繁变化。没有任何永久绕过的保证。
 
-### Practical Expectations
+### 实际预期
 
-- **Basic integrity:** sometimes passable with careful setup
-- **Device/strong integrity:** commonly fails on unlocked/rooted devices
-- Banking/payment app behavior varies by region, app version, and backend policy
+- **基本完整性（basic integrity）：** 经过细致设置有时可以通过
+- **设备/强完整性（device/strong integrity）：** 在已解锁/已 root 的设备上通常无法通过
+- 银行/支付类应用的表现因地区、应用版本和后端策略而异
 
-### Safer Strategy
+### 更稳妥的策略
 
-- Keep root access denied for sensitive apps
-- Use minimum module set required for your use case
-- Re-test after every OTA or major app update
+- 对敏感应用保持拒绝 root 访问
+- 只使用你的使用场景所需的最少模块集合
+- 每次 OTA 或应用大版本更新后重新测试
 
 ---
 
-## Uninstallation
+## 卸载
 
-Most reliable path: restore stock boot chain image.
+最可靠的途径：还原官方启动链镜像。
 
 ```bash
 adb reboot bootloader
 
 fastboot flash boot stock_boot.img
-# or
+# 或
 fastboot flash init_boot stock_init_boot.img
 
 fastboot reboot
 ```
 
-If you need fully clean state, flash full stock firmware for your device.
+如果需要完全干净的状态，请为你的设备刷入完整官方固件。
 
 ---
 
-## Device-Specific Notes
+## 机型专属注意事项
 
 ### Pixel
 
-- Pixel 7/8/9: commonly patch `init_boot`
-- Pixel 6 and older: commonly patch `boot`
+- Pixel 7/8/9：通常修补 `init_boot`
+- Pixel 6 及更早：通常修补 `boot`
 
 ### OnePlus/OPPO/Realme
 
-- Newer Android builds frequently use `init_boot`
-- OTA extraction usually revolves around `payload.bin`
+- 较新的 Android 构建频繁使用 `init_boot`
+- OTA 提取通常围绕 `payload.bin` 展开
 
 ### Xiaomi/Redmi/POCO
 
-- Newer HyperOS/MIUI builds may use `init_boot`
-- Respect anti-rollback constraints when changing firmware
+- 较新的 HyperOS/MIUI 构建可能使用 `init_boot`
+- 更换固件时注意防回滚限制
 
 ### Samsung
 
-- Odin-based pipeline, no standard fastboot flashing on many models
-- Knox trip is permanent once rooted/unlocked
-- Use Samsung-specific methods only
+- 基于 Odin 的流程，许多机型没有标准的 Fastboot 刷入
+- 一旦 root/解锁，Knox 熔断永久生效
+- 只使用 Samsung 专属方法
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-<details><summary>👉 Click to expand details</summary><br>
+<details><summary>👉 点击展开详情</summary><br>
 
-### Bootloop After Flash
+### 刷入后无限重启
 
-Common causes:
-- Wrong partition target (`boot` vs `init_boot`)
-- Image from wrong firmware build
-- Wrong slot on A/B devices
+常见原因：
+- 分区目标错误（`boot` 与 `init_boot` 混淆）
+- 镜像来自错误的固件构建
+- A/B 设备上槽位选错
 
-Recovery:
+恢复方法：
 
 ```bash
 fastboot flash boot stock_boot.img
-# or
+# 或
 fastboot flash init_boot stock_init_boot.img
 fastboot reboot
 ```
 
-### APatch Fails to Patch Image
+### APatch 修补镜像失败
 
-- Update APatch manager to latest stable release
-- Re-extract image from original firmware package
-- Verify image is not corrupted/renamed incorrectly
-- Ensure enough free storage on device
+- 将 APatch 管理器更新到最新稳定版
+- 从原始固件包重新提取镜像
+- 确认镜像未损坏/未被错误重命名
+- 确保设备上有足够的可用存储
 
-### `fastboot` Cannot Detect Device
+### `fastboot` 无法检测到设备
 
-- Update platform-tools
-- Change cable/USB port
-- Verify OEM unlock and bootloader mode
-- Reinstall drivers on Windows
+- 更新 platform-tools
+- 更换数据线/USB 端口
+- 确认 OEM 解锁与 Bootloader 模式
+- 在 Windows 上重装驱动
 
-### Root Lost After OTA
+### OTA 后 root 丢失
 
-- Extract updated image from installed OTA build
-- Repatch and flash correct partition/slot
+- 从已安装的 OTA 构建中提取更新后的镜像
+- 重新修补并刷入正确的分区/槽位
 
 </details>
 
 ---
 
-## Next Steps
+## 下一步
 
-1. Install only essential modules first
-2. Keep stock images and notes for your exact build/slot
-3. Explore practical root use cases:
-   - [Android Ad Blocking](../general-guides/android-adblocking.md)
-   - [Android Debloating](../general-guides/android-apps-debloating.md)
-   - [Root Apps Collection](../apps-and-modules/)
+1. 先只安装必要的模块
+2. 保留与你确切构建/槽位对应的官方镜像和笔记
+3. 探索实用的 root 用例：
+   - [Android 广告拦截](../general-guides/android-adblocking.md)
+   - [Android 精简预装](../general-guides/android-apps-debloating.md)
+   - [Root 应用合集](../apps-and-modules/)
 
 ---
 
-## Community Resources
+## 社区资源
 
-**Official:**
-- [APatch Docs](https://apatch.dev/)
+**官方：**
+- [APatch 文档](https://apatch.dev/)
 - [APatch GitHub](https://github.com/bmax121/APatch)
-- [Latest Releases](https://github.com/bmax121/APatch/releases/latest)
-- [Official Telegram Channel](https://t.me/APatchChannel)
+- [最新发布](https://github.com/bmax121/APatch/releases/latest)
+- [官方 Telegram 频道](https://t.me/APatchChannel)
 
-**Project Help:**
-- [Troubleshooting Guide](../troubleshooting.md)
-- [FAQs](../faqs.md)
+**项目帮助：**
+- [故障排除指南](../troubleshooting.md)
+- [常见问题](../faqs.md)
 
-When requesting help, include:
-- Device model and build number
-- Android version
-- APatch manager version
-- Patched partition (`boot`/`init_boot`)
-- Current slot (`a`/`b`) on A/B devices
-- Exact error text and steps already tried
+寻求帮助时，请提供：
+- 设备型号与构建号
+- Android 版本
+- APatch 管理器版本
+- 修补的分区（`boot`/`init_boot`）
+- A/B 设备上的当前槽位（`a`/`b`）
+- 确切的错误文本与已尝试的步骤

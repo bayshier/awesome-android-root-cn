@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Google Pixel Root Guide
-description: Complete guide to root Google Pixel devices. All models from Pixel 1 to Pixel 10 Pro. Bootloader unlock, Magisk installation, and OTA handling.
+title: Google Pixel Root 指南
+description: Google Pixel 设备 Root 完全指南。涵盖 Pixel 1 到 Pixel 10 Pro 的所有机型。包括 Bootloader 解锁、Magisk 安装与 OTA 处理。
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: Google Pixel Root Guide
+      content: Google Pixel Root 指南
   - - meta
     - property: og:description
-      content: Root any Google Pixel device with comprehensive guide covering bootloader unlock, factory images, and Magisk installation.
+      content: 通过涵盖 Bootloader 解锁、出厂镜像和 Magisk 安装的全面指南 Root 任意 Google Pixel 设备。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/how-to-root-pixel-phone
@@ -32,25 +32,25 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: Google Pixel Root Guide
+      content: Google Pixel Root 指南
   - - meta
     - name: twitter:description
-      content: Root any Google Pixel device with comprehensive guide covering bootloader unlock, factory images, and Magisk installation.
+      content: 通过涵盖 Bootloader 解锁、出厂镜像和 Magisk 安装的全面指南 Root 任意 Google Pixel 设备。
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og/google-pixel.png
   - - meta
     - name: twitter:image:alt
-      content: Google Pixel Root Guide - Bootloader Unlock & Magisk Installation
+      content: Google Pixel Root 指南 - Bootloader 解锁与 Magisk 安装
   - - meta
     - name: author
-      content: Awesome Android Root Project
+      content: Awesome Android Root 项目
   - - meta
     - property: article:author
       content: https://github.com/awesome-android-root/awesome-android-root
   - - meta
     - property: article:section
-      content: Device Rooting
+      content: 设备 Root
   - - meta
     - property: article:tag
       content: Google Pixel
@@ -59,10 +59,10 @@ head:
       content: Magisk
   - - meta
     - property: article:tag
-      content: Bootloader Unlock
+      content: Bootloader 解锁
   - - meta
     - property: article:tag
-      content: Android Rooting
+      content: Android Root
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -74,347 +74,347 @@ head:
       content: index, follow
 ---
 
-# Google Pixel Root Guide
+# Google Pixel Root 指南
 
-Root any Google Pixel device with the easiest rooting process in Android. Clean bootloader unlock, official factory images, and Magisk support.
+通过 Android 中最简单的 Root 流程 Root 任意 Google Pixel 设备。干净的 Bootloader 解锁、官方出厂镜像以及 Magisk 支持。
 
-::: tip QUICK START
-**For experienced users:** Jump to [Pixel Flasher (GUI Tool)](#method-0-pixel-flasher-gui-tool-easiest) for the easiest one-click rooting method.
+::: tip 快速开始
+**面向有经验的用户：** 直接跳转到 [Pixel Flasher（图形界面工具）](#method-0-pixel-flasher-gui-tool-easiest)，使用最简单的一键 Root 方法。
 :::
 
-## Quick Navigation
+## 快速导航
 
-- [Prerequisites](#prerequisites)
-- [Device Compatibility](#device-compatibility)
-- [Bootloader Unlock](#unlock-bootloader)
-- [Root Methods](#root-installation-methods)
-  - [Pixel Flasher (Easiest)](#method-0-pixel-flasher-gui-tool-easiest)
-  - [Manual Patching](#method-1-manual-boot-image-patching)
-  - [Temporary Root](#method-2-temporary-root-test)
-- [Post-Root Setup](#post-root-setup)
-- [OTA Updates](#ota-updates-with-root)
-- [Troubleshooting](#troubleshooting)
+- [前置条件](#前置条件)
+- [设备兼容性](#设备兼容性)
+- [Bootloader 解锁](#解锁-bootloader)
+- [Root 方法](#root-安装方法)
+  - [Pixel Flasher（最简单）](#method-0-pixel-flasher-gui-tool-easiest)
+  - [手动修补](#方法-1手动修补-boot-镜像)
+  - [临时 Root](#方法-2临时-root-测试)
+- [Root 后设置](#root-后设置)
+- [OTA 更新](#保留-root-的-ota-更新)
+- [故障排除](#故障排除)
 
-**Related Guides:**
-- [Main Rooting Guide](./index.md) - Universal rooting concepts
-- [Bootloader Unlocking](./how-to-unlock-bootloader.md) - Detailed unlock guide
-- [Magisk Guide](./magisk-guide.md) - Complete Magisk documentation
-- [KernelSU Guide](./kernelsu-guide.md) - Alternative root method
+**相关指南：**
+- [Root 主指南](./index.md) - 通用 Root 概念
+- [Bootloader 解锁](./how-to-unlock-bootloader.md) - 详细的解锁指南
+- [Magisk 指南](./magisk-guide.md) - 完整的 Magisk 文档
+- [KernelSU 指南](./kernelsu-guide.md) - 替代 Root 方案
 
 ---
 
-## Prerequisites
+## 前置条件
 
-::: danger DATA WIPE WARNING
-Unlocking bootloader **erases everything** on your device. Backup all data first!
+::: danger 数据清除警告
+解锁 Bootloader 会**清除设备上的所有内容**。请先备份所有数据！
 :::
 
-### Quick Checklist
+### 快速检查清单
 
-**Hardware:**
-- ✅ Google Pixel device (any model)
-- ✅ USB-C cable (quality matters)
-- ✅ Computer (Windows/macOS/Linux)
-- ✅ 50%+ battery charge
+**硬件：**
+- ✅ Google Pixel 设备（任意机型）
+- ✅ USB-C 数据线（质量很重要）
+- ✅ 电脑（Windows/macOS/Linux）
+- ✅ 电量 50% 以上
 
-**Software Downloads:**
+**软件下载：**
 1. **[Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)** - ADB/Fastboot
-2. **[Google USB Drivers](https://developer.android.com/studio/run/win-usb)** - Windows only
-3. **[Magisk APK](https://github.com/topjohnwu/Magisk/releases)** - Latest stable
-    - **Google Pixel / Pixel XL (1st gen):** use **[Magisk v30.6](https://github.com/topjohnwu/Magisk/releases/tag/v30.6)** until [issue #9808](https://github.com/topjohnwu/Magisk/issues/9808) is resolved.
-4. **[Pixel Flasher](https://github.com/badabing2005/PixelFlasher)** - GUI tool (optional)
+2. **[Google USB 驱动](https://developer.android.com/studio/run/win-usb)** - 仅限 Windows
+3. **[Magisk APK](https://github.com/topjohnwu/Magisk/releases)** - 最新稳定版
+    - **Google Pixel / Pixel XL（第一代）：** 在 [issue #9808](https://github.com/topjohnwu/Magisk/issues/9808) 解决之前，请使用 **[Magisk v30.6](https://github.com/topjohnwu/Magisk/releases/tag/v30.6)**。
+4. **[Pixel Flasher](https://github.com/badabing2005/PixelFlasher)** - 图形界面工具（可选）
 
-### Enable Developer Options
+### 启用开发者选项
 
-1. **Settings** → **About phone** → Tap **Build number** 7 times
-2. **Settings** → **Developer options** → Enable:
-   - ✅ **OEM unlocking** (critical)
-   - ✅ **USB debugging**
+1. **设置** → **关于手机** → 连续点击**版本号** 7 次
+2. **设置** → **开发者选项** → 启用：
+   - ✅ **OEM 解锁**（关键）
+   - ✅ **USB 调试**
 
-### Test ADB Connection
+### 测试 ADB 连接
 
 ```bash
-# Connect device via USB, accept debugging prompt
+# 通过 USB 连接设备，并在设备上接受调试提示
 adb devices
-# Should show device serial number
+# 应显示设备序列号
 ```
 
 ---
 
-## Device Compatibility
+## 设备兼容性
 
-Google Pixel devices are the most root-friendly Android phones. All Pixel models (1 through current generation) support bootloader unlocking and rooting.
+Google Pixel 设备是对 Root 最友好的 Android 手机。所有 Pixel 机型（从 Pixel 1 到当前世代）都支持解锁 Bootloader 和 Root。
 
-### Incompatible Devices
+### 不兼容的设备
 
-::: warning CARRIER LOCKS
-**Verizon and some carrier-locked models** may have OEM unlocking permanently disabled. Always verify "OEM unlocking" is available in Developer Options before purchasing a device for rooting.
+::: warning 运营商锁
+**Verizon 及部分运营商定制机型**的 OEM 解锁可能被永久禁用。在购买用于 Root 的设备之前，请务必确认开发者选项中存在“OEM 解锁”选项。
 :::
 
-::: tip 💡 Rather not unlock at all?
-**Root My Pixel** uses the GhostLock kernel bug (CVE-2026-43499) to give supported Pixel devices **temporary, session-only root without unlocking the bootloader** - staged on-device via Shizuku, cleared by rebooting. See [Root Without Unlocking the Bootloader](./root-without-unlocking-bootloader.md).
+::: tip 💡 完全不想解锁？
+**Root My Pixel** 利用 GhostLock 内核漏洞（CVE-2026-43499），让受支持的 Pixel 设备在**不解锁 Bootloader 的情况下获得仅当前会话有效的临时 Root** - 通过 Shizuku 在设备上部署，重启后即被清除。参见[不解锁 Bootloader 进行 Root](./root-without-unlocking-bootloader.md)。
 :::
 
-### Image Type Quick Reference
+### 镜像类型快速参考
 
-| Device Generation | Image to Patch |
+| 设备世代 | 需要修补的镜像 |
 |-------------------|----------------|
-| Pixel 7 and newer | `init_boot.img` |
-| Pixel 6 (Android 13+) | `init_boot.img` |
-| Pixel 6 (Android 12) | `boot.img` |
-| Pixel 5 and older | `boot.img` |
+| Pixel 7 及更新 | `init_boot.img` |
+| Pixel 6（Android 13+） | `init_boot.img` |
+| Pixel 6（Android 12） | `boot.img` |
+| Pixel 5 及更早 | `boot.img` |
 
-::: tip QUICK CHECK
-Open Magisk app → Check "Ramdisk" field:
-- **Yes** = Use `boot.img`
-- **No** = Use `init_boot.img`
+::: tip 快速检查
+打开 Magisk 应用 → 查看“Ramdisk”字段：
+- **是** = 使用 `boot.img`
+- **否** = 使用 `init_boot.img`
 :::
 
 ---
 
-## Unlock Bootloader
+## 解锁 Bootloader
 
-### Step 1: Enter Fastboot
+### 步骤 1：进入 Fastboot
 ```bash
 adb reboot bootloader
-# OR manually: Power off → Hold Volume Down + Power
+# 或手动操作：关机 → 按住音量减 + 电源键
 ```
 
-### Step 2: Unlock
+### 步骤 2：解锁
 ```bash
 fastboot flashing unlock
 ```
-- Use Volume keys to select **"UNLOCK THE BOOTLOADER"**
-- Press Power to confirm
-- Device wipes and reboots automatically
+- 使用音量键选择 **"UNLOCK THE BOOTLOADER"**（解锁 Bootloader）
+- 按电源键确认
+- 设备自动清除数据并重启
 
-::: tip UNLOCK TIME
-Process takes 30-60 seconds. Device will show unlocked bootloader warning on every boot (normal).
+::: tip 解锁耗时
+该过程需要 30-60 秒。设备每次开机都会显示 Bootloader 已解锁的警告（正常现象）。
 :::
 
-### Step 3: Re-enable USB Debugging
-After setup, re-enable Developer Options and USB Debugging
+### 步骤 3：重新启用 USB 调试
+完成设置后，重新启用开发者选项和 USB 调试
 
 ---
 
-## Root Installation Methods
+## Root 安装方法
 
-### Know Your Image Type
+### 了解你的镜像类型
 
-| Device | Android Version | Image to Patch |
+| 设备 | Android 版本 | 需要修补的镜像 |
 |--------|-----------------|----------------|
-| Pixel 7/8/9/10 | All versions | **init_boot.img** |
+| Pixel 7/8/9/10 | 所有版本 | **init_boot.img** |
 | Pixel 6 | Android 13+ | **init_boot.img** |
 | Pixel 6 | Android 12 | **boot.img** |
-| Pixel 5 and older | All versions | **boot.img** |
+| Pixel 5 及更早 | 所有版本 | **boot.img** |
 
-::: tip QUICK CHECK
-Open Magisk app → Check "Ramdisk" field:
-- **Yes** = Use boot.img
-- **No** = Use init_boot.img
+::: tip 快速检查
+打开 Magisk 应用 → 查看“Ramdisk”字段：
+- **是** = 使用 boot.img
+- **否** = 使用 init_boot.img
 :::
 
 ---
 
-### Method 0: Pixel Flasher (GUI Tool) - EASIEST
+### 方法 0：Pixel Flasher（图形界面工具）- 最简单
 
-**Perfect for beginners - One-click rooting with GUI interface**
+**非常适合新手 - 通过图形界面一键 Root**
 
-**[Pixel Flasher](https://github.com/badabing2005/PixelFlasher)** automates the entire rooting process:
+**[Pixel Flasher](https://github.com/badabing2005/PixelFlasher)** 可自动完成整个 Root 流程：
 
-**Features:**
-- ✅ Automatic boot image extraction
-- ✅ Automatic Magisk patching
-- ✅ OTA installation with root preservation
-- ✅ Module management
-- ✅ Backup/restore functionality
-- ✅ Works on Windows, macOS, Linux
+**功能：**
+- ✅ 自动提取 boot 镜像
+- ✅ 自动使用 Magisk 修补
+- ✅ 安装 OTA 并保留 Root
+- ✅ 模块管理
+- ✅ 备份/恢复功能
+- ✅ 支持 Windows、macOS、Linux
 
-**Quick Steps:**
+**快速步骤：**
 
-1. **Download and Install**
-   - Get latest release from [GitHub](https://github.com/badabing2005/PixelFlasher/releases)
-   - Run installer for your OS
+1. **下载并安装**
+   - 从 [GitHub](https://github.com/badabing2005/PixelFlasher/releases) 获取最新版本
+   - 运行对应操作系统的安装程序
 
-2. **Connect Device**
-   - Enable USB debugging
-   - Connect via USB
-   - Pixel Flasher auto-detects device
+2. **连接设备**
+   - 启用 USB 调试
+   - 通过 USB 连接
+   - Pixel Flasher 会自动检测设备
 
-3. **Root Device**
-   - Click "Process Firmware"
-   - Select factory image or let tool download
-   - Choose "Patch boot with Magisk"
-   - Click "Flash"
-   - Tool handles everything automatically
+3. **Root 设备**
+   - 点击 "Process Firmware"（处理固件）
+   - 选择出厂镜像或让工具自动下载
+   - 选择 "Patch boot with Magisk"（用 Magisk 修补 boot）
+   - 点击 "Flash"（刷入）
+   - 工具会自动完成所有操作
 
-4. **Verify Root**
-   - Device reboots rooted
-   - Open Magisk to verify
+4. **验证 Root**
+   - 设备重启后即已 Root
+   - 打开 Magisk 进行验证
 
-::: tip PIXEL FLASHER ADVANTAGES
-- No command line needed
-- Automatic version detection
-- Built-in safety checks
-- OTA update support
-- Batch operations support
+::: tip PIXEL FLASHER 的优势
+- 无需命令行
+- 自动检测版本
+- 内置安全检查
+- 支持 OTA 更新
+- 支持批量操作
 :::
 
 ---
 
-### Method 1: Manual Boot Image Patching
+### 方法 1：手动修补 boot 镜像
 
-**For users who prefer manual control**
+**适合喜欢手动控制的用户**
 
-#### Step 1: Get Factory Image
-1. Visit [Google Factory Images](https://developers.google.com/android/images)
-2. Find your exact device and build number
-3. Download matching factory image
+#### 步骤 1：获取出厂镜像
+1. 访问 [Google 出厂镜像](https://developers.google.com/android/images)
+2. 找到你的确切设备和版本号（build number）
+3. 下载匹配的出厂镜像
 
-#### Step 2: Extract Boot Image
+#### 步骤 2：提取 boot 镜像
 ```bash
-# Extract factory ZIP
+# 解压出厂镜像 ZIP 包
 unzip pixel-factory-image.zip
 cd extracted-folder/
 unzip image-pixel-*.zip
 
-# You now have boot.img or init_boot.img
+# 现在你得到了 boot.img 或 init_boot.img
 ```
 
-#### Step 3: Patch with Magisk
+#### 步骤 3：使用 Magisk 修补
 ```bash
-# Transfer to device
-adb push init_boot.img /sdcard/Download/  # Or boot.img
+# 传输到设备
+adb push init_boot.img /sdcard/Download/  # 或 boot.img
 
-# Install Magisk APK on device
-# Open Magisk → Install → Select and Patch a File
-# Select the transferred image
-# Result: magisk_patched_*.img
+# 在设备上安装 Magisk APK
+# 打开 Magisk → 安装 → 选择并修补一个文件
+# 选择刚传输的镜像
+# 结果：magisk_patched_*.img
 ```
 
-#### Step 4: Flash Patched Image
+#### 步骤 4：刷入修补后的镜像
 ```bash
-# Pull patched image
+# 拉取修补后的镜像
 adb pull /sdcard/Download/magisk_patched_*.img
 
-# Flash it
+# 刷入
 adb reboot bootloader
-fastboot flash init_boot magisk_patched_*.img  # Or "boot" for older devices
+fastboot flash init_boot magisk_patched_*.img  # 较旧设备使用 "boot"
 fastboot reboot
 ```
 
 ---
 
-### Method 2: Temporary Root Test
+### 方法 2：临时 Root 测试
 
-**Test root without permanent changes**
+**在不做永久更改的情况下测试 Root**
 
 ```bash
 adb reboot bootloader
-fastboot boot magisk_patched_*.img  # Temporary boot
-# Device boots with temporary root
-# If satisfied, use Method 1 to flash permanently
+fastboot boot magisk_patched_*.img  # 临时启动
+# 设备以临时 Root 状态启动
+# 如果满意，使用方法 1 永久刷入
 ```
 
 ---
 
-## Post-Root Setup
+## Root 后设置
 
-### Essential Magisk Configuration
+### 必要的 Magisk 配置
 
-**Settings:**
-- ✅ **Hide Magisk app** - For banking apps
-- ✅ **Zygisk** - Enable for modules
-- ✅ **Enforce DenyList** - Root hiding
+**设置：**
+- ✅ **隐藏 Magisk 应用** - 针对银行类应用
+- ✅ **Zygisk** - 使用模块时需启用
+- ✅ **Enforce DenyList** - 隐藏 Root
 
-**DenyList Apps:**
+**DenyList 应用：**
 - Google Play Services
-- Banking apps
-- Payment apps (Google Pay)
-- Streaming apps (Netflix)
+- 银行类应用
+- 支付类应用（Google Pay）
+- 流媒体应用（Netflix）
 
-### Recommended Modules
+### 推荐模块
 
-1. **[Shamiko](https://github.com/LSPosed/LSPosed.github.io)** - Enhanced hiding
-2. **[LSPosed](https://github.com/LSPosed/LSPosed)** - Xposed framework
-3. **[AdAway](https://adaway.org/)** - System-wide ad blocking
-
----
-
-## OTA Updates with Root
-
-### Automatic Method (Pixel Flasher)
-
-1. Open Pixel Flasher
-2. Select "Process OTA"
-3. Tool preserves root automatically
-
-### Manual Method (Magisk)
-
-1. **Download OTA** in Settings (don't reboot)
-2. **Open Magisk** → Install → **Install to Inactive Slot**
-3. **Reboot** when prompted
-4. Root preserved through update
+1. **[Shamiko](https://github.com/LSPosed/LSPosed.github.io)** - 增强隐藏
+2. **[LSPosed](https://github.com/LSPosed/LSPosed)** - Xposed 框架
+3. **[AdAway](https://adaway.org/)** - 全系统广告屏蔽
 
 ---
 
-## Troubleshooting
+## 保留 Root 的 OTA 更新
 
-<details><summary>🔧 Common Issues & Fixes</summary>
+### 自动方法（Pixel Flasher）
 
-### OEM Unlocking Greyed Out
-- Remove all Google accounts
-- Wait 7 days after reset
-- Check carrier lock status
+1. 打开 Pixel Flasher
+2. 选择 "Process OTA"（处理 OTA）
+3. 工具会自动保留 Root
 
-### Bootloop After Root
+### 手动方法（Magisk）
+
+1. 在系统设置中**下载 OTA**（不要重启）
+2. **打开 Magisk** → 安装 → **安装到未使用的插槽**
+3. 在提示时**重启**
+4. 更新后 Root 得以保留
+
+---
+
+## 故障排除
+
+<details><summary>🔧 常见问题与解决方法</summary>
+
+### OEM 解锁选项呈灰色
+- 移除所有 Google 账号
+- 重置后等待 7 天
+- 检查运营商锁状态
+
+### Root 后无限重启
 ```bash
-# Flash stock image
-fastboot flash boot stock_boot.img  # Or init_boot
+# 刷入官方镜像
+fastboot flash boot stock_boot.img  # 或 init_boot
 fastboot reboot
 ```
 
-### Play Integrity Fails
-1. Enable Zygisk
-2. Configure DenyList
-3. Install Play Integrity Fix (PIF)
-4. Hide Magisk app
-5. Clear Google Play Services data
+### Play Integrity 校验失败
+1. 启用 Zygisk
+2. 配置 DenyList
+3. 安装 Play Integrity Fix（PIF）
+4. 隐藏 Magisk 应用
+5. 清除 Google Play Services 数据
 
-### Lost Root After OTA
-- Extract new boot image
-- Patch with Magisk
-- Flash patched image
+### OTA 后丢失 Root
+- 提取新的 boot 镜像
+- 使用 Magisk 修补
+- 刷入修补后的镜像
 
 </details>
 
 ---
 
-## Unroot / Factory Reset
+## 取消 Root / 恢复出厂设置
 
-### Remove Root Only
+### 仅移除 Root
 ```bash
 adb reboot bootloader
-fastboot flash init_boot stock_init_boot.img  # Or boot.img
+fastboot flash init_boot stock_init_boot.img  # 或 boot.img
 fastboot reboot
 ```
 
-### Complete Stock Restore
+### 完整恢复官方系统
 
-**Option 1: Pixel Flash Tool (Web)**
-- Visit [flash.android.com](https://flash.android.com/)
-- Connect device → Select build → Install
+**方案 1：Pixel Flash Tool（网页版）**
+- 访问 [flash.android.com](https://flash.android.com/)
+- 连接设备 → 选择版本 → 安装
 
-**Option 2: Flash-all Script**
+**方案 2：Flash-all 脚本**
 ```bash
-# Extract factory image
+# 解压出厂镜像
 ./flash-all.sh  # Linux/Mac
 flash-all.bat   # Windows
 ```
 
-### Relock Bootloader
+### 重新锁定 Bootloader
 ::: danger
-Only relock when COMPLETELY stock!
+只有在完全恢复官方系统时才能重新锁定！
 :::
 ```bash
 fastboot flashing lock
@@ -422,67 +422,67 @@ fastboot flashing lock
 
 ---
 
-## Quick Reference
+## 快速参考
 
-### Essential Links
+### 重要链接
 
-**Official Google:**
-- [Factory Images](https://developers.google.com/android/images)
-- [OTA Images](https://developers.google.com/android/ota)
-- [Web Flash Tool](https://flash.android.com/)
-- [USB Drivers](https://developer.android.com/studio/run/win-usb)
+**Google 官方：**
+- [出厂镜像](https://developers.google.com/android/images)
+- [OTA 镜像](https://developers.google.com/android/ota)
+- [网页刷入工具](https://flash.android.com/)
+- [USB 驱动](https://developer.android.com/studio/run/win-usb)
 
-**Tools:**
-- [Pixel Flasher](https://github.com/badabing2005/PixelFlasher) - GUI rooting tool
+**工具：**
+- [Pixel Flasher](https://github.com/badabing2005/PixelFlasher) - 图形界面 Root 工具
 - [Platform Tools](https://developer.android.com/studio/releases/platform-tools) - ADB/Fastboot
-- [Magisk](https://github.com/topjohnwu/Magisk/releases) - Root solution
+- [Magisk](https://github.com/topjohnwu/Magisk/releases) - Root 方案
 
-**Community:**
-- [XDA Pixel Forums](https://xdaforums.com/c/google.11976/)
+**社区：**
+- [XDA Pixel 论坛](https://xdaforums.com/c/google.11976/)
 - [r/GooglePixel](https://www.reddit.com/r/GooglePixel/)
-- [GrapheneOS](https://grapheneos.org/) - Privacy ROM
-- [CalyxOS](https://calyxos.org/) - Privacy ROM
+- [GrapheneOS](https://grapheneos.org/) - 隐私 ROM
+- [CalyxOS](https://calyxos.org/) - 隐私 ROM
 
-### Command Cheat Sheet
+### 命令速查表
 
 ```bash
 # Bootloader
-adb reboot bootloader          # Enter fastboot
-fastboot flashing unlock       # Unlock bootloader
-fastboot flashing lock         # Lock bootloader
+adb reboot bootloader          # 进入 fastboot
+fastboot flashing unlock       # 解锁 Bootloader
+fastboot flashing lock         # 锁定 Bootloader
 
-# Flashing
-fastboot flash boot image.img       # Flash boot (old Pixels)
-fastboot flash init_boot image.img  # Flash init_boot (new Pixels)
-fastboot boot image.img             # Temporary boot
+# 刷入
+fastboot flash boot image.img       # 刷入 boot（旧款 Pixel）
+fastboot flash init_boot image.img  # 刷入 init_boot（新款 Pixel）
+fastboot boot image.img             # 临时启动
 
-# Verification
-adb shell su -c id             # Check root access
+# 验证
+adb shell su -c id             # 检查 Root 权限
 ```
 
 ---
 
-## Next Steps
+## 下一步
 
-After rooting your Pixel:
+Root 你的 Pixel 之后：
 
 
-1. **Explore Root Apps:**
-   - [Root Apps Collection](../apps-and-modules/)
-   - [LSPosed Guide](./lsposed-guide.md)
+1. **探索 Root 应用：**
+   - [Root 应用合集](../apps-and-modules/)
+   - [LSPosed 指南](./lsposed-guide.md)
 
-2. **Optimize Performance:**
-   - [Debloating Guide](../general-guides/android-apps-debloating.md)
-   - [Ad Blocking Guide](../general-guides/android-adblocking.md)
+2. **优化性能：**
+   - [精简应用指南](../general-guides/android-apps-debloating.md)
+   - [广告屏蔽指南](../general-guides/android-adblocking.md)
 
-3. **Consider custom ROMs:**
-   - [Custom ROM Guide](./custom-rom-installation.md) - Installation steps
-   - GrapheneOS for maximum privacy
-   - CalyxOS for balanced privacy
-   - LineageOS for customization
+3. **考虑第三方 ROM：**
+   - [第三方 ROM 指南](./custom-rom-installation.md) - 安装步骤
+   - GrapheneOS，追求最大隐私
+   - CalyxOS，兼顾隐私与易用
+   - LineageOS，高度可定制
 
 ---
 
-::: tip SUCCESS
-Your Pixel is now rooted! Remember to keep Magisk updated and always backup before major changes - except on Pixel 1 / 1st gen Pixel devices, where you should stay on Magisk v30.6 until the upstream issue is resolved.
+::: tip 成功
+你的 Pixel 已经 Root 成功！记得保持 Magisk 为最新版本，并在进行重大更改前始终先备份 - 但 Pixel 1 / 第一代 Pixel 设备除外，在上游问题解决之前，请继续使用 Magisk v30.6。
 :::

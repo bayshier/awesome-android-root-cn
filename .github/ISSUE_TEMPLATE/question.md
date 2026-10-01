@@ -1,31 +1,31 @@
 ---
-name: General Question
-about: Ask a question about the project
+name: 一般问题
+about: 就本项目提问
 title: '[QUESTION] '
 labels: 'question'
 assignees: ''
 ---
 
-## Your Question
+## 你的问题
 
-(Ask your question clearly)
+（清晰地提出你的问题）
 
-## Context
+## 背景
 
-**What are you trying to do?**
+**你想做什么？**
 
-**What have you tried so far?**
+**你目前尝试过什么？**
 
-## Your Setup (if relevant)
+## 你的环境（如相关）
 
-**Device:** 
-**Android Version:** 
-**Root Method:** (Magisk/KernelSU/APatch/None)
+**设备：** 
+**Android 版本：** 
+**Root 方式：**（Magisk/KernelSU/APatch/无）
 
-## Additional Information
+## 补充信息
 
-(Any other details that might be relevant)
+（任何其他可能相关的细节）
 
 ---
 
-**Note:** For rooting help and technical support, please visit our [FAQ](/faqs) or [Troubleshooting Guide](/troubleshooting) first. For community discussions, check [GitHub Discussions](https://github.com/awesome-android-root/awesome-android-root/discussions).
+**注意：** 如需 root 帮助和技术支持，请先访问我们的[常见问题](/faqs)或[故障排除指南](/troubleshooting)。社区讨论请查看 [GitHub Discussions](https://github.com/awesome-android-root/awesome-android-root/discussions)。

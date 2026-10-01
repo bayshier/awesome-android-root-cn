@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Nothing & CMF Phone Rooting Guide
-description: "Master guide to root all Nothing & CMF by Nothing Phone models with bootloader unlock and Magisk installation for Nothing OS."
+title: Nothing 与 CMF 手机 Root 指南
+description: "所有 Nothing 与 CMF by Nothing Phone 机型的 Root 总指南，包含 Bootloader 解锁与 Nothing OS 上的 Magisk 安装。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: Complete Nothing & CMF by Nothing Phone Rooting Guide - All Models
+      content: Nothing 与 CMF by Nothing 手机 Root 完全指南 - 所有机型
   - - meta
     - property: og:description
-      content: Root any Nothing Phone with our comprehensive guide covering bootloader unlock, custom recovery, and Magisk installation for Nothing OS.
+      content: 通过我们涵盖 Bootloader 解锁、第三方 Recovery 和 Nothing OS 上 Magisk 安装的全面指南 Root 任意 Nothing Phone。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/how-to-root-nothing-phone
@@ -26,10 +26,10 @@ head:
       content: summary_large_image
   - - meta
     - name: twitter:title
-      content: Complete Nothing & CMF by Nothing Phone Rooting Guide - All Models
+      content: Nothing 与 CMF by Nothing 手机 Root 完全指南 - 所有机型
   - - meta
     - name: twitter:description
-      content: Root any Nothing & CMF by Nothing Phone with bootloader unlock and Magisk installation guide.
+      content: 通过 Bootloader 解锁和 Magisk 安装指南 Root 任意 Nothing 与 CMF by Nothing 手机。
   - - meta
     - name: twitter:site
       content: "@awsm_and_root"
@@ -41,16 +41,16 @@ head:
       content: https://awesome-android-root.zhoe.org/images/og/nothing.png
   - - meta
     - name: twitter:image:alt
-      content: Nothing Phone Root Guide - All Models
+      content: Nothing Phone Root 指南 - 所有机型
   - - meta
     - name: author
-      content: Awesome Android Root Project
+      content: Awesome Android Root 项目
   - - meta
     - property: article:author
       content: https://github.com/awesome-android-root/awesome-android-root
   - - meta
     - property: article:section
-      content: Device Rooting
+      content: 设备 Root
   - - meta
     - property: article:tag
       content: Nothing Phone
@@ -59,10 +59,10 @@ head:
       content: Nothing OS
   - - meta
     - property: article:tag
-      content: Bootloader Unlock
+      content: Bootloader 解锁
   - - meta
     - property: article:tag
-      content: Magisk Installation
+      content: Magisk 安装
   - - meta
     - property: article:published_time
       content: 2026-09-27T00:00:00Z
@@ -74,371 +74,371 @@ head:
       content: index, follow
 ---
 
-# Nothing & CMF Phone Root Guide
+# Nothing 与 CMF 手机 Root 指南
 
-Root Nothing Phone devices with straightforward process. 
+通过简单直接的流程 Root Nothing Phone 设备。
 
-## Quick Navigation
-- [Device Compatibility](#device-compatibility)
-- [Prerequisites](#prerequisites)
-- [Bootloader Unlock](#unlock-bootloader)
-- [Root Installation](#root-installation)
-- [Troubleshooting](#troubleshooting)
+## 快速导航
+- [设备兼容性](#设备兼容性)
+- [前置条件](#前置条件)
+- [Bootloader 解锁](#解锁-bootloader)
+- [Root 安装](#root-安装)
+- [故障排除](#故障排除)
 
-**Related Guides:**
-- [Main Rooting Guide](./index.md) - Universal rooting concepts
-- [Bootloader Unlocking](./how-to-unlock-bootloader.md) - Detailed unlock guide
-- [Magisk Guide](./magisk-guide.md) - Complete Magisk documentation
+**相关指南：**
+- [Root 主指南](./index.md) - 通用 Root 概念
+- [Bootloader 解锁](./how-to-unlock-bootloader.md) - 详细的解锁指南
+- [Magisk 指南](./magisk-guide.md) - 完整的 Magisk 文档
 
 ---
 
 
-## Device Compatibility
+## 设备兼容性
 
-All Nothing and CMF by Nothing Phone models support bootloader unlocking and rooting. No regional restrictions - all devices are unlockable globally.
+所有 Nothing 和 CMF by Nothing Phone 机型都支持解锁 Bootloader 和 Root。没有地区限制 - 所有设备均可在全球范围内解锁。
 
-**Codenames for firmware identification:**
+**用于识别固件的代号：**
 - Phone (1): `Spacewar` · Phone (2): `Pong` · Phone (2a): `Pacman`/`PacmanPro` · Phone (3): `Metroid` · Phone (3a): `Asteroids`
 - CMF Phone (1): `Tetris` · CMF Phone (2): `Galaga`
 
 > [!NOTE]
-> All Nothing Phones are unlockable globally. No known incompatible models.
+> 所有 Nothing 手机均可在全球范围内解锁。目前没有已知的不兼容机型。
 
 > [!TIP]
-> **Don't want to unlock?** On the Nothing Phone (1), the community tool **root-my-nothing** grants **temporary root via the GhostLock bug (CVE-2026-43499)** - KernelSU installs with the bootloader still locked, and everything resets on reboot. See [Root Without Unlocking the Bootloader](./root-without-unlocking-bootloader.md).
+> **不想解锁？** 在 Nothing Phone (1) 上，社区工具 **root-my-nothing** 可通过 **GhostLock 漏洞（CVE-2026-43499）授予临时 Root** - 在 Bootloader 仍锁定的情况下安装 KernelSU，重启后一切复原。参见[不解锁 Bootloader 进行 Root](./root-without-unlocking-bootloader.md)。
 
 ---
 
-## Prerequisites
+## 前置条件
 
-### Critical Requirements
+### 关键要求
 
-::: danger BEFORE YOU START
-**Data Wipe:** Unlocking bootloader erases everything including internal storage.
+::: danger 开始之前
+**数据清除：** 解锁 Bootloader 会清除包括内部存储在内的所有内容。
 
-**Backup Everything:** Photos, contacts, messages, app data, authenticator codes.
+**备份所有内容：** 照片、联系人、短信、应用数据、验证器代码。
 
-**Warranty Void:** Bootloader unlock voids manufacturer warranty permanently.
+**保修失效：** 解锁 Bootloader 将永久失去制造商保修。
 
-**Glyph Interface:** May not work on some custom ROMs. Test before full switch.
+**Glyph Interface：** 在某些第三方 ROM 上可能无法使用。完全切换前请先测试。
 :::
 
-### Hardware Requirements
+### 硬件要求
 
-- Nothing Phone device (any model)
-- Quality USB-C cable
-- Computer (Windows, macOS, or Linux)
-- 50%+ battery charge
+- Nothing Phone 设备（任意机型）
+- 质量良好的 USB-C 数据线
+- 电脑（Windows、macOS 或 Linux）
+- 电量 50% 以上
 
-### Software Requirements
+### 软件要求
 
-**On Computer:**
+**电脑端：**
 
-1. **Platform Tools** (ADB/Fastboot)
-   - Download: [Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
+1. **Platform Tools**（ADB/Fastboot）
+   - 下载：[Android Platform Tools](https://developer.android.com/studio/releases/platform-tools)
 
-2. **USB Drivers** (Windows)
-   - Usually auto-install
-   - Or download generic Android drivers
+2. **USB 驱动**（Windows）
+   - 通常自动安装
+   - 或下载通用 Android 驱动
 
-3. **Stock Firmware** (for recovery)
-   - Download from [Github](https://github.com/spike0en/nothing_archive)
-   - Official updates via OTA
-   - Nothing Phone (2) OTA: [XDA Thread](https://xdaforums.com/t/nothing-phone-2-official-ota-zip-full-incremental.4604803/)
+3. **官方固件**（用于恢复）
+   - 从 [GitHub](https://github.com/spike0en/nothing_archive) 下载
+   - 官方更新通过 OTA 获取
+   - Nothing Phone (2) OTA：[XDA 帖子](https://xdaforums.com/t/nothing-phone-2-official-ota-zip-full-incremental.4604803/)
 
-**On Device:**
+**设备端：**
 
 1. **Magisk APK**
-   - Download: [Magisk GitHub](https://github.com/topjohnwu/Magisk/releases)
+   - 下载：[Magisk GitHub](https://github.com/topjohnwu/Magisk/releases)
 
-### Device Preparation
+### 设备准备
 
-**Step 1: Enable Developer Options**
+**步骤 1：启用开发者选项**
 
-1. Settings > About phone
-2. Tap "Build number" 7 times
-3. Enter PIN/password
+1. 设置 > 关于手机
+2. 连续点击“版本号”7 次
+3. 输入 PIN 码/密码
 
-**Step 2: Enable Required Settings**
+**步骤 2：启用所需设置**
 
-Settings > System > Developer options:
-- **OEM unlocking**: Enable
-- **USB debugging**: Enable
+设置 > 系统 > 开发者选项：
+- **OEM 解锁**：启用
+- **USB 调试**：启用
 
-**Step 3: Verify ADB**
+**步骤 3：验证 ADB**
 
 ```bash
 adb devices
-# Accept debugging prompt
-# Should show "device" status
+# 接受调试提示
+# 应显示 "device" 状态
 ```
 
 ---
 
-## Unlock Bootloader
+## 解锁 Bootloader
 
-### Step 1: Enter Fastboot Mode
+### 步骤 1：进入 Fastboot 模式
 
-**Method 1: ADB**
+**方法 1：ADB**
 ```bash
 adb reboot bootloader
 ```
 
-**Method 2: Hardware Keys**
-1. Power off
-2. Hold Volume Down + Power
-3. Release at fastboot screen
+**方法 2：物理按键**
+1. 关机
+2. 按住音量减 + 电源键
+3. 出现 fastboot 界面时松开
 
-### Step 2: Unlock Bootloader
+### 步骤 2：解锁 Bootloader
 
 ```bash
-# Verify connection
+# 验证连接
 fastboot devices
 
-# Unlock bootloader
+# 解锁 Bootloader
 fastboot flashing unlock
 
-# Alternatively (if first doesn't work)
+# 或者（如果上面那条不生效）
 fastboot oem unlock
 ```
 
-**On Device:**
-1. Warning screen appears
-2. Use Volume keys to navigate
-3. Select "UNLOCK THE BOOTLOADER"
-4. Press Power to confirm
-5. Device wipes and reboots
+**设备端操作：**
+1. 出现警告界面
+2. 使用音量键移动
+3. 选择 "UNLOCK THE BOOTLOADER"（解锁 Bootloader）
+4. 按电源键确认
+5. 设备清除数据并重启
 
-### Step 3: Complete Setup
+### 步骤 3：完成设置
 
-After automatic factory reset:
-1. Complete Android setup
-2. Re-enable Developer options
-3. Re-enable USB debugging
+自动恢复出厂设置后：
+1. 完成 Android 设置
+2. 重新启用开发者选项
+3. 重新启用 USB 调试
 
 ---
 
-## Root Installation
+## Root 安装
 
-### Determine Correct Image
+### 确定正确的镜像
 
-| Device Generation | Image to Patch |
+| 设备世代 | 需要修补的镜像 |
 |---|---|
-| All Nothing Phones (Android 13+) | `init_boot.img` |
-| Phone (1) on Android 12 | `boot.img` |
+| 所有 Nothing 手机（Android 13+） | `init_boot.img` |
+| Phone (1)（Android 12） | `boot.img` |
 
-**Check in Magisk app "Ramdisk" field if unsure.**
+**如果不确定，请在 Magisk 应用中查看“Ramdisk”字段。**
 
-### Method 1: Boot Image Patching
+### 方法 1：修补 boot 镜像
 
-**Step 1: Extract Boot Image**
+**步骤 1：提取 boot 镜像**
 
-For Nothing Phone (2) and (2a):
-1. Download OTA update or firmware
-2. Extract payload.bin
-3. Use payload-dumper-go:
+对于 Nothing Phone (2) 和 (2a)：
+1. 下载 OTA 更新包或固件
+2. 提取 payload.bin
+3. 使用 payload-dumper-go：
 ```bash
 ./payload-dumper-go -o extracted payload.bin
 ```
-4. Find init_boot.img in extracted/
+4. 在 extracted/ 中找到 init_boot.img
 
-For Nothing Phone (1):
-- Check current Android version
-- Android 13+ uses init_boot.img
-- Android 12 uses boot.img
+对于 Nothing Phone (1)：
+- 检查当前 Android 版本
+- Android 13+ 使用 init_boot.img
+- Android 12 使用 boot.img
 
-**Step 2: Transfer to Device**
+**步骤 2：传输到设备**
 
 ```bash
 adb push init_boot.img /sdcard/Download/
-# Or
+# 或者
 adb push boot.img /sdcard/Download/
 ```
 
-**Step 3: Install Magisk and Patch**
+**步骤 3：安装 Magisk 并修补**
 
 ```bash
 adb install magisk.apk
 ```
 
-**Note:** Use latest Magisk version from [GitHub Releases](https://github.com/topjohnwu/Magisk/releases)
+**注意：** 请使用 [GitHub Releases](https://github.com/topjohnwu/Magisk/releases) 中的最新版 Magisk
 
-On device:
-1. Open Magisk
-2. Install > Select and Patch a File
-3. Choose boot/init_boot image
-4. Wait for patching
+在设备上：
+1. 打开 Magisk
+2. 安装 > 选择并修补一个文件
+3. 选择 boot/init_boot 镜像
+4. 等待修补完成
 
-**Step 4: Transfer Patched Image**
+**步骤 4：传输修补后的镜像**
 
 ```bash
 adb pull /sdcard/Download/magisk_patched_xxxxx.img ./
 ```
 
-**Step 5: Flash Patched Image**
+**步骤 5：刷入修补后的镜像**
 
 ```bash
 adb reboot bootloader
 
-# For Android 13/14
+# 针对 Android 13/14
 fastboot flash init_boot magisk_patched_xxxxx.img
 
-# For Android 12
+# 针对 Android 12
 fastboot flash boot magisk_patched_xxxxx.img
 
 fastboot reboot
 ```
 
-**Step 6: Verify Root**
+**步骤 6：验证 Root**
 
-1. Open Magisk app
-2. Should show:
-   - Magisk: Installed
-   - App: Latest
+1. 打开 Magisk 应用
+2. 应显示：
+   - Magisk：已安装
+   - 应用：最新
 
-Test:
+测试：
 ```bash
 adb shell
 su
 id
-# Returns: uid=0(root)
+# 返回：uid=0(root)
 ```
 
 ---
 
-## Post-Root Setup
+## Root 后设置
 
-### Configure Magisk
+### 配置 Magisk
 
-**Settings:**
-- **Zygisk**: Enable
-- **Enforce DenyList**: Enable
-- **Hide Magisk app**: For banking apps
+**设置：**
+- **Zygisk**：启用
+- **Enforce DenyList**：启用
+- **隐藏 Magisk 应用**：针对银行类应用
 
-**DenyList Configuration:**
+**DenyList 配置：**
 - Google Play Services
-- Google Play Store
-- Banking apps
-- Payment apps
+- Google Play 商店
+- 银行类应用
+- 支付类应用
 
-### Nothing OS Optimization
+### Nothing OS 优化
 
-**Battery Optimization:**
-1. Settings > Battery
-2. Find Magisk and root apps
-3. Set to "Unrestricted"
+**电池优化：**
+1. 设置 > 电池
+2. 找到 Magisk 和 Root 应用
+3. 设为“不受限制”
 
-**Background Activity:**
-1. Settings > Apps
-2. Magisk and root apps
-3. Allow background activity
+**后台活动：**
+1. 设置 > 应用
+2. Magisk 和 Root 应用
+3. 允许后台活动
 
-### Recommended Modules
+### 推荐模块
 
-- **Play Integrity Fix** - Banking app compatibility
-- **Shamiko** - Root hiding
-- **LSPosed** - Framework
-- **Systemless Hosts** - Ad blocking
-
----
-
-## OTA Handling
-
-### For A/B Devices (All Nothing Phones)
-
-**Step 1: Download OTA**
-
-Settings > System > System update
-
-Download but don't reboot yet
-
-**Step 2: Magisk Installation**
-
-1. Magisk > Install
-2. "Install to Inactive Slot (After OTA)"
-3. Wait for completion
-4. Reboot when prompted
-
-Root preserved after update!
+- **Play Integrity Fix** - 银行类应用兼容性
+- **Shamiko** - Root 隐藏
+- **LSPosed** - 框架
+- **Systemless Hosts** - 广告屏蔽
 
 ---
 
-## Troubleshooting
+## OTA 处理
 
-<details><summary> Tap to expand common issues and fixes</summary>
+### 针对 A/B 设备（所有 Nothing 手机）
 
-### Bootloader Issues
+**步骤 1：下载 OTA**
 
-**OEM Unlocking Greyed Out**
+设置 > 系统 > 系统更新
 
-Solutions:
-1. Remove all accounts
-2. Factory reset
-3. Wait 24 hours
-4. Try again
+下载但先不要重启
 
-**Fastboot Not Detecting**
+**步骤 2：Magisk 安装**
 
-Solutions:
-- Update Platform Tools
-- Try USB 2.0 port
-- Different cable
-- Reinstall drivers
+1. Magisk > 安装
+2. “安装到未使用的插槽（OTA 后）”
+3. 等待完成
+4. 在提示时重启
 
-### Installation Issues
+更新后 Root 得以保留！
 
-**Magisk Shows N/A**
+---
 
-Solutions:
-1. Verify correct image
-2. Check Android version
-3. Re-patch correct image
-4. Flash to correct partition
+## 故障排除
 
-**Bootloop After Root**
+<details><summary> 点按展开常见问题与解决方法</summary>
+
+### Bootloader 问题
+
+**OEM 解锁呈灰色**
+
+解决方法：
+1. 移除所有账号
+2. 恢复出厂设置
+3. 等待 24 小时
+4. 重试
+
+**Fastboot 检测不到设备**
+
+解决方法：
+- 更新 Platform Tools
+- 尝试 USB 2.0 端口
+- 更换数据线
+- 重新安装驱动
+
+### 安装问题
+
+**Magisk 显示 N/A**
+
+解决方法：
+1. 确认镜像正确
+2. 检查 Android 版本
+3. 重新修补正确的镜像
+4. 刷入正确的分区
+
+**Root 后无限重启**
 
 ```bash
 fastboot flash init_boot stock_init_boot.img
-# Or
+# 或者
 fastboot flash boot stock_boot.img
 fastboot reboot
 ```
 
-### Glyph Interface Issues
+### Glyph Interface 问题
 
-**Glyph Not Working After Root**
+**Root 后 Glyph 无法使用**
 
-Usually continues working with Magisk. If issues:
-1. Check for Glyph-related modules
-2. Reinstall Nothing OS stock
-3. Some custom ROMs may not support Glyph
+通常在 Magisk 下仍可正常使用。如果出现问题：
+1. 检查与 Glyph 相关的模块
+2. 重新安装 Nothing OS 官方系统
+3. 某些第三方 ROM 可能不支持 Glyph
 
 </details>
 
 ---
 
-## Unroot and Restore
+## 取消 Root 与恢复
 
-### Remove Root
+### 移除 Root
 
 ```bash
-# Magisk > Uninstall > Restore Images
+# Magisk > 卸载 > 还原镜像
 ```
 
-### Flash Stock Firmware
+### 刷入官方固件
 
-Via fastboot:
+通过 fastboot：
 ```bash
-# Flash stock images
+# 刷入官方镜像
 fastboot flash boot stock_boot.img
 fastboot flash init_boot stock_init_boot.img
 fastboot reboot
 ```
 
-### Relock Bootloader
+### 重新锁定 Bootloader
 
-::: danger RELOCK WARNING
-Only when completely stock!
+::: danger 重新锁定警告
+只有在完全恢复官方系统时才能操作！
 :::
 
 ```bash
@@ -447,106 +447,107 @@ fastboot flashing lock
 
 ---
 
-## Custom ROMs
+## 第三方 ROM
 
-### Available ROMs
+### 可用 ROM
 
-**LineageOS:**
-- Official builds for Nothing Phone (1) and (2)
-- Available for Phone (3a) series (unofficial)
+**LineageOS：**
+- 提供 Nothing Phone (1) 和 (2) 的官方构建版本
+- Phone (3a) 系列可用（非官方）
 
-**crDroid:**
-- Available for Phone (3a) series
-- Based on LineageOS 23
+**crDroid：**
+- Phone (3a) 系列可用
+- 基于 LineageOS 23
 
-**/e/OS:**
-- Privacy-focused option
-- Available for Phone (2)
+**/e/OS：**
+- 注重隐私的选择
+- Phone (2) 可用
 
-**OrangeFox Recovery:**
-- Available for Phone (2), (3), and (3a) series
-- Alternative to TWRP
+**OrangeFox Recovery：**
+- Phone (2)、(3) 和 (3a) 系列可用
+- TWRP 的替代品
 
-**Note:** Glyph Interface support varies by ROM! Most custom ROMs have limited or no Glyph support.
+**注意：** Glyph Interface 的支持情况因 ROM 而异！大多数第三方 ROM 对 Glyph 的支持有限或不支持。
 
 ---
 
-## Device-Specific Notes
+## 设备专属说明
 
-### Nothing Phone (3) Series
+### Nothing Phone (3) 系列
 
-**Nothing Phone (3):**
-- Released July 2025
+**Nothing Phone (3)：**
+- 2025 年 7 月发布
 - Snapdragon 8s Gen 4
 - Android 15/16
-- Monochrome LED display (489 LEDs)
-- IP68 water resistance
-- 5 major Android upgrades promised
+- 单色 LED 背屏（489 颗 LED）
+- IP68 防水
+- 承诺 5 次 Android 大版本升级
 
-**Nothing Phone (3a/3a Pro):**
-- Released March 2025
+**Nothing Phone (3a/3a Pro)：**
+- 2025 年 3 月发布
 - Snapdragon 7s Gen 3
 - Android 15/16
-- 3 major Android upgrades promised
-- IP64 water resistance
-- Shared codename: `Asteroids`
+- 承诺 3 次 Android 大版本升级
+- IP64 防水
+- 共用代号：`Asteroids`
 
 ### CMF Phone (2) Pro
-- Released April 2025
-- Dimensity 7300 Pro chipset
-- No Glyph Interface (CMF brand)
+- 2025 年 4 月发布
+- Dimensity 7300 Pro 芯片
+- 无 Glyph Interface（CMF 品牌）
 
 ---
 
-## Best Practices
+## 最佳实践
 
-### Security
+### 安全
 
-1. **Hide Magisk** for sensitive apps
-2. **Configure DenyList** properly
-3. **Only trusted modules**
-4. **Keep Magisk updated**
-
----
-
-## Community Resources
-
-**Official Nothing:**
-- [Nothing Support](https://nothing.tech/support) - Official site
-- [Nothing Community](https://nothing.community/) - Forums
-
-**Developer Community:**
-- [XDA Nothing Forums](https://xdaforums.com/c/nothing.12583/) - Development
-- [Reddit r/NothingTech](https://www.reddit.com/r/NothingTech/) - Community
-
-**Awesome Android Root Resources:**
-- [FAQs](../faqs)
-- [Troubleshooting Guide](../troubleshooting) 
-
-### Getting Help
-
-**Provide:**
-- Exact Nothing Phone model
-- Nothing OS version
-- Android version
-- Error messages
-- Steps attempted
+1. 使用敏感应用时**隐藏 Magisk**
+2. 正确**配置 DenyList**
+3. **只用可信模块**
+4. **保持 Magisk 为最新版本**
 
 ---
 
-## Next Steps
+## 社区资源
 
-**After Rooting:**
+**Nothing 官方：**
+- [Nothing 支持](https://nothing.tech/support) - 官方网站
+- [Nothing 社区](https://nothing.community/) - 论坛
 
-1. **Essential apps:**
-   - [Root Apps Collection](../apps-and-modules/)
+**开发者社区：**
+- [XDA Nothing 论坛](https://xdaforums.com/c/nothing.12583/) - 开发讨论
+- [Reddit r/NothingTech](https://www.reddit.com/r/NothingTech/) - 社区
 
-2. **Enhance experience:**
-   - [Ad Blocking Guide](../general-guides/android-adblocking.md)
-   - [Debloating Guide](../general-guides/android-apps-debloating.md)
-   - [LSPosed Guide](./lsposed-guide.md)
+**Awesome Android Root 资源：**
+- [常见问题](../faqs)
+- [故障排除指南](../troubleshooting) 
 
-3. **Explore ROMs:**
-   - [Custom ROM Guide](./custom-rom-installation.md)
-   - Test Glyph support before switching
+### 寻求帮助
+
+**请提供：**
+- 确切的 Nothing Phone 机型
+- Nothing OS 版本
+- Android 版本
+- 错误信息
+- 已尝试的步骤
+
+---
+
+## 下一步
+
+**Root 之后：**
+
+1. **必备应用：**
+   - [Root 应用合集](../apps-and-modules/)
+
+2. **增强体验：**
+   - [广告屏蔽指南](../general-guides/android-adblocking.md)
+   - [精简应用指南](../general-guides/android-apps-debloating.md)
+   - [LSPosed 指南](./lsposed-guide.md)
+
+3. **探索 ROM：**
+   - [第三方 ROM 指南](./custom-rom-installation.md)
+   - 切换前先测试 Glyph 支持
+
 

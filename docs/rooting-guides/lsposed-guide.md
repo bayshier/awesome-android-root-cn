@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Complete LSPosed Framework Guide
-description: "Master LSPosed framework - the modern Xposed implementation. Comprehensive installation guide with module management and customization."
+title: LSPosed 框架完整指南
+description: "掌握 LSPosed 框架——现代 Xposed 实现。包含模块管理与个性化的完整安装指南。"
 head:
   - - link
     - rel: canonical
@@ -11,10 +11,10 @@ head:
       content: article
   - - meta
     - property: og:title
-      content: Complete LSPosed Framework Guide - Modern Xposed Implementation
+      content: LSPosed 框架完整指南 - 现代 Xposed 实现
   - - meta
     - property: og:description
-      content: Install LSPosed framework with our comprehensive guide. Modern Xposed implementation with Zygisk integration and advanced module management.
+      content: 通过我们的完整指南安装 LSPosed 框架。集成 Zygisk 的现代 Xposed 实现，支持高级模块管理。
   - - meta
     - property: og:url
       content: https://awesome-android-root.zhoe.org/rooting-guides/lsposed-guide
@@ -32,16 +32,16 @@ head:
       content: "@awsm_and_root"
   - - meta
     - name: twitter:title
-      content: Complete LSPosed Framework Guide
+      content: LSPosed 框架完整指南
   - - meta
     - name: twitter:description
-      content: Modern Xposed framework implementation with LSPosed. Advanced Android customization and module management.
+      content: 基于 LSPosed 的现代 Xposed 框架实现。高级 Android 个性化与模块管理。
   - - meta
     - name: twitter:image
       content: https://awesome-android-root.zhoe.org/images/og/lsposed-guide.png
   - - meta
     - name: twitter:image:alt
-      content: LSPosed Framework Installation Guide
+      content: LSPosed 框架安装指南
   - - meta
     - name: author
       content: Awesome Android Root Project
@@ -50,16 +50,16 @@ head:
       content: https://github.com/awesome-android-root/awesome-android-root
   - - meta
     - property: article:section
-      content: Android Customization
+      content: Android 个性化
   - - meta
     - property: article:tag
       content: LSPosed
   - - meta
     - property: article:tag
-      content: Xposed Framework
+      content: Xposed 框架
   - - meta
     - property: article:tag
-      content: Android Customization
+      content: Android 个性化
   - - meta
     - property: article:tag
       content: Zygisk
@@ -74,258 +74,258 @@ head:
       content: index, follow
 ---
 
-# Complete LSPosed / Vector Framework Guide
+# LSPosed / Vector 框架完整指南
 
-The modern Xposed implementation for Android 8.1 and above. This guide covers both the original LSPosed project (now distributed as closed-source builds via Telegram) and the fully open-source **Vector** fork - helping you make an informed choice about which framework to trust on your device.
+面向 Android 8.1 及以上版本的现代 Xposed 实现。本指南同时覆盖原始 LSPosed 项目（现通过 Telegram 以闭源构建分发）和完全开源的 **Vector** 分支，帮助你就设备上信任哪个框架做出知情选择。
 
 > [!WARNING]
-> **Transparency Advisory:** The original LSPosed GitHub repository ([LSPosed/LSPosed](https://github.com/LSPosed/LSPosed)) has been **archived** since January 2024 with no public releases since October 2023. Current "official" builds are distributed exclusively as **closed-source** binaries via the LSPosed Telegram channel and **[lsposed.zip](https://lsposed.zip/)**. This violates the GPLv3 license under which the original code was released. Users should be aware of the [ongoing controversy](https://exposelsposed.pages.dev/) and make an informed decision.
+> **透明度提示：** 原始 LSPosed GitHub 仓库（[LSPosed/LSPosed](https://github.com/LSPosed/LSPosed)）自 2024 年 1 月起已被**归档**，且自 2023 年 10 月以来没有公开发布。当前的"官方"构建仅通过 LSPosed Telegram 频道和 **[lsposed.zip](https://lsposed.zip/)** 以**闭源**二进制形式分发。这违反了原始代码所采用的 GPLv3 许可证。用户应了解这场[持续进行的争议](https://exposelsposed.pages.dev/)并做出知情决定。
 >
-> The fully open-source **[Vector](https://github.com/JingMatrix/Vector)** fork (GPLv3) is actively maintained, has a transparent development process, and supports libxposed API 101 and 102 in its stable release.
+> 完全开源的 **[Vector](https://github.com/JingMatrix/Vector)** 分支（GPLv3）仍在积极维护，开发过程透明，其稳定版已支持 libxposed API 101 和 102。
 
 ---
 
-## Essential Resources
+## 核心资源
 
-- **[Vector (JingMatrix Fork)](https://github.com/JingMatrix/Vector)** - Fully open-source (GPLv3), actively maintained - **Recommended**
-- **[lsposed.zip](https://lsposed.zip/)** - Closed-source builds from the original LSPosed team (distributed via [Telegram](https://t.me/LSPosed))
-- [Magisk Guide](./magisk-guide.md) - Required root solution with Zygisk support
-- [KernelSU Guide](./kernelsu-guide.md) - Alternative kernel-based root
-- [Root Apps Collection](../apps-and-modules/index.md) - Popular LSPosed/Vector modules directory
+- **[Vector（JingMatrix 分支）](https://github.com/JingMatrix/Vector)** - 完全开源（GPLv3），积极维护 - **推荐**
+- **[lsposed.zip](https://lsposed.zip/)** - 来自原始 LSPosed 团队的闭源构建（通过 [Telegram](https://t.me/LSPosed) 分发）
+- [Magisk 指南](./magisk-guide.md) - 必备的 root 方案，需支持 Zygisk
+- [KernelSU 指南](./kernelsu-guide.md) - 基于内核的替代 root 方案
+- [Root 应用合集](../apps-and-modules/index.md) - 热门 LSPosed/Vector 模块目录
 
 ---
 
-## Choosing Your Version
+## 选择你的版本
 
-There are currently two primary sources for the framework. Choosing the right one involves trade-offs between open-source transparency, API compatibility, and stability.
+目前该框架有两个主要来源。选择哪一个需要在开源透明度、API 兼容性和稳定性之间权衡。
 
-| Feature | Vector (JingMatrix Fork) | "Official" LSPosed (lsposed.zip) |
+| 特性 | Vector（JingMatrix 分支） | "官方" LSPosed（lsposed.zip） |
 |---------|--------------------------|-----------------------------------|
-| **Primary URL** | [JingMatrix/Vector](https://github.com/JingMatrix/Vector) | **[lsposed.zip](https://lsposed.zip/)** |
-| **Open Source** | ✅ Fully open-source (GPLv3) | ❌ Closed-source (GPL violation) |
-| **Source Available** | [Yes - public repo](https://github.com/JingMatrix/Vector) | No - distributed via Telegram only |
-| **Stable API** | API 102 (v2.2) | API 101 |
-| **Canary/CI API** | Tracks master, ahead of latest stable | N/A |
-| **Active Development** | ✅ Active (commits, issues, PRs) | ⚠️ Telegram-only, no public tracker |
-| **Android Support** | 8.1+ | 8.1+ |
-| **Detection Hiding** | Standard | Enhanced (ACE, Banks, etc.) |
-| **Trust & Transparency** | ✅ Public code, community audit | ⚠️ [Controversy](https://exposelsposed.pages.dev/), [malware in beta](https://xdaforums.com/t/security-analysis-of-the-lsposed-beta-version.4750843/) |
+| **主要 URL** | [JingMatrix/Vector](https://github.com/JingMatrix/Vector) | **[lsposed.zip](https://lsposed.zip/)** |
+| **开源** | ✅ 完全开源（GPLv3） | ❌ 闭源（违反 GPL） |
+| **源码可用** | [是 - 公开仓库](https://github.com/JingMatrix/Vector) | 否 - 仅通过 Telegram 分发 |
+| **稳定版 API** | API 102 (v2.2) | API 101 |
+| **Canary/CI API** | 跟随 master，领先于最新稳定版 | 不适用 |
+| **活跃开发** | ✅ 活跃（提交、issue、PR） | ⚠️ 仅限 Telegram，无公开跟踪器 |
+| **Android 支持** | 8.1+ | 8.1+ |
+| **检测隐藏** | 标准 | 增强（ACE、Banks 等） |
+| **信任与透明度** | ✅ 代码公开，社区可审计 | ⚠️ [争议](https://exposelsposed.pages.dev/)、[beta 版曾含恶意软件](https://xdaforums.com/t/security-analysis-of-the-lsposed-beta-version.4750843/) |
 
 > [!NOTE]
-> **About lsposed.zip:** This domain is operated by the original LSPosed team. Builds are distributed through their [official Telegram channel](https://t.me/LSPosed) and are **closed-source** - meaning the code cannot be independently audited. The original LSPosed GitHub repository at [LSPosed/LSPosed](https://github.com/LSPosed/LSPosed) is archived and no longer reflects these builds.
+> **关于 lsposed.zip：** 该域名由原始 LSPosed 团队运营。构建通过其[官方 Telegram 频道](https://t.me/LSPosed)分发，且为**闭源**——意味着代码无法被独立审计。位于 [LSPosed/LSPosed](https://github.com/LSPosed/LSPosed) 的原始 LSPosed GitHub 仓库已归档，不再反映这些构建。
 
-### Which one should I use?
-- **Use Vector** if you value open-source transparency, want publicly auditable code, and prefer a project with an active public development process. Vector's stable releases support API 100, 101, and 102.
-- **Use Official LSPosed (lsposed.zip)** if you are comfortable with closed-source binaries. LSPosed stable releases support API 100 and 101.
+### 我该用哪个？
+- **选择 Vector**，如果你看重开源透明度，希望代码可公开审计，并偏好一个拥有活跃公开开发流程的项目。Vector 的稳定版支持 API 100、101 和 102。
+- **选择官方 LSPosed（lsposed.zip）**，如果你能接受闭源二进制。LSPosed 稳定版支持 API 100 和 101。
 
 ---
 
-## Background: The LSPosed Ecosystem
+## 背景：LSPosed 生态
 
-### What is LSPosed?
+### 什么是 LSPosed？
 
-LSPosed is a Zygisk module providing an ART hooking framework that maintains API consistency with the original Xposed. It allows modules to modify system and application behavior in-memory without touching system partitions. The original project was developed as open-source (GPLv3) on [GitHub](https://github.com/LSPosed/LSPosed), but the repository was **archived in January 2024** after the core developers announced they would stop maintaining it.
+LSPosed 是一个 Zygisk 模块，提供与原版 Xposed 保持 API 一致的 ART hook 框架。它允许模块在内存中修改系统和应用行为，而不触碰系统分区。原始项目曾以开源（GPLv3）形式在 [GitHub](https://github.com/LSPosed/LSPosed) 上开发，但在核心开发者宣布停止维护后，该仓库于 **2024 年 1 月被归档**。
 
-Following the archival, the original team continued distributing closed-source builds through their Telegram channel and `lsposed.zip`. These builds cannot be independently audited and their distribution in closed-source form violates the GPLv3 license.
+归档之后，原始团队继续通过其 Telegram 频道和 `lsposed.zip` 分发闭源构建。这些构建无法被独立审计，其闭源分发形式违反了 GPLv3 许可证。
 
-### What is Vector?
+### 什么是 Vector？
 
-[Vector](https://github.com/JingMatrix/Vector) is a fully open-source (GPLv3) fork of LSPosed maintained by [JingMatrix](https://github.com/JingMatrix) and [84+ contributors](https://github.com/JingMatrix/Vector/graphs/contributors). It provides the same ART hooking framework with active public development, issue tracking, and community contributions. Vector v2.2 (stable) implements API 102, while v2.1 introduced API 101.
+[Vector](https://github.com/JingMatrix/Vector) 是 LSPosed 的完全开源（GPLv3）分支，由 [JingMatrix](https://github.com/JingMatrix) 和 [84+ 位贡献者](https://github.com/JingMatrix/Vector/graphs/contributors)维护。它提供相同的 ART hook 框架，拥有活跃的公开开发、issue 跟踪和社区贡献。Vector v2.2（稳定版）实现了 API 102，而 v2.1 引入了 API 101。
 
-### Key Features
+### 主要特性
 
-**Vector (Open-Source - Recommended)**
-- **Fully Transparent:** All source code publicly available, auditable by anyone.
-- **Active Development:** Regular commits, community issue tracker, pull requests.
-- **API 102:** Stable releases already support API 101 and 102.
-- **Broad Compatibility:** Supports Android 8.1 through the latest Android releases.
-- **Java-to-Kotlin Refactor:** Ongoing modernization for maintainability.
+**Vector（开源 - 推荐）**
+- **完全透明：** 所有源码公开，任何人皆可审计。
+- **活跃开发：** 定期提交、社区 issue 跟踪、pull request。
+- **API 102：** 稳定版已支持 API 101 和 102。
+- **广泛兼容：** 支持 Android 8.1 直至最新 Android 版本。
+- **Java 转 Kotlin 重构：** 持续推进现代化以提升可维护性。
 
-**"Official" LSPosed (lsposed.zip - Closed-Source)**
-- **API 101 Stable:** Stable support for the latest libxposed API standard.
-- **Better Detection Hiding:** Enhanced capabilities to hide from banking apps and integrity checks (ACE, GoTyme, etc.).
-- **Closed-Source:** Code is not publicly available; builds cannot be audited.
-- **KernelSU Support:** Compatible with KernelSU and Zygisk Next.
+**"官方" LSPosed（lsposed.zip - 闭源）**
+- **API 101 稳定：** 稳定支持最新的 libxposed API 标准。
+- **更好的检测隐藏：** 增强了对银行应用和完整性检查的隐藏能力（ACE、GoTyme 等）。
+- **闭源：** 代码不公开；构建无法审计。
+- **支持 KernelSU：** 与 KernelSU 和 Zygisk Next 兼容。
 
 <br>
-<details><summary>Technical Details: API 100 vs 101 vs 102</summary>
+<details><summary>技术细节：API 100 vs 101 vs 102</summary>
 
-### API 102 (The Current Standard)
-The ecosystem is moving toward API 102. New modules are increasingly being developed for API 102, making it the recommended target for future compatibility. Users stuck on API 100 may find themselves unable to use newer modules. Vector v2.2 (stable) now support this API.
+### API 102（当前标准）
+生态正在向 API 102 迁移。越来越多新模块面向 API 102 开发，使其成为面向未来兼容性的推荐目标。停留在 API 100 的用户可能无法使用较新的模块。Vector v2.2（稳定版）现已支持该 API。
 
-### API 101 (The Previous Standard)
-The libxposed API 101 includes significant changes compared to API 82/100. It is designed for better performance and compatibility with modern Android internals. Both lsposed.zip (stable) and Vector v2.1 (stable) now support this API.
+### API 101（上一代标准）
+与 API 82/100 相比，libxposed API 101 包含重大变化。它旨在获得更好的性能以及与现代 Android 内部机制的兼容性。lsposed.zip（稳定版）和 Vector v2.1（稳定版）现在都支持该 API。
 
-### API 100 (Legacy)
-Version 2.0 of the Vector fork finalized the API 100 implementation. If a module specifically requires API 100 and fails on API 101, Vector v2.0 is the recommended stable option.
+### API 100（旧版）
+Vector 分支的 2.0 版本最终完成了 API 100 的实现。如果某个模块明确要求 API 100 且在 API 101 上无法运行，推荐使用稳定的 Vector v2.0。
 
 </details>
 
 ---
 
-## Prerequisites
+## 前提条件
 
-### Mandatory Requirements
+### 强制要求
 
 > [!IMPORTANT]
-> LSPosed will **NOT** work without these requirements met. Do not proceed until all are satisfied.
+> 若不满足这些要求，LSPosed 将**无法**工作。在全部满足之前请勿继续。
 
-**Root Access**
-- Magisk 26+ with Zygisk enabled
-- KernelSU (and its forks) with Zygisk Next/NeoZygisk
+**root 权限**
+- Magisk 26+ 且已启用 Zygisk
+- KernelSU（及其分支）配合 Zygisk Next/NeoZygisk
 
-**Android Version**
-- Android 8.1 (Oreo) minimum through the latest Android releases
+**Android 版本**
+- 最低 Android 8.1（Oreo），直至最新 Android 版本
 
-## Device Compatibility
+## 设备兼容性
 
-- ✅ **Supported:** Pixel, Nexus, OnePlus, Samsung (stock OneUI), AOSP-based ROMs
-- ⚠️ **Limited:** MIUI/HyperOS (some versions have known crashes - see Troubleshooting), EMUI
-- ❌ **Not Supported:** Android Go, Fire OS
+- ✅ **支持：** Pixel、Nexus、OnePlus、Samsung（官方 OneUI）、基于 AOSP 的 ROM
+- ⚠️ **有限支持：** MIUI/HyperOS（部分版本存在已知崩溃 - 见故障排除）、EMUI
+- ❌ **不支持：** Android Go、Fire OS
 
-### ROM Compatibility
+### ROM 兼容性
 
-| ROM Type | Compatibility | Notes |
+| ROM 类型 | 兼容性 | 备注 |
 |----------|--------------|-------|
-| Stock Android (Google) | Excellent | Best compatibility |
-| AOSP-based ROMs | Excellent | LineageOS, PixelOS, etc. |
-| OneUI (Samsung) | Good | Works with Magisk + Zygisk |
-| OxygenOS (OnePlus) | Good | ColorOS base also works |
-| MIUI/HyperOS (Xiaomi) | Moderate | Known crashes on some HyperOS 2.x versions |
-| Nothing OS | Good | Growing compatibility |
-| Custom GSI | Variable | Depends on implementation |
-| GrapheneOS | Now Supported* | *Via Zygisk Next/NeoZygisk stable |
-| CalyxOS | Good | Works with microG |
+| 官方 Android（Google） | 极佳 | 兼容性最好 |
+| 基于 AOSP 的 ROM | 极佳 | LineageOS、PixelOS 等 |
+| OneUI（Samsung） | 良好 | 可与 Magisk + Zygisk 配合使用 |
+| OxygenOS（OnePlus） | 良好 | ColorOS 底层同样可用 |
+| MIUI/HyperOS（Xiaomi） | 一般 | 部分 HyperOS 2.x 版本存在已知崩溃 |
+| Nothing OS | 良好 | 兼容性不断提升 |
+| 第三方 GSI | 因设备而异 | 取决于具体实现 |
+| GrapheneOS | 现已支持* | *通过 Zygisk Next/NeoZygisk 稳定版 |
+| CalyxOS | 良好 | 可与 microG 配合使用 |
 
-> **GrapheneOS Note:** Support for GrapheneOS has been added in the Zygisk Next/NeoZygisk stable release. GrapheneOS users should use Zygisk Next/NeoZygisk as their Zygisk provider.
-
----
-
-## Installation Guide
+> **GrapheneOS 说明：** Zygisk Next/NeoZygisk 稳定版已加入对 GrapheneOS 的支持。GrapheneOS 用户应使用 Zygisk Next/NeoZygisk 作为其 Zygisk 提供者。
 
 ---
 
-### Method 1: Magisk Manager Installation (Recommended)
-
-**Best for**: Most users, easiest method
-
-#### Step 1: Enable Zygisk
-
-1. Open **Magisk Manager** app
-2. Tap the **gear icon** (Settings)
-3. Scroll to **"Zygisk"** and enable the toggle
-4. Tap **"Reboot"** when prompted
-5. Wait for device to restart (1–2 minutes)
-
-#### Step 2: Download the Framework
-
-**Option A: Vector (Open-Source - Recommended)**
-1. Visit [Vector Releases](https://github.com/JingMatrix/Vector/releases) on GitHub.
-2. Download the latest **stable release ZIP** (v2.2, API 102) or a **CI build** (distributed as pre-releases).
-
-**Option B: Official LSPosed (Closed-Source)**
-1. Visit **[lsposed.zip](https://lsposed.zip/)** or the [Official Telegram](https://t.me/LSPosed).
-2. Download the latest **Zygisk release ZIP**.
-
-#### Step 3: Install the Module
-
-1. Open **Magisk Manager** > **Modules** tab
-2. Tap **"Install from storage"**
-3. Select the downloaded ZIP
-4. Wait for the installation to finish and tap **"Reboot"**.
-
-#### Step 4: Open the Manager
-
-After reboot, look for the LSPosed notification or app icon.
-- If you don't see it, dial `*#*#5776733#*#*` (`*#*#LSPosed#*#*`) to open the manager.
-- New versions also include an "Action button" in the status bar notification.
+## 安装指南
 
 ---
 
-### Method 2: KernelSU Installation
+### 方法一：通过 Magisk Manager 安装（推荐）
+
+**最适合**：大多数用户，最简单的方法
+
+#### 步骤 1：启用 Zygisk
+
+1. 打开 **Magisk Manager** 应用
+2. 点击**齿轮图标**（设置）
+3. 找到 **"Zygisk"** 并打开开关
+4. 在提示时点击**"重启"**
+5. 等待设备重启（1–2 分钟）
+
+#### 步骤 2：下载框架
+
+**选项 A：Vector（开源 - 推荐）**
+1. 访问 GitHub 上的 [Vector Releases](https://github.com/JingMatrix/Vector/releases)。
+2. 下载最新的**稳定版 ZIP**（v2.2，API 102）或 **CI 构建**（以预发布形式分发）。
+
+**选项 B：官方 LSPosed（闭源）**
+1. 访问 **[lsposed.zip](https://lsposed.zip/)** 或 [官方 Telegram](https://t.me/LSPosed)。
+2. 下载最新的 **Zygisk 版本 ZIP**。
+
+#### 步骤 3：安装模块
+
+1. 打开 **Magisk Manager** > **模块**标签页
+2. 点击**"从存储安装"**
+3. 选择下载好的 ZIP
+4. 等待安装完成后点击**"重启"**。
+
+#### 步骤 4：打开管理器
+
+重启后，寻找 LSPosed 通知或应用图标。
+- 如果没有看到，在拨号盘输入 `*#*#5776733#*#*`（`*#*#LSPosed#*#*`）打开管理器。
+- 新版本还在状态栏通知中提供了"操作按钮"。
+
+---
+
+### 方法二：KernelSU 安装
 
 > [!WARNING]
-> KernelSU requires **Zygisk Next** or **NeoZygisk** to be installed first for LSPosed/Vector to function.
+> KernelSU 需要先安装 **Zygisk Next** 或 **NeoZygisk**，LSPosed/Vector 才能运行。
 
-1. Install KernelSU and the Manager app.
-2. Install **Zygisk Next** via KernelSU Manager > Modules.
-3. Reboot.
-4. Download the ZIP from your chosen source:
-   - **Vector:** [GitHub Releases](https://github.com/JingMatrix/Vector/releases) (open-source)
-   - **lsposed.zip:** [lsposed.zip](https://lsposed.zip/) (closed-source)
-5. Install via KernelSU Manager > Modules > Install from storage.
-6. Reboot and open the manager from the notification.
+1. 安装 KernelSU 和管理器应用。
+2. 通过 KernelSU 管理器 > 模块安装 **Zygisk Next**。
+3. 重启。
+4. 从你选择的来源下载 ZIP：
+   - **Vector：** [GitHub Releases](https://github.com/JingMatrix/Vector/releases)（开源）
+   - **lsposed.zip：** [lsposed.zip](https://lsposed.zip/)（闭源）
+5. 通过 KernelSU 管理器 > 模块 > 从存储安装。
+6. 重启并从通知打开管理器。
 
 ---
 
-## Module Management
+## 模块管理
 
-### API Compatibility Check
+### API 兼容性检查
 
 > [!IMPORTANT]
-> - **API 102 Modules:** Require Vector v2.2+ (stable).
-> - **API 101 Modules:** Compatible with Vector v2.1+ or lsposed.zip.
-> - **API 100 Modules:** Compatible with Vector v2.0 (stable) and some may work on lsposed.zip via legacy support. For strict API 100 compatibility, Vector v2.0 is the baseline.
+> - **API 102 模块：** 需要 Vector v2.2+（稳定版）。
+> - **API 101 模块：** 兼容 Vector v2.1+ 或 lsposed.zip。
+> - **API 100 模块：** 兼容 Vector v2.0（稳定版），部分模块可通过旧版支持在 lsposed.zip 上运行。若要求严格的 API 100 兼容，Vector v2.0 是基线。
 
-### How to Enable a Module
+### 如何启用模块
 
-1. Install the module APK (via File Manager or ADB).
-2. Open the **LSPosed Manager**.
-3. Go to the **Modules** tab.
-4. Tap the module and toggle **"Enable"**.
-5. **Select Scope:** Check the apps you want the module to modify.
-   - *Note:* For system-wide tweaks, you may need to check "System Framework".
-6. **Reboot** (some modules require it, others apply instantly).
+1. 安装模块 APK（通过文件管理器或 ADB）。
+2. 打开 **LSPosed 管理器**。
+3. 进入**模块**标签页。
+4. 点击该模块并打开**"启用"**开关。
+5. **选择作用域：** 勾选你希望该模块修改的应用。
+   - *注意：* 对于系统级调整，可能需要勾选 "System Framework（系统框架）"。
+6. **重启**（部分模块需要重启，另一些立即生效）。
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-### "API Version Too New/Old"
-- If a module says it requires API 102, use Vector v2.2 (stable).
-- If a module says it requires API 101, use either `lsposed.zip` or Vector v2.1 (both stable)
-- If a module is very old and only supports API 82/100, and fails on API 101/102, try the Vector v2.0 stable release.
+### "API 版本过新/过旧"
+- 如果模块要求 API 102，请使用 Vector v2.2（稳定版）。
+- 如果模块要求 API 101，请使用 `lsposed.zip` 或 Vector v2.1（两者均为稳定版）
+- 如果模块非常老旧、只支持 API 82/100 且在 API 101/102 上无法运行，请尝试 Vector v2.0 稳定版。
 
-### Detection Issues (Banking Apps)
-The closed-source lsposed.zip builds have better success in hiding their presence. If you still face issues:
-1. Ensure the banking app is **NOT** in the scope of any module.
-2. Use **Shamiko** (closed-source, from LSPosed team) or the open-source alternative **[Zygisk Assistant](https://xdaforums.com/t/module-zygisk-assistant-foss-root-hider.4664761/)**.
-3. Disable "Verbose Logs" in LSPosed/Vector settings.
+### 检测问题（银行应用）
+闭源的 lsposed.zip 构建在隐藏自身方面成功率更高。如果仍然遇到问题：
+1. 确保银行应用**不在**任何模块的作用域内。
+2. 使用 **Shamiko**（闭源，来自 LSPosed 团队）或开源替代品 **[Zygisk Assistant](https://xdaforums.com/t/module-zygisk-assistant-foss-root-hider.4664761/)**。
+3. 在 LSPosed/Vector 设置中关闭 "Verbose Logs（详细日志）"。
 
-### Installation Issues
+### 安装问题
 
-<details><summary>Click to expand</summary>
+<details><summary>点击展开</summary>
 
-#### Manager Not Appearing After Install
+#### 安装后管理器未出现
 
-**Symptom:** Module installed in Magisk, but no notification appears.
+**症状：** 模块已在 Magisk 中安装，但没有出现通知。
 
 ```bash
-# Check if module is installed
+# 检查模块是否已安装
 adb shell su -c "ls /data/adb/modules/ | grep lsposed"
 
-# Check Zygisk status
+# 检查 Zygisk 状态
 adb shell su -c "magisk --status | grep Zygisk"
 ```
 
-**Solutions:**
+**解决方案：**
 
-1. **Verify Zygisk:** Magisk Settings > Zygisk > enabled > reboot
-2. **Dial Code:** Open your dialer and enter `*#*#5776733#*#*`
-3. **Reinstall Module:** Remove > reboot > reinstall > reboot
-4. **Clear Magisk cache:**
+1. **确认 Zygisk：** Magisk 设置 > Zygisk > 启用 > 重启
+2. **拨号代码：** 打开拨号盘输入 `*#*#5776733#*#*`
+3. **重装模块：** 移除 > 重启 > 重装 > 重启
+4. **清除 Magisk 缓存：**
    ```bash
    adb shell su -c "rm -rf /data/adb/magisk/*cache*"
    adb reboot
    ```
 
-#### Manager Won't Open
+#### 管理器无法打开
 
 ```bash
-# Force stop manager
+# 强制停止管理器
 adb shell am force-stop org.lsposed.manager
 
-# Clear cache
+# 清除缓存
 adb shell pm clear org.lsposed.manager
 ```
 
@@ -333,70 +333,70 @@ adb shell pm clear org.lsposed.manager
 
 ---
 
-### System Stability & Bootloops
+### 系统稳定性与无限重启
 
-<details><summary>Click to expand</summary>
+<details><summary>点击展开</summary>
 
-#### Bootloop After Enabling Module
+#### 启用模块后无限重启
 
 > [!DANGER]
-> Bootloops require immediate action to prevent data loss or extended downtime.
+> 无限重启需要立即处理，以防止数据丢失或设备长时间无法使用。
 
-**Emergency Recovery:**
+**紧急恢复：**
 
-**Step 1: Boot to Recovery or Safe Mode**
-- Hold power 10+ seconds to force off
-- Boot to recovery or Safe Mode (usually holding Volume Down during boot)
+**步骤 1：进入 Recovery 或安全模式**
+- 长按电源键 10 秒以上强制关机
+- 进入 Recovery 或安全模式（通常在开机时按住音量下键）
 
-**Step 2: Disable Modules**
+**步骤 2：禁用模块**
 
-*Method A - Via Recovery ADB:*
+*方法 A - 通过 Recovery 下的 ADB：*
 ```bash
 adb devices
 
-# Disable all Magisk modules
+# 禁用所有 Magisk 模块
 adb shell rm -rf /data/adb/modules/*/
 
-# Or just LSPosed
+# 或仅禁用 LSPosed
 adb shell rm -rf /data/adb/modules/lsposed/
 
 adb reboot
 ```
 
-*Method B - Via File Manager (Recovery):*
-Navigate to `/data/adb/modules/lsposed/` and rename the folder to `lsposed.disabled`.
+*方法 B - 通过文件管理器（Recovery）：*
+进入 `/data/adb/modules/lsposed/` 并将该文件夹重命名为 `lsposed.disabled`。
 
 </details>
 
 ---
 
-### HyperOS / Xiaomi-Specific Issues
+### HyperOS / Xiaomi 专属问题
 
-<details><summary>Click to expand</summary>
+<details><summary>点击展开</summary>
 
-#### Framework Shows as Activated but Modules Don't Work
+#### 框架显示已激活但模块不工作
 
-LSPosed may show as "Activated" in the manager, but modules fail to work. This is a known issue on certain HyperOS 2.x (MTK) builds.
+LSPosed 可能在管理器中显示"已激活"，但模块无法工作。这是某些 HyperOS 2.x（MTK）构建上的已知问题。
 
-**Workarounds:**
-- Official LSPosed (API 101) includes several fixes for modern ROMs. Upgrade to this version if you are on a legacy fork.
-- Try switching between KernelSU and KernelSU Next with NeoZygisk.
+**解决方法：**
+- 官方 LSPosed（API 101）包含针对现代 ROM 的多项修复。如果你还在使用旧分支，请升级到该版本。
+- 尝试在 KernelSU 与 KernelSU Next 之间切换并搭配 NeoZygisk。
 
 </details>
 
 ---
 
-## Uninstallation
+## 卸载
 
-### Complete Removal
+### 完全移除
 
-#### Method 1: Magisk Manager (Recommended)
+#### 方法一：Magisk Manager（推荐）
 
-1. Magisk Manager > **Modules tab**
-2. Find **"LSPosed"** > tap trash icon > **Remove**
-3. Confirm > **Reboot**
+1. Magisk Manager > **模块标签页**
+2. 找到 **"LSPosed"** > 点击垃圾桶图标 > **移除**
+3. 确认 > **重启**
 
-#### Method 2: ADB
+#### 方法二：ADB
 
 ```bash
 adb shell su -c "rm -rf /data/adb/modules/lsposed*"
@@ -407,30 +407,30 @@ adb reboot
 
 ---
 
-| Version | Status | Best For |
+| 版本 | 状态 | 最适合 |
 |---------|--------|----------|
-| **Vector (Open-Source)** | **Recommended** | Transparency, auditable code, active development. Stable release supports API 101 and 102. |
-| **lsposed.zip (Closed-Source)** | Use with caution | Stable API 101, better detection hiding. Be aware of closed-source risks. |
-| **LSPatch** | Non-Root | Modifying apps on non-rooted devices. |
+| **Vector（开源）** | **推荐** | 透明、代码可审计、开发活跃。稳定版支持 API 101 和 102。 |
+| **lsposed.zip（闭源）** | 谨慎使用 | 稳定的 API 101，更好的检测隐藏。注意闭源风险。 |
+| **LSPatch** | 无需 root | 在未 root 的设备上修改应用。 |
 
 ---
 
-## Next Steps
+## 下一步
 
-### Expand Your Setup
+### 扩展你的配置
 
-**After Mastering LSPosed:**
-1. [Custom ROM Installation](./custom-rom-installation.md) - Full system replacement
-2. [Magisk Modules Guide](./magisk-guide.md) - System-level modifications
-3. [KernelSU Guide](./kernelsu-guide.md) - Kernel-based root alternative
-4. [Root Apps Collection](../apps-and-modules/index.md) - 300+ tested apps and modules
+**掌握 LSPosed 之后：**
+1. [第三方 ROM 安装](./custom-rom-installation.md) - 完整替换系统
+2. [Magisk 模块指南](./magisk-guide.md) - 系统级修改
+3. [KernelSU 指南](./kernelsu-guide.md) - 基于内核的替代 root 方案
+4. [Root 应用合集](../apps-and-modules/index.md) - 300+ 经测试的应用和模块
 
-### Stay Updated
+### 保持关注
 
-**Follow Development**
-- [Vector GitHub](https://github.com/JingMatrix/Vector) - Open-source fork (actively maintained)
-- [lsposed.zip](https://lsposed.zip/) - Closed-source builds from the original LSPosed team
-- [LSPosed Telegram](https://t.me/LSPosed) - Official team channel (closed-source builds distributed here)
-- [Expose LSPosed](https://exposelsposed.pages.dev/) - Community documentation of GPL violations and controversy
+**关注开发动态**
+- [Vector GitHub](https://github.com/JingMatrix/Vector) - 开源分支（积极维护）
+- [lsposed.zip](https://lsposed.zip/) - 来自原始 LSPosed 团队的闭源构建
+- [LSPosed Telegram](https://t.me/LSPosed) - 官方团队频道（闭源构建在此分发）
+- [Expose LSPosed](https://exposelsposed.pages.dev/) - 社区记录的 GPL 违规与争议
 
-**Need help?** Visit our [FAQ section](../faqs.md) or [Troubleshooting Guide](../troubleshooting.md).
+**需要帮助？** 访问我们的[常见问题](../faqs.md)或[故障排除指南](../troubleshooting.md)。

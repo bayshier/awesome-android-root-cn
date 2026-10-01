@@ -1,39 +1,39 @@
 ---
-name: Dead Link Report
-about: Report a broken or dead link in the repository
+name: 失效链接报告
+about: 报告仓库中损坏或失效的链接
 title: '[DEAD LINK] '
 labels: 'bug, dead-link'
 assignees: ''
 ---
 
-## Dead Link Details
+## 失效链接详情
 
-**Page/Section:** 
-(Which page contains the broken link?)
+**页面/章节：** 
+（哪个页面包含失效链接？）
 
-**Link URL:** 
-(The exact URL that is broken)
+**链接 URL：** 
+（失效的确切 URL）
 
-**Link Text/App Name:** 
-(What does the link say or which app is it for?)
+**链接文字/应用名称：** 
+（链接文字是什么，或指向哪个应用？）
 
-## Error Description
+## 错误描述
 
-**What happens when you click the link?**
-- [ ] 404 Not Found
-- [ ] Website/repo no longer exists
-- [ ] Redirects to wrong page
-- [ ] Other (describe below)
+**点击链接后会发生什么？**
+- [ ] 404 未找到
+- [ ] 网站/仓库已不存在
+- [ ] 重定向到错误的页面
+- [ ] 其他（在下方描述）
 
-**Description:**
+**描述：**
 
-## Suggested Fix
+## 修复建议
 
-**Do you have an alternative link?** (optional)
+**你有替代链接吗？**（可选）
 
-**Should the entry be removed?** 
-(Yes/No - if the project is completely dead)
+**是否应移除该条目？** 
+（是/否 - 如果项目已彻底停止维护）
 
-## Additional Context
+## 补充信息
 
-(Any other information that might help)
+（任何可能有帮助的其他信息）

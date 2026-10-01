@@ -1,41 +1,41 @@
 ---
-name: Bug Report
-about: Report a website or documentation bug
+name: Bug 报告
+about: 报告网站或文档的 Bug
 title: '[BUG] '
 labels: 'bug'
 assignees: ''
 ---
 
-## Bug Description
+## Bug 描述
 
-**What's the bug?**
-(Clear and concise description of the problem)
+**Bug 是什么？**
+（对问题的清晰、简洁描述）
 
-## Steps to Reproduce
+## 复现步骤
 
-1. Go to '...'
-2. Click on '...'
-3. Scroll down to '...'
-4. See error
+1. 前往 '...'
+2. 点击 '...'
+3. 滚动到 '...'
+4. 看到错误
 
-## Expected Behavior
+## 预期行为
 
-(What should happen?)
+（应该发生什么？）
 
-## Actual Behavior
+## 实际行为
 
-(What actually happens?)
+（实际发生了什么？）
 
-## Screenshots
+## 截图
 
-(If applicable, add screenshots to help explain the problem)
+（如适用，请添加截图以帮助说明问题）
 
-## Environment
+## 环境
 
-**Browser:** (Chrome, Firefox, Safari, etc.)
-**Device:** (Desktop/Mobile/Tablet)
-**Operating System:** 
+**浏览器：**（Chrome、Firefox、Safari 等）
+**设备：**（桌面/移动/平板）
+**操作系统：** 
 
-## Additional Context
+## 补充信息
 
-(Any other context about the problem)
+（关于问题的任何其他背景信息）

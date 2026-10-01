@@ -11,7 +11,7 @@
       <svg class="pwa-toast__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9V5h2v4H9zm0 4v-2h2v2H9z" fill="currentColor"/>
       </svg>
-      <span class="pwa-toast__message">You're offline - Some features may be limited</span>
+      <span class="pwa-toast__message">您已离线 - 部分功能可能受限</span>
     </div>
   </div>
 </template>
